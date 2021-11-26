@@ -2,7 +2,6 @@
 
 **VARIABLE**
 ************
-
     int : nb1, nb2
     boolean : quit
     double : result
@@ -11,7 +10,6 @@
 
 **CODE**
 **********
-
     do
         wrrite "Entrez deux chiffres entier :"
         read nb1
