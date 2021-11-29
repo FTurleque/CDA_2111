@@ -8,6 +8,7 @@ namespace Exercice_1_1_3
         private static double userNumber;
         private static double result = 0;
         private static string[] numbersTabString;
+        // Initialization empty array
         private static double[] numbersTab;
 
 
@@ -20,48 +21,34 @@ namespace Exercice_1_1_3
 
         private static void AskNumber(string message)
         {
-            int indexUserNumber = 0;
             Console.WriteLine(message);
 
-
+            // 
             userEntry = Console.ReadLine();
             numbersTabString = userEntry.Split(' ');
+            numbersTab = new double[numbersTabString.Length];
 
-            do
+            for (int index = 0; index < numbersTabString.Length; index++)
             {
                 try
                 {
-                    userNumber = double.Parse(numbersTabString[indexUserNumber]);
+                    userNumber = double.Parse(numbersTabString[index]);
+                    numbersTab[index] = userNumber;
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine($"Votre {indexUserNumber} chiffre n'en est pas un recommencez :");
-                }
-                indexUserNumber++;
-            } while (indexUserNumber <= numbersTabString.Length - 1);
-
-/*            for (int index = 0; index < numbersTabString.Length; index++)
-            {
-                try
-                {
-                    userNumber = double.Parse(numbersTabString[indexUserNumber]);
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine($"Votre {indexUserNumber} chiffre n'en est pas un recommencez :");
+                    Console.WriteLine($"Votre {index} chiffre n'en est pas un recommencez :");
                 }
             }
-*/        }
+        }
 
         private static double Average()
         {
-            int indexUserNumber = 0;
-            do
+            for (int index = 0; index < numbersTab.Length; index++)
             {
-                result = (double)numbersTab[indexUserNumber] + (double)numbersTab[indexUserNumber + 1];
-                indexUserNumber++;
-            } while (indexUserNumber < numbersTab.Length);
-            return result;
+               result = result + (double)numbersTab[index];
+            }
+            return result / (double)numbersTab.Length;
         }
     }
 }
