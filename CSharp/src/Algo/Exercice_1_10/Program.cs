@@ -10,7 +10,7 @@ namespace Exercice_1_10
         private static double ifDivisorIsPrime;
         private static bool isPrime;
         private static double[] resultsNbPerfect;
-        private static double nbToTest;
+        private static int nbToTest;
 
         static void Main(string[] args)
         {
