@@ -24,7 +24,7 @@ namespace Exercice_1_1_3
 
             // 
             userEntry = Console.ReadLine();
-            numbersTabString = userEntry.Split(' ');
+            numbersTabString = userEntry.Split(" ");
             numbersTab = new double[numbersTabString.Length];
 
             for (int index = 0; index < numbersTabString.Length; index++)
