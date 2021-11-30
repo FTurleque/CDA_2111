@@ -8,7 +8,6 @@ namespace Exercice_1_1_3
         private static double userNumber;
         private static double result = 0;
         private static string[] numbersTabString;
-        // Initialization empty array
         private static double[] numbersTab;
 
 
