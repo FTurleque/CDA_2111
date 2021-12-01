@@ -4,6 +4,7 @@
 ************
 
     int : nb_random, user_number
+    bool : numberFind <-- false
     nb_random <-- RANDOM(0, 100)
 
 
@@ -11,7 +12,7 @@
 **********
 
     write "Trouvez le nombre mystère"
-    do
+    do 
         write "Choisir un nombre entre 0 et 100"
         read user_number
 
@@ -23,3 +24,4 @@
                 write "Gagnez !!!"
             EndIf
         EndIf
+    while numberFind = false
