@@ -22,7 +22,6 @@ namespace Exercice_1_1_3
         {
             Console.WriteLine(message);
 
-            // 
             userEntry = Console.ReadLine();
             numbersTabString = userEntry.Split(" ");
             numbersTab = new double[numbersTabString.Length];

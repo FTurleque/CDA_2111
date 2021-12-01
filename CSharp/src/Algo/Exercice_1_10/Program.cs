@@ -9,8 +9,8 @@ namespace Exercice_1_10
         private static int divisor;
         private static double ifDivisorIsPrime;
         private static bool isPrime;
-        private static double[] resultsNbPerfect;
-        private static int nbToTest;
+        private static double resultsNbPerfect;
+        private static double nbToTest;
 
         static void Main(string[] args)
         {
@@ -18,7 +18,7 @@ namespace Exercice_1_10
             FindPerfectNumber();
         }
 
-        private static int AskNumber(String message)
+        private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do
@@ -37,21 +37,20 @@ namespace Exercice_1_10
 
         private static void FindPerfectNumber()
         {
-            resultsNbPerfect = new double[nbOfperfectNumber];
+            nbToTest = 2;
             for (int i = 0; i < nbOfperfectNumber; i++)
             {
-                nbToTest = 1;
                 do
                 {
                     CheckIfIsPrime(nbToTest);
                     if (isPrime == true)
                     {
-                        ifDivisorIsPrime = Math.Pow(2, nbToTest) - 1;
+                        ifDivisorIsPrime = Math.Pow(2d, nbToTest) - 1d;
                         CheckIfIsPrime(ifDivisorIsPrime);
                         if (isPrime == true)
                         {
-                            resultsNbPerfect[i] = Math.Pow(2, nbToTest - 1) * (ifDivisorIsPrime);
-                            Console.WriteLine(resultsNbPerfect[i]);
+                            resultsNbPerfect = Math.Pow(2d, nbToTest - 1d) * (ifDivisorIsPrime);
+                            Console.WriteLine(resultsNbPerfect);
                         }
                     }
                     nbToTest++;

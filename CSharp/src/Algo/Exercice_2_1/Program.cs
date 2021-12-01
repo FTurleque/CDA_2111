@@ -4,13 +4,13 @@ namespace Exercice_2_1
 {
     class Program
     {
-        private static String userNumber;
-        private static String[] valiousTable;
-        private static String valious = "";
-        private static String unity = "";
-        private static Boolean go = false;
-        private static String[] tableOfUnit;
-        private static String[] distanceTable;
+        private static string userNumber;
+        private static string[] valiousTable;
+        private static string valious = "";
+        private static string unity = "";
+        private static bool go = false;
+        private static string[] tableOfUnit;
+        private static string[] distanceTable;
 
         static void Main(string[] args)
         {
@@ -22,12 +22,12 @@ namespace Exercice_2_1
             } while (!userNumber.Equals("quitter"));
         }
 
-        static String AskEntryUser(String message)
+        static string AskEntryUser(string message)
         {
             Console.WriteLine(message);
             do
             {
-                userNumber = Console.ReadLine();
+                userNumber = Console.ReadLine().ToLower();
 
                 if (userNumber.Equals("quitter"))
                 {
@@ -82,16 +82,16 @@ namespace Exercice_2_1
             {
                 string tmp = distanceTable[index];
                 double numDistanceIndex = double.Parse(tmp);
-                String numUnitIndex = tableOfUnit[index];
+                string numUnitIndex = tableOfUnit[index];
 
                 // Display of the calculation
                 if (numUnitIndex.Equals("mi"))
                 {
-                    Console.WriteLine(numDistanceIndex + " " + numUnitIndex + " = " + numDistanceIndex * 1.609 + " kilomètres");
+                    Console.WriteLine(numDistanceIndex + " " + char.ToUpper(numUnitIndex[0]) + numUnitIndex[1] + " = " + numDistanceIndex * 1.609 + " Kilomètres");
                 }
                 else
                 {
-                    Console.WriteLine(numDistanceIndex + " " + numUnitIndex + " = " + numDistanceIndex / 1.609 + " miles ");
+                    Console.WriteLine(numDistanceIndex + " " + char.ToUpper(numUnitIndex[0]) + numUnitIndex[1] + " = " + numDistanceIndex / 1.609 + " Miles ");
                 }
             }
         }
