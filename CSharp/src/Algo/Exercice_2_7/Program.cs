@@ -56,7 +56,7 @@ namespace Exercice_2_7
 
             if (minorNumber == ageOfPeople.Length) return "Il n'y a pas d'adultes !";
             else if (adultsNumber == ageOfPeople.Length) return "Il n'y a pas de jeunes !";
-            else return "Il y a des jeunes et des adultes !";
+            else return $"Il y a des {minorNumber} jeunes et {adultsNumber} adultes !";
 
         }
     }
