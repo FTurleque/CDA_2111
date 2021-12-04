@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Exercice_3_4
 {
@@ -36,10 +37,10 @@ namespace Exercice_3_4
 
         private static string Display(int[] _arrayNumber, string message)
         {
-            string stringArray = "";
+            StringBuilder stringArray = new();
             for (int i = 0; i < _arrayNumber.Length; i++)
             {
-                stringArray += $"{_arrayNumber[i]} ";
+                stringArray.Append($"{_arrayNumber[i]} ");
             }
             return message + stringArray;
         }
