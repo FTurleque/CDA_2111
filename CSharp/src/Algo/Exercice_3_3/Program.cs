@@ -11,7 +11,7 @@ namespace Exercice_3_3
 
         static void Main(string[] args)
         {
-            textUser = AskTextUser("Saisir un texte :");
+            textUser = AskTextUser("Rechercher une lettre dans un chaine de caractères !\nSaisir un texte :");
             FindOccurenceLetter();
         }
 
