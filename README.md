@@ -17,3 +17,5 @@
     --> Exercice 3.1 : Rechercher un nombre dans un tableau <=> with try catch and function                             (0.00)   
     --> Exercice 3.2 : Rechercher une lettre dans une String <=> with try catch and function                            (0.00)   
     --> Exercice 3.3 : Dénombrer les lettres de l'alphabet dans un tableau <=> with try catch and function              (0.00)   
+    --> Exercice 3.4 : Tri d'un tableau <=> with try catch and function                                                 (0.00)   
+    --> Exercice 3.5 : Palindrome <=> with try catch and function                                                       (0.00)   
