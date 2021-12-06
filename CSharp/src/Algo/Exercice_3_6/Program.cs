@@ -13,7 +13,7 @@ namespace Exercice_3_6
             char[] wordHidden = new char[wordToFind.Length];
             wordHidden = WordLetterPlaced(wordHidden);
             Console.WriteLine(DisplayWord(wordHidden));
-            FindAWord(wordToFind, wordHidden);
+            Console.WriteLine(FindAWord(wordToFind, wordHidden));
         }
 
         // Vérification si le mot comporte au maximum 6 charatères different
@@ -26,7 +26,8 @@ namespace Exercice_3_6
                 string userEntry = Console.ReadLine();
                 try
                 {
-                    if (Regex.IsMatch(userEntry, $"^[a-zA-Z]+$")) return userEntry.ToCharArray();
+                    if (Regex.IsMatch(userEntry, $"^[a-zA-Z]{6}")) return userEntry.ToCharArray();
+                    /*else if ()*/
                     else throw new Exception("Vous n'avez pas entrez un mot !\nRéessayez :");
                 }
                 catch (Exception e)
@@ -83,23 +84,29 @@ namespace Exercice_3_6
 
 
 
-        private static void FindAWord(char[] _wordToFind, char[] _wordHidden)
+        private static string FindAWord(char[] _wordToFind, char[] _wordHidden)
         {
+            int find = 0;
             int life = 0;
             do
             {
                 char suggestedLetter = AskLetter("Entrez une lettre de l'alphabet :");
+                Console.Clear();
                 for (int i = 0; i < _wordToFind.Length; i++)
                 {
                     char tmp = _wordToFind[i];
                     if (tmp == suggestedLetter)
                     {
                         _wordHidden[i] = suggestedLetter;
+                        find++;
                     }
                 }
                 Console.WriteLine(DisplayWord(_wordHidden));
                 life++;
-            } while (life != 6);
+            } while (!(life == 6 || find == _wordToFind.Length));
+
+            if (find == _wordToFind.Length) return "Vous avez gagnez, bravo !";
+            else return "Vous avez perdu ! :( ";
         }
 
     }
