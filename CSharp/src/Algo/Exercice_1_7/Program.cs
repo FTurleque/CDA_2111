@@ -11,7 +11,7 @@ namespace Exercice_1_7
 
         static void Main(string[] args)
         {
-            aNumber = AskNumber("Choisir un nombre pour 'a' :");
+            aNumber = AskNumber("Tri de nombres\n\nChoisir un nombre pour 'a' :");
             bNumber = AskNumber("Choisir un nombre pour 'b' :");
             cNumber = AskNumber("Choisir un nombre pour 'c' :");
             Console.WriteLine($"Les chiffres dans l'ordre croissant sont : {CheckNumber()} !");
@@ -38,43 +38,20 @@ namespace Exercice_1_7
         {
             if (aNumber < bNumber)
             {
-                if (cNumber < aNumber)
-                {
-                    return $"{cNumber} < {aNumber} < {bNumber}";
-                }
+                if (cNumber < aNumber)  return $"{cNumber} < {aNumber} < {bNumber}";
                 else
                 {
-                    if (cNumber < bNumber)
-                    {
-                        return $"{aNumber} < {cNumber} < {bNumber}";
-                    }
-                    else
-                    {
-                        return $"{aNumber} < {bNumber} < {cNumber}";
-
-                    }
+                    if (cNumber < bNumber) return $"{aNumber} < {cNumber} < {bNumber}";
+                    else return $"{aNumber} < {bNumber} < {cNumber}";
                 }
             }
             else
             {
-                if (cNumber < bNumber)
-                {
-                    return $"{cNumber} < {bNumber} < {aNumber}";
-
-                }
+                if (cNumber < bNumber) return $"{cNumber} < {bNumber} < {aNumber}";
                 else
                 {
-                    if (cNumber < bNumber)
-                    {
-                        return $"{bNumber} < {cNumber} < {aNumber}";
-
-                    }
-                    else
-                    {
-                        return $"{bNumber} < {aNumber} < {cNumber}";
-
-                    }
-
+                    if (cNumber < bNumber) return $"{bNumber} < {cNumber} < {aNumber}";
+                    else return $"{bNumber} < {aNumber} < {cNumber}";
                 }
             }
         }

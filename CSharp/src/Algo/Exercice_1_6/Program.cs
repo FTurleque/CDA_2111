@@ -12,7 +12,7 @@ namespace Exercice_1_6
         static void Main(string[] args)
         {
             userNumber = Math.Abs(userNumber);
-            userNumber = AskNumber("Verifier si le nombre est premier :");
+            userNumber = AskNumber("Nombre Premier\n\nVerifier si le nombre est premier :");
             Console.WriteLine(CheckIfIsPrime());
         }
 
@@ -40,14 +40,8 @@ namespace Exercice_1_6
                 divisor++;
             }
 
-            if (divisor > Math.Sqrt(userNumber))
-            {
-                return "Le chiffre est premier !";
-            }
-            else
-            {
-                return "Le chiffre n'est pas premier !";
-            }
+            if (divisor > Math.Sqrt(userNumber)) return "Le chiffre est premier !";
+            else return "Le chiffre n'est pas premier !";
         }
     }
 }

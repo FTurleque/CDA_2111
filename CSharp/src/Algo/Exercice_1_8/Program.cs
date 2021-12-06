@@ -9,7 +9,7 @@ namespace Exercice_1_8
 
         static void Main(string[] args)
         {
-            year = AskNumber("Entrez une année pour verifier si elle est Bissextile :");
+            year = AskNumber("Année Bissextile\n\nEntrez une année pour verifier si elle est Bissextile :");
             Console.WriteLine(CheckIfIsBisextile());
         }
 
@@ -32,14 +32,8 @@ namespace Exercice_1_8
 
         private static string CheckIfIsBisextile()
         {
-            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0)
-            {
-                return "L'année est Bisextille";
-            }
-            else
-            {
-                return "L'année n'est pas Bisextille";
-            }
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) return "L'année est Bisextille";
+            else return "L'année n'est pas Bisextille";
         }
     }
 }

@@ -9,16 +9,18 @@ namespace Exercice_1_2
 
         static void Main(string[] args)
         {
-            AskNumberWithString("Choisir un chiffre :");
-            Console.WriteLine($"L'aire du cercle est de {AirCalculation()}");
-            Console.WriteLine($"Le volume du cercle est de {VolumeCalculation()}");
+            AskNumberWithString("Calcul de l’aire et du volume d’une sphère\n\nChoisir un chiffre :");
+            Console.WriteLine($"L'aire du cercle est de {AirCalculation()} !");
+            Console.WriteLine($"Le volume du cercle est de {VolumeCalculation()} !");
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message"></param>
         private static void AskNumberWithString(string message)
         {
             Console.WriteLine(message);
-
-            bool userEntryOk = false;
             do
             {
                 userEntry = Console.ReadLine();
@@ -26,20 +28,27 @@ namespace Exercice_1_2
                 try
                 {
                     ray = double.Parse(userEntry);
-                    userEntryOk = true;
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Vous n'avez pas entrez un chiffre");
+                    Console.WriteLine("Vous n'avez pas entrez un chiffre, recommencez :");
                 }
-            } while (userEntryOk == false);
+            } while (false);
         }
 
+        /// <summary>
+        /// Calculate the area
+        /// </summary>
+        /// <returns>Return area</returns>
         private static double AirCalculation()
         {
             return 4*Math.PI*Math.Pow(ray, 2);
         }
 
+        /// <summary>
+        /// Calculate the volume
+        /// </summary>
+        /// <returns>Return volume</returns>
         private static double VolumeCalculation()
         {
             return (4 / 3) * Math.PI * Math.Pow(ray, 3);

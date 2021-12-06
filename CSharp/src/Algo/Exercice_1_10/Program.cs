@@ -14,10 +14,15 @@ namespace Exercice_1_10
 
         static void Main(string[] args)
         {
-            nbOfperfectNumber = AskNumber("Choisir combien de nombres parfaits vous voulez afficher :");
+            nbOfperfectNumber = AskNumber("Calcul des nombres parfaits\n\nChoisir combien de nombres parfaits vous voulez afficher :");
             FindPerfectNumber();
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns>Return the number</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);
@@ -35,6 +40,9 @@ namespace Exercice_1_10
             } while (true);
         }
 
+        /// <summary>
+        /// I try to find if the number is perfect
+        /// </summary>
         private static void FindPerfectNumber()
         {
             nbToTest = 2;
@@ -58,6 +66,10 @@ namespace Exercice_1_10
             }
         }
 
+        /// <summary>
+        /// I try to know if the number is prime to use the euclidean formula
+        /// </summary>
+        /// <param name="_nbToTest"></param>
         private static void CheckIfIsPrime(double _nbToTest)
         {
             divisor = 2;

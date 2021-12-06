@@ -14,10 +14,14 @@ namespace Exercice_1_1_3
 
         static void Main(string[] args)
         {
-            AskNumber("Entrez le nombre de notes voulues séparé par un espace :");
-            Console.WriteLine($"La moyenne est de {Average()}");
+            AskNumber("Calcul de la moyenne de 2 nombres\n\nEntrez le nombre de notes voulues séparé par un espace :");
+            Console.WriteLine($"La moyenne est de {Average()} !");
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message"></param>
         private static void AskNumber(string message)
         {
             Console.WriteLine(message);
@@ -40,11 +44,15 @@ namespace Exercice_1_1_3
             }
         }
 
+        /// <summary>
+        /// I add up numbers
+        /// </summary>
+        /// <returns>Return the average</returns>
         private static double Average()
         {
             for (int index = 0; index < numbersTab.Length; index++)
             {
-               result = result + (double)numbersTab[index];
+               result += (double)numbersTab[index];
             }
             return result / (double)numbersTab.Length;
         }

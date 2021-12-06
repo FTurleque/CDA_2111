@@ -11,8 +11,7 @@ namespace Exercice_1_4
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Inversion de 2 valeurs !");
-            aNumber = AskNumber("Choisir un nombre pour 'a' :");
+            aNumber = AskNumber("Inversion de 2 valeurs\n\nChoisir un nombre pour 'a' :");
             bNumber = AskNumber("Choisir un nombre pour 'b' :");
             Console.WriteLine($"Vous avez choisi {aNumber} pour 'a' et {bNumber} pour 'b' !");
             InversionNumber();
@@ -22,27 +21,24 @@ namespace Exercice_1_4
         private static int AskNumber(String message)
         {
             Console.WriteLine(message);
-            bool userEntryOk = false;
             do
             {
                 userEntry = Console.ReadLine();
                 try
                 {
                     userNumber = int.Parse(userEntry);
-                    userEntryOk = true;
+                    return userNumber;
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Vous n'avez pas entrez un chiffre, recommencez :");
                 }
-            } while (userEntryOk == false);
-            return userNumber;
+            } while (true);
         }
 
         private static void InversionNumber()
         {
-            int tmp;
-            tmp = aNumber;
+            int tmp = aNumber;
             aNumber = bNumber;
             bNumber = tmp;
         }

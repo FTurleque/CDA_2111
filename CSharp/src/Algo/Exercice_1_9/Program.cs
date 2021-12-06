@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace Exercice_1_9
 {
@@ -10,7 +11,7 @@ namespace Exercice_1_9
 
         static void Main(string[] args)
         {
-            userNumber = AskNumber("Entrer un nombre pour en récupérer tous ses diviseurs :");
+            userNumber = AskNumber("Recherche des diviseurs d’un nombre\n\nEntrer un nombre pour en récupérer tous ses diviseurs :");
             CheckAllDivisor();
         }
 
@@ -35,10 +36,7 @@ namespace Exercice_1_9
         {
             for (divisor = 2; divisor <= userNumber; divisor++)
             {
-                if (userNumber % divisor == 0 && divisor != userNumber)
-                {
-                    Console.WriteLine(divisor);
-                }
+                if (userNumber % divisor == 0 && divisor != userNumber) Console.Write($"{divisor} ");
             }
         }
     }
