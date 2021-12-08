@@ -8,36 +8,25 @@ namespace Exercice_Final_v1
 
         static void Main(string[] args)
         {
-            //int aNumber = AskNumber("Calcul du PGCD de 2 entiers positifs !\n\nEntrez un premier nombre entier positif :");
-            //int bNumber = AskNumber("Entrez un second nombre entier positif :");
+            int aNumber = AskNumber("Calcul du PGCD de 2 entiers positifs !\n\nEntrez le premier nombre entier positif :");
+            int bNumber = AskNumber("Entrez le second nombre entier positif :");
 
-            //Calcul_PGCD(aNumber, bNumber);
-            Console.WriteLine($"Le PGCD de 36 et 60 est : {Calcul_PGCD(36, 60)}");
+            Console.WriteLine($"Le PGCD de {aNumber} et {bNumber} est : {Calcul_PGCD(aNumber, bNumber)} !");
+/*            Console.WriteLine($"Le PGCD de 36 et 60 est : {Calcul_PGCD(36, 60)}");
             Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(42, 63)}");
-        }
+            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(561, 357)}");
+            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(15, 12)}");
+            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(10, 9)}");
+*/        }
 
         private static int Calcul_PGCD(int _aNumber, int _bNumber)
         {
-            int resultOfTheDifference;
-            if (_aNumber > _bNumber) resultOfTheDifference = _aNumber - _bNumber;
-            else resultOfTheDifference = _bNumber - _aNumber;
-
-            while (!(_aNumber > 0 | _bNumber > 0))
+            while (!_aNumber.Equals(_bNumber))
             {
-                if (_aNumber > _bNumber)
-                {
-                    int tmp = _bNumber - resultOfTheDifference;
-                    result = resultOfTheDifference - tmp;
-                    resultOfTheDifference = tmp - result;
-                }
-                else
-                {
-                    int tmp = _aNumber - resultOfTheDifference;
-                    result = resultOfTheDifference - tmp;
-                    resultOfTheDifference = tmp - result;
-                }
+                if (_aNumber > _bNumber) _aNumber -= _bNumber;
+                else _bNumber -= _aNumber;
             }
-            return result;
+            return _aNumber;
         }
 
         private static int AskNumber(string message)
