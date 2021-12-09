@@ -13,11 +13,11 @@ namespace Recursif_Exercice_2_5
 
         private static int SumOfNumbers(int _aNumber, int _bNumber)
         {
-            if (_bNumber == 0)
-            {
-                return _aNumber;
-            }
-            return SumOfNumbers(_aNumber + 1, _bNumber - 1);
+            if (_bNumber == 0) return _aNumber;
+            else if (_aNumber == 0) return _bNumber;
+            else if (_aNumber < 0 & _bNumber > 0) return SumOfNumbers(_aNumber + 1, _bNumber - 1);
+            else if (_aNumber > 0 & _bNumber < 0) return SumOfNumbers(_aNumber - 1, _bNumber + 1);
+            else return SumOfNumbers(_aNumber + 1, _bNumber - 1);
         }
 
         private static int AskNumber(string message)
