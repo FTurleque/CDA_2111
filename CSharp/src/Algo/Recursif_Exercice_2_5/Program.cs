@@ -6,7 +6,7 @@ namespace Recursif_Exercice_2_5
     {
         static void Main(string[] args)
         {
-            int aNumber = AskNumber("Algorithme récursifs sur les nombres\n\nEntrez un nombre entier pour 'a' :");
+            int aNumber = AskNumber("Algorithme récursifs sur les nombres\nSomme de deux entiers\nEntrez un nombre entier pour 'a' :");
             int bNumber = AskNumber("Entrez un nombre entier 'b' :");
             Console.WriteLine($"La somme de {aNumber} et de {bNumber} est {SumOfNumbers(aNumber, bNumber)}");
         }
