@@ -14,7 +14,7 @@ namespace Recursif_Exercice_2_7
 
         private static int ProductOfNumbers(int _aNumber, int _bNumber)
         {
-            if (_bNumber == 0) return _aNumber;
+            if (_bNumber == 0) return 1;
             else
             {
                 return _aNumber * ProductOfNumbers(_aNumber, _bNumber - 1);
