@@ -6,28 +6,21 @@ namespace Recursif_Exercice_2_12
 {
     class Program
     {
-        //private static int permutationNumber;
+        private static int permutationNumber;
         private static int indexPerm = 0;
         private static string userString;
-        private const string alphabet = "abcdefghijklmnopqustuvwxyz";
-        private static char[] alphaChar = alphabet.ToCharArray();
-        private static int lengthAlpha = alphaChar.Length - 1;
 
         static void Main(string[] args)
         {
             //userString = AskAString("Permutation de charactères\n\nEntrez une suite de lettre à permuter (sans espace) :");
             //Console.Clear();
-            //permutationNumber = AskNumber("Choisir le nombre de permutation à effectuer :");
+            userString = "abc";
+            permutationNumber = AskNumber($"Choisir le numéro de permutation à afficher sur la chaine de charactère '{userString}' :");
 
-            userString = "eabdc";
-            //string toFind = "portez ce vieux whisky au juge blond qui fume";
-            //string alphabet = "abcdefghijklmnopqustuvwxyz";
-            //string alphabet = "abcde";
-            //char[] arrayAlphabet = alphabet.ToCharArray();
+            char[] arrayUserString = userString.ToCharArray();
             int stringLength = userString.Length - 1;
             int indexChar = 0;
-            //GetPermutation(arrayAlphabet, indexChar, stringLength);
-            GetPermutation(alphaChar, indexChar, stringLength);
+            GetPermutation(arrayUserString, indexChar, stringLength);
 
 
         }
@@ -82,10 +75,10 @@ namespace Recursif_Exercice_2_12
         {
             if (_indexChar == _stringLength)
             {
-                string tmp = DisplayWord(_arrayAlphabet).ToString();
-                Console.WriteLine(tmp);
                 indexPerm++;
-                if (userString.Equals(tmp))
+                string tmp = DisplayWord(_arrayAlphabet).ToString();
+                Console.WriteLine($"La permutation {indexPerm} est : {tmp}");
+                if (permutationNumber == indexPerm)
                 {
                     Console.WriteLine(_arrayAlphabet);
                 }
@@ -98,6 +91,7 @@ namespace Recursif_Exercice_2_12
                     GetPermutation(_arrayAlphabet, _indexChar + 1, _stringLength);
                     Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
                 }
+
             }
         }
 
@@ -113,30 +107,30 @@ namespace Recursif_Exercice_2_12
 
 
 
-        /*        private static void GetPermutation(char[] _arrayAlphabet, int _indexChar, int _stringLength)
+        /*private static void GetPermutation(char[] _arrayAlphabet, int _indexChar, int _stringLength)
+        {
+            if (_indexChar == _stringLength)
+            {
+                string tmp = _arrayAlphabet.ToString();
+                indexPerm++;
+                Console.WriteLine(_arrayAlphabet);
+                //if (permutationNumber == indexPerm) Console.WriteLine(_arrayAlphabet);
+                if (tmp.Equals(alphabetToFind))
                 {
-                    if (_indexChar == _stringLength)
-                    {
-                        string tmp = _arrayAlphabet.ToString();
-                        indexPerm++;
-                        Console.WriteLine(_arrayAlphabet);
-                        //if (permutationNumber == indexPerm) Console.WriteLine(_arrayAlphabet);
-                        if (tmp.Equals(alphabetToFind))
-                        {
-                            Console.WriteLine(_arrayAlphabet);
-                            Console.ReadKey();
-                        }
-                    }
-                    else
-                    {
-                        for (int i = _indexChar; i <= _stringLength; i++)
-                        {
-                            Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
-                            GetPermutation(_arrayAlphabet, _indexChar + 1, _stringLength);
-                            Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
-                        }
-                    }
+                    Console.WriteLine(_arrayAlphabet);
+                    Console.ReadKey();
                 }
-        */
+            }
+            else
+            {
+                for (int i = _indexChar; i <= _stringLength; i++)
+                {
+                    Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
+                    GetPermutation(_arrayAlphabet, _indexChar + 1, _stringLength);
+                    Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
+                }
+            }
+        }
+*/
     }
 }
