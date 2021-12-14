@@ -7,13 +7,14 @@ namespace Exercice_2_7
     {
         private static string userEntry;
         private static int[] ageOfPeople = new int[20];
-        private static int adultsNumber = 1;
-        private static int minorNumber = 1;
+        private static int adultsNumber = 0;
+        private static int minorNumber = 0;
         private static StringBuilder ageOfAllPeoples;
 
         static void Main(string[] args)
         {
-            AskNumber("Entrez l'âge de 20 personnes \nPour la personne n°");
+            Console.WriteLine("Entrez l'âge de 20 personnes :");
+            AskNumber("Pour la personne n°");
             Console.WriteLine(CheckIfTheyAreAdult());
             Console.WriteLine(ageOfAllPeoples);
         }
@@ -39,10 +40,10 @@ namespace Exercice_2_7
         private static string CheckIfTheyAreAdult()
         {
             ageOfAllPeoples = new StringBuilder("");
-            for (int i = 0; i < ageOfPeople.Length - 1; i++)
+            for (int i = 0; i < ageOfPeople.Length; i++)
             {
                 int tmp = ageOfPeople[i];
-                if (tmp < 18)
+                if (tmp < 20)
                 {
                     minorNumber++;
                 }
