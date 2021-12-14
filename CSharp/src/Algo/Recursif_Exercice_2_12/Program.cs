@@ -87,9 +87,14 @@ namespace Recursif_Exercice_2_12
             {
                 for (int i = _indexChar; i <= _stringLength; i++)
                 {
+                    Console.WriteLine(_arrayAlphabet);
+
                     Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
                     GetPermutation(_arrayAlphabet, _indexChar + 1, _stringLength);
                     Swap(ref _arrayAlphabet[_indexChar], ref _arrayAlphabet[i]);
+
+                    Console.WriteLine(_arrayAlphabet);
+
                 }
 
             }
