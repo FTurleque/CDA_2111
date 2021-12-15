@@ -5,7 +5,6 @@ namespace Exercice_2_2_2_ConversionDegresF_C
 {
     class Program
     {
-
         static void Main(string[] args)
         {
             do
@@ -21,6 +20,12 @@ namespace Exercice_2_2_2_ConversionDegresF_C
             } while (true);
         }
 
+        /// <summary>
+        /// I make a conversion
+        /// </summary>
+        /// <param name="_unity"></param>
+        /// <param name="_minNumber"></param>
+        /// <param name="_maxNumber"></param>
         private static void TemperatureConversion(string _unity, double _minNumber, double _maxNumber)
         {
             for (double i = _minNumber; i <= _maxNumber; i++)
@@ -30,6 +35,11 @@ namespace Exercice_2_2_2_ConversionDegresF_C
             }
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message">Question for user</param>
+        /// <returns>Number</returns>
         private static double AskNumber(string message)
         {
             Console.WriteLine(message);
@@ -47,6 +57,11 @@ namespace Exercice_2_2_2_ConversionDegresF_C
             } while (true);
         }
 
+        /// <summary>
+        /// Request a unity for conversion from the user by sending a question
+        /// </summary>
+        /// <param name="message">Question for user</param>
+        /// <returns>Number</returns>
         private static string AskUnit(string message)
         {
             Console.WriteLine(message);
