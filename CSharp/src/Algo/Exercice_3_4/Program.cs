@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Exercice_3_4
+namespace Exercice_3_4_TriD1Tableau
 {
     class Program
     {

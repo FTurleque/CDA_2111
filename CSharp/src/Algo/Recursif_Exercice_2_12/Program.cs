@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Recursif_Exercice_2_12
+namespace Recursif_Exercice_2_12_PermutationChar
 {
     class Program
     {

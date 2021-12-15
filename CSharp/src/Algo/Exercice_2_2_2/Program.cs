@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Exercice_2_2_2
+namespace Exercice_2_2_2_ConversionDegresF_C
 {
     class Program
     {
@@ -25,7 +25,7 @@ namespace Exercice_2_2_2
         {
             for (double i = _minNumber; i <= _maxNumber; i++)
             {
-                if (_unity.Equals("C")) Console.WriteLine($"{i} °{_unity} = {(i * (9d / 5d)) + 32d} °F");
+                if (_unity.Equals("C")) Console.WriteLine($"{i} °{_unity} = {i * (9d / 5d) + 32d} °F");
                 else Console.WriteLine($"{i} °{_unity} = {(i - 32d) * (5d / 9d)} °C");
             }
         }

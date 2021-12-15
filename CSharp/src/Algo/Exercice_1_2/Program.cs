@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_2
+namespace Exercice_1_2_AirEtVolume
 {
     class Program
     {

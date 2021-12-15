@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_6
+namespace Exercice_1_6_NombresPremier
 {
     class Program
     {
@@ -16,7 +16,7 @@ namespace Exercice_1_6
             Console.WriteLine(CheckIfIsPrime());
         }
 
-        private static int AskNumber(String message)
+        private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do

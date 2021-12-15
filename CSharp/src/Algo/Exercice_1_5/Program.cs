@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_5
+namespace Exercice_1_5_CalculeInterets
 {
     class Program
     {
@@ -19,7 +19,7 @@ namespace Exercice_1_5
             Console.WriteLine($"Les intérêts composés seront de {CompoundInterest()} !");
         }
 
-        private static double AskNumber(String message)
+        private static double AskNumber(string message)
         {
             Console.WriteLine(message);
             do
@@ -39,12 +39,12 @@ namespace Exercice_1_5
 
         private static double SimpleInterest()
         {
-            return (account * (1 + yearNumber * interest)) - account;
+            return account * (1 + yearNumber * interest) - account;
         }
 
         private static double CompoundInterest()
         {
-            return (account * Math.Pow((1 + interest), yearNumber)) - account;
+            return account * Math.Pow(1 + interest, yearNumber) - account;
         }
     }
 }

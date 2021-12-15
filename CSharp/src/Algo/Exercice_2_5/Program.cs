@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_2_5
+namespace Exercice_2_5_JeuDu0_2
 {
     class Program
     {
@@ -34,7 +34,7 @@ namespace Exercice_2_5
                 {
                     int tmp = int.Parse(userEntry);
 
-                    if ((tmp < 3 && tmp >= 0) || tmp < 0) return tmp;
+                    if (tmp < 3 && tmp >= 0 || tmp < 0) return tmp;
                     else
                     {
                         throw new FormatException("Vous n'avez pas entrez un chiffre entre 0 et 2, recommencez :");

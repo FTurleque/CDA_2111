@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Exercice_1_9
+namespace Exercice_1_9_LesDiviseurD1Nombre
 {
     class Program
     {
@@ -15,7 +15,7 @@ namespace Exercice_1_9
             CheckAllDivisor();
         }
 
-        private static int AskNumber(String message)
+        private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do

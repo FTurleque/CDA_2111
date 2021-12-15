@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_8
+namespace Exercice_1_8_AnneeBisextile
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace Exercice_1_8
             Console.WriteLine(CheckIfIsBisextile());
         }
 
-        private static int AskNumber(String message)
+        private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Exercice_3_6
+namespace Exercice_3_6_JeuDuPendu
 {
     class Program
     {
@@ -63,7 +63,7 @@ namespace Exercice_3_6
 
         private static char[] WordLetterPlaced(char[] _word)
         {
-            
+
             for (int i = 0; i < _word.Length; i++)
             {
                 _word[i] = '-';

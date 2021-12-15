@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_2_1
+namespace Exercice_2_1_ConversionKmMi
 {
     class Program
     {

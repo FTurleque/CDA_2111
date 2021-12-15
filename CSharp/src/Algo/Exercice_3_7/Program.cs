@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Exercice_3_7
+namespace Exercice_3_7_Dichotomie
 {
     class Program
     {
@@ -33,7 +33,7 @@ namespace Exercice_3_7
 
         private static string FindName(string _nameUser)
         {
-            string[] namePeoples = {"agathe", "berthe", "chloé", "cunégonde", "fabrice", "olga", "raymonde", "sidonie"};
+            string[] namePeoples = { "agathe", "berthe", "chloé", "cunégonde", "fabrice", "olga", "raymonde", "sidonie" };
             int startArray = 0;
             int endArray = namePeoples.Length - 1;
             bool nameFind = false;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_3
+namespace Exercice_1_3_SurfaceSecteurCirculaire
 {
     class Program
     {

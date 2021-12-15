@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Recursif_Exercice_2_15
+namespace Recursif_Exercice_2_15_SommeTableau
 {
     class Program
     {

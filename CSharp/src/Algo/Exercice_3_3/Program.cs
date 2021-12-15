@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_3_3
+namespace Exercice_3_3_DenombrerLesLettres
 {
     class Program
     {

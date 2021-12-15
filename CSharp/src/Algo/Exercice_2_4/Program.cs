@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_2_4
+namespace Exercice_2_4_BarnabetFaitSesCourses
 {
     class Program
     {
@@ -39,7 +39,7 @@ namespace Exercice_2_4
             {
                 if (remainingSum >= 2)
                 {
-                    sumSpent = (remainingSum / 2d) + 1d;
+                    sumSpent = remainingSum / 2d + 1d;
                     remainingSum -= sumSpent;
                 }
                 else remainingSum -= remainingSum;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Recursif_Exercice_2_10
+namespace Recursif_Exercice_2_10_Palindromes
 {
     class Program
     {

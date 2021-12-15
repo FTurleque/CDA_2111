@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Exercice_2_7
+namespace Exercice_2_7_CalculDuNombreDePersonne
 {
     class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_Final_v1
+namespace Exercice_Final_v1_PGCD
 {
     class Program
     {
@@ -12,12 +12,13 @@ namespace Exercice_Final_v1
             int bNumber = AskNumber("Entrez le second nombre entier positif :");
 
             Console.WriteLine($"Le PGCD de {aNumber} et {bNumber} est : {Calcul_PGCD(aNumber, bNumber)} !");
-/*            Console.WriteLine($"Le PGCD de 36 et 60 est : {Calcul_PGCD(36, 60)}");
-            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(42, 63)}");
-            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(561, 357)}");
-            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(15, 12)}");
-            Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(10, 9)}");
-*/        }
+            /*            Console.WriteLine($"Le PGCD de 36 et 60 est : {Calcul_PGCD(36, 60)}");
+                        Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(42, 63)}");
+                        Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(561, 357)}");
+                        Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(15, 12)}");
+                        Console.WriteLine($"Le PGCD de 42 et 63 est : {Calcul_PGCD(10, 9)}");
+            */
+        }
 
         private static int Calcul_PGCD(int _aNumber, int _bNumber)
         {

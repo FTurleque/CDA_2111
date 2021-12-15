@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_10
+namespace Exercice_1_10_CalculDesNombresParfaits
 {
     class Program
     {
@@ -57,7 +57,7 @@ namespace Exercice_1_10
                         CheckIfIsPrime(ifDivisorIsPrime);
                         if (isPrime == true)
                         {
-                            resultsNbPerfect = Math.Pow(2d, nbToTest - 1d) * (ifDivisorIsPrime);
+                            resultsNbPerfect = Math.Pow(2d, nbToTest - 1d) * ifDivisorIsPrime;
                             Console.WriteLine(resultsNbPerfect);
                         }
                     }

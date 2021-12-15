@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_7
+namespace Exercice_1_7_TriDeNombre
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace Exercice_1_7
             Console.WriteLine($"Les chiffres dans l'ordre croissant sont : {CheckNumber()} !");
         }
 
-        private static int AskNumber(String message)
+        private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do
@@ -38,7 +38,7 @@ namespace Exercice_1_7
         {
             if (aNumber < bNumber)
             {
-                if (cNumber < aNumber)  return $"{cNumber} < {aNumber} < {bNumber}";
+                if (cNumber < aNumber) return $"{cNumber} < {aNumber} < {bNumber}";
                 else
                 {
                     if (cNumber < bNumber) return $"{aNumber} < {cNumber} < {bNumber}";

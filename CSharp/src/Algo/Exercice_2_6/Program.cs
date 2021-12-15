@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_2_6
+namespace Exercice_2_6_MaBicyclette
 {
     class Program
     {

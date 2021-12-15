@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Exercice_3_1
+namespace Exercice_3_1_RechercherUnNombreDansUnTableau
 {
     class Program
     {
         private static string userEntry;
         private static int userNumber;
-        private static int[] mysteryNumber = new int[] { 2, 10, 8, 13, 16, 19};
+        private static int[] mysteryNumber = new int[] { 2, 10, 8, 13, 16, 19 };
         private static bool find = false;
 
         static void Main(string[] args)

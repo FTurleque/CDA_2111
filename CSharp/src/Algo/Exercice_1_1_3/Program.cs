@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_1_3
+namespace Exercice_1_1_3_Moyenne
 {
     class Program
     {

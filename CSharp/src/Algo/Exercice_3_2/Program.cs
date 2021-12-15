@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Exercice_3_2
+namespace Exercice_3_2_RechercheUneLettreDansUneString
 {
     class Program
     {
@@ -74,7 +74,7 @@ namespace Exercice_3_2
 
         private static int FindOccurenceLetter()
         {
-            Char[] convertedSentence = userSentence.ToCharArray();
+            char[] convertedSentence = userSentence.ToCharArray();
             foreach (char i in convertedSentence)
             {
                 if (i == letterChosen)

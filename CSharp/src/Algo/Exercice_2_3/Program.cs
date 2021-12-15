@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_2_3
+namespace Exercice_2_3_JeuDeLaFourchette
 {
     class Program
     {

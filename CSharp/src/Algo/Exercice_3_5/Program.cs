@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Linq;
 
-namespace Exercice_3_5
+namespace Exercice_3_5_Palindrome
 {
     class Program
     {

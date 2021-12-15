@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Exercice_1_4
+namespace Exercice_1_4_InversionDeValeur
 {
     class Program
     {
