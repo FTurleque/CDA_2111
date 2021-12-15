@@ -4,37 +4,25 @@ namespace Exercice_1_1_3_Moyenne
 {
     class Program
     {
-        private static string userEntry;
-        private static double userNumber;
-        private static double result = 0;
-        private static string[] numbersTabString;
-        private static double[] numbersTab;
-
-
-
         static void Main(string[] args)
         {
-            AskNumber("Calcul de la moyenne de 2 nombres\n\nEntrez le nombre de notes voulues séparé par un espace :");
-            Console.WriteLine($"La moyenne est de {Average()} !");
+            double[] userNumbers = AskNumber("Calcul de la moyenne de 2 nombres\n\nEntrez le nombre de notes voulues séparé par un espace :");
+            Console.WriteLine($"La moyenne est de {Average(userNumbers)} !");
         }
 
-        /// <summary>
-        /// Request a number from the user by sending a question
-        /// </summary>
-        /// <param name="message"></param>
-        private static void AskNumber(string message)
+        private static double[] AskNumber(string message)
         {
             Console.WriteLine(message);
 
-            userEntry = Console.ReadLine();
-            numbersTabString = userEntry.Split(" ");
-            numbersTab = new double[numbersTabString.Length];
+            string userEntry = Console.ReadLine();
+            string[] numbersTabString = userEntry.Split(" ");
+            double[] numbersTab = new double[numbersTabString.Length];
 
             for (int index = 0; index < numbersTabString.Length; index++)
             {
                 try
                 {
-                    userNumber = double.Parse(numbersTabString[index]);
+                    double userNumber = double.Parse(numbersTabString[index]);
                     numbersTab[index] = userNumber;
                 }
                 catch (FormatException)
@@ -42,19 +30,17 @@ namespace Exercice_1_1_3_Moyenne
                     Console.WriteLine($"Votre {index} chiffre n'en est pas un recommencez :");
                 }
             }
+            return numbersTab;
         }
 
-        /// <summary>
-        /// I add up numbers
-        /// </summary>
-        /// <returns>Return the average</returns>
-        private static double Average()
+        private static double Average(double[] _userNumbers)
         {
-            for (int index = 0; index < numbersTab.Length; index++)
+            double result = 0;
+            for (int index = 0; index < _userNumbers.Length; index++)
             {
-               result += (double)numbersTab[index];
+               result += (double)_userNumbers[index];
             }
-            return result / (double)numbersTab.Length;
+            return result / (double)_userNumbers.Length;
         }
     }
 }
