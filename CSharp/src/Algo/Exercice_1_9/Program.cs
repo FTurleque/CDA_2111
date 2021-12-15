@@ -1,26 +1,26 @@
 ﻿using System;
-using System.Text;
 
 namespace Exercice_1_9_LesDiviseurD1Nombre
 {
     class Program
     {
-        private static string userEntry;
-        private static int userNumber;
-        private static int divisor;
-
         static void Main(string[] args)
         {
-            userNumber = AskNumber("Recherche des diviseurs d’un nombre\n\nEntrer un nombre pour en récupérer tous ses diviseurs :");
-            CheckAllDivisor();
+            int userNumber = AskNumber("Recherche des diviseurs d’un nombre\n\nEntrer un nombre pour en récupérer tous ses diviseurs :");
+            CheckAllDivisor(userNumber);
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message">Question for user</param>
+        /// <returns>Number</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
                     return int.Parse(userEntry);
@@ -32,11 +32,15 @@ namespace Exercice_1_9_LesDiviseurD1Nombre
             } while (true);
         }
 
-        private static void CheckAllDivisor()
+        /// <summary>
+        /// Check all divisor
+        /// </summary>
+        /// <param name="_userNumber">Number</param>
+        private static void CheckAllDivisor(int _userNumber)
         {
-            for (divisor = 2; divisor <= userNumber; divisor++)
+            for (int divisor = 2; divisor <= _userNumber; divisor++)
             {
-                if (userNumber % divisor == 0 && divisor != userNumber) Console.Write($"{divisor} ");
+                if (_userNumber % divisor == 0 && divisor != _userNumber) Console.Write($"{divisor} ");
             }
         }
     }

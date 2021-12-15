@@ -10,6 +10,11 @@ namespace Exercice_1_1_3_Moyenne
             Console.WriteLine($"La moyenne est de {Average(userNumbers)} !");
         }
 
+        /// <summary>
+        /// Ask the user for numbers
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns>Return array</returns>
         private static double[] AskNumber(string message)
         {
             Console.WriteLine(message);
@@ -33,6 +38,11 @@ namespace Exercice_1_1_3_Moyenne
             return numbersTab;
         }
 
+        /// <summary>
+        /// Calculate average
+        /// </summary>
+        /// <param name="_userNumbers">Array</param>
+        /// <returns>Return average</returns>
         private static double Average(double[] _userNumbers)
         {
             double result = 0;

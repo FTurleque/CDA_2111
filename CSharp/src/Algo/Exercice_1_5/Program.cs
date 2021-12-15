@@ -4,31 +4,29 @@ namespace Exercice_1_5_CalculeInterets
 {
     class Program
     {
-        private static string userEntry;
-        private static double userNumber;
-        private static double account;
-        private static double yearNumber;
-        private static double interest;
-
         static void Main(string[] args)
         {
-            account = AskNumber("Calcul d’intérêts\n\nQuelle est la somme que vous voulez placez ?");
-            yearNumber = AskNumber("Pendant combien d'année(s) ?");
-            interest = AskNumber("Quel est le taux d'intérêt en % que vous propose la banque ?");
-            Console.WriteLine($"Les intérêts simples seront de {SimpleInterest()} !");
-            Console.WriteLine($"Les intérêts composés seront de {CompoundInterest()} !");
+            double account = AskNumber("Calcul d’intérêts\n\nQuelle est la somme que vous voulez placez ?");
+            double yearNumber = AskNumber("Pendant combien d'année(s) ?");
+            double interest = AskNumber("Quel est le taux d'intérêt en % que vous propose la banque ?");
+            Console.WriteLine($"Les intérêts simples seront de {SimpleInterest(account, yearNumber, interest)} !");
+            Console.WriteLine($"Les intérêts composés seront de {CompoundInterest(account, yearNumber, interest)} !");
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message">Question for user</param>
+        /// <returns>Return a number</returns>
         private static double AskNumber(string message)
         {
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
-                    userNumber = double.Parse(userEntry);
-                    return userNumber;
+                    return double.Parse(userEntry);
                 }
                 catch (FormatException)
                 {
@@ -37,14 +35,28 @@ namespace Exercice_1_5_CalculeInterets
             } while (true);
         }
 
-        private static double SimpleInterest()
+        /// <summary>
+        /// Calculate simple interest
+        /// </summary>
+        /// <param name="_account">Number</param>
+        /// <param name="_yearNumber">Number</param>
+        /// <param name="_interest">Number</param>
+        /// <returns>Return result</returns>
+        private static double SimpleInterest(double _account, double _yearNumber, double _interest)
         {
-            return account * (1 + yearNumber * interest) - account;
+            return _account * (1 + _yearNumber * _interest) - _account;
         }
 
-        private static double CompoundInterest()
+        /// <summary>
+        /// Calculate compound interest
+        /// </summary>
+        /// <param name="_account">Number</param>
+        /// <param name="_yearNumber">Number</param>
+        /// <param name="_interest">Number</param>
+        /// <returns>Return result</returns>
+        private static double CompoundInterest(double _account, double _yearNumber, double _interest)
         {
-            return account * Math.Pow(1 + interest, yearNumber) - account;
+            return _account * Math.Pow(1 + _interest, _yearNumber) - _account;
         }
     }
 }

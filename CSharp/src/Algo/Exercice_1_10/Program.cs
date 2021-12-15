@@ -4,18 +4,12 @@ namespace Exercice_1_10_CalculDesNombresParfaits
 {
     class Program
     {
-        private static string userEntry;
-        private static int nbOfperfectNumber;
-        private static int divisor;
-        private static double ifDivisorIsPrime;
         private static bool isPrime;
-        private static double resultsNbPerfect;
-        private static double nbToTest;
 
         static void Main(string[] args)
         {
-            nbOfperfectNumber = AskNumber("Calcul des nombres parfaits\n\nChoisir combien de nombres parfaits vous voulez afficher :");
-            FindPerfectNumber();
+            int nbOfperfectNumber = AskNumber("Calcul des nombres parfaits\n\nChoisir combien de nombres parfaits vous voulez afficher :");
+            FindPerfectNumber(nbOfperfectNumber);
         }
 
         /// <summary>
@@ -28,7 +22,7 @@ namespace Exercice_1_10_CalculDesNombresParfaits
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
                     return int.Parse(userEntry);
@@ -43,21 +37,21 @@ namespace Exercice_1_10_CalculDesNombresParfaits
         /// <summary>
         /// I try to find if the number is perfect
         /// </summary>
-        private static void FindPerfectNumber()
+        private static void FindPerfectNumber(int _nbOfperfectNumber)
         {
-            nbToTest = 2;
-            for (int i = 0; i < nbOfperfectNumber; i++)
+            double nbToTest = 2;
+            for (int i = 0; i < _nbOfperfectNumber; i++)
             {
                 do
                 {
                     CheckIfIsPrime(nbToTest);
                     if (isPrime == true)
                     {
-                        ifDivisorIsPrime = Math.Pow(2d, nbToTest) - 1d;
-                        CheckIfIsPrime(ifDivisorIsPrime);
+                        double ifDivisorIsPrime = Math.Pow(2d, nbToTest) - 1d;
+                        bool isPrime = CheckIfIsPrime(ifDivisorIsPrime);
                         if (isPrime == true)
                         {
-                            resultsNbPerfect = Math.Pow(2d, nbToTest - 1d) * ifDivisorIsPrime;
+                            double resultsNbPerfect = Math.Pow(2d, nbToTest - 1d) * ifDivisorIsPrime;
                             Console.WriteLine(resultsNbPerfect);
                         }
                     }
@@ -69,21 +63,19 @@ namespace Exercice_1_10_CalculDesNombresParfaits
         /// <summary>
         /// I try to know if the number is prime to use the euclidean formula
         /// </summary>
-        /// <param name="_nbToTest"></param>
-        private static void CheckIfIsPrime(double _nbToTest)
+        /// <param name="_nbToTest">Number</param>
+        /// <returns>Boolean</returns>
+        private static bool CheckIfIsPrime(double _nbToTest)
         {
-            divisor = 2;
+            int divisor = 2;
             isPrime = false;
             while (_nbToTest % divisor != 0 && divisor <= Math.Sqrt(_nbToTest))
             {
                 divisor++;
             }
 
-            if (divisor > Math.Sqrt(_nbToTest))
-            {
-                isPrime = true;
-                /*return "Le chiffre est premier !";*/
-            }
+            if (divisor > Math.Sqrt(_nbToTest)) return true;
+            else return false;
             /*ifDivisorIsPrime = Math.Pow(2, divisor) - 1;*/
         }
 

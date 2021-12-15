@@ -4,34 +4,27 @@ namespace Exercice_1_3_SurfaceSecteurCirculaire
 {
     class Program
     {
-        private static string userEntry;
-        private static double userNumber;
-        private static double ray;
-        private static double angle;
-
-
         static void Main(string[] args)
         {
-            ray = AskNumber("Calcul de la surface d’un secteur circulaire\n\nChoisir un chiffre pour le rayon du cercle en cm :");
-            angle = AskNumber("Choisir un chiffre pour l'angle :");
-            Console.WriteLine($"La surface du secteur circulaire es de {CalculationSector()}cm !");
+            double ray = AskNumber("Calcul de la surface d’un secteur circulaire\n\nChoisir un chiffre pour le rayon du cercle en cm :");
+            double angle = AskNumber("Choisir un chiffre pour l'angle :");
+            Console.WriteLine($"La surface du secteur circulaire es de {CalculationSector(ray, angle)}cm !");
         }
 
         /// <summary>
         /// Request a number from the user by sending a question
         /// </summary>
-        /// <param name="message"></param>
+        /// <param name="message">Question for user</param>
         /// <returns>Return number</returns>
         private static double AskNumber(String message)
         {
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
-                    userNumber = double.Parse(userEntry);
-                    return userNumber;
+                    return double.Parse(userEntry);
                 }
                 catch (FormatException)
                 {
@@ -43,10 +36,12 @@ namespace Exercice_1_3_SurfaceSecteurCirculaire
         /// <summary>
         /// I make a calculation
         /// </summary>
-        /// <returns>Return result</returns>
-        private static double CalculationSector()
+        /// <param name="_ray">Number</param>
+        /// <param name="_angle">Number</param>
+        /// <returns>Result</returns>
+        private static double CalculationSector(double _ray, double _angle)
         {
-            return Math.PI * Math.Pow(ray, 2) * (double)angle / 360;
+            return Math.PI * Math.Pow(_ray, 2) * (double)_angle / 360;
         }
 
     }

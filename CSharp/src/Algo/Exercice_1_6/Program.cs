@@ -4,24 +4,24 @@ namespace Exercice_1_6_NombresPremier
 {
     class Program
     {
-        private static string userEntry;
-        private static double userNumber;
-        private static double divisor = 2;
-
-
         static void Main(string[] args)
         {
+            double userNumber = AskNumber("Nombre Premier\n\nVerifier si le nombre est premier :");
             userNumber = Math.Abs(userNumber);
-            userNumber = AskNumber("Nombre Premier\n\nVerifier si le nombre est premier :");
-            Console.WriteLine(CheckIfIsPrime());
+            Console.WriteLine(CheckIfIsPrime(userNumber));
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message">Question for user</param>
+        /// <returns>Return a number</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
                     return int.Parse(userEntry);
@@ -33,14 +33,20 @@ namespace Exercice_1_6_NombresPremier
             } while (true);
         }
 
-        private static string CheckIfIsPrime()
+        /// <summary>
+        /// I try to find if the number is prime
+        /// </summary>
+        /// <param name="_userNumber"></param>
+        /// <returns>Return string result</returns>
+        private static string CheckIfIsPrime(double _userNumber)
         {
-            while (userNumber % divisor != 0 && divisor <= Math.Sqrt(userNumber))
+            double divisor = 2;
+            while (_userNumber % divisor != 0 && divisor <= Math.Sqrt(_userNumber))
             {
                 divisor++;
             }
 
-            if (divisor > Math.Sqrt(userNumber)) return "Le chiffre est premier !";
+            if (divisor > Math.Sqrt(_userNumber)) return "Le chiffre est premier !";
             else return "Le chiffre n'est pas premier !";
         }
     }
