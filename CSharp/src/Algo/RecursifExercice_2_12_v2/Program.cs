@@ -5,27 +5,23 @@ namespace Recursif_Exercice_2_12_v2
 {
     class Program
     {
-        private static int permutationNumber;
-        private static int index = 0;
-
         static void Main(string[] args)
         {
-            //string userString = "abcde";
             string userString = AskAString("Permutations des charactère\n\nChoisir une suite de lettres dans l'ordre alphabetique :");
-            permutationNumber = AskNumber($"Choisir le numéro de la permutation à afficher sur la chaine de charactère '{userString}' :");
+            int permutationNumber = AskNumber($"Choisir le numéro de la permutation à afficher sur la chaine de charactère '{userString}' :");
             string newString = "";
-            Permutation(newString, userString);
-
+            Permutation(newString, userString, ref permutationNumber);
         }
 
-        private static void Permutation(string _newString, string _userString)
+        private static void Permutation(string _newString, string _userString, ref int _permutationNumber)
         {
 
             if (_userString.Length == 0)
             {
                 //Console.WriteLine($"La permutation {index} {_newString}");
-                if (permutationNumber == index) Console.WriteLine($"La permutation {index} est {_newString} !");
-                index++;
+                if (_permutationNumber == 1) Console.WriteLine($"La permutation demandé est {_newString} !");
+                //index++;
+                _permutationNumber--;
             }
             for (int i = 0; i < _userString.Length; i++)
             {
@@ -35,7 +31,7 @@ namespace Recursif_Exercice_2_12_v2
                 Console.WriteLine(tmp2);
                 string tmp3 = _userString.Substring(i + 1, _userString.Length - 1 - i);
                 Console.WriteLine(tmp3);*/
-                Permutation(_newString + _userString.Substring(i, 1), _userString.Substring(0, i) + _userString.Substring(i + 1, _userString.Length - 1 - i));
+                Permutation(_newString + _userString.Substring(i, 1), _userString.Substring(0, i) + _userString.Substring(i + 1, _userString.Length - 1 - i), ref _permutationNumber);
             }
         }
 
