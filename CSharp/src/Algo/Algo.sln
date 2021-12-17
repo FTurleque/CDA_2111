@@ -75,7 +75,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_12_v2",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_16_Inversion", "Recursif_Exercice_2_16_Inversion\Recursif_Exercice_2_16_Inversion.csproj", "{A5F85FA4-A81A-4D9F-9A71-9D1BF6DCE676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Lambda_Expression", "Test_Lambda_Expression\Test_Lambda_Expression.csproj", "{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Lambda_Expression", "Test_Lambda_Expression\Test_Lambda_Expression.csproj", "{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursif_Exercice_Dichotomie", "Recursif_Exercice_Dichotomie\Recursif_Exercice_Dichotomie.csproj", "{286D0963-E870-4BB2-B977-3846A376C638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -231,6 +233,10 @@ Global
 		{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286D0963-E870-4BB2-B977-3846A376C638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286D0963-E870-4BB2-B977-3846A376C638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286D0963-E870-4BB2-B977-3846A376C638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286D0963-E870-4BB2-B977-3846A376C638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
