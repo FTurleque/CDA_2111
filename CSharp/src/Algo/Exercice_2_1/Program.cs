@@ -4,20 +4,18 @@ namespace Exercice_2_1_ConversionKmMi
 {
     class Program
     {
-        private static string userNumber;
-        private static string[] valiousTable;
         private static string valious = "";
         private static string unity = "";
-        private static bool go = false;
         private static string[] tableOfUnit;
         private static string[] distanceTable;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Conversion Kilomètres <-> Miles !");
+            string userNumber;
             do
             {
-                AskEntryUser("Conversion Kilomètre en Miles et inversement. \nChoisir des distances en Miles (mi) ou Kilomètres (km) séparées d'un espace ou quitter :");
+                userNumber = AskEntryUser("Conversion Kilomètre en Miles et inversement. \nChoisir des distances en Miles (mi) ou Kilomètres (km) séparées d'un espace ou quitter :");
                 DistanceConversions();
             } while (!userNumber.Equals("quitter"));
         }
@@ -25,29 +23,23 @@ namespace Exercice_2_1_ConversionKmMi
         static string AskEntryUser(string message)
         {
             Console.WriteLine(message);
+            string userEntry;
+            string[] valiousTable;
+            bool go = false;
             do
             {
-                userNumber = Console.ReadLine().ToLower();
-
-                if (userNumber.Equals("quitter"))
-                {
-                    Environment.Exit(0);
-                }
-                else if (userNumber.Equals("go"))
-                {
-                    go = true;
-                }
+                userEntry = Console.ReadLine().ToLower();
+                if (userEntry.Equals("quitter")) Environment.Exit(0);
+                else if (userEntry.Equals("go")) go = true;
                 else
                 {
-                    valiousTable = userNumber.Split(" ");
-
+                    valiousTable = userEntry.Split(" ");
                     // Test of the user input
                     try
                     {
                         int tmp = int.Parse(valiousTable[0]);
                         valious += valiousTable[0] + " ";
-                        SaveUnity();
-
+                        SaveUnity(valiousTable);
                         Console.WriteLine("Tapez go pour lancer les calculs si vous avez fini ou recommencez :");
                     }
                     catch (FormatException)
@@ -57,19 +49,13 @@ namespace Exercice_2_1_ConversionKmMi
                     }
                 }
             } while (!go);
-            return userNumber;
+            return userEntry;
         }
 
-        private static void SaveUnity()
+        private static void SaveUnity(string[] _valiousTable)
         {
-            if (valiousTable.Length < 2)
-            {
-                unity += "km ";
-            }
-            else
-            {
-                unity += valiousTable[1] + " ";
-            }
+            if (_valiousTable.Length < 2) unity += "km ";
+            else unity += _valiousTable[1] + " ";
         }
 
 
@@ -77,22 +63,14 @@ namespace Exercice_2_1_ConversionKmMi
         {
             tableOfUnit = unity.Split(" ");
             distanceTable = valious.Split(" ");
-
             for (int index = 0; index < distanceTable.Length - 1; index++)
             {
                 string tmp = distanceTable[index];
                 double numDistanceIndex = double.Parse(tmp);
                 string numUnitIndex = tableOfUnit[index];
-
                 // Display of the calculation
-                if (numUnitIndex.Equals("mi"))
-                {
-                    Console.WriteLine(numDistanceIndex + " " + char.ToUpper(numUnitIndex[0]) + numUnitIndex[1] + " = " + numDistanceIndex * 1.609 + " Kilomètres");
-                }
-                else
-                {
-                    Console.WriteLine(numDistanceIndex + " " + char.ToUpper(numUnitIndex[0]) + numUnitIndex[1] + " = " + numDistanceIndex / 1.609 + " Miles ");
-                }
+                if (numUnitIndex.Equals("mi")) Console.WriteLine($"{numDistanceIndex} {char.ToUpper(numUnitIndex[0])}{numUnitIndex[1]} = {numDistanceIndex * 1.609 } Kilomètres");
+                else Console.WriteLine($"{numDistanceIndex} {char.ToUpper(numUnitIndex[0])}{numUnitIndex[1]} = {numDistanceIndex / 1.609} Miles ");
             }
         }
 

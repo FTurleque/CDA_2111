@@ -6,20 +6,23 @@ namespace Exercice_3_5_Palindrome
 {
     class Program
     {
-        private static string userEntry;
-
         static void Main(string[] args)
         {
             string wordUser = AskAWord("Verification si un mot est un Palindrome !\nEcrivez un seul mot :").ToLower();
             Console.WriteLine(PalindromeOrNot(wordUser));
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a word
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static string AskAWord(string message)
         {
             Console.WriteLine(message);
             do
             {
-                userEntry = Console.ReadLine();
+                string userEntry = Console.ReadLine();
                 try
                 {
                     if (string.IsNullOrEmpty(userEntry) || userEntry.Equals(" ")) throw new Exception("La phrase est vide !\nrecommencez :");
@@ -34,6 +37,11 @@ namespace Exercice_3_5_Palindrome
             } while (true);
         }
 
+        /// <summary>
+        /// Check if the word is a palindrome or not
+        /// </summary>
+        /// <param name="_wordUser">String</param>
+        /// <returns>String result</returns>
         private static string PalindromeOrNot(string _wordUser)
         {
             bool isAPalindrome = false;

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Recursif_Exercice_2_16_Inversion
 {
@@ -16,24 +15,22 @@ namespace Recursif_Exercice_2_16_Inversion
             Console.WriteLine(Display(result, "Le resultat du tableau inversé est : "));
         }
 
+        /// <summary>
+        /// I ask the user to enter several numbers
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>Array number</returns>
         private static int[] AskUserNumber(string message)
         {
-            int[] valiousTable;
             Console.WriteLine(message);
             do
             {
                 string userNumber = Console.ReadLine();
                 string[] stringValious = userNumber.Split(" ");
-                valiousTable = new int[stringValious.Length];
-
-                // Test of the user input
+                int[] valiousTable = new int[stringValious.Length];
                 try
                 {
-                    for (int i = 0; i < valiousTable.Length; i++)
-                    {
-                        valiousTable[i] = int.Parse(stringValious[i]);
-
-                    }
+                    for (int i = 0; i < valiousTable.Length; i++) valiousTable[i] = int.Parse(stringValious[i]);
                     return valiousTable;
                 }
                 catch (FormatException)
@@ -44,7 +41,13 @@ namespace Recursif_Exercice_2_16_Inversion
             } while (true);
         }
 
-
+        /// <summary>
+        /// I swap number of the table
+        /// </summary>
+        /// <param name="_arrayNumber">Array number</param>
+        /// <param name="_index">Number</param>
+        /// <param name="_arrayLength">Number</param>
+        /// <returns>Array result</returns>
         private static int[] arrayReverse(int[] _arrayNumber, int _index, int _arrayLength)
         {
             if (_index >= _arrayLength) return _arrayNumber;
@@ -57,13 +60,16 @@ namespace Recursif_Exercice_2_16_Inversion
             }
         }
 
+        /// <summary>
+        /// I display the table in making a string
+        /// </summary>
+        /// <param name="_arrayNumber">Array number</param>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static string Display(int[] _arrayNumber, string message)
         {
             StringBuilder stringArray = new();
-            for (int i = 0; i < _arrayNumber.Length; i++)
-            {
-                stringArray.Append($"{_arrayNumber[i]} ");
-            }
+            for (int i = 0; i < _arrayNumber.Length; i++)stringArray.Append($"{_arrayNumber[i]} ");
             return message + stringArray;
         }
 

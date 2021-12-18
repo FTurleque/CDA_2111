@@ -16,6 +16,11 @@ namespace Exercice_3_6_JeuDuPendu
             Console.WriteLine(FindAWord(wordToFind, wordHidden));
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a word
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>Char array result</returns>
         private static char[] AskAWord(string message)
         {
             Console.WriteLine(message);
@@ -39,6 +44,11 @@ namespace Exercice_3_6_JeuDuPendu
             } while (true);
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a letter
+        /// </summary>
+        /// <param name="message">Char</param>
+        /// <returns>Char result</returns>
         private static char AskLetter(string message)
         {
             Console.WriteLine(message);
@@ -61,26 +71,36 @@ namespace Exercice_3_6_JeuDuPendu
             } while (true);
         }
 
+        /// <summary>
+        /// I replace the word with dashes to hide it
+        /// </summary>
+        /// <param name="_word">Char array</param>
+        /// <returns>Char array result</returns>
         private static char[] WordLetterPlaced(char[] _word)
         {
 
-            for (int i = 0; i < _word.Length; i++)
-            {
-                _word[i] = '-';
-            }
+            for (int i = 0; i < _word.Length; i++) _word[i] = '-';
             return _word;
         }
 
+        /// <summary>
+        /// Display the word
+        /// </summary>
+        /// <param name="_word">Char array</param>
+        /// <returns>String result</returns>
         private static StringBuilder DisplayWord(char[] _word)
         {
             StringBuilder dysplayWord = new StringBuilder("");
-            foreach (char letter in _word)
-            {
-                dysplayWord.Append(letter);
-            }
+            foreach (char letter in _word) dysplayWord.Append(letter);
             return dysplayWord;
         }
 
+        /// <summary>
+        /// I check if the word contain the letter
+        /// </summary>
+        /// <param name="_wordToFind">Char array</param>
+        /// <param name="_wordHidden">Char array</param>
+        /// <returns>String result</returns>
         private static string FindAWord(char[] _wordToFind, char[] _wordHidden)
         {
             int wordFind = 0;
@@ -109,6 +129,5 @@ namespace Exercice_3_6_JeuDuPendu
             if (wordFind == _wordToFind.Length) return "Vous avez gagnez, bravo !";
             else return "Vous avez perdu ! :( ";
         }
-
     }
 }

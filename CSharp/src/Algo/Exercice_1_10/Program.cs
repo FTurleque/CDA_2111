@@ -69,10 +69,7 @@ namespace Exercice_1_10_CalculDesNombresParfaits
         {
             int divisor = 2;
             isPrime = false;
-            while (_nbToTest % divisor != 0 && divisor <= Math.Sqrt(_nbToTest))
-            {
-                divisor++;
-            }
+            while (_nbToTest % divisor != 0 && divisor <= Math.Sqrt(_nbToTest)) divisor++;
 
             if (divisor > Math.Sqrt(_nbToTest)) return true;
             else return false;

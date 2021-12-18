@@ -13,18 +13,27 @@ namespace Recursif_Exercice_2_10_Palindromes
             Console.WriteLine($"{GetPalindrome(wordUser, startIndex, length)}");
         }
 
+        /// <summary>
+        /// Check if the word is a palindrome or not with recursif function
+        /// </summary>
+        /// <param name="_wordUser">String</param>
+        /// <param name="_index">Number</param>
+        /// <param name="_length">Number</param>
+        /// <returns>String result</returns>
         private static string GetPalindrome(string _wordUser, int _index, int _length)
         {
             string letterLeft = _wordUser.Substring(_index, 1);
             string letterRight = _wordUser.Substring(_length, 1);
             if (!letterLeft.Equals(letterRight)) return "Ce n'est pas un Palindrome";
-            else if (letterLeft.Equals(letterRight) && _index < _length - 1)
-            {
-                return GetPalindrome(_wordUser, _index + 1, _length - 1);
-            }
+            else if (letterLeft.Equals(letterRight) && _index < _length - 1) return GetPalindrome(_wordUser, _index + 1, _length - 1);
             else return "C'est un Palindrome";
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a word
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static string AskAWord(string message)
         {
             Console.WriteLine(message);

@@ -57,11 +57,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercice_Final_v1_PGCD", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exercice_2_2_2_ConversionDegresF_C", "Exercice_2_2_2\Exercice_2_2_2_ConversionDegresF_C.csproj", "{8BF38EB9-7560-428E-BB53-3CD138CF7031}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_5", "Recursif_Exercice_2_5\Recursif_Exercice_2_5.csproj", "{4A2CC4E7-0A7E-4681-BDB1-6DC6DDECEAF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_5_SommeDeDeuxEntier", "Recursif_Exercice_2_5\Recursif_Exercice_2_5_SommeDeDeuxEntier.csproj", "{4A2CC4E7-0A7E-4681-BDB1-6DC6DDECEAF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_6", "Recursif_Exercice_2.6\Recursif_Exercice_2_6.csproj", "{B51E0EC1-31FE-4286-94EB-873930E0D227}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_6_ProduitDeDeuxEntier", "Recursif_Exercice_2.6\Recursif_Exercice_2_6_ProduitDeDeuxEntier.csproj", "{B51E0EC1-31FE-4286-94EB-873930E0D227}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_7", "Recursif_Exercice_2_7\Recursif_Exercice_2_7.csproj", "{9339A8C2-AA26-4B40-A884-0EDB4DAF0A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_7_PuissanceEntierDunNombre", "Recursif_Exercice_2_7\Recursif_Exercice_2_7_PuissanceEntierDunNombre.csproj", "{9339A8C2-AA26-4B40-A884-0EDB4DAF0A04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_15_SommeTableau", "Recursif_Exercice_2_15\Recursif_Exercice_2_15_SommeTableau.csproj", "{E31E3258-82B5-45F9-A4B3-FA2527CB0442}"
 EndProject
@@ -77,7 +77,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_2_16_Inve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Lambda_Expression", "Test_Lambda_Expression\Test_Lambda_Expression.csproj", "{2F858A3B-6A4A-49AA-B9C8-208F6649CFB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursif_Exercice_Dichotomie", "Recursif_Exercice_Dichotomie\Recursif_Exercice_Dichotomie.csproj", "{286D0963-E870-4BB2-B977-3846A376C638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursif_Exercice_Dichotomie", "Recursif_Exercice_Dichotomie\Recursif_Exercice_Dichotomie.csproj", "{286D0963-E870-4BB2-B977-3846A376C638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

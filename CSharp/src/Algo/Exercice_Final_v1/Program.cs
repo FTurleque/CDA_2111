@@ -20,6 +20,12 @@ namespace Exercice_Final_v1_PGCD
             */
         }
 
+        /// <summary>
+        /// I find the PGCD of tow numbers
+        /// </summary>
+        /// <param name="_aNumber">Number</param>
+        /// <param name="_bNumber">Number</param>
+        /// <returns>Number result</returns>
         private static int Calcul_PGCD(int _aNumber, int _bNumber)
         {
             while (!_aNumber.Equals(_bNumber))
@@ -30,6 +36,11 @@ namespace Exercice_Final_v1_PGCD
             return _aNumber;
         }
 
+        /// <summary>
+        /// Ask a number by sending a question
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>Int result</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);

@@ -28,6 +28,7 @@ namespace Test_Lambda_Expression
             Console.WriteLine(string.Join(" ", sum));*/
 
             List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
             Func<int, int> square = x => x * x;
             Console.WriteLine(square(10));
@@ -45,6 +46,7 @@ namespace Test_Lambda_Expression
             printOdd(4);
             oddNumbers.ForEach(x => printOdd(x));
 
+            Console.WriteLine(numbers.Sum());
 
             Console.ReadKey();
         }

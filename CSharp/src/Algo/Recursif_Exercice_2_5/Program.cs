@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Recursif_Exercice_2_5
+namespace Recursif_Exercice_2_5_SommeDeDeuxEntier
 {
     class Program
     {
@@ -11,6 +11,12 @@ namespace Recursif_Exercice_2_5
             Console.WriteLine($"La somme de {aNumber} et de {bNumber} est {SumOfNumbers(aNumber, bNumber)}");
         }
 
+        /// <summary>
+        /// Calculate of two number with recursif function
+        /// </summary>
+        /// <param name="_aNumber">Number</param>
+        /// <param name="_bNumber">Number</param>
+        /// <returns>Return sum</returns>
         private static int SumOfNumbers(int _aNumber, int _bNumber)
         {
             if (_bNumber == 0) return _aNumber;
@@ -20,6 +26,11 @@ namespace Recursif_Exercice_2_5
             else return SumOfNumbers(_aNumber + 1, _bNumber - 1);
         }
 
+        /// <summary>
+        /// Request a number from the user by sending a question
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);

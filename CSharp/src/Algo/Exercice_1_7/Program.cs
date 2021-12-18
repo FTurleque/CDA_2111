@@ -16,7 +16,7 @@ namespace Exercice_1_7_TriDeNombre
         /// Request a number from the user by sending a question
         /// </summary>
         /// <param name="message">Question for user</param>
-        /// <returns>Return a number</returns>
+        /// <returns>Number</returns>
         private static int AskNumber(string message)
         {
             Console.WriteLine(message);

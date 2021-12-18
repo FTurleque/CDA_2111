@@ -10,12 +10,18 @@ namespace Recursif_Exercice_Dichotomie
             int startIndex = 0;
             string[] namePeoples = { "agathe", "berthe", "chloe", "cunégonde", "olga", "raymonde", "sidonie" };
             int arrayLength = namePeoples.Length - 1;
-
-            //string nameUser = AskNameUser("Recherche par dichotomie d'un élément dans un tableau classé !\nEntrez un nom sans charactères spéciaux :");
-            string nameUser = "sidonie";
+            string nameUser = AskNameUser("Recherche par dichotomie d'un élément dans un tableau classé !\nEntrez un nom sans charactères spéciaux :");
             Console.WriteLine(FindName(namePeoples, nameUser, startIndex, arrayLength));
         }
 
+        /// <summary>
+        /// I try to find if the name is in the table
+        /// </summary>
+        /// <param name="_namePeoples">Array string</param>
+        /// <param name="_nameUser">String</param>
+        /// <param name="_startIndex">Number</param>
+        /// <param name="_arrayLength">Number</param>
+        /// <returns>String result</returns>
         private static string FindName(string[] _namePeoples, string _nameUser, int _startIndex, int _arrayLength)
         {
             int middleArray = (_arrayLength + _startIndex) / 2;
@@ -27,6 +33,11 @@ namespace Recursif_Exercice_Dichotomie
             else return $"{_nameUser} n'est pas present dans le tableau !";
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a name
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static string AskNameUser(string message)
         {
             Console.WriteLine(message);

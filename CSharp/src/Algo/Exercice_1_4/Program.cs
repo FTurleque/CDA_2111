@@ -9,7 +9,7 @@ namespace Exercice_1_4_InversionDeValeur
             int aNumber = AskNumber("Inversion de 2 valeurs\n\nChoisir un nombre pour 'a' :");
             int bNumber = AskNumber("Choisir un nombre pour 'b' :");
             Console.WriteLine($"Vous avez choisi {aNumber} pour 'a' et {bNumber} pour 'b' !");
-            Console.WriteLine(InversionNumber(aNumber, bNumber));
+            Console.WriteLine(Swap(ref aNumber, ref bNumber));
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Exercice_1_4_InversionDeValeur
         /// <param name="_aNumber">Number</param>
         /// <param name="_bNumber">Number</param>
         /// <returns>Return a string</returns>
-        private static string InversionNumber(int _aNumber, int _bNumber)
+        private static string Swap(ref int _aNumber, ref int _bNumber)
         {
             int tmp = _aNumber;
             _aNumber = _bNumber;

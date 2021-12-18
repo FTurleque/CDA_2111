@@ -5,7 +5,6 @@ namespace Exercice_3_7_Dichotomie
 {
     class Program
     {
-        private static string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
         static void Main(string[] args)
         {
@@ -13,6 +12,11 @@ namespace Exercice_3_7_Dichotomie
             Console.WriteLine(FindName(nameUser));
         }
 
+        /// <summary>
+        /// Ask the user a question to enter a name
+        /// </summary>
+        /// <param name="message">String</param>
+        /// <returns>String result</returns>
         private static string AskNameUser(string message)
         {
             Console.WriteLine(message);
@@ -31,23 +35,24 @@ namespace Exercice_3_7_Dichotomie
             } while (true);
         }
 
+        /// <summary>
+        /// I check if the name is in the array and return is place
+        /// </summary>
+        /// <param name="_nameUser">String</param>
+        /// <returns>String result</returns>
         private static string FindName(string _nameUser)
         {
-            string[] namePeoples = { "agathe", "berthe", "chloé", "cunégonde", "fabrice", "olga", "raymonde", "sidonie" };
+            string[] namePeoples = { "agathe", "berthe", "chloe", "cunegonde", "fabrice", "olga", "raymonde", "sidonie" };
             int startArray = 0;
             int endArray = namePeoples.Length - 1;
-            bool nameFind = false;
             int midleArray = (startArray + endArray) / 2;
 
             while (namePeoples[midleArray] != _nameUser && startArray < endArray)
             {
-                if (namePeoples[midleArray] == _nameUser) nameFind = true;
-                else
+                if (namePeoples[midleArray] != _nameUser) 
                 {
-                    /*char[] _alphabet = alphabet.ToCharArray();*/
                     char[] tmpArray = namePeoples[midleArray].ToCharArray();
                     char[] tmpUser = _nameUser.ToCharArray();
-                    int index = 0;
                     if (tmpArray[0] > tmpUser[0]) endArray = midleArray - 1;
                     else startArray = midleArray + 1;
                     midleArray = (startArray + endArray) / 2;
