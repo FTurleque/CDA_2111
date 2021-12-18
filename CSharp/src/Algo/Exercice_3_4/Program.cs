@@ -1,11 +1,27 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Exercice_3_4_TriD1Tableau
 {
     class Program
     {
         static void Main(string[] args)
+        {
+            //BasicVersion();
+            AdvanceVersion();
+        }
+
+        private static void AdvanceVersion()
+        {
+            
+        }
+
+        /// <summary>
+        /// First version easy
+        /// </summary>
+        private static void BasicVersion()
         {
             int[] arrayNumber = AskNumber("Entrez 6 nombres différent afin de céer un tableau et le trier :");
             Console.WriteLine(Display(arrayNumber, "Avant : "));
