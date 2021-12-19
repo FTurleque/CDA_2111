@@ -14,31 +14,31 @@ namespace Test_Lambda_Expression
         static void Main(string[] args)
         {
             // anonymous delegate
-            /*var evens = Enumerable
+            var evens = Enumerable
                                         .Range(1, 100)
                                         .Where(delegate (int x) { return (x % 2) == 0; })
-                                        .ToList();*/
+                                        .ToList();
             //lambda expression
-            /*var evens2 = Enumerable
+            var evens2 = Enumerable
                                         .Range(1, 100)
                                         .Where(x => (x % 2) == 0)
                                         .ToList();
 
 
-            
+
             Func<int, int> sumNumber = x => x + x;
-            
+
             Console.WriteLine(sumNumber(5));
 
-            
-            int[] numbers = { 2, 3, 4, 5 };
-            var sum = numbers.Select(x => x + x);
+
+            int[] numbers1 = { 2, 3, 4, 5 };
+            var sum = numbers1.Select(x => x + x);
             Console.WriteLine(string.Join(" ", sum));
 
-            
-            List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };*/
 
-            /*List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
             Func<int, int> square = x => x * x;
             Console.WriteLine(square(10));
@@ -56,7 +56,7 @@ namespace Test_Lambda_Expression
             printOdd(4);
             oddNumbers.ForEach(x => printOdd(x));
 
-            Console.WriteLine(numbers.Sum());*/
+            Console.WriteLine(numbers.Sum());
 
             method = Upper;
             Console.WriteLine(method("Fab"));
