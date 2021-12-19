@@ -15,22 +15,13 @@ namespace Recursif_Exercice_2_12_v2
 
         private static void Permutation(string _newString, string _userString, ref int _permutationNumber)
         {
-
             if (_userString.Length == 0)
             {
-                //Console.WriteLine($"La permutation {index} {_newString}");
                 if (_permutationNumber == 1) Console.WriteLine($"La permutation demandé est {_newString} !");
-                //index++;
                 _permutationNumber--;
             }
             for (int i = 0; i < _userString.Length; i++)
             {
-                /*string tmp = _userString.Substring(i, 1);
-                Console.WriteLine(tmp);
-                string tmp2 = _userString.Substring(0, i);
-                Console.WriteLine(tmp2);
-                string tmp3 = _userString.Substring(i + 1, _userString.Length - 1 - i);
-                Console.WriteLine(tmp3);*/
                 Permutation(_newString + _userString.Substring(i, 1), _userString.Substring(0, i) + _userString.Substring(i + 1, _userString.Length - 1 - i), ref _permutationNumber);
             }
         }

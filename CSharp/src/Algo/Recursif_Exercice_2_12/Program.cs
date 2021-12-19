@@ -12,8 +12,7 @@ namespace Recursif_Exercice_2_12_PermutationChar
 
         static void Main(string[] args)
         {
-            //userString = AskAString("Permutation de charactères\n\nEntrez une suite de lettre à permuter (sans espace) :");
-            //Console.Clear();
+            //Dont return good value
             userString = "abc";
             permutationNumber = AskNumber($"Choisir le numéro de permutation à afficher sur la chaine de charactère '{userString}' :");
 
