@@ -17,7 +17,7 @@ namespace Recursif_Exercice_2_12_v2
         {
             if (_userString.Length == 0)
             {
-                if (_permutationNumber == 1) Console.WriteLine($"La permutation demandé est {_newString} !");
+                if (_permutationNumber == 0) Console.WriteLine($"La permutation demandé est {_newString} !");
                 _permutationNumber--;
             }
             for (int i = 0; i < _userString.Length; i++)
