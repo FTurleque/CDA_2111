@@ -6,36 +6,59 @@ namespace Recursif_TriangleDePascal
     {
         static void Main(string[] args)
         {
-            int length = 10;
+            //int length = 10;
+            int length = AskNumber("Entrez le numéro de la ligne du triangle de Pascal que vous souhaitez afficher :");
             //PrintPascal(length);
             int[,] pascalTable2D = new int[length, length];
             RecursifPascal(pascalTable2D, length, 0);
         }
-        /*public static void PrintPascal(int length)
+
+        private static int AskNumber(string message)
         {
-            int[,] pascalTable2D = new int[length, length];
-            for (int row = 0; row < length; row++)
+            Console.WriteLine(message);
+            do
             {
-                for (int i = 0; i <= row; i++)
+                string userEntry = Console.ReadLine();
+                try
                 {
-                    if (row == i || i == 0) 
-                    {
-                        pascalTable2D[row, col] = 1;
-                        Console.Write(pascalTable2D[row, col] + " ");
-                    }
-                    else
-                    {
-                        pascalTable2D[row, i] = pascalTable2D[row - 1, i - 1] + pascalTable2D[row - 1, i];
-                        Console.Write(pascalTable2D[row, i]);
-                    }
+                    return int.Parse(userEntry);
                 }
-                Console.WriteLine("");
-            }
-        }*/
+                catch (Exception)
+                {
+                    Console.WriteLine("Vous n'avez pas saisi un nombre, recommencez :");
+                }
+            } while (true);
+        }
+
+        /*public static void PrintPascal(int length)
+{
+   int[,] pascalTable2D = new int[length, length];
+   for (int row = 0; row < length; row++)
+   {
+       for (int i = 0; i <= row; i++)
+       {
+           if (row == i || i == 0) 
+           {
+               pascalTable2D[row, col] = 1;
+               Console.Write(pascalTable2D[row, col] + " ");
+           }
+           else
+           {
+               pascalTable2D[row, i] = pascalTable2D[row - 1, i - 1] + pascalTable2D[row - 1, i];
+               Console.Write(pascalTable2D[row, i]);
+           }
+       }
+       Console.WriteLine("");
+   }
+}*/
 
         public static void RecursifPascal(int[,] pascalTable2D, int length, int row)
         {
-            if (row == length - 1) Console.ReadKey();
+            if (row == length - 1)
+            {
+                Console.Write(pascalTable2D);
+                Console.ReadKey();
+            }
             for (int col = 0; col <= row; col++)
             {
                 if (row == col || col == 0)
