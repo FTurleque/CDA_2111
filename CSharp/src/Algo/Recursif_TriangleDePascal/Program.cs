@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Recursif_TriangleDePascal
 {
@@ -6,11 +7,10 @@ namespace Recursif_TriangleDePascal
     {
         static void Main(string[] args)
         {
-            //int length = 10;
-            int length = AskNumber("Entrez le numéro de la ligne du triangle de Pascal que vous souhaitez afficher :");
-            //PrintPascal(length);
-            int[,] pascalTable2D = new int[length, length];
-            RecursifPascal(pascalTable2D, length, 0);
+            PrintPascal(10);
+            int n = AskNumber("Entrez le numéro de ligne, du triangle de Pascal, que vous souhaitez afficher :");
+            int[] newResult = GetPascalLine(n);
+            newResult.ToList().ForEach(x => Console.Write($"{x} "));
         }
 
         private static int AskNumber(string message)
@@ -30,50 +30,80 @@ namespace Recursif_TriangleDePascal
             } while (true);
         }
 
-        /*public static void PrintPascal(int length)
-{
-   int[,] pascalTable2D = new int[length, length];
-   for (int row = 0; row < length; row++)
-   {
-       for (int i = 0; i <= row; i++)
-       {
-           if (row == i || i == 0) 
-           {
-               pascalTable2D[row, col] = 1;
-               Console.Write(pascalTable2D[row, col] + " ");
-           }
-           else
-           {
-               pascalTable2D[row, i] = pascalTable2D[row - 1, i - 1] + pascalTable2D[row - 1, i];
-               Console.Write(pascalTable2D[row, i]);
-           }
-       }
-       Console.WriteLine("");
-   }
-}*/
-
-        public static void RecursifPascal(int[,] pascalTable2D, int length, int row)
+        public static void PrintPascal(int _n)
         {
-            if (row == length - 1)
+            int[,] pascalTable2D = new int[_n, _n];
+            for (int row = 0; row < _n; row++)
             {
-                Console.Write(pascalTable2D);
-                Console.ReadKey();
+                for (int col = 0; col <= row; col++)
+                {
+                    if (row == col || col == 0)
+                    {
+                        pascalTable2D[row, col] = 1;
+                        Console.Write(pascalTable2D[row, col] + " ");
+                    }
+                    else
+                    {
+                        pascalTable2D[row, col] = pascalTable2D[row - 1, col - 1] + pascalTable2D[row - 1, col];
+                        Console.Write(pascalTable2D[row, col] + " ");
+                    }
+                }
+                Console.WriteLine("");
             }
-            for (int col = 0; col <= row; col++)
+        }
+
+
+        /*public static int[] RecursifPascal(int length)
+        {
+            int[] pascalTable = new int[length + 1];
+
+            if (length == 0)
             {
-                if (row == col || col == 0)
+                return pascalTable;
+                //Console.ReadKey();
+            }
+            else
+            {
+                int[] _pascalArrayBefore = RecursifPascal(length - 1);
+                for (int i = 0; i < pascalTable.Length; i++)
                 {
-                    pascalTable2D[row, col] = 1;
-                    Console.Write(pascalTable2D[row, col] + " ");
-                }
-                else
-                {
-                    pascalTable2D[row, col] = pascalTable2D[row - 1, col - 1] + pascalTable2D[row - 1, col];
-                    Console.Write(pascalTable2D[row, col] + " ");
+                    if (i == 0 || i == _pascalArrayBefore.Length - 1)
+                    {
+                        pascalTable[i] = 1;
+                    }
+                    else
+                    {
+                        pascalTable[i] = _pascalArrayBefore[length - 1] + _pascalArrayBefore[length - 1];
+                    }
                 }
             }
-            Console.WriteLine("");
-            RecursifPascal(pascalTable2D, length, row + 1);
+            return pascalTable;
+        }*/
+
+        public static int[] GetPascalLine(int _n)
+        {
+            int[] result = new int[_n + 1];
+            if (_n == 0)
+            {
+                return new int[] { 1 };
+            }
+            else
+            {
+                int[] previousPascalLine = GetPascalLine(_n - 1);
+
+                for (var i = 0; i < result.Length; i++)
+                {
+                    if (i == 0 || i == result.Length - 1)
+                    {
+                        result[i] = 1;
+                    }
+                    else
+                    {
+                        result[i] = previousPascalLine[i - 1] + previousPascalLine[i];
+                    }
+                }
+                return result;
+            }
         }
     }
 }
