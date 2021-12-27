@@ -463,8 +463,6 @@ namespace Evaluation_22_12_2021
                     }
                 }
             }
-
-
         }
 
         private static string TrueOrFalse(string message)
