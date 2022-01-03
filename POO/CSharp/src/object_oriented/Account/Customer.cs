@@ -9,6 +9,9 @@ namespace Account
     class Customer
     {
         private int _idCustomer;
+        private string _firstName;
+        private string _lastName;
+        private int _age;
 
         public int IdCustomer
         {
@@ -16,22 +19,17 @@ namespace Account
             set { _idCustomer = value; }
         }
 
-        private string _firstName;
-
         public string FirstName
         {
             get { return _firstName; }
             set { _firstName = value; }
         }
 
-        private string _lastName;
         public string LastName
         {
             get { return _lastName; }
             set { _lastName = value; }
         }
-
-        private int _age;
 
         public int Age
         {

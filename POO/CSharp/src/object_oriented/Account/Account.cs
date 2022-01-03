@@ -8,7 +8,15 @@ namespace Account
 {
     class Account
     {
+        private int _accountNumber;
         private double _accountBalance;
+        private double _authorizedOverdraft;
+
+        public int AccountNumber
+        {
+            get { return _accountNumber; }
+            set { _accountNumber = value; }
+        }
 
         public double AccountBalance
         {
@@ -16,14 +24,11 @@ namespace Account
             set { _accountBalance = value; }
         }
 
-        private double _authorizedOverdraft;
-
         public double AuthorizedOverdraft
         {
             get { return _authorizedOverdraft; }
             set { _authorizedOverdraft = value; }
         }
-
 
         // With propfull
         /*private int myVar;
@@ -35,8 +40,9 @@ namespace Account
         }*/
 
 
-        public Account(double _accountBalance, double _authorizedOverdraft)
+        public Account(int _accountNumber, double _accountBalance, double _authorizedOverdraft)
         {
+            this._accountNumber = _accountNumber;
             this._authorizedOverdraft = _authorizedOverdraft;
             this._accountBalance = _accountBalance;
         }
