@@ -8,10 +8,36 @@ namespace Account
 {
     class Customer
     {
-        private int idCustomer;
-        private string firstName;
-        private string lastName;
-        private int age;
+        private int _idCustomer;
+
+        public int IdCustomer
+        {
+            get { return _idCustomer; }
+            set { _idCustomer = value; }
+        }
+
+        private string _firstName;
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+        private string _lastName;
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+
+        private int _age;
+
+        public int Age
+        {
+            get { return _age; }
+            set { _age = value; }
+        }
         //private string phoneNumber;
 
         /// <summary>
@@ -22,9 +48,9 @@ namespace Account
         /// <param name="_age">Age of the client</param>
         public Customer(string _firstName, string _lastName, int _age)
         {
-            firstName = _firstName;
-            lastName = _lastName;
-            age = _age;
+            this._firstName = _firstName;
+            this._lastName = _lastName;
+            this._age = _age;
         }
 
 

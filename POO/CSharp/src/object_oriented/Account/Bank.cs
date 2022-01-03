@@ -9,7 +9,8 @@ namespace Account
     class Bank
     {
         private static List<Customer> customers = new();
-        private static List<Account> accountsCustomers = new();
+        private static List<Account> accounts = new();
+        private static Dictionary<Customer, List<Account>> associationCustomersAccounts = new();
 
         /// <summary>
         /// Bank constructor
@@ -37,12 +38,15 @@ namespace Account
         {
             double accountBalance = _account.AccountBalance;
             double authorizedOverdraft = _account.AuthorizedOverdraft;
-            Account account = new(_customer, accountBalance, authorizedOverdraft);
-            accountsCustomers.Add(account);
+            Account account = new(accountBalance, authorizedOverdraft);
+            List<Account> listTmpAccount = new();
+            listTmpAccount.Add(account);
+            accounts.Add(account);
+            associationCustomersAccounts.Add(_customer, listTmpAccount);
         }
 
 
-        /*private List<Account> AccountCreation(Customer _client, double _accountNB)
+        /*private void AccountCreation(Customer _client, double _accountNB)
         {
             List<Account> accounts = new();
             int accountID;
