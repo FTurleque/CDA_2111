@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Account
 {
-    class Client
+    class Customer
     {
+        private int idCustomer;
         private string firstName;
         private string lastName;
         private int age;
+        //private string phoneNumber;
 
         /// <summary>
         /// Client constructor
@@ -18,7 +20,7 @@ namespace Account
         /// <param name="_firstName">First name of the client</param>
         /// <param name="_lastName">Last name of the client</param>
         /// <param name="_age">Age of the client</param>
-        public Client(string _firstName, string _lastName, int _age)
+        public Customer(string _firstName, string _lastName, int _age)
         {
             firstName = _firstName;
             lastName = _lastName;
@@ -55,26 +57,5 @@ namespace Account
         {
             
         }
-
-        /*private Account AccountCreation(Client _client, double _accountNB)
-        {
-            List<Account> accounts = new();
-            int accountID;
-            do
-            {
-                accountID = RandomNumber(1, 20);
-            } while (accountNumber.Contains(accountID));
-            accountNumber.Add(accountID);
-            Account accountClient = new(_client, accountID, _accountNB);
-            accounts.Add(accountClient);
-            return accounts;
-        }
-
-        private int RandomNumber(int start, int end)
-        {
-            Random number = new Random();
-            return number.Next(start, end);
-        }*/
-
     }
 }

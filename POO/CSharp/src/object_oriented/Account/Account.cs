@@ -8,25 +8,26 @@ namespace Account
 {
     class Account
     {
-        private Client client;
-        private int accountNumber;
-        private double accountBalance;
+        //private int idAccount;
+        public double AccountBalance { get; set; }
+        public double AuthorizedOverdraft { get; set; }
+        private Customer customer;
 
-        public Account(Client _client, int _accountNumber, double _accountBalance)
+        public Account(Customer _customer, double _accountBalance, double _authorizedOverdraft)
         {
-            client = _client;
-            accountNumber = _accountNumber;
-            accountBalance = _accountBalance;
+            customer = _customer;
+            AuthorizedOverdraft = _authorizedOverdraft;
+            AccountBalance = _accountBalance;
         }
 
         public void AccountDebit(double _debit, int _accountNumberClient)
         {
-            accountBalance -= _debit;
+            AccountBalance -= _debit;
         }
 
         public void AccountCredit(double _credit, int _accountNumberClient)
         {
-            accountBalance += _credit;
+            AccountBalance += _credit;
         }
     }
 }
