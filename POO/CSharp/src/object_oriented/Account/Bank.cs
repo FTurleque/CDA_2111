@@ -8,43 +8,39 @@ namespace Account
 {
     class Bank
     {
-        private static List<Customer> customers = new();
-        private static List<Account> accounts = new();
-        private static Dictionary<Customer, List<Account>> associationCustomersAccounts = new();
+        private List<Customer> customers = new();
+        private List<Account> accounts = new();
+        private Dictionary<Customer, List<Account>> associationCustomersAccounts = new();
 
-        /// <summary>
-        /// Bank constructor
-        /// </summary>
-/*        private void MakeCustomersAccounts(Client client, List<Account> accounts)
+        public Bank()
         {
-            accountsClients = new();
-            for (int i = 0; i < 3; i++)
-            {
-                List<Ob> data = new();
-                accountsClients.Add(client);
 
-
-            }
         }
-*/
-        public static void AddClient(Customer _customer, Account _account)
+
+        public int GetAccountNumber(int _accountNumber = 0000)
+        {
+            _accountNumber++;
+            return _accountNumber;
+        }
+
+        public void AddClient(Customer _customer, Account _account)
         {
             Customer customerInfo = _customer;
             customers.Add(customerInfo);
             AddAccountToCustomer(_customer, _account);
         }
 
-        public static void AddAccountToCustomer(Customer _customer, Account _account)
+        public void AddAccountToCustomer(Customer _customer, Account _account)
         {
+            int accountNumber = _account.AccountNumber;
             double accountBalance = _account.AccountBalance;
             double authorizedOverdraft = _account.AuthorizedOverdraft;
-            Account account = new(accountBalance, authorizedOverdraft);
+            Account account = new(accountNumber, accountBalance, authorizedOverdraft);
             List<Account> listTmpAccount = new();
             listTmpAccount.Add(account);
             accounts.Add(account);
             associationCustomersAccounts.Add(_customer, listTmpAccount);
         }
-
 
         /*private void AccountCreation(Customer _client, double _accountNB)
         {
@@ -57,17 +53,6 @@ namespace Account
             accountNumber.Add(accountID);
             Account accountClient = new(_client, accountID, _accountNB);
             accounts.Add(accountClient);
-            return accounts;
-        }
-
-        private int RandomNumber(int start, int end)
-        {
-            Random number = new Random();
-            return number.Next(start, end);
-        }
-
-        public List<List<Account>> AccountsClients()
-        {
             return accounts;
         }*/
     }

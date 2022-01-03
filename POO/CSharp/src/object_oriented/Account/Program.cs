@@ -7,21 +7,28 @@ namespace Account
     {
         static void Main(string[] args)
         {
+            Bank bank = new();
+
             Customer c1 = new("Fabrice", "Turleque", 30);
-            Account c1Account = new(30000, -400);
-            Bank.AddClient(c1, c1Account);
+            int c1AcountNumber = bank.GetAccountNumber();
+            Account c1Account = new(c1AcountNumber, 30000, -400);
+            bank.AddClient(c1, c1Account);
+
 
             Customer c2 = new("Cyril", "Legrand", 35);
-            Account c2Account = new(2000, -300);
-            Bank.AddClient(c2, c2Account);
+            int c2AcountNumber = bank.GetAccountNumber();
+            Account c2Account = new(c2AcountNumber, 2000, -300);
+            bank.AddClient(c2, c2Account);
 
             Customer c3 = new("Axel", "Bouiller", 18);
-            Account c3Account = new(500, -100);
-            Bank.AddClient(c3, c3Account);
+            int c3AcountNumber = bank.GetAccountNumber();
+            Account c3Account = new(c3AcountNumber, 500, -100);
+            bank.AddClient(c3, c3Account);
 
             Customer c4 = new("Damien", "Simon", 25);
-            Account c4Account = new(1800, 200);
-            Bank.AddClient(c4, c4Account);
+            int c4AcountNumber = bank.GetAccountNumber();
+            Account c4Account = new(c4AcountNumber, 1800, 200);
+            bank.AddClient(c4, c4Account);
 
             
         }
