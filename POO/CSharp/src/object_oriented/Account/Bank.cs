@@ -9,18 +9,12 @@ namespace Account
     class Bank
     {
         private List<Customer> customers = new();
-        private List<Account> accounts = new();
+        private List<int> accounts = new();
         private Dictionary<Customer, List<Account>> associationCustomersAccounts = new();
 
         public Bank()
         {
 
-        }
-
-        public int GetAccountNumber(int _accountNumber = 0000)
-        {
-            _accountNumber++;
-            return _accountNumber;
         }
 
         public void AddClient(Customer _customer, Account _account)
@@ -32,17 +26,24 @@ namespace Account
 
         public void AddAccountToCustomer(Customer _customer, Account _account)
         {
+
             int accountNumber = _account.AccountNumber;
             double accountBalance = _account.AccountBalance;
             double authorizedOverdraft = _account.AuthorizedOverdraft;
             Account account = new(accountNumber, accountBalance, authorizedOverdraft);
             List<Account> listTmpAccount = new();
             listTmpAccount.Add(account);
-            accounts.Add(account);
             associationCustomersAccounts.Add(_customer, listTmpAccount);
         }
 
-        /*private void AccountCreation(Customer _client, double _accountNB)
+        public override string ToString()
+        {
+            StringBuilder tmp = new();
+            tmp.Append($"Votre prénom est : {}");
+            return base.ToString();
+        }
+
+        /*private Account AccountCreation(Client _client, double _accountNB)
         {
             List<Account> accounts = new();
             int accountID;
@@ -54,6 +55,24 @@ namespace Account
             Account accountClient = new(_client, accountID, _accountNB);
             accounts.Add(accountClient);
             return accounts;
-        }*/
+        }
+        */
+
+        public int GetAccountNumber()
+        {
+            int accountNumber;
+            do
+            {
+                accountNumber = RandomNumber(1, 5);
+            } while (accounts.Contains(accountNumber));
+            accounts.Add(accountNumber);
+            return accountNumber;
+        }
+
+        private int RandomNumber(int start, int end)
+        {
+            Random number = new Random();
+            return number.Next(start, end);
+        }
     }
 }

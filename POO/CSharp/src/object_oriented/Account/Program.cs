@@ -27,7 +27,7 @@ namespace Account
 
             Customer c4 = new("Damien", "Simon", 25);
             int c4AcountNumber = bank.GetAccountNumber();
-            Account c4Account = new(c4AcountNumber, 1800, 200);
+            Account c4Account = new(c4AcountNumber, 1900, -1200);
             bank.AddClient(c4, c4Account);
 
             
