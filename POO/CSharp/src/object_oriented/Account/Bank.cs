@@ -8,9 +8,14 @@ namespace Account
 {
     class Bank
     {
-        private List<Customer> customers = new();
-        private List<int> accounts = new();
-        private Dictionary<Customer, List<Account>> associationCustomersAccounts = new();
+        private List<Customer> _customers = new();
+        private List<int> _accounts = new();
+        private Dictionary<Customer, List<Account>> _associationCustomersAccounts = new();
+
+        public Dictionary<Customer, List<Account>> AssociationCustomersAccounts
+        {
+            get { return _associationCustomersAccounts; }
+        }
 
         public Bank()
         {
@@ -20,7 +25,7 @@ namespace Account
         public void AddClient(Customer _customer, Account _account)
         {
             Customer customerInfo = _customer;
-            customers.Add(customerInfo);
+            _customers.Add(customerInfo);
             AddAccountToCustomer(_customer, _account);
         }
 
@@ -33,15 +38,20 @@ namespace Account
             Account account = new(accountNumber, accountBalance, authorizedOverdraft);
             List<Account> listTmpAccount = new();
             listTmpAccount.Add(account);
-            associationCustomersAccounts.Add(_customer, listTmpAccount);
+            _associationCustomersAccounts.Add(_customer, listTmpAccount);
         }
 
-        public override string ToString()
+        public void FindAccount()
+        {
+
+        }
+
+        /*public override string ToString()
         {
             StringBuilder tmp = new();
             tmp.Append($"Votre prénom est : {}");
             return base.ToString();
-        }
+        }*/
 
         /*private Account AccountCreation(Client _client, double _accountNB)
         {
@@ -64,8 +74,8 @@ namespace Account
             do
             {
                 accountNumber = RandomNumber(1, 5);
-            } while (accounts.Contains(accountNumber));
-            accounts.Add(accountNumber);
+            } while (_accounts.Contains(accountNumber));
+            _accounts.Add(accountNumber);
             return accountNumber;
         }
 

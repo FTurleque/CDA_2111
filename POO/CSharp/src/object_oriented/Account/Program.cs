@@ -30,7 +30,7 @@ namespace Account
             Account c4Account = new(c4AcountNumber, 1900, -1200);
             bank.AddClient(c4, c4Account);
 
-            
+            c4Account.AccountCredit(100, c4AcountNumber);
         }
     }
 }
