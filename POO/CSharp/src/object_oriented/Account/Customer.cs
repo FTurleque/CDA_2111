@@ -51,35 +51,37 @@ namespace Account
             this._age = _age;
         }
 
-
-
         /// <summary>
         /// The client can make a payement
         /// </summary>
-        /// <param name="message">Name of payement strore</param>
-        /// <param name="_payment">Amount of money spent</param>
-        public void MakeAPayment(string message, double _payment)
+        /// <param name="_payment">Payement amount</param>
+        /// <param name="_accountNumber">Account to be debited</param>
+        /// <param name="bank">Bank where my account is located</param>
+        public void MakeAPayment(double _payment, int _accountNumber, ref Bank bank)
         {
-            
+            bank.ChooseAccountToDebit(_payment, _accountNumber);
         }
 
         /// <summary>
         /// The client can make a withdrawal in a bank
         /// </summary>
         /// <param name="_withdrawal">Withdrawal amount</param>
-        public void MakeACashWithdrawal(double _withdrawal)
+        /// <param name="_accountNumber">Account to be debited</param>
+        /// <param name="bank">Bank where my account is located</param>
+        public void MakeACashWithdrawal(double _withdrawal, int _accountNumber, ref Bank bank)
         {
-            
+            bank.ChooseAccountToDebit(_withdrawal, _accountNumber);
         }
 
         /// <summary>
         /// The client can make a deposit in his account
         /// </summary>
-        /// <param name="message">Name of the deposit</param>
         /// <param name="_deposit">Deposit amount</param>
-        public void MakeADeposit(string message, double _deposit)
+        /// <param name="_accountNumber">Account to be credited</param>
+        /// <param name="bank">Bank where my account is located</param>
+        public void MakeADeposit(double _deposit, int _accountNumber, ref Bank bank)
         {
-            
+            bank.ChooseAccountToCredit(_deposit, _accountNumber);
         }
     }
 }

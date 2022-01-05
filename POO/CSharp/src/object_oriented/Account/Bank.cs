@@ -41,7 +41,15 @@ namespace Account
             _associationCustomersAccounts.Add(_customer, listTmpAccount);
         }
 
-        public void FindAccount()
+        public void ChooseAccountToDebit(double _debit, int _accountNumber)
+        {
+            for (int i = 0; i < length; i++)
+            {
+
+            }
+        }
+        // Peut on voir la provenance des variables ?????
+        public void ChooseAccountToCredit(double _credit, int _accountNumber)
         {
 
         }
