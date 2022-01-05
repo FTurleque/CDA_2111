@@ -49,12 +49,25 @@ namespace Account
 
         public void AccountDebit(double _debit, int _accountNumberClient)
         {
-            AccountBalance -= _debit;
+            _accountBalance -= _debit;
         }
 
-        public void AccountCredit(double _credit, int _accountNumberClient)
+        public void AccountCredit(double _credit, int _clientAccountNumber)
         {
-            AccountBalance += _credit;
+            int index = 0;
+            
+            do
+            {
+
+                if (_clientAccount._accountBalance + _credit > _clientAccount._authorizedOverdraft)
+                {
+                    _clientAccount._accountBalance += _credit;
+                }
+                else
+                {
+                    Console.WriteLine($"Vous n'avez pas assez d'argent pour retirer la somme que vous souhaitez.\nVous ne pouvez retirer que {_clientAccount._authorizedOverdraft - _clientAccount._accountBalance}");
+                }
+            } while (true);
         }
     }
 }
