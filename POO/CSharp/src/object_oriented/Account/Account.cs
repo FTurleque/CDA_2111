@@ -39,7 +39,12 @@ namespace Account
             set { myVar = value; }
         }*/
 
-
+        /// <summary>
+        /// Account builder
+        /// </summary>
+        /// <param name="_accountNumber">Account number</param>
+        /// <param name="_accountBalance">Account balance</param>
+        /// <param name="_authorizedOverdraft">If the client can be overdrawn</param>
         public Account(int _accountNumber, double _accountBalance, double _authorizedOverdraft)
         {
             this._accountNumber = _accountNumber;
@@ -47,14 +52,31 @@ namespace Account
             this._accountBalance = _accountBalance;
         }
 
-        public void Debit(double _debit)
+        /// <summary>
+        /// Make a debit to the account
+        /// </summary>
+        /// <param name="_debit">Debit amount</param>
+        /// <param name="_account">Information on the account to make a debit</param>
+        public void Debit(double _debit, Account _account)
         {
-            AccountBalance -= _debit;
+            if (_account.AccountBalance - _debit > _account.AuthorizedOverdraft)
+            {
+                _account.AccountBalance -= _debit;
+            }
+            else
+            {
+                Console.WriteLine("Vous n'avez pas assez d'argent pour retirer la somme voulut !");
+            }
         }
 
-        public void Credit(double _credit)
+        /// <summary>
+        /// Make a credit to the account
+        /// </summary>
+        /// <param name="_credit">Credit amount</param>
+        /// <param name="_account">Information on the account to make a credit</param>
+        public void Credit(double _credit, Account _account)
         {
-            AccountBalance += _credit;
+            _account.AccountBalance += _credit;
             
         }
     }

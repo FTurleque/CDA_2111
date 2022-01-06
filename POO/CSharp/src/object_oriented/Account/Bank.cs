@@ -8,74 +8,68 @@ namespace Account
 {
     class Bank
     {
-        private List<Customer> _customers = new();
-        private List<int> _accounts = new();
-        private Dictionary<Customer, List<Account>> _associationCustomersAccounts = new();
-
-        public Dictionary<Customer, List<Account>> AssociationCustomersAccounts
-        {
-            get { return _associationCustomersAccounts; }
-        }
+        private readonly List<int> _accounts = new();
+        private readonly Dictionary<Customer, List<Account>> _associationCustomersAccounts = new();
 
         public Bank()
         {
 
         }
 
-        public void AddClient(Customer _customer, Account _account)
+        /// <summary>
+        /// Associate account and client in dictionnary
+        /// </summary>
+        /// <param name="_customer">Information client</param>
+        /// <param name="_account">Information on the account Client</param>
+        public void AssociateClientWithAccount(Customer _customer, List<Account> _account)
         {
-            Customer customerInfo = _customer;
-            _customers.Add(customerInfo);
-            AddAccountToCustomer(_customer, _account);
+            _associationCustomersAccounts.Add(_customer, _account);
         }
 
-        public void AddAccountToCustomer(Customer _customer, Account _account)
-        {
-
-            int accountNumber = _account.AccountNumber;
-            double accountBalance = _account.AccountBalance;
-            double authorizedOverdraft = _account.AuthorizedOverdraft;
-            Account account = new(accountNumber, accountBalance, authorizedOverdraft);
-            List<Account> listTmpAccount = new();
-            listTmpAccount.Add(account);
-            _associationCustomersAccounts.Add(_customer, listTmpAccount);
-        }
-
+        /// <summary>
+        /// I retrieve the customer's account information to make a debit. 
+        /// </summary>
+        /// <param name="_debit">Debit amount</param>
+        /// <param name="_accountNumber">Client account number</param>
         public void ChooseAccountToDebit(double _debit, int _accountNumber)
         {
-            for (int i = 0; i < length; i++)
+            foreach (KeyValuePair< Customer, List<Account>> tmp in _associationCustomersAccounts)
             {
-
+                var x = tmp.Value;
+                for (int i = 0; i < x.Count; i++)
+                {
+                    if (x[i].AccountNumber == _accountNumber)
+                    {
+                        x[i].Debit(_debit, x[i]);
+                    }
+                }
             }
         }
-        // Peut on voir la provenance des variables ?????
+
+        /// <summary>
+        /// I retrieve the customer's account information to make a credit. 
+        /// </summary>
+        /// <param name="_credit">Crediut amount</param>
+        /// <param name="_accountNumber">Client account number</param>
         public void ChooseAccountToCredit(double _credit, int _accountNumber)
         {
-
-        }
-
-        /*public override string ToString()
-        {
-            StringBuilder tmp = new();
-            tmp.Append($"Votre prénom est : {}");
-            return base.ToString();
-        }*/
-
-        /*private Account AccountCreation(Client _client, double _accountNB)
-        {
-            List<Account> accounts = new();
-            int accountID;
-            do
+            foreach (KeyValuePair<Customer, List<Account>> tmp in _associationCustomersAccounts)
             {
-                accountID = RandomNumber(1, 20);
-            } while (accountNumber.Contains(accountID));
-            accountNumber.Add(accountID);
-            Account accountClient = new(_client, accountID, _accountNB);
-            accounts.Add(accountClient);
-            return accounts;
+                var x = tmp.Value;
+                for (int i = 0; i < x.Count; i++)
+                {
+                    if (x[i].AccountNumber == _accountNumber)
+                    {
+                        x[i].Credit(_credit, x[i]);
+                    }
+                }
+            }
         }
-        */
 
+        /// <summary>
+        /// Generate the customer's account number 
+        /// </summary>
+        /// <returns>I return the customer's account number</returns>
         public int GetAccountNumber()
         {
             int accountNumber;
@@ -87,10 +81,17 @@ namespace Account
             return accountNumber;
         }
 
+        /// <summary>
+        /// I generate a random number between two values
+        /// </summary>
+        /// <param name="start">Start value</param>
+        /// <param name="end">End value</param>
+        /// <returns>I return a random number</returns>
         private int RandomNumber(int start, int end)
         {
             Random number = new Random();
             return number.Next(start, end);
         }
+
     }
 }
