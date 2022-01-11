@@ -16,6 +16,10 @@ namespace ModelingAKit
             set { _tipOfMineToCarve = value; }
         }
 
+        public Pencil(string _color) : base(_color)
+        {
+
+        }
 
         public void Sharpen()
         {
