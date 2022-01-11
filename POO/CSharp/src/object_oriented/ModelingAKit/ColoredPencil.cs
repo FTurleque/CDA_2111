@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ModelingAKit
 {
-    class ColoredPencil
+    class ColoredPencil : Pencil
     {
+        public ColoredPencil(string _color) : base(_color)
+        {
+
+        }
     }
 }

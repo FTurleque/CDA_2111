@@ -23,6 +23,11 @@ namespace ModelingAKit
             get { return _writingCapacity; }
         }
 
+        public WritingTool(string _color)
+        {
+            Color = _color;
+        }
+
         public virtual void Write()
         {
 

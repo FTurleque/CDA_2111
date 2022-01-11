@@ -8,7 +8,7 @@ namespace ModelingAKit
 {
     interface ITool
     {
-        public void Used()
+        public void Use()
         {
 
         }

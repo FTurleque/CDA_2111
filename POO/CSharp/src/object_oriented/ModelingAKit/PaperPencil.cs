@@ -8,5 +8,9 @@ namespace ModelingAKit
 {
     class PaperPencil
     {
+        public PaperPencil()
+        {
+
+        }
     }
 }
