@@ -21,16 +21,38 @@ namespace ModelingAKit
         public int WritingCapacity
         {
             get { return _writingCapacity; }
+            /*protected set { _writingCapacity = value; }*/
         }
 
-        public WritingTool(string _color)
+        private int _lengthOfMineTip;
+
+        public int LengthOfMineTip
+        {
+            get { return _lengthOfMineTip; }
+            init { _writingCapacity = 10; }
+        }
+
+        public WritingTool(string _color, int _writingCapacity)
         {
             Color = _color;
+            WritingCapacity = _writingCapacity;
         }
 
-        public virtual void Write()
+        public void Use()
         {
-
+            Write();
         }
+
+        private void Write()
+        {
+            /*if (_lengthOfMineTip == 0)
+            {
+                Pencil.Sharpen();
+                WritingCapacity--;
+            }
+            _lengthOfMineTip--;*/
+        }
+
+        /*public abstract void Write();*/
     }
 }

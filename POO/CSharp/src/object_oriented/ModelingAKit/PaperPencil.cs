@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ModelingAKit
 {
-    class PaperPencil
+    class PaperPencil : Pencil
     {
-        public PaperPencil()
+        public PaperPencil(string _color, int _writingCapacity) : base(_color, _writingCapacity)
         {
 
         }

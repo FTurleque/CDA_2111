@@ -8,9 +8,6 @@ namespace ModelingAKit
 {
     interface ITool
     {
-        public void Use()
-        {
-
-        }
+        public abstract void Use();
     }
 }

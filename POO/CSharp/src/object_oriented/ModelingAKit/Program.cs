@@ -6,7 +6,10 @@ namespace ModelingAKit
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ColoredPencil pencil1 = new("Blue", 10);
+
+            pencil1.Use();
+
         }
     }
 }
