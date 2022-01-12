@@ -8,7 +8,7 @@ namespace ModelingAKit
 {
     class ColoredPencil : Pencil
     {
-        public ColoredPencil(string _color) : base(_color)
+        public ColoredPencil(string _color, int _writingCapacity) : base(_color, _writingCapacity)
         {
 
         }
