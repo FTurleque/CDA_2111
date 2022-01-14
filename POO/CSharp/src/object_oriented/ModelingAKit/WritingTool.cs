@@ -35,7 +35,7 @@ namespace ModelingAKit
         public WritingTool(string _color, int _writingCapacity)
         {
             Color = _color;
-            WritingCapacity = _writingCapacity;
+            this._writingCapacity = _writingCapacity;
         }
 
         public void Use()
