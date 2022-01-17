@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,33 +44,6 @@ namespace MyModelingKitVersion
             _trim_number++;
             PencilLeadLength = _decrease_of_the_mine;
             _decrease_of_the_mine = 0;
-        }
-
-        public override void Write(char letter)
-        {
-            PencilLeadLength--;
-            _decrease_of_the_mine++;
-        }
-
-        public override void Use(string txt)
-        {
-            char[] tmp = Regex.Replace(txt, @"\s", "").ToArray();
-            for (int i = 0; i < tmp.Length; i++)
-            {
-                if (_pencil_lead_length == 0)
-                {
-                    Trim();
-                }
-                else if (PencilHeigth != 0)
-                {
-                    Write(tmp[i]);
-                }
-                else
-                {
-                    Console.WriteLine("Vous ne pouvez plus écrire, changer de crayon.");
-                }
-                
-            }
         }
 
     }

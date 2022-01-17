@@ -27,9 +27,35 @@ namespace MyModelingKitVersion
             get { return _char_number_to_decrease; }
         }
 
-        public abstract void Write(char letter);
+        public void Write(string txt)
+        {
+            string[] word = txt.Split(" ");
+            
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (_pencil_lead_length == 0)
+                {
+                    Trim();
+                }
+                else if (PencilHeigth != 0)
+                {
+                    Write(tmp[i]);
+                }
+                else
+                {
+                    Console.WriteLine("Vous ne pouvez plus écrire, changer de crayon.");
+                }
 
-        public abstract void Use(string txt);
+            }
+            PencilLeadLength--;
+            _decrease_of_the_mine++;
+
+        }
+
+        public void Use(string txt)
+        {
+            Write(txt);
+        }
         
     }
 }
