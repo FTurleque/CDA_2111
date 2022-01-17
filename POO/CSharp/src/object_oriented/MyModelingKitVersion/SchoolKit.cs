@@ -8,9 +8,8 @@ namespace MyModelingKitVersion
 {
     class SchoolKit : Kit
     {
-        private List<WritingTool> tools;
 
-        public SchoolKit(string color, double length, int volume) : base(color, length, volume)
+        public SchoolKit(string color, int volume) : base(color, volume)
         {
 
         }

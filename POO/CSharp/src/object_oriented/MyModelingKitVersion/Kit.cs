@@ -10,15 +10,13 @@ namespace MyModelingKitVersion
     {
         private bool _isOpen;
         private int _volume;
-        private double _length;
         private string _color;
-        //private bool _isNotEmpty = false;
-
-        public Kit(string color, double length, int volume)
+        
+        public Kit(string color, int volume)
         {
             _color = color;
-            _length = length;
             _volume = volume;
+            IsOpen = false;
         }
 
 
@@ -26,13 +24,6 @@ namespace MyModelingKitVersion
         {
             get { return _color; }
             init { _color = value; }
-        }
-
-
-        public double Length
-        {
-            get { return _length; }
-            init { _length = value; }
         }
 
 
@@ -49,14 +40,20 @@ namespace MyModelingKitVersion
         }
 
 
-        public bool Open()
+        public void Open()
         {
-            return _isOpen;
+            if (IsOpen == false)
+            {
+                IsOpen = true;
+            }
         }
 
-        public bool Close()
+        public void Close()
         {
-            return _isOpen;
+            if (IsOpen == true)
+            {
+                IsOpen = false;
+            }
         }
     }
 }
