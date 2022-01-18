@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace MyModelingKitVersion
 {
-    class ColoredPencil : Pencil
+    class BallPen : WritingTool
     {
-        public ColoredPencil()
+        public BallPen()
         {
-            this.Color = "bleu";
+            this.Color = "rouge";
             this.WritingCapacity = 100;
-            this.PointOfMineToBeCut = true;
         }
 
-        public ColoredPencil(string color)
+        public BallPen(string color)
         {
             this.Color = color;
             this.WritingCapacity = 100;
-            this.PointOfMineToBeCut = true;
+        }
+        public override void Use()
+        {
+            this.Write();
+            this.WritingCapacity--;
         }
     }
 }

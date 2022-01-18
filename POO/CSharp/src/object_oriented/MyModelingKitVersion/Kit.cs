@@ -9,40 +9,30 @@ namespace MyModelingKitVersion
     abstract class Kit
     {
         private bool _isOpen;
-        private int _volume;
-        private string _color;
+        private int _maxToolsNumber;
         
-        public Kit(string color, int volume)
+        public Kit(int maxToolsNumber)
         {
-            _color = color;
-            _volume = volume;
-            IsOpen = false;
+            this.MaxToolsNumber = maxToolsNumber;
+            this.IsOpen = false;
         }
 
-
-        public string Color
+        public int MaxToolsNumber
         {
-            get { return _color; }
-            init { _color = value; }
-        }
-
-
-        public int Volume
-        {
-            get { return _volume; }
-            init { _volume = value; }
+            get { return _maxToolsNumber; }
+            init { _maxToolsNumber = value; }
         }
 
         public bool IsOpen
         {
             get { return _isOpen; }
-            set { _isOpen = value; }
+            private set { _isOpen = value; }
         }
 
 
         public void Open()
         {
-            if (IsOpen == false)
+            if (!this.IsOpen)
             {
                 IsOpen = true;
             }
@@ -50,7 +40,7 @@ namespace MyModelingKitVersion
 
         public void Close()
         {
-            if (IsOpen == true)
+            if (this.IsOpen)
             {
                 IsOpen = false;
             }

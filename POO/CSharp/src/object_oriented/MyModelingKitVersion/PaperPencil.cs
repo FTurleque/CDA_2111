@@ -8,10 +8,12 @@ namespace MyModelingKitVersion
 {
     class PaperPencil : Pencil
     {
-        public PaperPencil(string color, int pencil_lead_length, int pencil_heigth) : base(color, pencil_lead_length, pencil_heigth)
+        PaperPencil()
         {
-            
+            this.WritingCapacity = 100;
+            this.Color = "gris";
+            this.PointOfMineToBeCut = true;
         }
-        
+
     }
 }

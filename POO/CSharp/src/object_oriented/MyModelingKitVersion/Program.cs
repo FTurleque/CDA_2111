@@ -6,12 +6,21 @@ namespace MyModelingKitVersion
     {
         static void Main(string[] args)
         {
-            SchoolKit schoolKit1 = new("Red", 15.7, 5);
+            ColoredPencil colorPencilGreen = new("vert");
+            colorPencilGreen.Use();
+            colorPencilGreen.Use();
+            colorPencilGreen.Use();
+            colorPencilGreen.Use();
+            ColoredPencil colorPencilGreen2 = new("vert");
+            NibPen nibPenBlue = new("bleu");
+            BallPen ballPenRed = new("rouge");
 
-            ColoredPencil coloredPencil1 = new("Blue", 20, 50);
-            PaperPencil paperPencil1 = new("Grey", 20, 50);
+            SchoolKit schoolKit = new SchoolKit(2);
 
-            paperPencil1.Use("Bienvenue dans le monde de la fin des chose affreusement tester pour le moment");
+            schoolKit.Open();
+            schoolKit.AddTool(colorPencilGreen);
+            schoolKit.AddTool(colorPencilGreen2);
+
         }
     }
 }

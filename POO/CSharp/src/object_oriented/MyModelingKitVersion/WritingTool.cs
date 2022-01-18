@@ -9,53 +9,41 @@ namespace MyModelingKitVersion
     abstract class WritingTool
     {
         private string _color;
-        private const int _char_number_to_decrease = 15;
+        private int _writingCapacity;
         
-        public WritingTool(string color)
-        {
-            _color = color;
-        }
-
         public string Color
         {
             get { return _color; }
-            set { _color = value; }
+            protected set { _color = value; }
         }
 
-        public int CharNumber
+        public int WritingCapacity
         {
-            get { return _char_number_to_decrease; }
+            get { return _writingCapacity; }
+            protected set { _writingCapacity = value; }
         }
 
-        public void Write(string txt)
+        protected void Write()
         {
-            string[] word = txt.Split(" ");
-            
-            for (int i = 0; i < word.Length; i++)
+            if (schoolKit.IsOpen)
             {
-                if (_pencil_lead_length == 0)
+                if (this.WritingCapacity > 0)
                 {
-                    Trim();
-                }
-                else if (PencilHeigth != 0)
-                {
-                    Write(tmp[i]);
+                    Console.WriteLine($"J'écris du texte de couleur {Color}");
                 }
                 else
                 {
-                    Console.WriteLine("Vous ne pouvez plus écrire, changer de crayon.");
+                    Console.WriteLine("!!! Capacité d'écriture épuisée !!!");
                 }
-
             }
-            PencilLeadLength--;
-            _decrease_of_the_mine++;
-
+            else
+            {
+                Console.WriteLine("La trousse n'est pas ouverte, vous ne pouvez pas écrire.");
+            }
+            
         }
 
-        public void Use(string txt)
-        {
-            Write(txt);
-        }
+        public abstract void Use();
         
     }
 }
