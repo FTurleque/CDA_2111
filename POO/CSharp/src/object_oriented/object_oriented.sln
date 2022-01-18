@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Geometrie", "Geometrie\Geom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelingAKit", "ModelingAKit\ModelingAKit.csproj", "{DBC7B71C-9D1F-4758-9F14-1AC80F8309C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyModelingKitVersion", "MyModelingKitVersion\MyModelingKitVersion.csproj", "{597826A4-C32F-4FC4-9230-2534C52024B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyModelingKitVersion", "MyModelingKitVersion\MyModelingKitVersion.csproj", "{597826A4-C32F-4FC4-9230-2534C52024B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrickDolls", "TrickDolls\TrickDolls.csproj", "{4BD39405-93EE-46B7-897D-401AA6FF295B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

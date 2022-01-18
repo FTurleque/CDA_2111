@@ -8,43 +8,41 @@ namespace MyModelingKitVersion
 {
     abstract class Pencil : WritingTool
     {
-        private int _pencil_lead_length;
-        private int _pencil_heigth;
-        private int _decrease_of_the_mine = 0;
-        private int _trim_number = 0;
-        
+        private bool _pointOfMineToBeCut;
 
-        public Pencil(string color, int pencil_lead_length, int pencil_heigth) : base(color)
+        public bool PointOfMineToBeCut
         {
-            _pencil_lead_length = pencil_lead_length;
-            _pencil_heigth = pencil_heigth;
-        }
-
-        public int TrimNumber
-        {
-            get { return _trim_number; }
-        }
-
-        public int PencilHeigth
-        {
-            get { return _pencil_heigth; }
-            set { _pencil_heigth = value; }
-        }
-
-
-        public int PencilLeadLength
-        {
-            get { return _pencil_lead_length; }
-            set { _pencil_lead_length = value; }
+            get { return _pointOfMineToBeCut; }
+            set { _pointOfMineToBeCut = value; }
         }
 
         public void Trim()
         {
-            PencilHeigth--;
-            _trim_number++;
-            PencilLeadLength = _decrease_of_the_mine;
-            _decrease_of_the_mine = 0;
+            if(WritingCapacity > 3)
+            {
+                WritingCapacity -= 3;
+                PointOfMineToBeCut = true;
+            }
+            else
+            {
+                WritingCapacity = -1;
+            }
         }
 
+        public override void Use()
+        {
+            int rndMinePlusTaillee = new Random().Next(0, 3);
+
+            if (!this.PointOfMineToBeCut)
+            {
+                this.Trim();
+            }
+            base.Write();
+
+            if (rndMinePlusTaillee == 0)
+            {
+                this.PointOfMineToBeCut = false;
+            }
+        }
     }
 }
