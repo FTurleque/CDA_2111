@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelingAKit", "ModelingAKi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyModelingKitVersion", "MyModelingKitVersion\MyModelingKitVersion.csproj", "{597826A4-C32F-4FC4-9230-2534C52024B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrickDolls", "TrickDolls\TrickDolls.csproj", "{4BD39405-93EE-46B7-897D-401AA6FF295B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RussianDolls", "RussianDolls\RussianDolls.csproj", "{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{597826A4-C32F-4FC4-9230-2534C52024B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BD39405-93EE-46B7-897D-401AA6FF295B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

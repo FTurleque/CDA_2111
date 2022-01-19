@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TrickDolls
+namespace RussianDolls
 {
     class Doll
     {
@@ -51,21 +55,19 @@ namespace TrickDolls
         public void Open()
         {
             if (!this.IsOpen) this.IsOpen = true;
-            else Console.WriteLine("Déja ouverte.");
+            else Console.WriteLine("Already open.");
         }
 
         public void Close()
         {
             if (this.IsOpen) this.IsOpen = false;
-            else Console.WriteLine("Déja fermé.");
+            else Console.WriteLine("Already closed.");
         }
 
         public void PlaceDollIn(Doll bigDoll)
         {
-            if (bigDoll.IsContainIn != false)
-            {
-                Console.WriteLine($"La poupée {bigDoll.Name} est déjà contenue dans une autre.");
-            }
+            if (this.IsContainIn != false) Console.WriteLine($"The {this.Name} doll is contained in another doll I can't open it.");
+            else if (bigDoll.IsContainIn != false) Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
             else
             {
                 if (!bigDoll.IsOpen) bigDoll.Open();
@@ -73,21 +75,22 @@ namespace TrickDolls
                 {
                     bigDoll.DollContain = this;
                     this.IsContainIn = true;
-                    Console.WriteLine($"Vous mettez la poupée {this.Name} de taille {this.Size} à l'intérieur de {bigDoll.Name} de taille {bigDoll.Size}.");
+                    Console.WriteLine($"You put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
                 }
                 else if (bigDoll.DollContain != null)
                 {
-                    Console.WriteLine($"La poupée {bigDoll.Name} à déja une poupée à l'interieur.");
+                    Console.WriteLine($"The {bigDoll.Name} doll has already a doll inside.");
                     bigDoll.Close();
                 }
-                else Console.WriteLine($"Vous ne pouvez pas mettre la poupée {this.Name} de taille {this.Size} à l'intérieur de {bigDoll.Name} de taille {bigDoll.Size}.");
+                else Console.WriteLine($"You cannot put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
             }
         }
 
         public void RemoveDollIn(Doll bigDoll)
         {
-            
-            if (bigDoll.IsContainIn != false) Console.WriteLine($"La poupée {bigDoll.Name} est contenu dans une autre poupée je ne peut pas l'ouvrir.");
+
+            if (bigDoll.IsContainIn != false) Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
+            else if (bigDoll.DollContain.Name != this.Name) Console.WriteLine($"{this.Name} doll is not in {bigDoll.Name}");
             else
             {
                 if (!bigDoll.IsOpen) bigDoll.Open();
@@ -95,15 +98,14 @@ namespace TrickDolls
                 {
                     bigDoll.DollContain = null;
                     this.IsContainIn = false;
-                    Console.WriteLine($"Vous sortez la poupée {this.Name} de taille {this.Size} de {bigDoll.Name} de taille {bigDoll.Size}.");
+                    Console.WriteLine($"You take out {this.Name} of {bigDoll.Name} doll.");
                 }
                 else
                 {
-                    Console.WriteLine("La poupée est vide.");
+                    Console.WriteLine("The doll is empty.");
                     bigDoll.Close();
                 }
             }
         }
-
     }
 }
