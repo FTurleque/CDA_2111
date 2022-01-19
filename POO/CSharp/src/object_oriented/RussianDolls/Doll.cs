@@ -11,6 +11,7 @@ namespace RussianDolls
         private int _size;
         private bool _isOpen;
         private bool _isContainIn;
+        private Doll _externDoll;
         private Doll _dollContain;
         private string _name;
 
@@ -40,6 +41,12 @@ namespace RussianDolls
             set { _dollContain = value; }
         }
 
+        public Doll ExternDoll
+        {
+            get { return _externDoll; }
+            set { _externDoll = value; }
+        }
+
         public bool IsOpen
         {
             get { return _isOpen; }
@@ -54,13 +61,18 @@ namespace RussianDolls
 
         public void Open()
         {
-            if (!this.IsOpen) this.IsOpen = true;
+            if (!this.IsOpen && this.ExternDoll == null) this.IsOpen = true;
+            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) Console.WriteLine("The doll is contained in another one that is closed");
             else Console.WriteLine("Already open.");
         }
 
         public void Close()
         {
-            if (this.IsOpen) this.IsOpen = false;
+            if (this.IsOpen && !(this.ExternDoll != null && this.ExternDoll.IsOpen == false))
+            {
+                this.IsOpen = false;
+            }
+            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) Console.WriteLine("The doll is contained in another one that is closed");
             else Console.WriteLine("Already closed.");
         }
 
@@ -70,19 +82,27 @@ namespace RussianDolls
             else if (bigDoll.IsContainIn != false) Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
             else
             {
-                if (!bigDoll.IsOpen) bigDoll.Open();
-                if (this.Size < bigDoll.Size && bigDoll.DollContain == null)
+                if (!bigDoll.IsOpen)
                 {
-                    bigDoll.DollContain = this;
-                    this.IsContainIn = true;
-                    Console.WriteLine($"You put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
+                    Console.WriteLine("The doll is closed open it.");
                 }
-                else if (bigDoll.DollContain != null)
+                else
                 {
-                    Console.WriteLine($"The {bigDoll.Name} doll has already a doll inside.");
-                    bigDoll.Close();
+                    if (this.Size < bigDoll.Size && bigDoll.DollContain == null)
+                    {
+                        bigDoll.DollContain = this;
+                        this.IsContainIn = true;
+                        ExternDoll = bigDoll;
+                        Console.WriteLine($"You put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
+                    }
+                    else if (bigDoll.DollContain != null)
+                    {
+                        Console.WriteLine($"The {bigDoll.Name} doll has already a doll inside.");
+                        bigDoll.Close();
+                    }
+                    else Console.WriteLine($"You cannot put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
                 }
-                else Console.WriteLine($"You cannot put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
+                
             }
         }
 
@@ -98,6 +118,7 @@ namespace RussianDolls
                 {
                     bigDoll.DollContain = null;
                     this.IsContainIn = false;
+                    ExternDoll = null;
                     Console.WriteLine($"You take out {this.Name} of {bigDoll.Name} doll.");
                 }
                 else
