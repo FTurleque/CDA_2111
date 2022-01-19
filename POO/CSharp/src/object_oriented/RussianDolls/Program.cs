@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TrickDolls
+namespace RussianDolls
 {
     class Program
     {
@@ -21,8 +21,14 @@ namespace TrickDolls
             doll2.Close();
             doll3.Close();
 
+            // The doll is contained in another doll I can't open it.
+            doll1.PlaceDollIn(doll3);
+
             // You cant do that because a doll is already there.
             doll2.PlaceDollIn(doll3);
+
+            // You cant do that because the doll is not there, an other is there.
+            doll1.RemoveDollIn(doll3);
 
             // Good result to remove the doll.
             doll2.RemoveDollIn(doll3);
