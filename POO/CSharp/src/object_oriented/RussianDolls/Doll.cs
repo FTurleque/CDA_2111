@@ -61,25 +61,28 @@ namespace RussianDolls
 
         public void Open()
         {
-            if (!this.IsOpen && this.ExternDoll == null) this.IsOpen = true;
-            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) Console.WriteLine("The doll is contained in another one that is closed");
+            if (!this.IsOpen && this.ExternDoll == null) 
+                this.IsOpen = true;
+            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) 
+                Console.WriteLine("The doll is contained in another one that is closed");
             else Console.WriteLine("Already open.");
         }
 
         public void Close()
         {
-            if (this.IsOpen && !(this.ExternDoll != null && this.ExternDoll.IsOpen == false))
-            {
+            if (this.IsOpen && !(this.ExternDoll != null && this.ExternDoll.IsOpen == false)) 
                 this.IsOpen = false;
-            }
-            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) Console.WriteLine("The doll is contained in another one that is closed");
+            else if (this.ExternDoll != null && this.ExternDoll.IsOpen == false) 
+                Console.WriteLine("The doll is contained in another one that is closed");
             else Console.WriteLine("Already closed.");
         }
 
         public void PlaceDollIn(Doll bigDoll)
         {
-            if (this.IsContainIn != false) Console.WriteLine($"The {this.Name} doll is contained in another doll I can't open it.");
-            else if (bigDoll.IsContainIn != false) Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
+            if (this.IsContainIn != false) 
+                Console.WriteLine($"The {this.Name} doll is contained in another doll I can't open it.");
+            else if (bigDoll.IsContainIn != false) 
+                Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
             else
             {
                 if (!bigDoll.IsOpen)
@@ -93,14 +96,16 @@ namespace RussianDolls
                         bigDoll.DollContain = this;
                         this.IsContainIn = true;
                         ExternDoll = bigDoll;
-                        Console.WriteLine($"You put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
+                        Console.WriteLine(
+                            $"You put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
                     }
                     else if (bigDoll.DollContain != null)
                     {
                         Console.WriteLine($"The {bigDoll.Name} doll has already a doll inside.");
                         bigDoll.Close();
                     }
-                    else Console.WriteLine($"You cannot put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
+                    else Console.WriteLine(
+                        $"You cannot put the {this.Name} doll of size {this.Size} inside {bigDoll.Name} doll of size {bigDoll.Size}.");
                 }
                 
             }
@@ -109,8 +114,10 @@ namespace RussianDolls
         public void RemoveDollIn(Doll bigDoll)
         {
 
-            if (bigDoll.IsContainIn != false) Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
-            else if (bigDoll.DollContain.Name != this.Name) Console.WriteLine($"{this.Name} doll is not in {bigDoll.Name}");
+            if (bigDoll.IsContainIn != false) 
+                Console.WriteLine($"The {bigDoll.Name} doll is contained in another doll I can't open it.");
+            else if (bigDoll.DollContain.Name != this.Name) 
+                Console.WriteLine($"{this.Name} doll is not in {bigDoll.Name}");
             else
             {
                 if (!bigDoll.IsOpen) bigDoll.Open();
