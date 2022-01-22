@@ -19,18 +19,25 @@ namespace PeopleWithWatch
 
         public Watch(int hour, int minute)
         {
-            this.Time = MakeTimeCreation(hour, minute);
+            try
+            {
+                Time = new(1, 1, 1, hour, minute, 0);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Impossible creation.");
+            }
         }
 
         public Watch(Watch otherWath)
         {
-            this.Time = MakeTimeCreation(otherWath.Hour, otherWath.Minute);
+            this.Time = otherWath.Time;
         }
 
-        private DateTime MakeTimeCreation(int hour, int minute)
+        public DateTime Time
         {
-            DateTime tmp = new DateTime(hour / minute);
-            return tmp;
+            get { return _time; }
+            set { _time = value; }
         }
 
         public int Minute
@@ -44,25 +51,19 @@ namespace PeopleWithWatch
             get { return _hour; }
             set { _hour = value; }
         }
-
-        public DateTime Time
-        {
-            get { return _time; }
-            set { _time = value; }
-        }
-
+                
         public string AdvanceTheTime(int timeToAdvance)
         {
-            Hour = this.Time.Hour;
-            Minute = this.Time.Minute;
+            this.Hour = this.Time.Hour;
+            this.Minute = this.Time.Minute;
             for (int i = timeToAdvance; i > 0; i--)
             {
                 if (Minute == 59)
                 {
-                    Hour += 1;
-                    Minute = 0;
+                    this.Hour += 1;
+                    this.Minute = 0;
                 }
-                else Minute += 1;
+                else this.Minute += 1;
             }
             return $"{Hour:D2}:{Minute:D2}";
         }
