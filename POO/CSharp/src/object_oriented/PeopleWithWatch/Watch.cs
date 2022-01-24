@@ -50,13 +50,13 @@ namespace PeopleWithWatch
         public int Minute
         {
             get { return _minute; }
-            set { _minute = value; }
+            private set { _minute = value; }
         }
 
         public int Hour
         {
             get { return _hour; }
-            set { _hour = value; }
+            private set { _hour = value; }
         }
                 
         public string AdvanceTheTime(int timeToAdvance)
