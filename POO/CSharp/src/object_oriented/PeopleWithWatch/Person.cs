@@ -16,24 +16,25 @@ namespace PeopleWithWatch
         {
             this.FirstName = firstname;
             this.LastName = lastName;
+            this.TheWatch = null;
         }
 
         public Watch TheWatch
         {
-            get { return _theWatch; }
-            set { _theWatch = value; }
+            get { return this._theWatch; }
+            private set { this._theWatch = value; }
         }
         
         public string LastName
         {
-            get { return _lastName; }
-            set { _lastName = value; }
+            get { return this._lastName; }
+            set { this._lastName = value; }
         }
 
         public string FirstName
         {
-            get { return _firstName; }
-            set { _firstName = value; }
+            get { return this._firstName; }
+            set { this._firstName = value; }
         }
 
         public void GiveAWatch(Person personWhoGiveTheWatch)
@@ -49,7 +50,12 @@ namespace PeopleWithWatch
 
         public void AddWatch(Watch theWatch)
         {
-            if (this.TheWatch == null) this.TheWatch = theWatch;
+            if (this.TheWatch == null && theWatch.Person == null)
+            {
+                this.TheWatch = theWatch;
+                theWatch.Person = this;
+            }
+            else if (theWatch.Person != null) Console.WriteLine("The watch already belongs to someone, you can't take it.");
             else Console.WriteLine("You already have a watch he can't get an other.");
         }
 
