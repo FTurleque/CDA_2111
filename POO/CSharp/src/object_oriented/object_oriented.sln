@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyModelingKitVersion", "MyM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RussianDolls", "RussianDolls\RussianDolls.csproj", "{31ED6A94-1A9F-4ACC-80F9-935950C84CF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeopleWithWatch", "PeopleWithWatch\PeopleWithWatch.csproj", "{B51DF9C1-D322-4BD7-BF57-E50FAB73B5E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PeopleWithWatch", "PeopleWithWatch\PeopleWithWatch.csproj", "{B51DF9C1-D322-4BD7-BF57-E50FAB73B5E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamTopics", "ExamTopics\ExamTopics.csproj", "{B631A23D-09C8-43EB-AED4-5E399E9E8D6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{B51DF9C1-D322-4BD7-BF57-E50FAB73B5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B51DF9C1-D322-4BD7-BF57-E50FAB73B5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B51DF9C1-D322-4BD7-BF57-E50FAB73B5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B631A23D-09C8-43EB-AED4-5E399E9E8D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B631A23D-09C8-43EB-AED4-5E399E9E8D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B631A23D-09C8-43EB-AED4-5E399E9E8D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B631A23D-09C8-43EB-AED4-5E399E9E8D6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
