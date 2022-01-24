@@ -16,24 +16,25 @@ namespace PeopleWithWatch
         {
             this.FirstName = firstname;
             this.LastName = lastName;
+            this.TheWatch = null;
         }
 
         public Watch TheWatch
         {
-            get { return _theWatch; }
-            set { _theWatch = value; }
+            get { return this._theWatch; }
+            private set { this._theWatch = value; }
         }
         
         public string LastName
         {
-            get { return _lastName; }
-            set { _lastName = value; }
+            get { return this._lastName; }
+            set { this._lastName = value; }
         }
 
         public string FirstName
         {
-            get { return _firstName; }
-            set { _firstName = value; }
+            get { return this._firstName; }
+            set { this._firstName = value; }
         }
 
         public void GiveAWatch(Person personWhoGiveTheWatch)
