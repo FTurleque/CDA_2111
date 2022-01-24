@@ -13,6 +13,7 @@ namespace PeopleWithWatch
             Person p2 = new("Paul", "Bourgeois");
             Person p3 = new("Cyril", "Legrand");
             Person p4 = new("Toto", "Dupuis");
+            Person p5 = new("Tartenpion", "Van-Damme");
 
             // Make a watch and use it.
             Watch watch1 = new(_time);
@@ -45,6 +46,8 @@ namespace PeopleWithWatch
             Console.WriteLine($"The owner of the copy watch 2 is {p3.FirstName} {p3.LastName} and is {p3.GivingTheActualyHour()}");
             p3.AdvanceTheTimeOnYourWatch(15);
             Console.WriteLine($"Advanced 15 minutes copy watch 2 and is {p3.GivingTheHourWithRedefine()} now.");
+
+            p4.AddWatch(copyWatch2);
 
             // Impossible creation.
             Watch watchImpossible1 = new(24, 50);
