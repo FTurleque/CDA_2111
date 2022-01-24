@@ -49,7 +49,12 @@ namespace PeopleWithWatch
 
         public void AddWatch(Watch theWatch)
         {
-            if (this.TheWatch == null) this.TheWatch = theWatch;
+            if (this.TheWatch == null && theWatch.Person == null)
+            {
+                this.TheWatch = theWatch;
+                theWatch.Person = this;
+            }
+            else if (theWatch.Person != null) Console.WriteLine("The watch already belongs to someone, you can't take it.");
             else Console.WriteLine("You already have a watch he can't get an other.");
         }
 

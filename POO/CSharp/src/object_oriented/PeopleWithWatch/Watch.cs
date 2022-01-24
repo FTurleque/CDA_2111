@@ -9,6 +9,7 @@ namespace PeopleWithWatch
     class Watch
     {
         private DateTime _time;
+        private Person _person;
         private int _hour;
         private int _minute;
 
@@ -38,6 +39,12 @@ namespace PeopleWithWatch
         {
             get { return _time; }
             set { _time = value; }
+        }
+
+        public Person Person
+        {
+            get { return _person; }
+            set { _person = value; }
         }
 
         public int Minute
