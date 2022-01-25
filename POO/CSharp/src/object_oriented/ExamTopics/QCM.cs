@@ -8,17 +8,34 @@ namespace ExamTopics
 {
     class QCM
     {
-        private List<Question> _questions;
+        private Dictionary<Question, int> _questions;
 
-        public QCM(List<Question> questions)
+        public QCM()
         {
-            this.Questions = questions;
+            this.Questions = new Dictionary<Question, int>();
         }
 
-        public List<Question> Questions
+        public Dictionary<Question, int> Questions
         {
             get { return _questions; }
             set { _questions = value; }
+        }
+
+        public void AddQuestion(Question question, int numberOfPointsPerQuestion)
+        {
+            this.Questions.Add(question, numberOfPointsPerQuestion);
+        }
+
+        public void RemoveQuestion(Question question)
+        {
+            try
+            {
+                this.Questions.Remove(question);
+            }
+            catch (Exception)
+            {
+                throw new ApplicationException("The question is not in the QCM.");
+            }
         }
 
         public void Display()

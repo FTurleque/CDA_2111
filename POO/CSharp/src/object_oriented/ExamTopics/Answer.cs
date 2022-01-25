@@ -8,47 +8,25 @@ namespace ExamTopics
 {
     class Answer
     {
-        /*private string _answerToQuestion;
-        private bool _goodAnswer;*/
-        private Dictionary<string, bool> _answersToQuestion;
-        private Question _questionAsk;
+        private string _answerToQuestion;
+        private bool _goodAnswer;
 
-        public Answer(Question questionAsk)
+        public Answer(string answerToQuestion, bool goodAnswer)
         {
-            this.QuestionAsk = questionAsk;
-            this.AnswersToQuestion = new();
+            this.AnswerToQuestion = answerToQuestion;
+            this.GoodAnswer = goodAnswer;
         }
 
-        public Dictionary<string, bool> AnswersToQuestion
-        {
-            get { return _answersToQuestion; }
-            set { _answersToQuestion = value; }
-        }
-
-        /*public bool GoodAnswer
+        public bool GoodAnswer
         {
             get { return _goodAnswer; }
-            set { _goodAnswer = value; }
+            init { _goodAnswer = value; }
         }
 
         public string AnswerToQuestion
         {
             get { return _answerToQuestion; }
-            set { _answerToQuestion = value; }
-        }*/
-
-        public Question QuestionAsk
-        {
-            get { return _questionAsk; }
-            init { _questionAsk = value; }
-        }
-
-        public void AddAnswer(string answerToQuestion, bool goodAnswer)
-        {
-            for (int i = 0; i < QuestionAsk.MultipleChoice; i++)
-            {
-                AnswersToQuestion.Add(answerToQuestion, goodAnswer);
-            }
+            init { _answerToQuestion = value; }
         }
     }
 }
