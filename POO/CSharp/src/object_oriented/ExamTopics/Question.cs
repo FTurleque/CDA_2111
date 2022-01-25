@@ -10,36 +10,19 @@ namespace ExamTopics
     {
         private string _statementOfReview;
         private int _difficulty;
-        // Not need is the array.Length.
-        private int _multipleChoice;
-        private double _numberOfPointsPerQuestion;
-        private Answer _answers;
+        private List<Answer> _answers;
 
-        public Question(string statementOfReview, double numberOfPointsPerQuestion, int multipleChoice, int difficulty)
+        public Question(string statementOfReview, int difficulty)
         {
             this.StatementOfReview = statementOfReview;
-            this.NumberOfPointsPerQuestion = numberOfPointsPerQuestion;
-            this.MultipleChoice = multipleChoice;
             this.Difficulty = difficulty;
-            this.Answers = null;
+            this.Answers = new List<Answer>();
         }
 
-        public Answer Answers
+        public List<Answer> Answers
         {
             get { return _answers; }
             set { _answers = value; }
-        }
-
-        public double NumberOfPointsPerQuestion
-        {
-            get { return _numberOfPointsPerQuestion; }
-            init { _numberOfPointsPerQuestion = value; }
-        }
-
-        public int MultipleChoice
-        {
-            get { return _multipleChoice; }
-            init { _multipleChoice = value; }
         }
 
         public int Difficulty
@@ -52,6 +35,12 @@ namespace ExamTopics
         {
             get { return _statementOfReview; }
             init { _statementOfReview = value; }
+        }
+
+        public void AddAnswer(string answer, bool goodAnswer)
+        {
+            Answer tmp = new(answer, goodAnswer);
+            this.Answers.Add(tmp);
         }
     }
 }
