@@ -12,13 +12,13 @@ namespace ExamTopics
 
         public QCM()
         {
-            this.Questions = new Dictionary<Question, int>();
+            this._questions = new Dictionary<Question, int>();
         }
 
         public Dictionary<Question, int> Questions
         {
             get { return _questions; }
-            set { _questions = value; }
+            // set { _questions = value; }
         }
 
         public void AddQuestion(Question question, int numberOfPointsPerQuestion)
@@ -28,14 +28,26 @@ namespace ExamTopics
 
         public void RemoveQuestion(Question question)
         {
-            try
+            this._questions.Remove(question);
+
+            /*try
             {
-                this.Questions.Remove(question);
             }
             catch (Exception)
             {
-                throw new ApplicationException("The question is not in the QCM.");
+                Console.WriteLine("The question is not in the QCM.");
+            }*/
+        }
+
+        public int CalculationTheAverageOfTheDifficulty()
+        {
+            if (this.Questions.Count == 0) throw new ApplicationException("You don't have a question.");
+            int result = 0;
+            foreach(Question question in this.Questions.Keys)
+            {
+                result += question.Difficulty;
             }
+            return result / this._questions.Count;
         }
 
         public void Display()

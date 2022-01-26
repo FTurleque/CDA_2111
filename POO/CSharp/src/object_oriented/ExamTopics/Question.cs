@@ -21,20 +21,25 @@ namespace ExamTopics
 
         public List<Answer> Answers
         {
-            get { return _answers; }
-            set { _answers = value; }
+            get { return this._answers; }
+            set { this._answers = value; }
         }
 
         public int Difficulty
         {
-            get { return _difficulty; }
-            private set { _difficulty = value; }
+            get { return this._difficulty; }
+            private set 
+            {
+                if (value < 0) this._difficulty = 0;
+                else if (value > 100) this._difficulty = 100;
+                else this._difficulty = value; 
+            }
         }
 
         public string StatementOfReview
         {
-            get { return _statementOfReview; }
-            init { _statementOfReview = value; }
+            get { return this._statementOfReview; }
+            init { this._statementOfReview = value; }
         }
 
         public void AddAnswer(string answer, bool goodAnswer)
