@@ -28,7 +28,7 @@ namespace ONF
         public double Longitude
         {
             get => this._longitude;
-            set => this._latidude = value;
+            set => this._longitude = value;
         }
 
         public double Latitude

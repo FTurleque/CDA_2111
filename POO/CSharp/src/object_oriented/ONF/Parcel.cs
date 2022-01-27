@@ -16,7 +16,7 @@ namespace ONF
         {
             this.ParcelId = _id;
             this.Coordonates = coordonates;
-            this.Trees = null;
+            this.Trees = new List<Tree> { };
         }
 
         public List<GpsCoordonate> Coordonates
@@ -24,10 +24,12 @@ namespace ONF
             get => this._coordonates;
             set 
             {
-                if (_coordonates.Count == 4)
+                if (value.Count != 4)
                 {
-                    _coordonates = value;
+                    throw new ApplicationException("We need 4 GPS coordonates");
                 }
+
+                _coordonates = value;
             }
         }
 
