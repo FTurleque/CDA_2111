@@ -8,16 +8,16 @@ namespace Geometrie
 {
     class Point2D
     {
-        private double _x;
-        private double _y;
+        private int _x;
+        private int _y;
 
-        public double X
+        public int X
         {
             get { return _x; }
             set { _x = value; }
         }
 
-        public double Y
+        public int Y
         {
             get { return _y; }
             set { _y = value; }
@@ -32,10 +32,27 @@ namespace Geometrie
             Y = 0;
         }
 
-        public Point2D(double x, double y)
+        public Point2D(int x, int y)
         {
             X = x;
             Y = y;
         }
+
+        public override string ToString()
+        {
+            return ($"({X}, {Y})");
+        }
+
+        public void DeplacerVersPosition(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
+        public void DeplacerDe(int nombreADeplacerX = 0, int nombreADeplacerY = 0)
+        {
+            X = X + nombreADeplacerX;
+            Y = Y + nombreADeplacerY;
+        }
+
     }
 }
