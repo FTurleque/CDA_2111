@@ -8,9 +8,9 @@ namespace Geometrie
 {
     class Point3D : Point2D
     {
-        private double _z;
+        private int _z;
 
-        public double Z
+        public int Z
         {
             get { return _z; }
             set { _z = value; }
@@ -20,9 +20,14 @@ namespace Geometrie
             Z = 0;
         }
 
-        public Point3D(double x, double y, double z) : base(x,y)
+        public Point3D(int x, int y, int z) : base(x,y)
         {
             Z = z;
         }
+        public override string ToString()
+        {
+            return $"({X}, {Y}, {Z})"; ;
+        }
+
     }
 }
