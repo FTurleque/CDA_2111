@@ -59,7 +59,7 @@ namespace MyModelingKitVersion
                     tool.SchoolKitOfPen = null;
                     Tools.Remove(tool);
                 }
-                else Console.WriteLine("La trousse ne contient pas cet outil.");
+                else Console.WriteLine("The kit does not contain this tool.");
             }
             else Console.WriteLine("The school kit is closed, open it !");
         }
