@@ -8,12 +8,12 @@ namespace MyModelingKitVersion
 {
     abstract class Pencil : WritingTool
     {
-        private bool _pointOfMineToBeCut;
+        private bool _pointOfMineAlreadyCut;
 
-        public bool PointOfMineToBeCut
+        public bool PointOfMineAlreadyCut
         {
-            get { return _pointOfMineToBeCut; }
-            set { _pointOfMineToBeCut = value; }
+            get { return _pointOfMineAlreadyCut; }
+            set { _pointOfMineAlreadyCut = value; }
         }
 
         public void Trim()
@@ -21,7 +21,7 @@ namespace MyModelingKitVersion
             if(WritingCapacity > 3)
             {
                 WritingCapacity -= 3;
-                PointOfMineToBeCut = true;
+                PointOfMineAlreadyCut = true;
             }
             else
             {
@@ -31,17 +31,17 @@ namespace MyModelingKitVersion
 
         public override void Use()
         {
-            int rndMinePlusTaillee = new Random().Next(0, 3);
+            int rndPointOfMineToBeCut = new Random().Next(0, 3);
 
-            if (!this.PointOfMineToBeCut)
+            if (!this.PointOfMineAlreadyCut)
             {
                 this.Trim();
             }
-            base.Write();
+            Console.WriteLine(base.Write());
 
-            if (rndMinePlusTaillee == 0)
+            if (rndPointOfMineToBeCut == 0)
             {
-                this.PointOfMineToBeCut = false;
+                this.PointOfMineAlreadyCut = false;
             }
         }
     }

@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyModelingKitVersion
 {
-    abstract class WritingTool
+    abstract class WritingTool : ITool
     {
         private string _color;
         private int _writingCapacity;
-        
+        private SchoolKit _schoolKitOfPen;
+
+        public SchoolKit SchoolKitOfPen
+        {
+            get { return _schoolKitOfPen; }
+            set { _schoolKitOfPen = value; }
+        }
+
         public string Color
         {
             get { return _color; }
@@ -23,22 +30,15 @@ namespace MyModelingKitVersion
             protected set { _writingCapacity = value; }
         }
 
-        protected void Write()
+        protected string Write()
         {
-            if (schoolKit.IsOpen)
+            if (this.WritingCapacity > 0)
             {
-                if (this.WritingCapacity > 0)
-                {
-                    Console.WriteLine($"J'écris du texte de couleur {Color}");
-                }
-                else
-                {
-                    Console.WriteLine("!!! Capacité d'écriture épuisée !!!");
-                }
+                return $"I write {Color} text.";
             }
             else
             {
-                Console.WriteLine("La trousse n'est pas ouverte, vous ne pouvez pas écrire.");
+                return "!!! Writing capacity exhausted !!!";
             }
             
         }

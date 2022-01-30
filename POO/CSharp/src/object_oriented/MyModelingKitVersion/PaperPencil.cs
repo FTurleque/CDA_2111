@@ -8,11 +8,11 @@ namespace MyModelingKitVersion
 {
     class PaperPencil : Pencil
     {
-        PaperPencil()
+        public PaperPencil()
         {
             this.WritingCapacity = 100;
-            this.Color = "gris";
-            this.PointOfMineToBeCut = true;
+            this.Color = "Grey";
+            this.PointOfMineAlreadyCut = true;
         }
 
     }
