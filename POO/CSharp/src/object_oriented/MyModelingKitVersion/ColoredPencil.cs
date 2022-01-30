@@ -8,18 +8,18 @@ namespace MyModelingKitVersion
 {
     class ColoredPencil : Pencil
     {
-        public ColoredPencil()
+        /*public ColoredPencil()
         {
-            this.Color = "bleu";
+            this.Color = "Blue";
             this.WritingCapacity = 100;
-            this.PointOfMineToBeCut = true;
-        }
+            this.PointOfMineAlreadyCut = true;
+        }*/
 
         public ColoredPencil(string color)
         {
             this.Color = color;
             this.WritingCapacity = 100;
-            this.PointOfMineToBeCut = true;
+            this.PointOfMineAlreadyCut = true;
         }
     }
 }

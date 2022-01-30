@@ -10,7 +10,7 @@ namespace MyModelingKitVersion
     {
         private bool _isOpen;
         private int _maxToolsNumber;
-        
+
         public Kit(int maxToolsNumber)
         {
             this.MaxToolsNumber = maxToolsNumber;
@@ -28,7 +28,6 @@ namespace MyModelingKitVersion
             get { return _isOpen; }
             private set { _isOpen = value; }
         }
-
 
         public void Open()
         {

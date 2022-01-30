@@ -8,11 +8,11 @@ namespace MyModelingKitVersion
 {
     class NibPen : WritingTool
     {
-        public NibPen()
+        /*public NibPen()
         {
-            this.Color = "vert";
+            this.Color = "Green";
             this.WritingCapacity = 100;
-        }
+        }*/
 
         public NibPen(string color)
         {
@@ -28,8 +28,8 @@ namespace MyModelingKitVersion
 
         public override void Use()
         {
-            this.Write();
             this.WritingCapacity -= 2;
+            Console.WriteLine(this.Write());
         }
     }
 }
