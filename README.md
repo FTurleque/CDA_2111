@@ -1,46 +1,53 @@
 # CDA_2111
 
-    Exercices en CSharp :
-***************************************************************************************************
+## **Exercises in Pseudo code :**  
+-------------------------------------
+        Exercises 1.1.1  
+        Exercises 1.1.2
+        Exercises 1.2
+        Exercises 1.3
+        Exercises 1.6
+        Exercises 2.3
+        Exercises 2.4
+        Exercises 2.5
 
-        --> Exercice : Hello World
-        --> Exercice 1.1.3 : Calcul de la moyenne de 2 nombres <=> with try catch and function                             (Opti, Comment)  
-        --> Exercice 1.2 : Calcul de l'aire et du volume d'une sphère <=> with try catch and function                      (Opti, Comment)  
-        --> Exercice 1.3 : Calcul de la surface d'un secteur circulaire <=> with try catch and function                    (Opti, Comment)  
-        --> Exercice 1.4 : Inversion de 2 valeurs <=> with try catch and function                                          (Opti, Comment)   
-        --> Exercice 1.5 : Calcul d'intérêts <=> with try catch and function                                               (Opti, Comment)  
-        --> Exercice 1.6 : Nombre Premier <=> with try catch and function                                                  (Opti, Comment)  
-        --> Exercice 1.7 : Tri de nombres <=> with try catch and function                                                  (Opti, Comment)  
-        --> Exercice 1.8 : Année Bissextile <=> with try catch and function                                                (Opti, Comment)  
-        --> Exercice 1.9 : Recherche des diviseurs d'un nombre <=> with try catch and function                             (Opti, Comment)  
-        --> Exercice 1.10 : Calcul des nombres parfaits <=> with try catch and function                                    (Opti, Comment)  
-        --> Exercice 2.1 : Kilomètres <-> Miles v3 illimited <=> with try cath (miss in unity) and function                ()  
-        --> Exercice 2.2 : Fahrenheit (°F) <-> Celsius (°C) <=> with try catch and function                                (Opti, Comment)  
-        --> Exercice 2.3 : Jeu de la fourchette <=> with try catch and function                                            (Opti, Comment)  
-        --> Exercice 2.4 : Barnabé fait ses courses <=> with try catch and function                                        (Opti, Comment)  
-        --> Exercice 2.5 : Jeu du 0 - 2 <-> Celsius (°C) <=> with try catch and function                                   (Opti, Comment)  
-        --> Exercice 2.6 : Ma bicyclette  <=> with try catch and function                                                  (Opti, Comment)  
-        --> Exercice 2.7 : Calcule du nombre de personnes  <=> with try catch and function                                 (Opti, Comment)  
-        --> Exercice 3.1 : Rechercher un nombre dans un tableau <=> with try catch and function                            (Opti, Comment)  
-        --> Exercice 3.2 : Rechercher une lettre dans une String <=> with try catch and function                           (Opti, Comment)  
-        --> Exercice 3.3 : Dénombrer les lettres de l'alphabet dans un tableau <=> with try catch and function             (Opti, Comment)  
-        --> Exercice 3.4 : Tri d'un tableau <=> with try catch and function                                                (Opti, Comment)  
-        --> Exercice 3.5 : Palindrome <=> with try catch and function                                                      (Opti, Comment)  
-        --> Exercice 3.6 : Jeu du pendu <=> with try catch and function                                                    (Opti, Comment)  
-        --> Exercice 3.7 : Recherche par Dichotomie d'un élement dans un tableau <=> with try catch and function           (Opti, Comment)  
-        --> Exercice final : Calcul du PGCD de 2 entiers positif <=> with try catch and function                           (Opti, Comment)  
-****************************************************************************************************
-        Exercices récursifs
-        Exercice 2.5 : Somme de deux entiers                                                                               (Opti, Comment)  
-        Exercice 2.6 : Produit de deux entiers                                                                             (Opti, Comment)  
-        Exercice 2.7 : Puissance entière d'un nombre réel                                                                  (Opti, Comment)  
-        Exercice 2.10 : Palindrome                                                                                         (Opti, Comment)  
-        Exercice 2.12 : Permutations des caractères                                                                        ()  
-        Exercice 2.15 : Somme des éléments d'un tableau                                                                    (Opti, Comment)  
-        Exercice 2.12 : Inversion de l'ordre d'un tableau                                                                  (Opti, Comment)  
-        Exercice Dichotomie                                                                                                (Opti, Comment) 
-*****************************************************************************************************
-        A tester en Lambda
-        1.6
-        1.8
-        1.10  
+## **CSharp procedural exercises :**  
+-------------------------------------
+>- **Exercise :** `Hello World`  
+>- **Exercise 1.1.3 :** `Calculation of the average of 2 numbers` <=> *with try catch and function*            (Opti, Coment)  
+>- **Exercise 1.2 :** `Calculating the area and volume of a sphere` <=> *with try catch and function*          (Opti, Coment)  
+>- **Exercise 1.3 :** `Calculation of the area of a circular sector` <=> *with try catch and function*         (Opti, Coment)  
+>- **Exercise 1.4 :** `Inversion of 2 values` <=> *with try catch and function*                                (Opti, Coment)   
+>- **Exercise 1.5 :** `Interest calculation` <=> *with try catch and function*                                 (Opti, Coment)  
+>- **Exercise 1.6 :** `First Number` <=> *with try catch and function*                                         (Opti, Coment)  
+>- **Exercise 1.7 :** `Sorting numbers` <=> *with try catch and function*                                      (Opti, Coment)  
+>- **Exercise 1.8 :** `Leap Year` <=> *with try catch and function*                                            (Opti, Coment)  
+>- **Exercise 1.9 :** `Finding the divisors of a number` <=> *with try catch and function*                     (Opti, Coment)  
+>- **Exercise 1.10 :** `Calculation of perfect numbers` <=> *with try catch and function*                      (Opti, Coment)  
+>- **Exercise 2.1 :** `Kilometers <-> Miles v3 illimited` <=> *with try cath (miss in unity) and function*     ()  
+>- **Exercise 2.2 :** `Fahrenheit (°F) <-> Celsius (°C)` <=> *with try catch and function*                     (Opti, Coment)  
+>- **Exercise 2.3 :** `Fork game` <=> *with try catch and function*                                            (Opti, Coment)  
+>- **Exercise 2.4 :** `Barnabé goes shopping` <=> *with try catch and function*                                (Opti, Coment)  
+>- **Exercise 2.5 :** `Game of 0 - 2 <-> Celsius (°C)` <=> *with try catch and function*                       (Opti, Coment)  
+>- **Exercise 2.6 :** `My bike`  <=> *with try catch and function*                                             (Opti, Coment)  
+>- **Exercise 2.7 :** `Calculation of the number of people`  <=> *with try catch and function*                 (Opti, Coment)  
+>- **Exercise 3.1 :** `Find a number in a table` <=> *with try catch and function*                             (Opti, Coment)  
+>- **Exercise 3.2 :** `Search for a letter in a String` <=> *with try catch and function*                      (Opti, Coment)  
+>- **Exercise 3.3 :** `Count the letters of the alphabet in a table` <=> *with try catch and function*         (Opti, Coment)  
+>- **Exercise 3.4 :** `Sorting a table` <=> *with try catch and function*                                      (Opti, Coment)  
+>- **Exercise 3.5 :** `Palindrome` <=> *with try catch and function*                                           (Opti, Coment)  
+>- **Exercise 3.6 :** `Hangman game` <=> *with try catch and function*                                         (Opti, Coment)  
+>- **Exercise 3.7 :** `Search by Dichotomy of an element in a table` <=> *with try catch and function*         (Opti, Coment)  
+>- **Final Exercise :** `Computation of the PGCD of 2 positive integers` <=> *with try catch and function*     (Opti, Coment)  
+
+## **Recursive CSharp procedural exercises :**  
+
+        Exercise 2.5 : Sum of two integers                                                                      (Opti, Coment)  
+        Exercise 2.6 : Product of two integers                                                                  (Opti, Coment)  
+        Exercise 2.7 : Integer power of a real number                                                           (Opti, Coment)  
+        Exercise 2.10 : Palindrome                                                                              (Opti, Coment)  
+        Exercise 2.12 : Character permutations                                                                  ()  
+        Exercise 2.15 : Sum of the elements of an array                                                         (Opti, Coment)  
+        Exercise 2.12 : Reverse the order of a table                                                            (Opti, Coment)  
+        Exercise Dichotomy                                                                                      (Opti, Coment)  
+
