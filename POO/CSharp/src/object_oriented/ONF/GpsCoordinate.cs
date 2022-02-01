@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ONF
 {
-    class GpsCoordonate
+    class GpsCoordinate
     {
         private double _longitude;
         private double _latidude;
         private Parcel _theParcel;
 
-        public GpsCoordonate(double latidude, double longitude)
+        public GpsCoordinate(double latidude, double longitude)
         {
             this.Latitude = latidude;
             this.Longitude = longitude;
