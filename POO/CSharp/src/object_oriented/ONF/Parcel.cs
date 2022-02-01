@@ -10,18 +10,18 @@ namespace ONF
     {
         private uint _id;
         private List<Tree> _trees;
-        private List<GpsCoordonate> _coordonates;
+        private List<GeoCoordinate.NetStandard2.GeoCoordinate> _coordinates;
 
-        public Parcel(uint _id, List<GpsCoordonate> coordonates)
+        public Parcel(uint _id, List<GeoCoordinate.NetStandard2.GeoCoordinate> coordinates)
         {
             this.ParcelId = _id;
-            this.Coordonates = coordonates;
+            this.Coordinates = coordinates;
             this.Trees = new List<Tree> { };
         }
 
-        public List<GpsCoordonate> Coordonates
+        public List<GeoCoordinate.NetStandard2.GeoCoordinate> Coordinates
         {
-            get => this._coordonates;
+            get => this._coordinates;
             set 
             {
                 if (value.Count != 4)
@@ -29,7 +29,7 @@ namespace ONF
                     throw new ApplicationException("We need 4 GPS coordonates");
                 }
 
-                _coordonates = value;
+                _coordinates = value;
             }
         }
 
@@ -55,9 +55,13 @@ namespace ONF
             this.Trees.Add(tree);
         }
 
-        public float GetSurface()
+        /// <summary>
+        /// Return surface of parcel from coordinates
+        /// </summary>
+        /// <returns>Surface of parcel in square kilometer</returns>
+        public double GetSurface()
         {
-            return 0;
+            return Coordinates[0].GetDistanceTo(Coordinates[1]) * Coordinates[1].GetDistanceTo(Coordinates[2]) / 1000000;
         }
     }
 }
