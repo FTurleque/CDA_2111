@@ -92,23 +92,24 @@ CONSTRAINT FK_Celestial_objects_global_system_code FOREIGN KEY (global_system_co
 CONSTRAINT FK_Celestial_objects_code_mission FOREIGN KEY (code_mission) REFERENCES Missions (code_mission));
 
 CREATE TABLE Ships
-(ship_code VARCHAR(10) NOT NULL,
-ship_type VARCHAR(25), 
+(ship_name VARCHAR(50) NOT NULL,
+ship_type VARCHAR(50), 
+ship_class VARCHAR(25) NOT NULL,
 ship_action_radius BIGINT NOT NULL,
 ship_pilot_number TINYINT NOT NULL,
-ship_max_speed BIGINT NOT NULL,
+ship_max_speed INT NOT NULL,
 ship_engine_type VARCHAR(25) NOT NULL,
 ship_crew_min TINYINT NOT NULL,
 ship_crew_max SMALLINT NOT NULL,
-ship_code_1 VARCHAR(10),
+ship_name_1 VARCHAR(50),
 empire_name VARCHAR(50),
 coordinate_date_time DATETIME,
 action_id INT NOT NULL,
 code_mission VARCHAR(50),
 state_id INT NOT NULL,
 rebellion_leader_name VARCHAR(50),
-CONSTRAINT PK_ship_code PRIMARY KEY (ship_code),
-CONSTRAINT FK_Ships_ship_code_1 FOREIGN KEY (ship_code_1) REFERENCES Ships (ship_code),
+CONSTRAINT PK_ship_name PRIMARY KEY (ship_name),
+CONSTRAINT FK_Ships_ship_name_1 FOREIGN KEY (ship_name_1) REFERENCES Ships (ship_name),
 CONSTRAINT FK_Ships_empire_name FOREIGN KEY (empire_name) REFERENCES Empires (empire_name),
 CONSTRAINT FK_Ships_coordinate_date_time FOREIGN KEY (coordinate_date_time) REFERENCES Coordinates (coordinate_date_time),
 CONSTRAINT FK_Ships_action_id FOREIGN KEY (action_id) REFERENCES Actions_type (action_id),
@@ -118,12 +119,12 @@ CONSTRAINT FK_Ships_rebellion_leader_name FOREIGN KEY (rebellion_leader_name) RE
 
 CREATE TABLE Crews
 (crew_code INT NOT NULL,
-ship_code VARCHAR(10),
+ship_name VARCHAR(50),
 CONSTRAINT PK_crew_code PRIMARY KEY (crew_code),
-CONSTRAINT FK_Crews_ship_code FOREIGN KEY (ship_code) REFERENCES Ships (ship_code));
+CONSTRAINT FK_Crews_ship_name FOREIGN KEY (ship_name) REFERENCES Ships (ship_name));
 
 CREATE TABLE Persons
-(person_matricule INT NOT NULL,
+(person_matricule BIGINT NOT NULL IDENTITY(200,1),
 person_species VARCHAR(50) NOT NULL,
 person_last_name VARCHAR(50) NOT NULL,
 person_first_name VARCHAR(50) NOT NULL,
