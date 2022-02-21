@@ -1,6 +1,12 @@
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'db_library')
+BEGIN
 CREATE DATABASE db_library;
+END
+GO
 
 USE db_library;
+
+GO
 
 CREATE TABLE Customers
 (customer_id INT NOT NULL IDENTITY,
@@ -39,22 +45,22 @@ CREATE TABLE Borrows
 borrow_date DATE NOT NULL,
 borrow_late BIT NOT NULL,
 borrow_number TINYINT NOT NULL,
-customer_id INT,
+borrow_customer_id INT,
 CONSTRAINT PK_borrow_id PRIMARY KEY (borrow_id),
-CONSTRAINT FK_Borrows_customer_id FOREIGN KEY (customer_id) REFERENCES CUstomers (customer_id));
+CONSTRAINT FK_Borrows_customer_id FOREIGN KEY (borrow_customer_id) REFERENCES Customers (customer_id));
 
 CREATE TABLE Books
 (book_isbn VARCHAR(50) NOT NULL,
 book_title VARCHAR(64) NOT NULL,
 book_purchasedate DATE NOT NULL,
-state_id INT NOT NULL,
-writer_id INT NOT NULL,
-publisher_id INT NOT NULL,
-collection_point_id INT NOT NULL,
-borrow_id INT,
+book_state_id INT NOT NULL,
+book_writer_id INT NOT NULL,
+book_publisher_id INT NOT NULL,
+book_collection_point_id INT NOT NULL,
+book_borrow_id INT,
 CONSTRAINT PK_book_isbn PRIMARY KEY (book_isbn),
-CONSTRAINT FK_Books_state_id FOREIGN KEY (state_id) REFERENCES States (state_id),
-CONSTRAINT FK_Books_author_firstname FOREIGN KEY (writer_id) REFERENCES Writers (writer_id),
-CONSTRAINT FK_Book_publisher_id FOREIGN KEY (publisher_id) REFERENCES Publishers (publisher_id),
-CONSTRAINT FK_Books_collection_point_id FOREIGN KEY (collection_point_id) REFERENCES Collection_points (collection_point_id),
-CONSTRAINT FK_Books_borrow_id FOREIGN KEY (borrow_id) REFERENCES Borrows (borrow_id));
+CONSTRAINT FK_Books_state_id FOREIGN KEY (book_state_id) REFERENCES States (state_id),
+CONSTRAINT FK_Books_author_firstname FOREIGN KEY (book_writer_id) REFERENCES Writers (writer_id),
+CONSTRAINT FK_Book_publisher_id FOREIGN KEY (book_publisher_id) REFERENCES Publishers (publisher_id),
+CONSTRAINT FK_Books_collection_point_id FOREIGN KEY (book_collection_point_id) REFERENCES Collection_points (collection_point_id),
+CONSTRAINT FK_Books_borrow_id FOREIGN KEY (book_borrow_id) REFERENCES Borrows (borrow_id));
