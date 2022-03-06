@@ -69,7 +69,8 @@ END
 IF NOT EXISTS (SELECT * FROM sys.sysobjects WHERE name = 'Books' AND xtype = 'U')
 BEGIN
 	CREATE TABLE Books
-	(book_isbn VARCHAR(50) NOT NULL,
+	(book_id INT NOT NULL IDENTITY,
+	book_isbn VARCHAR(50) NOT NULL,
 	book_title VARCHAR(64) NOT NULL,
 	book_purchasedate DATE NOT NULL,
 	book_state_id INT NOT NULL,
@@ -77,7 +78,7 @@ BEGIN
 	book_publisher_id INT NOT NULL,
 	book_collection_point_id INT NOT NULL,
 	book_borrow_id INT,
-	CONSTRAINT PK_book_isbn PRIMARY KEY (book_isbn),
+	CONSTRAINT PK_book_id PRIMARY KEY (book_id),
 	CONSTRAINT FK_Books_state_id FOREIGN KEY (book_state_id) REFERENCES States (state_id),
 	CONSTRAINT FK_Books_author_firstname FOREIGN KEY (book_writer_id) REFERENCES Writers (writer_id),
 	CONSTRAINT FK_Book_publisher_id FOREIGN KEY (book_publisher_id) REFERENCES Publishers (publisher_id),
