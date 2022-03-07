@@ -1,9 +1,9 @@
 USE db_avion_vide
 GO
 
-IF NOT EXISTS (SELECT * FROM Avion)
+IF NOT EXISTS (SELECT * FROM Avions)
 BEGIN
-	INSERT INTO Avion	(av_marque,		av_type,	av_capacite, av_loc) VALUES
+	INSERT INTO Avions	(av_marque,		av_type,	av_capacite, av_loc) VALUES
 						('AIRBUS',		'A320',			300,	'Nice'),
 						('BOEING',		'B707',			250,	'Paris'),
 						('AIRBUS',		'A320',			300,	'Toulouse'),
@@ -16,9 +16,9 @@ BEGIN
 						('AIRBUS',		'A340',			350,	'Bastia')
 END
 
-IF NOT EXISTS (SELECT * FROM Pilote)
+IF NOT EXISTS (SELECT * FROM Pilotes)
 BEGIN
-	INSERT INTO Pilote	(pil_nom,	pil_adresse) VALUES
+	INSERT INTO Pilotes	(pil_nom,	pil_adresse) VALUES
 						('SERGE',		'Nice'),
 						('JEAN',		'Paris'),
 						('CLAUDE',		'Grenoble'),
@@ -30,9 +30,9 @@ BEGIN
 						('LUC',			'Paris')
 END
 
-IF NOT EXISTS (SELECT * FROM Vol)
+IF NOT EXISTS (SELECT * FROM Vols)
 BEGIN
-	INSERT INTO Vol	(vol,		avion,	pilote, vd,			va,			hd, ha) VALUES
+	INSERT INTO Vols	(vol,		avion,	pilote, vd,			va,			hd, ha) VALUES
 					('IT100',	100,	1,		'NICE',		'PARIS',	7,	9),
 					('IT101',	100,	2,		'PARIS',	'TOULOUSE', 11, 12),
 					('IT102',	101,	1,		'PARIS',	'NICE',		12, 14),
