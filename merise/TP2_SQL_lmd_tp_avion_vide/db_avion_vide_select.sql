@@ -3,7 +3,7 @@ GO
 
 -- 1	Quels sont les vols au départ de Paris entre 12h et 14h ?
 SELECT *
-FROM Vols WHERE vd = 'Paris' AND hd >= 12 AND ha <= 14;
+FROM Vols WHERE vd = 'Paris' AND hd >= 12 AND hd <= 14;
 
 -- 2	Quels sont les pilotes dont le nom commence par "S" ?
 SELECT *
