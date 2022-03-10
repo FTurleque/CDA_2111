@@ -47,10 +47,10 @@ WHERE Vols.avion  IN (SELECT av FROM Avions WHERE av_marque = 'AIRBUS') OR Pilot
 
 -- 9	Quels sont les noms des pilotes qui conduisent un Airbus sauf ceux qui habitent dans la ville de localisation d'un Airbus ?
 SELECT DISTINCT pil_nom
-FROM Vols
-	INNER JOIN Pilotes
-		ON Vols.pilote = Pilotes.pil
-WHERE Vols.pilote IN (SELECT Pilotes.pil FROM Pilotes WHERE Pilotes.pil_adresse <> ALL (SELECT Avions.av_loc FROM Avions WHERE av_marque = 'AIRBUS'));
+FROM vols 
+	INNER JOIN pilotes ON vols.pilote=pilotes.pil
+	INNER JOIN avions ON vols.avion= avions.av
+WHERE av_marque='AIRBUS' and pilotes.pil_adresse <> avions.av_loc;
 
 -- 10	Quels sont les vols ayant un trajet identique ( VD, VA ) à ceux assurés par Serge ?
 SELECT vol, vd, va
