@@ -64,7 +64,7 @@ SELECT P1.pil_nom, P2.pil_nom
 FROM Pilotes AS P1
 	FULL JOIN Pilotes  AS P2
 		ON P1.pil_adresse = P2.pil_adresse
-WHERE P1.pil_nom < P2.pil_nom;
+WHERE P1.pil > P2.pil;
 
 -- 12	Quels sont les noms des pilotes qui conduisent un avion que conduit aussi le pilote n°1 ?
 SELECT pil_nom
