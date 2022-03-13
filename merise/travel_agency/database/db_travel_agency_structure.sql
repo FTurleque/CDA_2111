@@ -110,7 +110,7 @@ BEGIN
 	(client_id INT NOT NULL IDENTITY,
 	client_lastname VARCHAR(32) NOT NULL,
 	client_firstname VARCHAR(32) NOT NULL,
-	client_email VARCHAR(128) NOT NULL UNIQUE, -- format email
+	client_email VARCHAR(128) NOT NULL UNIQUE, -- format email CONSTRAINT CK_Colonne_Has_AT CHECK (Colonne LIKE '%@%')
 	client_phone VARCHAR(16) NOT NULL,-- format international
 	client_added DATE NOT NULL, --  [Y-M-D]
 	client_password VARCHAR(60) NOT NULL, -- chiffré (BCRYPT)
