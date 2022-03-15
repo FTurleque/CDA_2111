@@ -2,7 +2,7 @@ USE db_travel_agency;
 GO
 
 -- 2)	Sélectionner tous les clients (code et nom de son commercial inclus). 
-CREATE VIEW Clients_Info
+CREATE OR ALTER VIEW Clients_Info
 AS
 SELECT client_id, client_firstname, client_lastname, client_email, client_phone, com_code, com_name
 FROM Clients
@@ -11,7 +11,7 @@ FROM Clients
 GO
 
 -- 6)	Sélectionner toutes les réservations non payées (code et nom de client inclus).
-CREATE VIEW Unpaid_Reservations
+CREATE OR ALTER VIEW Unpaid_Reservations
 AS
 SELECT Reserve.client_id, client_firstname, client_lastname, trip_title
 FROM Reserve
@@ -23,7 +23,7 @@ WHERE Reserve.order_paid = 0;
 GO
 
 -- 8)	Sélectionnez tous les voyages (nom de la ville, code pays et nom du pays inclus).
-CREATE VIEW Trips_Info
+CREATE OR ALTER VIEW Trips_Info
 AS
 SELECT 
 	Trips.trip_code AS Numero_Offre, 
