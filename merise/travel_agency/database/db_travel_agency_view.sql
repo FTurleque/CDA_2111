@@ -8,6 +8,7 @@ SELECT client_id, client_firstname, client_lastname, client_email, client_phone,
 FROM Clients
 	INNER JOIN Comercials
 		ON client_com_code = Comercials.com_code;
+GO
 
 -- 6)	Sélectionner toutes les réservations non payées (code et nom de client inclus).
 CREATE VIEW Unpaid_Reservations
@@ -19,6 +20,7 @@ FROM Reserve
 	INNER JOIN Trips
 		ON Reserve.trip_code = Trips.trip_code
 WHERE Reserve.order_paid = 0;
+GO
 
 -- 8)	Sélectionnez tous les voyages (nom de la ville, code pays et nom du pays inclus).
 CREATE VIEW Trips_Info
@@ -36,6 +38,7 @@ FROM Transit
 		ON Transit.city_code = Cities.city_code
 	INNER JOIN Countries
 		ON Cities.city_country_code = Countries.country_code;
+GO
 
 SELECT * FROM Clients_Info;
 SELECT * FROM Unpaid_Reservations;
