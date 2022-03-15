@@ -5,25 +5,44 @@ CREATE TRIGGER Ajouter_client
 ON Clients
 FOR INSERT
 AS
-DECLARE @ClientId INT
-	SET @ClientId = (SELECT COUNT(*) FROM Clients)
 BEGIN
 	SET NOCOUNT ON
 
-	DECLARE @LastName VARCHAR(32),
-			@FirstName VARCHAR(32),
-			@Email VARCHAR(128),
-			@PhoneNumber VARCHAR(16),
-			@ClientAdded DATE = GETDATE(),
-			@Password VARCHAR(60),
-			@ComClient INT
-
-	IF (NOT EXISTS (SELECT * FROM Clients, inserted WHERE Clients.client_id = inserted.client_id))
+	IF (NOT EXISTS (SELECT Clients.client_email 
+					FROM Clients, inserted 
+					WHERE Clients.client_email = inserted.client_email) 
+					AND ((SELECT inserted.client_email FROM inserted) LIKE '%@%.%') 
+					AND ((SELECT inserted.client_added FROM inserted) < GETDATE()))
+	BEGIN
 		INSERT INTO Clients
-		SELECT	*
+		SELECT	client_firstname, client_lastname, client_email, client_phone, client_added, client_password, client_com_code
 		FROM inserted
-
+	END
+	ELSE 
+	BEGIN
+		ROLLBACK TRANSACTION
+		PRINT('Problème dans les données.')
+	END
 END
-GO
+/*
+CREATE TRIGGER Ajouter_client
+ON Clients
+FOR INSERT
+AS
+BEGIN
+	SET NOCOUNT ON
 
+	IF (NOT EXISTS (SELECT Clients.client_email 
+					FROM Clients, inserted 
+					WHERE Clients.client_email = inserted.client_email) 
+					AND ((SELECT inserted.client_email FROM inserted) LIKE '%@%.%') 
+					AND ((SELECT inserted.client_added FROM inserted) < GETDATE()))
+		INSERT INTO Clients
+		SELECT	client_firstname, client_lastname, client_email, client_phone, client_added, client_password, client_com_code
+		FROM inserted
+	ELSE 
+		ROLLBACK TRANSACTION
+		PRINT('Problème dans les données.')
+END
+*/
 SELECT * FROM Clients;
