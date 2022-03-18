@@ -46,8 +46,8 @@ GO
 
 -- EXEC Add_Trip 'NewToto', 100, '2020-05-01T12:20:00', '2020-05-08T12:20:00', 899, 'Découvrez tous les site les plus fantasique du Marrakech.', NULL, 5
 
-SELECT * FROM Trips
-GO
+-- SELECT * FROM Trips
+
 -- update of a single field 
 CREATE OR ALTER PROCEDURE Update_Client
 	@client_id INT,
@@ -112,9 +112,8 @@ CREATE OR ALTER PROCEDURE All_Update_Client
 	@client_firstname VARCHAR(32),
 	@client_email VARCHAR(128),
 	@client_phone VARCHAR(16),
-	@client_added DATE,
 	@client_password VARCHAR(60),
-	@client_com_code INT NOT NULL
+	@client_com_code INT
 AS
 BEGIN
 	SET NOCOUNT ON;
@@ -125,7 +124,6 @@ BEGIN
 				client_firstname = @client_firstname,
 				client_email = @client_email,
 				client_phone = @client_phone,
-				client_added = @client_added,
 				client_password = @client_password,
 				client_com_code = @client_com_code
 		WHERE client_id = @client_id
@@ -136,8 +134,103 @@ BEGIN
 END
 GO
 
+-- EXEC All_Update_Client 4, 'Barry', 'Allen', 'ballen@speed.zr', '+49 465458765', '........', 2
 
+-- SELECT * FROM Clients
 
-EXEC Update_Client 1, 'client_firstname', 'Jean'
+CREATE OR ALTER PROCEDURE Trip_Update
+	@trip_code INT,
+	@field_to_update VARCHAR(max),
+	@data_to_update VARCHAR(max)
+AS
+BEGIN
+	IF (EXISTS (SELECT * FROM Trips WHERE trip_code = @trip_code))
+	BEGIN
+		IF (@field_to_update = 'trip_title')
+		BEGIN
+			UPDATE Trips
+				SET trip_title = @data_to_update
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_title !')
+		END
+		IF (@field_to_update = 'trip_available')
+		BEGIN
+			UPDATE Trips
+				SET trip_available = CAST(@data_to_update AS int)
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_available !')
+		END
+		IF (@field_to_update = 'trip_start')
+		BEGIN
+			UPDATE Trips
+				SET trip_start = CAST(@data_to_update AS datetime)
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_start !')
+		END
+		IF (@field_to_update = 'trip_end')
+		BEGIN
+			UPDATE Trips
+				SET trip_end = CAST(@data_to_update AS datetime)
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_end !')
+		END
+		IF (@field_to_update = 'trip_price')
+		BEGIN
+			UPDATE Trips
+				SET trip_price = CAST(@data_to_update AS int)
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_price !')
+		END
+		IF (@field_to_update = 'trip_overview')
+		BEGIN
+			UPDATE Trips
+				SET trip_overview = @data_to_update
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_overview !')
+		END
+		IF (@field_to_update = 'trip_description')
+		BEGIN
+			UPDATE Trips
+				SET trip_description = @data_to_update
+			WHERE trip_code = @trip_code
+			PRINT('Updated trip_description !')
+		END
+		IF (@field_to_update = 'city_code_start_end')
+		BEGIN
+			UPDATE Trips
+				SET city_code_start_end = CAST(@data_to_update AS int)
+			WHERE trip_code = @trip_code
+			PRINT('Updated city_code_start_end !')
+		END
+	END
+	ELSE
+		PRINT('Not updated !')	
+END
+GO
 
-SELECT * FROM Clients
+-- EXEC Trip_Update 2, 'trip_description', 'ATTENTION !!! Pensez à prendre un sac.'
+
+CREATE OR ALTER PROCEDURE Test_Update_Client
+	@client_id INT,
+	@field_to_update VARCHAR(max),
+	@data_to_update VARCHAR(max)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	IF (EXISTS (SELECT client_id FROM Clients WHERE client_id = @client_id))
+	BEGIN
+		UPDATE Clients
+			SET client_lastname = @client_lastname,
+				client_firstname = @client_firstname,
+				client_email = @client_email,
+				client_phone = @client_phone,
+				client_password = @client_password,
+				client_com_code = @client_com_code
+		WHERE client_id = @client_id
+		PRINT('Updated !')
+	END
+	ELSE
+		PRINT('Not updated !')
+END
+GO
+SELECT * FROM Trips
