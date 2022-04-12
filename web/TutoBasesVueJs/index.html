@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Tuto VueJs</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <p v-bind:title="message" v-for="todo in todos">
+            {{ todo }}
+        </p>
+    </div>
+    <script>
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello world !',
+                    todos: ["Sauver les tons", "Taper les thons", "Boire un tonfé"]
+                }
+            },
+            methods:{
+                inverser(){
+                    this.todos.reverse();
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
