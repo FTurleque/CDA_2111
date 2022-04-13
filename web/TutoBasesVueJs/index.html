@@ -9,25 +9,57 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{message}}</h1>
-        <p v-bind:title="message" v-for="todo in todos">
-            {{ todo }}
-        </p>
+        <h1>The checkList</h1>
+        
+        <ajout @nouvelleNote="ajouterNote"></ajout>
+        <note v-for="todo in todos" v-bind:content="todo"  @click="inverser"></note>
     </div>
     <script>
         const vm = Vue.createApp({
             data() {
                 return {
                     message: 'Hello world !',
-                    todos: ["Sauver les tons", "Taper les thons", "Boire un tonfé"]
+                    todos: ["Sauver les tons", "Taper les thons", "Boire un tonfé", "Dormir a tathon"]
                 }
             },
             methods:{
                 inverser(){
                     this.todos.reverse();
+                },
+                ajouterNote(message){
+                    this.todos.push(message);
                 }
             }
-        }).mount('#app');
+        })
+
+        vm.component('note', {
+            props: ['content'],
+            template: `<p> {{ content }} </p>`
+        });
+
+        vm.component('ajout', {
+            props: [],
+            emits: ['nouvellenote'],
+            data(){
+                return{
+                    interne: 'Nouveau message'
+                }
+            },
+            methods:{
+                enregistrementNote(){
+                    // Permet de remonter l'info
+                    this.$emit('nouvellenote', this.interne);
+                    this.interne = '';
+                }
+            },
+            template:`
+                <input type="text" v-model="interne" />
+                <a href="#" @click="enregistrementNote" v-if="interne != '' ">Ajouter</a>
+                {{ interne }}
+            `
+        })
+        
+        vm.mount('#app');
     </script>
 </body>
 </html>
