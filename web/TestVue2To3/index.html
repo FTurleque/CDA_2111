@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cafe with a Vue</title>
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3"></script>
+    <div id="app" class="app">
+        <h1>{{ restaurantName }}</h1>
+        <p class="description">
+          Welcome to {{ restaurantName }}! We are known for our freshly baked
+          bread and french pastries! Give you morning a warm start or treat
+          yourself in the middle of the day. Our butter is imported from local
+          farmers in France. Once you take your first bite, you will see why
+          everyone can't get enough!
+        </p>
+  
+        <h2>Contact Us</h2>
+        <p>Address: {{ Address }}</p>
+        <p>Phone: {{ Phone }}</p>
+        <p>Email: {{ Email }}</p>
+        <p>Hours:</p>
+        <ul>
+          <li>M-F: 06:00 to 16:00</li>
+          <li>Saturday: 07:00 to 14:00</li>
+          <li>Sunday: 07:00 to 12:00</li>
+        </ul>
+  
+        <footer class="footer">
+          <p>Copyright {{ restaurantName }} 2019</p>
+        </footer>
+      </div>
+  
+      <script>
+        Vue.createApp({
+          data() {
+            return{
+                Address: '9274 Beurre Ave, Paris, France',
+                Phone: '+08 88 88 88 88 88',
+                Email: 'hello@cafewithavue.bakery',
+                restaurantName: 'Café avec vue'
+            }
+          }
+        }).mount('#app')
+      </script>
+</body>
+</html>
