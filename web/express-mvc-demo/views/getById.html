@@ -1,0 +1,26 @@
+{% include "header.html" %}
+
+<!-- titre page -->
+
+<!-- infos candidat -->
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Slogan</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ model.id }}</td>
+            <td>{{ model.lastname }}</td>
+            <td>{{ model.firstname }}</td>
+            <td>{{ model.slogan }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% include "footer.html" %}

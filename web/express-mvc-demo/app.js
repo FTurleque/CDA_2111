@@ -17,6 +17,8 @@ app.use((req, res, next) => {
 
 app.use('/public', express.static(__dirname + '/public'))
 
+require('./middleweares/liquid')(app)
+
 const router = require('./routes')
 app.use('/', router)
 
