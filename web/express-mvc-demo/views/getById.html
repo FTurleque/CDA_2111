@@ -1,9 +1,16 @@
 {% include "header.html" %}
 
 <!-- titre page -->
-
+<!-- <h1>Information sur le candidat {{ model.}}</h1> -->
 <!-- infos candidat -->
-<table>
+
+{% if model.id == undefined %}
+    Problème d'id
+{% else %}
+    <h2>Le nom du candidat est : {{ model.firstname | append:' ' |append:model.lastname }}</h2>
+    <p>Sont slogan est : {{ model.slogan }}</p>
+{% endif%}
+<!-- <table>
     <thead>
         <tr>
             <th>ID</th>
@@ -20,7 +27,7 @@
             <td>{{ model.slogan }}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
 
 
 {% include "footer.html" %}

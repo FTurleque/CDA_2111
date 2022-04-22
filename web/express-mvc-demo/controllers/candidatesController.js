@@ -20,13 +20,15 @@ module.exports = {
 
     async getById(req, res) {
         try {
-            if(req.params.id === undefined) {
-                throw new Error('Vous n\'avez par renseigner d\'id')
-            }
+            // if(!parseInt(req.params.id)) {
+            //     // console.log('Id absent')
+            //     throw new Error('Vous n\'avez par renseigner d\'id')
+            // }
             const { id } = req.params
             let result = await repo.getById(id)
             res.render('getById', { model: result})
         } catch (error) {
+            console.log(error)
             res.status(500).end()
         }
     },
