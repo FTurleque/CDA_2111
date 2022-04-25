@@ -58,5 +58,10 @@ module.exports = {
     async remove(req, res) {
         let result = await repo.getById(req.params.id)
         res.render('candidate_delete', { model: result })
+    },
+
+    async remove_post(req, res) {
+        await repo.delete(req.params.id)
+        res.redirect('/candidates')
     }
 }

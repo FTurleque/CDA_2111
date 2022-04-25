@@ -30,23 +30,22 @@ exports.getById = async (req, res) => {
 }
 
 exports.add = async (req, res) => {
-    console.log(req.method)
+    console.log(req.body)
     const model = req.body
     let result = await repository.create(model)
     // res.status(201).json(result)
-    res.status(201).redirect('/candidates')
+    res.status(201).json(result)
 }
 
 
 exports.remove = async (req, res) => {
-    console.log(req.method)
-    let { id } = req.params
-    let result = await repository.delete(id)
-    res.status(202).redirect('/candidates')
+    console.log(req.body)
+    let result = await repository.delete(req.params.id)
+    res.status(202).json(result)
 }
 
 exports.modify = async (req, res) => {
-    console.log(req.method)
+    console.log(req.body)
     const model = req.body
     model.id = req.params.id
     let result = await repository.update(model)
