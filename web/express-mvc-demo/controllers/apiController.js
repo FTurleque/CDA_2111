@@ -33,7 +33,8 @@ exports.add = async (req, res) => {
     console.log(req.method)
     const model = req.body
     let result = await repository.create(model)
-    res.status(201).json(result)
+    // res.status(201).json(result)
+    res.status(201).redirect('/candidates')
 }
 
 
@@ -41,14 +42,14 @@ exports.remove = async (req, res) => {
     console.log(req.method)
     let { id } = req.params
     let result = await repository.delete(id)
-    res.status(202).end()
+    res.status(202).redirect('/candidates')
 }
 
 exports.modify = async (req, res) => {
     console.log(req.method)
-    const { id } = req.params
     const model = req.body
-    let result = await repository.update(id, model)
+    model.id = req.params.id
+    let result = await repository.update(model)
     console.log(result)
     res.status(202).json(result)
 }

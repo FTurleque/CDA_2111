@@ -1,0 +1,18 @@
+{% include "header.html" %}
+
+<h1>Supprimer un candidat</h1>
+<p><a href="/candidates">Retour à la liste des candidats</a></p>
+
+<ul>
+    <li>{{ model.lastname }} {{model.firstname}}</li>
+    <li>{{ model.slogan }}</li>
+</ul>
+
+<h2>Supprimer un candidat</h2>
+
+<form>
+    <button type="submit">Oui</button>
+    <a href="/candidates" class="btn danger">Non</a>
+</form>
+
+{% include "footer.html" %}

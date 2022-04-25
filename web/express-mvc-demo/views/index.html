@@ -2,7 +2,7 @@
 
 <h1>Accueil</h1>
 <h2>{{ title }}</h2>
-<p><a href="/candidates">Ajouter un nouveau candidat</a></p>
+<p><a href="/candidates/add">Ajouter un nouveau candidat</a></p>
 <table>
     <thead>
         <tr>
@@ -20,7 +20,10 @@
                 <td>{{ candidate.lastname }}</td>
                 <td>{{ candidate.firstname }}</td>
                 <td>{{ candidate.slogan }}</td>
-                <td> ??? </td>
+                <td>
+                    <a href="/candidates/edit/{{ candidate.id }}">Modifier</a>
+                    <a href="/candidates/delete/{{ candidate.id }}">Supprimer</a>
+                </td>
             </tr>
         {% endfor %}
         

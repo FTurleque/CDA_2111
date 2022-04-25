@@ -12,7 +12,7 @@ module.exports = {
     async index(req, res) {
         try {
             let result = await repo.getAll()
-            res.render('index', { model: result})
+            res.render('index', { model: result, title: 'Liste des candidats'})
         } catch (error) {
             res.status(500).end()
         }
@@ -20,28 +20,43 @@ module.exports = {
 
     async getById(req, res) {
         try {
-            // if(!parseInt(req.params.id)) {
-            //     // console.log('Id absent')
-            //     throw new Error('Vous n\'avez par renseigner d\'id')
-            // }
-            const { id } = req.params
-            let result = await repo.getById(id)
-            res.render('getById', { model: result})
+            let result = await repo.getById(req.params.id)
+            res.render('candidate', { model: result, title: 'Fiche candidat' })
         } catch (error) {
             console.log(error)
             res.status(500).end()
         }
     },
 
-    add(req, res) {
-
+    async add(req, res) {
+        res.render('candidate_add')
     },
 
-    update(req, res) {
+    async add_post(req, res) {
+        let model = req.body
+        
+        // TODO : Contrôle de saisie
 
+        await repo.create(model)
+        res.redirect('/candidates')
     },
 
-    remove(req, res) {
+    async update(req, res) {
+        let result = await repo.getById(req.params.id)
+        res.render('candidate_edit', { model : result })
+    },
 
+    async update_post(req, res) {
+        let model = req.body
+
+        // TODO : Contrôle de saisie
+
+        await repo.update(model)
+        res.redirect('/candidates')
+    },
+
+    async remove(req, res) {
+        let result = await repo.getById(req.params.id)
+        res.render('candidate_delete', { model: result })
     }
 }
