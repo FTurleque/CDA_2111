@@ -5,13 +5,13 @@
 
 <form action="" method="post">
     <div>
-        <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" required>
+        <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" required pattern="^[a-zA-Z- ]{3,}$">
     </div>
     <div>
-        <label for="firstname">Prenom :</label> <input type="text" id="firstname" name="firstname" required>
+        <label for="firstname">Prenom :</label> <input type="text" id="firstname" name="firstname" required pattern="^[a-zA-Z- ]{3,}$">
     </div>
     <div>
-        <label for="slogan">Slogan :</label> <input type="text" id="slogan" name="slogan">
+        <label for="slogan">Slogan :</label> <input type="text" id="slogan" name="slogan" pattern="^[A-z- ]{3,}$">
     </div>
     <div>
         <button type="submit">Enregistrement du candidat</button>
