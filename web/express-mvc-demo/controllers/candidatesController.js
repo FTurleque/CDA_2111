@@ -5,8 +5,9 @@
     update    modifier une candidat
     delete    supprimer un candidat
 */
-
+const { body, validationResult } = require('express-validator')
 const repo = require('../db/candidatesRepository')
+// const validator = require('../middleweares/validator')
 
 module.exports = {
     async index(req, res) {
@@ -34,7 +35,9 @@ module.exports = {
 
     async add_post(req, res) {
         let model = req.body
-        
+        // console.log(model)
+        body('lastname').isAlpha()
+        console.log('Check lastname' + validationResult)
         // TODO : Contrôle de saisie
 
         await repo.create(model)
