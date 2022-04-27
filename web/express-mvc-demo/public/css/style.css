@@ -60,6 +60,7 @@ button, .btn {
 
 .danger {
     background-color: darkred;
+    color: white;
 }
 
 button:hover, .btn:hover {

@@ -6,16 +6,20 @@
 
 <h2>Candidat N°{{ model.id }}</h2>
 
+{% for error in errors %}
+    <p class="danger">{{ error.param }} : {{ error.msg }}</p>
+{% endfor %}
+
 <form action="" method="post">
     <input type="hidden" name="id" value="{{ model.id }}">
     <div>
-        <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" value="{{ model.lastname }}" pattern="^[a-zA-Z- ]{3,}$">
+        <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" value="{{ model.lastname }}">
     </div>
     <div>
-        <label for="firstname">Prénom :</label> <input type="text" id="firstname" name="firstname" value="{{ model.firstname }}" pattern="^[a-zA-Z- ]{3,}$">
+        <label for="firstname">Prénom :</label> <input type="text" id="firstname" name="firstname" value="{{ model.firstname }}">
     </div>
     <div>
-        <label for="slogan">Slogan :</label> <input type="text" id="slogan" name="slogan" value="{{ model.slogan }}" pattern="^[A-z- ]{3,}$">
+        <label for="slogan">Slogan :</label> <input type="text" id="slogan" name="slogan" value="{{ model.slogan }}">
     </div>
     <div>
         <button type="submit">Enregistrer les modifications</button>
@@ -25,3 +29,7 @@
 <p><a href="/candidates/{{ model.id }}">Retour à la fiche candidat</a> | <a href="/candidates/delete/{{ model.id }}">Supprimer ce candidat</a></p>
 
 {% include "footer.html" %}
+
+<!-- pattern="^[a-zA-Z- ]{3,}$"
+pattern="^[a-zA-Z- ]{3,}$"
+pattern="^[A-z- ]{3,}$" -->

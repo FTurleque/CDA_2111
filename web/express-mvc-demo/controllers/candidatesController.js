@@ -5,9 +5,8 @@
     update    modifier une candidat
     delete    supprimer un candidat
 */
-const { body, validationResult } = require('express-validator')
+const { validationResult } = require('express-validator')
 const repo = require('../db/candidatesRepository')
-// const validator = require('../middleweares/validator')
 
 module.exports = {
     async index(req, res) {
@@ -34,14 +33,15 @@ module.exports = {
     },
 
     async add_post(req, res) {
-        let model = req.body
-        // console.log(model)
-        body('lastname').isAlpha()
-        console.log('Check lastname' + validationResult)
-        // TODO : Contrôle de saisie
-
-        await repo.create(model)
-        res.redirect('/candidates')
+        const validatorErrors = validationResult(req)
+        if(!validatorErrors.isEmpty()){
+            console.log(validatorErrors.array())
+            res.render('candidate_add', { errors: validatorErrors.array(), model: req.body })
+        } else {
+            let model = req.body
+            await repo.create(model)
+            res.redirect('/candidates')
+        }
     },
 
     async update(req, res) {
@@ -50,12 +50,15 @@ module.exports = {
     },
 
     async update_post(req, res) {
-        let model = req.body
-
-        // TODO : Contrôle de saisie
-
-        await repo.update(model)
-        res.redirect('/candidates')
+        const validatorErrors = validationResult(req)
+        if(!validatorErrors.isEmpty()) {
+            console.log(validatorErrors.array())
+            res.render('candidate_edit', { errors: validatorErrors.array(), model: req.body })
+        } else {
+            let model = req.body
+            await repo.update(model)
+            res.redirect('/candidates')
+        }
     },
 
     async remove(req, res) {

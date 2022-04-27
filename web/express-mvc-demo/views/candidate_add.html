@@ -3,6 +3,10 @@
 <h1>Ajouter un candidat</h1>
 <p><a href="/candidates">Retour à la liste des candidats</a></p>
 
+{% for error in errors %}
+    <p class="danger">{{ error.param }} : {{ error.msg }}</p>
+{% endfor %}
+
 <form action="" method="post">
     <div>
         <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" required>
