@@ -11,6 +11,7 @@
 {% endfor %}
 
 <form action="" method="post">
+    <input type="hidden" name="csrf" value=token>
     <input type="hidden" name="id" value="{{ model.id }}">
     <div>
         <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" value="{{ model.lastname }}">

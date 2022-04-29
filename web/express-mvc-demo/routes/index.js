@@ -1,4 +1,5 @@
 const express = require('express')
+const cookie = require('../middleweares/cookieSession')
 
 // On recupère le router depuis express
 const router = express.Router()
@@ -24,13 +25,13 @@ router.post('/api', apiController.add)
 
 /* Candidates controller */
 router.get('/candidates/edit/:id', candidatesController.update)
-router.post('/candidates/edit/:id', validator.candidateValidator, candidatesController.update_post)
+router.post('/candidates/edit/:id', cookie.cookieSession, validator.candidateValidator, candidatesController.update_post)
 
 router.get('/candidates/delete/:id', candidatesController.remove)
-router.post('/candidates/delete/:id', candidatesController.remove_post)
+router.post('/candidates/delete/:id', cookie.cookieSession, candidatesController.remove_post)
 
 router.get('/candidates/add', candidatesController.add)
-router.post('/candidates/add', validator.candidateValidator, candidatesController.add_post)
+router.post('/candidates/add', cookie.cookieSession, validator.candidateValidator, candidatesController.add_post)
 
 router.get('/candidates/:id', candidatesController.getById)
 router.get('/candidates', candidatesController.index)

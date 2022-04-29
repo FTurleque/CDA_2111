@@ -8,6 +8,7 @@
 {% endfor %}
 
 <form action="" method="post">
+    <input type="hidden" name="csrf" value=token>
     <div>
         <label for="lastname">Nom :</label> <input type="text" id="lastname" name="lastname" required>
     </div>

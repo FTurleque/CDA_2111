@@ -36,7 +36,7 @@ module.exports = {
         const validatorErrors = validationResult(req)
         if(!validatorErrors.isEmpty()){
             console.log(validatorErrors.array())
-            res.render('candidate_add', { errors: validatorErrors.array(), model: req.body })
+            res.render('candidate_add', { errors: validatorErrors.array(), model: req.body, token: req.session.csrf })
         } else {
             let model = req.body
             await repo.create(model)
@@ -46,14 +46,15 @@ module.exports = {
 
     async update(req, res) {
         let result = await repo.getById(req.params.id)
-        res.render('candidate_edit', { model : result })
+        const newToken = req.session.csrf
+        res.render('candidate_edit', { model : result, token: newToken })
     },
 
     async update_post(req, res) {
         const validatorErrors = validationResult(req)
         if(!validatorErrors.isEmpty()) {
             console.log(validatorErrors.array())
-            res.render('candidate_edit', { errors: validatorErrors.array(), model: req.body })
+            res.render('candidate_edit', { errors: validatorErrors.array(), model: req.body, token: req.session.csrf })
         } else {
             let model = req.body
             await repo.update(model)
@@ -63,7 +64,7 @@ module.exports = {
 
     async remove(req, res) {
         let result = await repo.getById(req.params.id)
-        res.render('candidate_delete', { model: result })
+        res.render('candidate_delete', { model: result, token: req.session.csrf })
     },
 
     async remove_post(req, res) {
