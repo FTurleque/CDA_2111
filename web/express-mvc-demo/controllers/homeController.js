@@ -1,5 +1,6 @@
+
 exports.index = (req, res) => {
-    res.send('Accueil du contrôleur')
+    res.redirect('candidates')
 }
 
 exports.about = (req, res) => {

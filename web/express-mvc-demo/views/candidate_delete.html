@@ -11,7 +11,7 @@
 <h2>Supprimer un candidat</h2>
 
 <form method="post">
-    <input type="hidden" name="csrf" value=token>
+    <input type="hidden" name="csrf" value="{{ model.csrf }}">
     <button type="submit">Oui</button>
     <a href="/candidates" class="btn danger">Non</a>
 </form>
