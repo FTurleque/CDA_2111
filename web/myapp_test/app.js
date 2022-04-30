@@ -2,13 +2,13 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const cookieSession = require('cookie-session')
+const cookieSession = require('cookie-session'); // require cookie session
 const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,14 +21,14 @@ app.use(cookieParser());
 
 // set up the cookie for the session
 app.use(cookieSession({
-  name: 'session',
-  secret: 'MAKE_THIS_SECRET_SECURE',
-  maxAge: 3*60*60*1000,
-  sameSite: 'lax',
-  path: '/',
-  secure: process.env.NODE_ENV === 'production',
-  httpOnly: true
-}))
+  name: 'session',                              // name of the cookie
+  secret: 'MAKE_THIS_SECRET_SECURE',            // key to encode session
+  maxAge: 24 * 60 * 60 * 1000,                  // cookie's lifespan
+  sameSite: 'lax',                              // controls when cookies are sent
+  path: '/',                                    // explicitly set this for security purposes
+  secure: process.env.NODE_ENV === 'production',// cookie only sent on HTTPS
+  httpOnly: true                                // cookie is not available to JavaScript (client)
+}));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

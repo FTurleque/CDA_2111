@@ -1,31 +1,32 @@
-var express = require('express');
-var router = express.Router();
-var { randomBytes } = require('crypto')
+const express = require('express');
+const router = express.Router();
+const { randomBytes } = require('crypto');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  if(req.session.csrf === undefined) {
-    req.session.csrf = randomBytes(100).toString('base64')
+  if (req.session.csrf === undefined) {
+    req.session.csrf = randomBytes(100).toString('base64');
   }
-  console.log(req.session)
+
   res.render('index', { title: 'Express', token: req.session.csrf });
 });
 
-router.post('/', (req, res, next) => {
-  if(!req.body.csrf) {
+router.post('/', function(req, res, next) {
+  if (!req.body.csrf) {
     return res.send(`<p style="font-size: 4rem; color: red;">
-                      <strong>CSRF tokens not inclued.</strong>
-                      </p>`)
+                     <strong>CSRF Token not included.</strong>
+                     </p>`);
   }
-  if(req.body.csrf !== req.session.csrf) {
+
+  if (req.body.csrf !== req.session.csrf) {
     return res.send(`<p style="font-size: 4rem; color: red;">
-                      <strong>CSRF tokens do not matche.</strong>
-                      </p>`)
+                     <strong>CSRF tokens do not match.</strong>
+                     </p>`);
   }
 
   return res.send(`<p style="font-size: 4rem;">
-                    <strong>Succesful request !</strong>
-                    </p>`)
-})
+                   <strong>Successful request!</strong>
+                   </p>`);
+});
 
 module.exports = router;
