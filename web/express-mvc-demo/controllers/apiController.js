@@ -1,4 +1,4 @@
-const db = require('../db')
+// const db = require('../db')
 const repository = require('../db/candidatesRepository')
 
 exports.index = async (req, res) => { 

@@ -1,4 +1,4 @@
-db = require('./index')
+const db = require('./index')
 
 class Repository 
 {
