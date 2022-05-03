@@ -18,3 +18,9 @@
 
 **Création du model de film en provenance de l'API**
 - npx sequelize-cli model:generate --name Movie --attributes title:string,year:integer,language:string,format:string
+
+**Création de la base de donnée**  
+- npx sequelize-cli db:create
+
+**Création de la première migration**  
+- npx sequelize db:migrate
