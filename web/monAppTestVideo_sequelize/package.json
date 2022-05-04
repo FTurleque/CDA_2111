@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init-db": "node ./db/db_init.js"
   },
   "author": "Turleque Fabrice",
   "license": "MIT",

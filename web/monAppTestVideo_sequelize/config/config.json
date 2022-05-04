@@ -1,20 +1,20 @@
 {
   "development": {
-    "username": "root",
+    "user": "root",
     "password": "root",
     "database": "sequelize_db_movies",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "user": "root",
     "password": "root",
     "database": "sequelize_db_movies",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "user": "root",
     "password": "root",
     "database": "sequelize_db_movies",
     "host": "127.0.0.1",

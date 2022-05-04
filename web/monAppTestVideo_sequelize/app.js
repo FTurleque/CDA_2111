@@ -23,9 +23,6 @@ app.use((req, res, next) => {
 // Permet de ne pas interpréter le fichier coté node mais est interprété coté client
 app.use(express.static(__dirname + '/public'))
 
-db.sequelize.sync({force: true})
-
-console.log(db)
 // try {
 //     db.sequelize.authenticate();
 //     console.log(db)
@@ -38,5 +35,6 @@ app.use('/', indexRouter)
 // app.use('/users', userRouter)
 
 app.listen(port, () => {
+    db.sequelize.sync({force: true})
     console.log(`Server ready on the port : http://localhost:${port}`)
 })
