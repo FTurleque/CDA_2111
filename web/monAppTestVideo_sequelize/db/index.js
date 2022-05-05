@@ -14,4 +14,5 @@ exports.initialize = async () => {
     // db.User = require('../users/user.model')(sequelize);
 
     // sync all models with database
+    // await sequelize.sync({force: true});
 }

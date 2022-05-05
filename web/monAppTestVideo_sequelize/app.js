@@ -35,6 +35,5 @@ app.use('/', indexRouter)
 // app.use('/users', userRouter)
 
 app.listen(port, () => {
-    db.sequelize.sync({force: true})
     console.log(`Server ready on the port : http://localhost:${port}`)
 })
