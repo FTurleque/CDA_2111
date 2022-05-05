@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<offres>
+    <offre intitulé="Développeur PHP" ville="Paris" date_de_début="20-8-2022" salaire_annuel="50000" email_de_contact="stychconseil@ducoin@zf.com">
+        <description>        
+            <taches>  
+                <tache>
+                    Développer et assurer la maintenance des outils internes de gestion des commandes, d'expédition et de facturation.             
+                </tache>
+                <tache>
+                    Analyser les besoins des différentes équipes et proposer des solutions techniques et fonctionnelles efficaces.            
+                </tache>
+                <tache>
+                    Participer à la relecture, à l'amélioration et à l'optimisation du code ainsi qu'au maintien d'un haut niveau de sécurité.             
+                </tache>
+            </taches>
+            <avantages>            
+                <avantage>
+                    Stych, c'est la nouvelle école des mobilités : innovante, digitale, passionnée.
+                </avantage>
+                <avantage>
+                    Toute l'équipe au siège est concentrée pour accompagner nos élèves, nos enseignants et mener à bien notre mission. Et nous avons besoin de renfort ! Nous allons doubler les équipes au siège et tripler les équipes enseignantes dans les prochains mois.
+                </avantage>
+                <avantage>
+                    Avec plus de 200 enseignants salariés, nous sommes de loin la première auto-école de France.
+                </avantage>
+            </avantages>
+            <profil_recherché>            
+                De formation minimum Bac +2 en Informatique, vous avez une première expérience en développement Web. Vous raisonnez de manière modulaire pour rendre vos développements souples et favoriser le travail collaboratif autour d'un projet.
+            </profil_recherché>
+        <description>
+        <competences>
+            <conpetence>
+                PHP
+            </conpetence>
+            <conpetence>
+                MySQL
+            </conpetence>
+            <conpetence>
+                HTML5
+            </conpetence>
+            <conpetence>
+                CSS3
+            </conpetence>
+            <conpetence>
+                phpMyAdmin
+            </conpetence>
+        </competences>
+    <offre>
+    <offre intitulé="Développeur JAVA" ville="Mulhouse" date_de_début="9-9-2022" salaire_annuel="45000" email_de_contact="springcontact@toto.de">
+        <description>        
+            <taches>    
+                <tache>
+                    Créer le prototype ou MCD.             
+                </tache>
+                <tache>
+                    Prendre en compte les contraintes du projet selon le cahier des charges.               
+                </tache>
+                <tache>
+                    Déterminer les choix techniques d'architecture logicielle et matérielle, sélectionner les technologies, matériels, logiciels, configurations les plus pertinents.            
+                </tache>
+            </taches>
+            <avantages>            
+                <avantage>
+                    Notre connaissance des métiers ainsi que de nos bassins d'emploi nous permettent de vous proposer des solutions qui répondent à vos projets professionnels.
+                </avantage>
+                <avantage>
+                    En France, nos équipes sont composées de plus de 250 consultants en recrutement qui disposent d'une double expertise : géographique de par notre présence dans 30 villes en France et sectorielle via nos 11 spécialisations.
+                </avantage>
+                <avantage>
+                    Spring est le cabinet de conseil en recrutement et Intérim spécialisés du Groupe Adecco, présent dans 24 pays.
+                </avantage>
+            </avantages>
+            <profil_recherché>            
+                Vous disposez d'une bonne capacité d'analyse, de solides connaissances dans la conception de programmes, dans l'écriture de code et dans la mise en place et le suivi de tests unitaires et fonctionnels. La maîtrise du framework Node JS serait fortement appréciée également. Des compétences techniques supplémentaires en SPRING BOOT et ANGULAR seront nécessaires à ces postes.
+            </profil_recherché>
+        <description>
+        <competences>
+            <conpetence>
+                JAVA
+            </conpetence>
+            <conpetence>
+                JEE
+            </conpetence>
+            <conpetence>
+                Design Pattern
+            </conpetence>
+            <conpetence>
+                Principes SOLID
+            </conpetence>
+            <conpetence>
+                MVC
+            </conpetence>
+        </competences>
+    <offre>
+    <offre intitulé="Développeur NodeJS" ville="Toulouse" date_de_début="7-6-2022" salaire_annuel="70000" email_de_contact="devtouinti@cgi.fr">
+        <description>        
+            <taches>            
+                <tache>
+                    Effectuer de l'analyse de besoins et de la conception.              
+                </tache>
+                <tache>
+                    Participer à la réalisation de prototypes en co-construction avec le client.             
+                </tache>
+                <tache>
+                    Développer de nouvelles fonctionnalités, des plateformes et interface en Node.js principalement.              
+                </tache>
+            </taches>
+            <avantages>            
+                <avantage>
+                    Vous intégrerez une entreprise qui vous fera monter en compétences en termes de seniorité ou de maîtrise des technos (Node.js, React Js, Vue.js) en utilisant un programme transparent.
+                </avantage>
+                <avantage>
+                    Vous relèverez des challenges technologiques en utilisant des logiciels complexes- Avantages : 4 jours de télétravail par semaine possibles, RTT.
+                </avantage>
+                <avantage>
+                     jours de télétravail par semaine possibles.
+                </avantage>
+            </avantages>
+            <profil_recherché>            
+                Vous aimez relever des challenges techniques et répondre à des problématiques. 3 ans d'expérience significative en développement web, Votre envie de monter en compétences sur des framework JavaScript est grandissante.
+            </profil_recherché>
+        <description>
+        <competences>
+            <conpetence>
+                Express JS
+            </conpetence>
+            <conpetence>
+                Sequelize
+            </conpetence>
+            <conpetence>
+                MongoDB
+            </conpetence>
+            <conpetence>
+                React JS
+            </conpetence>
+            <conpetence>
+                Vue JS
+            </conpetence>
+        </competences>
+    <offre>
+</offres>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recette temps_de_préparation="30 minutes" cuisson="10 minutes" nombre="12">
+    <ustensibles>
+        <ustensible nom="saladier" />
+        <ustensible nom="fouet" />
+        <ustensible nom="poêle" />
+    </ustensibles>
+    <ingrediants>
+        <ingrediant nom="farine" quantitée="250 g" />
+        <ingrediant nom="beurre" quantitée="50 g" />
+        <ingrediant nom="lait" quantitée="50 cl" />
+        <ingrediant nom="eau" quantitée="10 cl" />
+        <ingrediant nom="sucre en poudre" quantitée="2 cuillères" />
+        <ingrediant nom="sel" quantitée="1 pincée" />
+    </ingrediants>
+    <instructions>
+        <préparation>
+            <étape1>
+                Dans un saladier, ajoutez la farine de froment, 2 cuillères à soupe de sucre et une pincée de sel.
+            </étape1>
+            <étape2>
+                Versez le lait puis l'eau progressivement tout en battant avec un fouet.
+            </étape2>
+            <étape3>
+                Ensuite, rajoutez le beurre au préalablement fondu et les œufs pour finir
+            </étape3>
+            <étape4>
+                Laissez la pâte à crêpes reposer pendant 30 à 45 mn au frais.
+            </étape4>
+            <étape5>
+                Utilisez une poêle à crêpes pour réaliser vos crepes bretonnes : graissez-la avec une noisette de beurre puis versez une louche de pâte.
+            </étape5>
+            <étape6>
+                Faites cuire votre crêpe environ 2 mn par face, et retournez-la avec une spatule.
+            </étape6>
+        </préparation>
+        <cuisson>
+            Faites chauffer la billig à environ 220°C, une fois la plaque bien chaude, graissez-la avec un tampon ou chiffon légèrement imbibé de beurre ou d'un mélange de saindoux et de jaune d'oeuf. Déposez une louche de pâte sur la crêpière et étalez-la à l'aide d'un râteau à crêpes (rozell en Breton). Laissez cuire la crêpe pendant environ une minute puis retournez-la avec une spatule à crêpes puis poursuivez la cuisson pendant quelques instant sur l'autre face.
+        </cuisson>
+    </instructions>
+</recette>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<films>
+    <film titre="Doctor Strange in the Multiverse of Madness" durée="127">
+        <lundi>
+            <horaires seance1="17h30" seance2="20h15" />
+        </lundi>
+        <mardi>
+            <horaires seance1="16h45" seance2="19h40" seance3="22h10" />
+        </mardi>
+        <mercredi>
+            <horaires seance1="16h45" seance2="19h40" seance3="22h10" />
+        </mercredi>
+        <jeudi>
+            <horaires seance1="16h45" seance2="19h40" seance3="22h10" />
+        </jeudi>
+        <vendredi>
+            <horaires seance1="16h45" seance2="19h40" seance3="22h10" />
+        </vendredi>
+        <samedi>
+            <horaires seance1="13h40" seance2="16h45" seance3="19h40" seance4="22h25" />
+        </samedi>
+        <dimanche>
+            <horaires seance1="13h40" seance2="16h45" seance3="19h40" seance4="22h25" />
+        </dimanche>
+    </film>
+    <film titre="Les animaux fantastiques 3 : Les secrets de Dum" durée="143">
+        <lundi>
+            <horaires seance1="16h40" seance2="19h40" seance3="22h15" />
+        </lundi>
+        <mardi>
+            <horaires seance1="19h40" seance2="22h15" />
+        </mardi>
+        <mercredi>
+            <horaires seance1="19h40" seance2="22h15" />
+        </mercredi>
+        <jeudi>
+            <horaires seance1="19h40" seance2="22h15" />
+        </jeudi>
+        <vendredi>
+            <horaires seance1="" seance2="" seance3="" seance4=""/>
+        </vendredi>
+        <samedi>
+            <horaires seance1="13h40" seance2="16h40" seance3="19h30" seance4="22h15" />
+        </samedi>
+        <dimanche>
+            <horaires seance1="13h40" seance2="16h40" seance3="19h30" seance4="22h15" />
+        </dimanche>
+    </film>
+    <film titre="Top Gun: Maverick" durée="132">
+        <lundi>
+            <horaires seance1="14h40" seance2="17h45" seance3="19h40" seance4="22h25"/>
+        </lundi>
+        <mardi>
+            <horaires seance1="14h00" seance2="16h50" seance3="19h40" seance4="22h25" />
+        </mardi>
+        <mercredi>
+            <horaires seance1="14h00" seance2="16h50" seance3="19h40" seance4="22h25" />
+        </mercredi>
+        <jeudi>
+            <horaires seance1="14h00" seance2="16h50" seance3="19h40" seance4="22h25" />
+        </jeudi>
+        <vendredi>
+            <horaires seance1="14h00" seance2="16h50" seance3="19h40" seance4="22h25" />
+        </vendredi>
+        <samedi>
+            <horaires seance1="10h40" seance2="14h00" seance3="17h45" seance4="20h30" />
+        </samedi>
+        <dimanche>
+            <horaires seance1="10h40" seance2="14h00" seance3="17h45" seance4="20h30" />
+        </dimanche>
+    </film>
+</films>

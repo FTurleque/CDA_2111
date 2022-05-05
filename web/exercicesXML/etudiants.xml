@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<formation intitulé="CDA" durée="12mois" début="1-1-2021" fin"1-1-2022">
+    <etudiants>
+        <etudiant nom="Dwayne" prénom="Djonson" date_de_naissance="20-5-1970" email="djonson@gege.fr"/>
+        <etudiant nom="Gandalf" prénom="LeGris" date_de_naissance="1-1-1254" email="g.pasblanc@gris.eu"/>
+        <etudiant nom="Rabi" prénom="Jacquob" date_de_naissance="30-7-1975" email="rj.cob@srcf.ze"/>
+    </etudiants>
+</formation>
