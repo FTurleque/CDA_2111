@@ -26,7 +26,7 @@ sequelize.authenticate()
 })
   
 app.listen(PORT, ()=>{
-    console.log(`server is listening  on ${PORT}`)
+    console.log(`server is listening  on http://localhost:${PORT}`)
 })
   
 module.exports = app

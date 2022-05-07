@@ -25,4 +25,4 @@ db.sequelize = sequelize
 db.Employee = require('../models/employee');
  
 // sync all models with database
- sequelize.sync()
+sequelize.sync()
