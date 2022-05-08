@@ -1,0 +1,18 @@
+{% include "header.html" %}
+
+<h1>Supprimer un candidat</h1>
+<p><a href="/users">Retour à la liste des utilisateur</a></p>
+
+<ul>
+    <li>Email : {{ model.email }} Id : {{model.id}}</li>
+</ul>
+
+<h2>Supprimer un utilisateur</h2>
+
+<form method="post">
+    <!-- <input type="hidden" name="csrf" value="{{ model.csrf }}"> -->
+    <button type="submit">Oui</button>
+    <a href="/users" class="btn danger">Non</a>
+</form>
+
+{% include "footer.html" %}

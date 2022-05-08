@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<h1>Ajouter un candidat</h1>
+<p><a href="/users">Retour à la liste des utilisateurs</a></p>
+
+{% for error in errors %}
+    <p class="danger">{{ error.param }} : {{ error.msg }}</p>
+{% endfor %}
+
+<form action="" method="post">
+    <!-- <input type="hidden" name="csrf" value="{{ model.csrf }}"> -->
+    <div>
+        <label for="title">Titre :</label> <input type="text" id="title" name="title" required>
+    </div>
+    <div>
+        <label for="year">Année :</label> <input type="text" id="password" name="year" required>
+    </div>
+    <div>
+        <label for="language">Langue :</label> <input type="text" id="language" name="language">
+    </div>
+    <div>
+        <label for="format">Format :</label> <input type="text" id="format" name="format">
+    </div>
+    <div>
+        <label for="urlFile">URL File :</label> <input type="text" id="urlFile" name="urlFile" required>
+    </div>
+    <div>
+        <button type="submit">Enregistrement du film</button>
+    </div>
+</form>
+
+{% include "footer.html" %}

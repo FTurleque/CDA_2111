@@ -1,0 +1,33 @@
+{% include "header.html" %}
+
+<h1>Modifier un candidat</h1>
+
+<p><a href="/users">Retour à la liste des candidats</a></p>
+
+<h2>Candidat N°{{ model.id }}</h2>
+
+{% for error in errors %}
+    <p class="danger">{{ error.param }} : {{ error.msg }}</p>
+{% endfor %}
+
+<form action="" method="post">
+    <!-- <input type="hidden" name="csrf" value="{{ model.csrf }}"> -->
+    <input type="hidden" name="id" value="{{ model.id }}">
+    <div>
+        <label for="email">Email :</label> <input type="email" id="email" name="email" value="{{ model.email }}">
+    </div>
+    <div>
+        <label for="password">Mot de passe :</label> <input type="text" id="password" name="password" value="{{ model.password }}">
+    </div>
+    <div>
+        <button type="submit">Enregistrer les modifications</button>
+    </div>
+</form>
+
+<p><a href="/users/{{ model.id }}">Retour à la fiche candidat</a> | <a href="/users/delete/{{ model.id }}">Supprimer ce candidat</a></p>
+
+{% include "footer.html" %}
+
+<!-- pattern="^[a-zA-Z- ]{3,}$"
+pattern="^[a-zA-Z- ]{3,}$"
+pattern="^[A-z- ]{3,}$" -->

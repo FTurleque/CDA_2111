@@ -1,0 +1,32 @@
+{% include "header.html" %}
+
+<h1>Accueil</h1>
+<h2>Liste des {{ title }}s</h2>
+<p><a href="/users/add">Ajouter un nouvel {{ title }}</a></p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Mot de Passe :D</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in model %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>
+                    <a href="/users/edit/{{ user.id }}">Modifier</a>
+                    <a href="/users/delete/{{ user.id }}">Supprimer</a>
+                    <a href="/users/{{ user.id }}">Afficher</a>
+                </td>
+            </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+{% include "footer.html" %}
