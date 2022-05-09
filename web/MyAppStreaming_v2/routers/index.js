@@ -32,8 +32,8 @@ router.post('/movies/delete/:id', movieFileController.remove_post)
 router.get('/movies/add', movieFileController.add)
 router.post('/movies/add', movieFileController.add_post)
 
-router.get('/movies/:id', movieFileController.getOneUser)
-router.get('/movies', movieFileController.getAllUsers)
+router.get('/movies/:id', movieFileController.getOneMovieFile)
+router.get('/movies', movieFileController.getAllMoviesFile)
 
 router.all('*', (req, res) => {
     res.status(400).send('Error 404 : Page not found !')

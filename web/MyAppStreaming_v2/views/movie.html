@@ -5,9 +5,9 @@
 <p><a href="/movies">Retour a la liste des films</a></p>
 
 <h2>Film n°{{ model.id }}</h2>
+    <!-- <input type="hidden" name="csrf" value="{{ model.csrf }}"> -->
 
 <ul>
-    <!-- <input type="hidden" name="csrf" value="{{ model.csrf }}"> -->
     <li>Titre : {{ model.title }}</li>
     <li>Année : {{ model.year }}</li>
     <li>Langue : {{ model.language }}</li>

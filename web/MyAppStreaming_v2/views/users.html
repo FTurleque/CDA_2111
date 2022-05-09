@@ -15,9 +15,12 @@
     <tbody>
         {% for user in model %}
             <tr>
-                <td>{{ user.id }}</td>
+                {% for param in user %}
+                    <td>{{ param }}</td>
+                {% endfor %}
+                <!-- <td>{{ user.id }}</td>
                 <td>{{ user.email }}</td>
-                <td>{{ user.password }}</td>
+                <td>{{ user.password }}</td> -->
                 <td>
                     <a href="/users/edit/{{ user.id }}">Modifier</a>
                     <a href="/users/delete/{{ user.id }}">Supprimer</a>

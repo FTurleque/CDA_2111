@@ -7,7 +7,7 @@ module.exports = {
      * @param {Request} req 
      * @param {Response} res 
      */
-    async getAllUsers(req, res) {
+    async getAllMoviesFile(req, res) {
         try {
             let results = await movieFileRepo.getAll()
             res.render('movies', { model: results, title: 'film'})
@@ -23,7 +23,7 @@ module.exports = {
      * @param {Request} req 
      * @param {Response} res 
      */
-    async getOneUser(req, res) {
+    async getOneMovieFile(req, res) {
         try {
             let result = await movieFileRepo.getById(req.params.id)
             // if(result === undefined)
@@ -43,7 +43,6 @@ module.exports = {
      * @param {Response} res 
      */
     async add(req, res) {
-        console.log(req.body)
         const result = req.body
         res.render('movie_add', { model: result })
     },
@@ -55,9 +54,8 @@ module.exports = {
      * @param {Response} res 
      */
     async add_post(req, res) {
-        const email = req.body.email
-        const password = req.body.password
-        await movieFileRepo.create(email, password)
+        const model = req.body
+        await movieFileRepo.create(model)
         res.redirect('/movies')
     },
 
@@ -79,10 +77,8 @@ module.exports = {
      * @param {Response} res 
      */
     async modify_post(req, res) {
-        const id = req.params.id
-        const email = req.body.email
-        const password = req.body.password
-        await movieFileRepo.update(id, email, password)
+        const model = req.body
+        await movieFileRepo.update(model)
         res.redirect('/movies')
     },
 

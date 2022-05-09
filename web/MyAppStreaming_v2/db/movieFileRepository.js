@@ -1,13 +1,13 @@
 const db = require('../models/index')
 
-const Movie = db.Movie
+const MovieFile = db.MovieFile
 
 module.exports = {
     /**
      * Retourne de l'intégralitée des films.
      */
     async getAll() {
-        const movies = await Movie.findAll()
+        const movies = await MovieFile.findAll()
         return movies
     },
 
@@ -16,27 +16,26 @@ module.exports = {
      * @param {Int} id Identifiant du film.
      */
     async getById(id) {
-        const movie = Movie.findByPk(id)
+        const movie = MovieFile.findByPk(id)
         return movie
     },
 
     /**
      * Création d'un film.
-     * @param {String} email 
-     * @param {String} password 
+     * @param {Object} model Corp de la requête d'un film
      */
-    async create(email, password) {       
-        await Movie.create({ email, password }) 
+    async create(model) {    
+        const {title, year, language, format, urlFile} = model
+        await MovieFile.create({ title, year, language, format, urlFile }) 
     },
 
     /**
      * Modifie un film.
-     * @param {Number} id 
-     * @param {String} email 
-     * @param {String} password 
+     * @param {Object} model Corp de la requête d'un film
      */
-    async update(id, email, password) {
-        await Movie.update({ email, password}, { where: {id: id} })
+    async update(model) {
+        const {title, year, language, format, urlFile, id} = model
+        await MovieFile.update({ title, year, language, format, urlFile }, { where: {id: id} })
     },
 
     /**

@@ -2,7 +2,7 @@
 
 <h1>Modifier un film</h1>
 
-<p><a href="/users">Retour à la liste des candidats</a></p>
+<p><a href="/movies">Retour à la liste des films</a></p>
 
 <h2>Film N°{{ model.id }}</h2>
 
@@ -20,7 +20,7 @@
         <label for="year">Année :</label> <input type="text" id="password" name="year" value="{{ model.year }}">
     </div>
     <div>
-        <label for="language">Email :</label> <input type="text" id="language" name="language" value="{{ model.language }}">
+        <label for="language">Langue :</label> <input type="text" id="language" name="language" value="{{ model.language }}">
     </div>
     <div>
         <label for="format">Format :</label> <input type="text" id="format" name="format" value="{{ model.format }}">
@@ -33,6 +33,6 @@
     </div>
 </form>
 
-<p><a href="/users/{{ model.id }}">Retour à la fiche film</a> | <a href="/users/delete/{{ model.id }}">Supprimer ce film</a></p>
+<p><a href="/movies/{{ model.id }}">Retour à la fiche film</a> | <a href="/users/delete/{{ model.id }}">Supprimer ce film</a></p>
 
 {% include "footer.html" %}
