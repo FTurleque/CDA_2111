@@ -1,0 +1,99 @@
+:root{
+    --header-color: yellowgreen;
+    --fieldset-bg-color: #333;
+    --nutri-a: darkgreen;
+    --nutri-b: #009900CC;
+    --nutri-c:#CCCC00CC;
+    --nutri-d:#CC6600CC;
+    --nutri-e:#CC0000CC;
+}
+
+body {
+    color: whitesmoke;
+    background-color: #111;
+    text-align: center;
+}
+
+header, form, fieldset {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: var(--header-color);
+    flex: 3;
+    text-align: center;
+}
+
+form {
+    flex: 1;
+}
+
+fieldset {
+    background-color: var(--fieldset-bg-color);
+}
+
+input[type="search"] {
+    color: whitesmoke;
+    background-color: var(--fieldset-bg-color);
+    border: 0px;
+}
+
+input::placeholder {
+    color: #FFFFFFCC;
+}
+
+table {
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 2em;
+    border-spacing: 2em;
+}
+
+thead {
+    color: var(--header-color);
+    background-color: #444;
+}
+
+tbody tr:hover, tbody tr:hover button {
+    background-color: #664;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.identifiant {
+    color: yellow;
+    background-color: var(--fieldset-bg-color);
+}
+
+.A {
+    background-color: var(--nutri-a);
+}
+
+.B {
+    background-color: var(--nutri-b);
+}
+
+.C {
+    background-color: var(--nutri-c);
+}
+
+.D {
+    background-color: var(--nutri-d);
+}
+
+.E {
+    background-color: var(--nutri-e);
+}
+
+td button {
+    border: 0;
+    background-color: #111;
+    color: #CC0000CC;
+}
+
