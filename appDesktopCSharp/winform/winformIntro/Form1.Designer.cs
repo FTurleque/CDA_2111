@@ -1,6 +1,6 @@
-﻿namespace BoutonAutomatique
+﻿namespace winformIntro
 {
-    partial class App
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -35,20 +35,20 @@
             // 
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 43);
+            this.button1.Size = new System.Drawing.Size(100, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // App
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 498);
+            this.ClientSize = new System.Drawing.Size(794, 461);
             this.Controls.Add(this.button1);
-            this.Name = "App";
-            this.Text = "My App";
+            this.Name = "Form1";
+            this.Text = "WinForm Intro";
             this.ResumeLayout(false);
 
         }

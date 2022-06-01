@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoutonAutomatique", "BoutonAutomatique\BoutonAutomatique.csproj", "{58089AD5-A4FB-4EE4-8AD3-3F0994DDD402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winformIntro", "winformIntro\winformIntro.csproj", "{ED308C21-2BD0-47F3-8A69-8E5A814A92FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{58089AD5-A4FB-4EE4-8AD3-3F0994DDD402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58089AD5-A4FB-4EE4-8AD3-3F0994DDD402}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58089AD5-A4FB-4EE4-8AD3-3F0994DDD402}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58089AD5-A4FB-4EE4-8AD3-3F0994DDD402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED308C21-2BD0-47F3-8A69-8E5A814A92FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED308C21-2BD0-47F3-8A69-8E5A814A92FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED308C21-2BD0-47F3-8A69-8E5A814A92FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED308C21-2BD0-47F3-8A69-8E5A814A92FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E8C0B250-582F-4D7D-B715-D952E252F6C4}
+		SolutionGuid = {7EF7BC7E-66C7-4036-B4A7-96A2388426F3}
 	EndGlobalSection
 EndGlobal
