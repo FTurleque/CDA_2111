@@ -40,8 +40,8 @@
             this.postalCode = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.dateSize = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnValidate
@@ -143,9 +143,9 @@
             this.dateSize.TabIndex = 14;
             this.dateSize.Text = "(JJ/MM/AAAA)";
             // 
-            // errorProvider1
+            // errorProvider
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProvider.ContainerControl = this;
             // 
             // Form1
             // 
@@ -165,7 +165,7 @@
             this.Controls.Add(this.btnValidate);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,6 +184,6 @@
         private Label postalCode;
         private Label name;
         private Label dateSize;
-        private ErrorProvider errorProvider1;
+        private ErrorProvider errorProvider;
     }
 }

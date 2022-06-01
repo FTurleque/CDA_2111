@@ -20,22 +20,32 @@ namespace ValidationOfTheEntry
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(txtNom.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
         }
 
         private void txtNom_Validated(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(txtNom.Text, @"^[\D]+$"))
+            if(string.IsNullOrEmpty(txtNom.Text))
             {
-                Console.WriteLine(txtNom.Text);
+                errorProvider.SetError(txtNom, "Entrez un nom.");
             }
             else
             {
-                string message = "Vous n'avez pas entrée de lettres";
-                MessageBox.Show(message);
-                txtNom.Clear();
-                //Console.WriteLine("Vous n'avez pas entré de lettres");
+                errorProvider.SetError(txtNom, "");
+                if (!Regex.IsMatch(txtNom.Text, @"^[\D]+$"))
+                {
+                    errorProvider.SetError(txtNom, "Un nom ne comporte pas de chiffre.");
+                }
+                else
+                {
+                    errorProvider.SetError(txtNom, "");
+                }
             }
+
         }
 
         private void txtDate_Validated(object sender, EventArgs e)
