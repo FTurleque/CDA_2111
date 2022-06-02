@@ -71,7 +71,8 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(178, 23);
             this.txtNom.TabIndex = 2;
-            this.txtNom.Validated += new System.EventHandler(this.txtNom_Validated);
+            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
+            this.txtNom.Validating += new System.ComponentModel.CancelEventHandler(this.txtNom_Validating);
             // 
             // txtCP
             // 
@@ -87,6 +88,7 @@
             this.txtMontant.Name = "txtMontant";
             this.txtMontant.Size = new System.Drawing.Size(121, 23);
             this.txtMontant.TabIndex = 4;
+            this.txtMontant.Validating += new System.ComponentModel.CancelEventHandler(this.txtMontant_Validating);
             // 
             // txtDate
             // 
@@ -96,7 +98,7 @@
             this.txtDate.PlaceholderText = "JJ/MM/AAAA";
             this.txtDate.Size = new System.Drawing.Size(121, 23);
             this.txtDate.TabIndex = 5;
-            this.txtDate.Validated += new System.EventHandler(this.txtDate_Validated);
+            this.txtDate.Validating += new System.ComponentModel.CancelEventHandler(this.txtDate_Validating);
             // 
             // date
             // 
