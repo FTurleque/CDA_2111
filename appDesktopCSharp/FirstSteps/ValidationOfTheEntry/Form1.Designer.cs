@@ -81,6 +81,7 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(79, 23);
             this.txtCP.TabIndex = 3;
+            this.txtCP.Validating += new System.ComponentModel.CancelEventHandler(this.txtCP_Validating);
             // 
             // txtMontant
             // 

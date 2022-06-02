@@ -17,20 +17,26 @@ namespace ValidationOfTheEntry
             txtDate.Clear();
             txtMontant.Clear();
             txtCP.Clear();
+            errorProvider.Clear();
+            txtNom.Focus();
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
         {
             if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show(txtNom.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Nom : " + txtNom.Text +
+                                "\nDate : " + txtDate.Text +
+                                "\nMontant : " + txtMontant.Text +
+                                "\nCode : " + txtCP.Text, "Validation effectuée", MessageBoxButtons.OK);
+                MessageBox.Show("Fin de l'application", "FIN", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
 
         }
 
         private void txtNom_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNom.Text))
+            if (string.IsNullOrWhiteSpace(txtNom.Text))
             {
                 errorProvider.SetError(txtNom, "Entrez un nom.");
             }
@@ -54,7 +60,7 @@ namespace ValidationOfTheEntry
 
         private void txtDate_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtDate.Text))
+            if (string.IsNullOrWhiteSpace(txtDate.Text))
             {
                 e.Cancel = true;
                 txtDate.Focus();
@@ -83,21 +89,43 @@ namespace ValidationOfTheEntry
 
         private void txtMontant_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if(string.IsNullOrEmpty(txtMontant.Text))
+            if(string.IsNullOrWhiteSpace(txtMontant.Text))
             {
-                e.Cancel= true;
+                e.Cancel = true;
                 txtMontant.Focus();
-                errorProvider.SetError(txtMontant, "Entrer un montant.")
+                errorProvider.SetError(txtMontant, "Entrer un montant.");
             }
             else if(!Regex.IsMatch(txtMontant.Text, @"^[\d]+([.,]?[\d]{2})$"))
             {
                 e.Cancel = true;
                 txtMontant.Focus();
-                errorProvider.SetError(txtMontant, "Veuillez entré des chiffres, virgule compris.");
+                errorProvider.SetError(txtMontant, "Entré des chiffres, deux chiffres après la virgule max.");
             }
             else
             {
+                e.Cancel = false;
                 errorProvider.SetError(txtMontant, string.Empty);
+            }
+        }
+
+        private void txtCP_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtCP.Text))
+            {
+                e.Cancel = true;
+                txtCP.Focus();
+                errorProvider.SetError(txtCP, "Entrez un code postal.");
+            }
+            else if(!Regex.IsMatch(txtCP.Text, @"^[\d]{5}"))
+            {
+                e.Cancel = true;
+                txtCP.Focus();
+                errorProvider.SetError(txtCP, "Un code postal est composé de chiffre");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider.SetError(txtCP, string.Empty);
             }
         }
     }
