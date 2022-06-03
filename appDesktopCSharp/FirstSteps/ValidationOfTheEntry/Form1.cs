@@ -38,22 +38,19 @@ namespace ValidationOfTheEntry
         {
             if (string.IsNullOrWhiteSpace(txtNom.Text))
             {
+                e.Cancel = true;
+                txtNom.Focus();
                 errorProvider.SetError(txtNom, "Entrez un nom.");
             }
-            else
+            else if (!Regex.IsMatch(txtNom.Text, @"^[a-zA-Z]+[-][a-zA-Z]+$"))
             {
-                errorProvider.SetError(txtNom, string.Empty);
-            }
-        }
-
-        private void txtNom_TextChanged(object sender, EventArgs e)
-        {
-            if (!Regex.IsMatch(txtNom.Text, @"^[\D]+$"))
-            {
-                errorProvider.SetError(txtNom, "Un nom ne comporte pas de chiffre.");
+                e.Cancel = true;
+                txtNom.Focus();
+                errorProvider.SetError(txtNom, "Entrez des lettres avec un - ou pas.");
             }
             else
             {
+                e.Cancel = false;
                 errorProvider.SetError(txtNom, string.Empty);
             }
         }
@@ -72,6 +69,7 @@ namespace ValidationOfTheEntry
                 errorProvider.SetError(txtDate, string.Empty);
                 try
                 {
+                    // Permettre tous les format de date et afficher au format fr
                     var cultureInfo = new CultureInfo("fr-FR");
                     DateTime date = DateTime.Parse(txtDate.Text, cultureInfo);
                     if (date < DateTime.Now)
@@ -82,13 +80,14 @@ namespace ValidationOfTheEntry
                 }
                 catch (FormatException error)
                 {
-                    Console.Error.WriteLine("Erreur : " + error);
+                    errorProvider.SetError(txtDate, "Entrez un date valide?.");
                 }
             }
         }
 
         private void txtMontant_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            // Verifier dans le montant la , et . (Fr: , et En: .) selon le systeme changer le . en , vis et versa
             if(string.IsNullOrWhiteSpace(txtMontant.Text))
             {
                 e.Cancel = true;
@@ -100,6 +99,12 @@ namespace ValidationOfTheEntry
                 e.Cancel = true;
                 txtMontant.Focus();
                 errorProvider.SetError(txtMontant, "Entré des chiffres, deux chiffres après la virgule max.");
+            }
+            else if (double.Parse(txtMontant.Text) < 0)
+            {
+                e.Cancel = false;
+                txtMontant.Focus();
+                errorProvider.SetError(txtMontant, "Vous ne pouvez pas être en négatif.");
             }
             else
             {

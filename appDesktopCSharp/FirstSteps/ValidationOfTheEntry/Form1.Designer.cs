@@ -46,7 +46,7 @@
             // 
             // btnValidate
             // 
-            this.btnValidate.Location = new System.Drawing.Point(271, 157);
+            this.btnValidate.Location = new System.Drawing.Point(258, 142);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(75, 23);
             this.btnValidate.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(271, 186);
+            this.btnDelete.Location = new System.Drawing.Point(258, 171);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 1;
@@ -66,17 +66,16 @@
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(131, 51);
+            this.txtNom.Location = new System.Drawing.Point(118, 36);
             this.txtNom.MaxLength = 30;
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(178, 23);
             this.txtNom.TabIndex = 2;
-            this.txtNom.TextChanged += new System.EventHandler(this.txtNom_TextChanged);
             this.txtNom.Validating += new System.ComponentModel.CancelEventHandler(this.txtNom_Validating);
             // 
             // txtCP
             // 
-            this.txtCP.Location = new System.Drawing.Point(131, 138);
+            this.txtCP.Location = new System.Drawing.Point(118, 123);
             this.txtCP.MaxLength = 5;
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(79, 23);
@@ -85,7 +84,7 @@
             // 
             // txtMontant
             // 
-            this.txtMontant.Location = new System.Drawing.Point(131, 109);
+            this.txtMontant.Location = new System.Drawing.Point(118, 94);
             this.txtMontant.Name = "txtMontant";
             this.txtMontant.Size = new System.Drawing.Size(121, 23);
             this.txtMontant.TabIndex = 4;
@@ -93,7 +92,7 @@
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(131, 80);
+            this.txtDate.Location = new System.Drawing.Point(118, 65);
             this.txtDate.MaxLength = 10;
             this.txtDate.Name = "txtDate";
             this.txtDate.PlaceholderText = "JJ/MM/AAAA";
@@ -104,7 +103,7 @@
             // date
             // 
             this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(41, 88);
+            this.date.Location = new System.Drawing.Point(28, 73);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(31, 15);
             this.date.TabIndex = 13;
@@ -113,7 +112,7 @@
             // amout
             // 
             this.amout.AutoSize = true;
-            this.amout.Location = new System.Drawing.Point(41, 117);
+            this.amout.Location = new System.Drawing.Point(28, 102);
             this.amout.Name = "amout";
             this.amout.Size = new System.Drawing.Size(53, 15);
             this.amout.TabIndex = 12;
@@ -122,7 +121,7 @@
             // postalCode
             // 
             this.postalCode.AutoSize = true;
-            this.postalCode.Location = new System.Drawing.Point(41, 146);
+            this.postalCode.Location = new System.Drawing.Point(28, 131);
             this.postalCode.Name = "postalCode";
             this.postalCode.Size = new System.Drawing.Size(70, 15);
             this.postalCode.TabIndex = 11;
@@ -131,7 +130,7 @@
             // name
             // 
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(41, 59);
+            this.name.Location = new System.Drawing.Point(28, 44);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(34, 15);
             this.name.TabIndex = 10;
@@ -140,7 +139,7 @@
             // dateSize
             // 
             this.dateSize.AutoSize = true;
-            this.dateSize.Location = new System.Drawing.Point(271, 83);
+            this.dateSize.Location = new System.Drawing.Point(258, 68);
             this.dateSize.Name = "dateSize";
             this.dateSize.Size = new System.Drawing.Size(87, 15);
             this.dateSize.TabIndex = 14;
@@ -154,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 248);
+            this.ClientSize = new System.Drawing.Size(378, 221);
             this.Controls.Add(this.dateSize);
             this.Controls.Add(this.date);
             this.Controls.Add(this.amout);
@@ -167,7 +166,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnValidate);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Les contrôles";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
