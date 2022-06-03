@@ -29,7 +29,16 @@ namespace ValidationOfTheEntry
                                 "\nDate : " + txtDate.Text +
                                 "\nMontant : " + txtMontant.Text +
                                 "\nCode : " + txtCP.Text, "Validation effectuée", MessageBoxButtons.OK);
-                MessageBox.Show("Fin de l'application", "FIN", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Fin de l'application", "FIN", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Remplissez les champs", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
 
         }
@@ -38,15 +47,13 @@ namespace ValidationOfTheEntry
         {
             if (string.IsNullOrWhiteSpace(txtNom.Text))
             {
-                e.Cancel = true;
-                txtNom.Focus();
-                errorProvider.SetError(txtNom, "Entrez un nom.");
+                string message = "Entrez un nom.";
+                this.returnErrorMessage(txtNom, message, e);
             }
-            else if (!Regex.IsMatch(txtNom.Text, @"^[a-zA-Z]+[-][a-zA-Z]+$"))
+            else if (!Regex.IsMatch(txtNom.Text, @"^[a-zA-Z]+([-]?[a-zA-Z]+)$"))
             {
-                e.Cancel = true;
-                txtNom.Focus();
-                errorProvider.SetError(txtNom, "Entrez des lettres avec un - ou pas.");
+                string message = "Entrez des lettres avec un - ou pas.";
+                this.returnErrorMessage(txtNom, message, e);
             }
             else
             {
@@ -59,9 +66,8 @@ namespace ValidationOfTheEntry
         {
             if (string.IsNullOrWhiteSpace(txtDate.Text))
             {
-                e.Cancel = true;
-                txtDate.Focus();
-                errorProvider.SetError(txtDate, "Entrez une date.");
+                string message = "Entrez une date.";
+                this.returnErrorMessage(txtDate, message, e);
             }
             else
             {
@@ -69,16 +75,28 @@ namespace ValidationOfTheEntry
                 errorProvider.SetError(txtDate, string.Empty);
                 try
                 {
-                    // Permettre tous les format de date et afficher au format fr
-                    var cultureInfo = new CultureInfo("fr-FR");
-                    DateTime date = DateTime.Parse(txtDate.Text, cultureInfo);
+                    DateTime date;
+                    CultureInfo userUICultureInfo = CultureInfo.CurrentUICulture;
+                        if(userUICultureInfo.Name != new CultureInfo("fr-FR").Name || 
+                        DateTime.TryParseExact(txtDate.Text, "yyyy/MM/dd", 
+                        new CultureInfo("en-US"),
+                        DateTimeStyles.None,
+                        out date))
+                    {
+                        date = DateTime.Parse(txtDate.Text, new CultureInfo("fr-FR"));
+                        txtDate.Text = date.ToString("d");
+                    }
+                    else
+                    {
+                        date = DateTime.Parse(txtDate.Text);
+                    }
                     if (date < DateTime.Now)
                     {
-                        MessageBox.Show("La date est déja passé.");
-                        txtDate.Clear();
+                        string message = "La date est déja passé.";
+                        this.returnErrorMessage(txtDate, message, e);
                     }
                 }
-                catch (FormatException error)
+                catch (FormatException)
                 {
                     errorProvider.SetError(txtDate, "Entrez un date valide?.");
                 }
@@ -87,27 +105,27 @@ namespace ValidationOfTheEntry
 
         private void txtMontant_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // Verifier dans le montant la , et . (Fr: , et En: .) selon le systeme changer le . en , vis et versa
-            if(string.IsNullOrWhiteSpace(txtMontant.Text))
+            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+            if (string.IsNullOrWhiteSpace(txtMontant.Text))
             {
-                e.Cancel = true;
-                txtMontant.Focus();
-                errorProvider.SetError(txtMontant, "Entrer un montant.");
+                string message = "Entrer un montant.";
+                this.returnErrorMessage(txtMontant, message, e);
             }
             else if(!Regex.IsMatch(txtMontant.Text, @"^[\d]+([.,]?[\d]{2})$"))
             {
-                e.Cancel = true;
-                txtMontant.Focus();
-                errorProvider.SetError(txtMontant, "Entré des chiffres, deux chiffres après la virgule max.");
-            }
-            else if (double.Parse(txtMontant.Text) < 0)
-            {
-                e.Cancel = false;
-                txtMontant.Focus();
-                errorProvider.SetError(txtMontant, "Vous ne pouvez pas être en négatif.");
+                string message = "Entré des chiffres uniquement positif, deux chiffres après la virgule max.";
+                this.returnErrorMessage(txtMontant, message, e);
             }
             else
             {
+                if(currentCulture == new CultureInfo("en-EN"))
+                {
+                    txtMontant.Text = Regex.Replace(txtMontant.Text, "[,]", replacement: ".");
+                } 
+                else
+                {
+                    txtMontant.Text = Regex.Replace(txtMontant.Text, "[.]", replacement: ",");
+                }
                 e.Cancel = false;
                 errorProvider.SetError(txtMontant, string.Empty);
             }
@@ -117,21 +135,26 @@ namespace ValidationOfTheEntry
         {
             if(string.IsNullOrWhiteSpace(txtCP.Text))
             {
-                e.Cancel = true;
-                txtCP.Focus();
-                errorProvider.SetError(txtCP, "Entrez un code postal.");
+                string message = "Entrez un code postal.";
+                this.returnErrorMessage(txtCP, message, e);
             }
             else if(!Regex.IsMatch(txtCP.Text, @"^[\d]{5}"))
             {
-                e.Cancel = true;
-                txtCP.Focus();
-                errorProvider.SetError(txtCP, "Un code postal est composé de chiffre");
+                string message = "Un code postal est composé de chiffre";
+                this.returnErrorMessage(txtCP, message, e);
             }
             else
             {
                 e.Cancel = false;
                 errorProvider.SetError(txtCP, string.Empty);
             }
+        }
+
+        private void returnErrorMessage(TextBox textBox, string message, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            // textBox.Focus();
+            errorProvider.SetError(textBox, message);
         }
     }
 }
