@@ -153,7 +153,7 @@ namespace ValidationOfTheEntry
         private void returnErrorMessage(TextBox textBox, string message, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
-            // textBox.Focus();
+            textBox.Focus();
             errorProvider.SetError(textBox, message);
         }
     }
