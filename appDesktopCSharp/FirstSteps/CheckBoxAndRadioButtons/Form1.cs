@@ -9,6 +9,10 @@ namespace CheckBoxAndRadioButtons
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             groupBoxChoice.Enabled = false;
             groupBoxBg.Visible = false;
             groupBoxChar.Visible = false;
@@ -29,60 +33,73 @@ namespace CheckBoxAndRadioButtons
             labelTxtEnter.Text = userInput.Text;
         }
 
-        private void checkBoxBgColor_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxBgColor_CheckedChanged(object sender, EventArgs e)
         {
-            this.displayCheckBox(checkBoxBgColor, groupBoxBg);
+            this.DisplayCheckBox(checkBoxBgColor, groupBoxBg);
             if(!checkBoxBgColor.Checked)
             {
+                /*radioBtnBgBlue.Checked = false;
+                radioBtnBgGreen.Checked = false;
+                radioBtnBg.Checked = false;*/
                 labelTxtEnter.BackColor = Color.Empty;
             }
         }
 
-        private void radioBtnBgBlue_CheckedChanged(object sender, EventArgs e)
+        private void RadioBtnBg_CheckedChanged(object sender, EventArgs e)
         {
-           labelTxtEnter.BackColor = Color.Blue;
-        }
-
-        private void radioBtnBgGreen_CheckedChanged(object sender, EventArgs e)
-        {
-            labelTxtEnter.BackColor = Color.Green;
-        }
-
-        private void radioBtnBgRed_CheckedChanged(object sender, EventArgs e)
-        {
-            labelTxtEnter.BackColor = Color.Red;
-        }
-
-        private void checkBoxCharColor_CheckedChanged(object sender, EventArgs e)
-        {
-            this.displayCheckBox(checkBoxCharColor, groupBoxChar);
-            if (!checkBoxCharColor.Checked)
+            if(radioBtnBg.Checked)
             {
-                labelTxtEnter.ForeColor = this.labelTxtEnterBaseColor;
+                labelTxtEnter.BackColor = Color.Red;
+            }
+            else if(radioBtnBgGreen.Checked)
+            {
+                labelTxtEnter.BackColor = Color.Green;
+            }
+            else
+            {
+                labelTxtEnter.BackColor = Color.Blue;
             }
         }
 
-        private void radioBtnCharRed_CheckedChanged(object sender, EventArgs e)
+        private void CheckBoxCharColor_CheckedChanged(object sender, EventArgs e)
         {
-            labelTxtEnter.ForeColor = Color.Red;
+            this.DisplayCheckBox(checkBoxCharColor, groupBoxChar);
+            if (!checkBoxCharColor.Checked)
+            {
+                labelTxtEnter.ForeColor = this.labelTxtEnterBaseColor;
+                /*radioBtnCharBlack.Checked = false;
+                radioBtnChar.Checked = false;
+                radioBtnCharWhite.Checked = false;*/
+            }
+        }
+        private void RadioBtnChar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioBtnChar.Checked)
+            {
+                labelTxtEnter.ForeColor = Color.Red;
+            }
+            else if (radioBtnCharBlack.Checked)
+            {
+                labelTxtEnter.ForeColor = Color.Black;
+            }
+            else
+            {
+                labelTxtEnter.ForeColor = Color.White;
+            }
         }
 
-        private void radioBtnCharWhite_CheckedChanged(object sender, EventArgs e)
+
+        private void CheckBoxCasse_CheckedChanged(object sender, EventArgs e)
         {
-            labelTxtEnter.ForeColor = Color.White;
+            this.DisplayCheckBox(checkBoxCasse, groupBoxCasse);
+            if(checkBoxCasse.Checked)
+            {
+                radioBtnLowerCase.Checked = false;
+                radioBtnUpperCase.Checked = false;
+            }
         }
 
-        private void radioBtnCharBlack_CheckedChanged(object sender, EventArgs e)
-        {
-            labelTxtEnter.ForeColor = Color.Black;
-        }
-
-        private void checkBoxCasse_CheckedChanged(object sender, EventArgs e)
-        {
-            this.displayCheckBox(checkBoxCasse, groupBoxCasse);
-        }
-
-        private void displayCheckBox(CheckBox checkbox, GroupBox group)
+        private void DisplayCheckBox(CheckBox checkbox, GroupBox group)
         {
             if (checkbox.Checked)
             {
@@ -103,5 +120,6 @@ namespace CheckBoxAndRadioButtons
         {
             labelTxtEnter.Text = labelTxtEnter.Text.ToUpper();
         }
+
     }
 }
