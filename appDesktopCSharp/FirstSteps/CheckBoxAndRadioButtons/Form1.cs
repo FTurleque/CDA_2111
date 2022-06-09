@@ -1,5 +1,3 @@
-using System.Drawing;
-
 namespace CheckBoxAndRadioButtons
 {
     public partial class Form1 : Form

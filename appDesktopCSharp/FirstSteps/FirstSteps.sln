@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationOfTheEntry", "Val
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckBoxAndRadioButtons", "CheckBoxAndRadioButtons\CheckBoxAndRadioButtons.csproj", "{7B646C7F-8019-4484-B8D1-1657895000EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibInputValidation", "LibInputValidation\LibInputValidation.csproj", "{3A804FC6-07E7-44C8-9245-026FDA9202DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibInputValidation", "LibInputValidation\LibInputValidation.csproj", "{3A804FC6-07E7-44C8-9245-026FDA9202DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOnValidationOfEntry", "TestOnValidationOfEntry\TestOnValidationOfEntry.csproj", "{95D4368D-92D9-48D4-ADDC-AEC37912E06B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3A804FC6-07E7-44C8-9245-026FDA9202DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A804FC6-07E7-44C8-9245-026FDA9202DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A804FC6-07E7-44C8-9245-026FDA9202DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
