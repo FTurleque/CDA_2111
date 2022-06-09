@@ -20,5 +20,6 @@ namespace LibInputValidation
             name = _name;
             return regexName.IsMatch(_name);
         }
+
     }
 }
