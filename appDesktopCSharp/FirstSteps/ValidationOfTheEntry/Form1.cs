@@ -98,7 +98,7 @@ namespace ValidationOfTheEntry
                 }
                 catch (FormatException)
                 {
-                    errorProvider.SetError(txtDate, "Entrez un date valide?.");
+                    errorProvider.SetError(txtDate, "Entrez un date valide.");
                 }
             }
         }

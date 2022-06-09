@@ -9,11 +9,11 @@ namespace LibInputValidation
 
         public NameValidator()
         {
-            regexName = new Regex(@"^[a-zA-Z]+([-]?[a-zA-Z]+)$");
+            regexName = new Regex(@"^([\w]+[-]?[\w]+){2,30}$");
             name = string.Empty;
         }
 
-        public string Name { get; }
+        public string Name { get => name; }
 
         public bool isValid(string _name)
         {
