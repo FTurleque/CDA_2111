@@ -16,20 +16,32 @@ namespace LibInputValidation
 
         }
 
-        public bool isValid(string _date)
+        public bool IsValid(string _date)
         {
             try
             {
                 newDate = DateTime.Parse(_date);
-/*                if(newDate <= DateTime.Now)
+                /*if (newDate <= DateTime.Now)
                 {
                     throw new ArgumentOutOfRangeException("La date doit être dans le futur.");
-                }
-*/                return true;
+                }*/
+                return true;
             }
             catch (FormatException e)
             {
                 throw e;
+            }
+        }
+
+        public bool IsInTheFUture(string _date)
+        {
+            if (newDate <= DateTime.Now)
+            {
+                throw new ArgumentOutOfRangeException("La date doit être dans le futur.");
+            }
+            else
+            {
+                return true;
             }
         }
     }
