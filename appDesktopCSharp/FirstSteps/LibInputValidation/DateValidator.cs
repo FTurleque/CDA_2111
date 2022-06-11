@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibInputValidation
+﻿namespace LibInputValidation
 {
     public class DateValidator
     {
@@ -13,18 +6,14 @@ namespace LibInputValidation
 
         public DateValidator()
         {
-
+            
         }
 
-        public bool IsValid(string _date)
+        public bool IsValidDate(string _date)
         {
             try
             {
                 newDate = DateTime.Parse(_date);
-                /*if (newDate <= DateTime.Now)
-                {
-                    throw new ArgumentOutOfRangeException("La date doit être dans le futur.");
-                }*/
                 return true;
             }
             catch (FormatException e)
@@ -33,15 +22,20 @@ namespace LibInputValidation
             }
         }
 
-        public bool IsInTheFUture(string _date)
+        public bool DateInTheFUture(string _date)
         {
-            if (newDate <= DateTime.Now)
+            newDate = DateTime.Parse(_date);
+            try
             {
-                throw new ArgumentOutOfRangeException("La date doit être dans le futur.");
-            }
-            else
-            {
+                if (newDate <= DateTime.Now)
+                {
+                    throw new ArgumentOutOfRangeException("La date doit être dans le futur.");
+                }
                 return true;
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+                throw e;
             }
         }
     }
