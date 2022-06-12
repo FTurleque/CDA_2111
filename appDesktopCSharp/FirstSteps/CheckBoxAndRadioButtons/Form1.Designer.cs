@@ -31,7 +31,7 @@
             this.labelUserInput = new System.Windows.Forms.Label();
             this.userInput = new System.Windows.Forms.TextBox();
             this.groupBoxChoice = new System.Windows.Forms.GroupBox();
-            this.checkBoxCasse = new System.Windows.Forms.CheckBox();
+            this.checkBoxCase = new System.Windows.Forms.CheckBox();
             this.checkBoxCharColor = new System.Windows.Forms.CheckBox();
             this.checkBoxBgColor = new System.Windows.Forms.CheckBox();
             this.groupBoxBg = new System.Windows.Forms.GroupBox();
@@ -44,7 +44,7 @@
             this.radioBtnCharBlack = new System.Windows.Forms.RadioButton();
             this.groupBoxCasse = new System.Windows.Forms.GroupBox();
             this.radioBtnUpperCase = new System.Windows.Forms.RadioButton();
-            this.radioBtnLowerCase = new System.Windows.Forms.RadioButton();
+            this.radioBtnCase = new System.Windows.Forms.RadioButton();
             this.labelTxt = new System.Windows.Forms.Label();
             this.labelTxtEnter = new System.Windows.Forms.Label();
             this.groupBoxChoice.SuspendLayout();
@@ -71,11 +71,11 @@
             this.userInput.Name = "userInput";
             this.userInput.Size = new System.Drawing.Size(278, 25);
             this.userInput.TabIndex = 4;
-            this.userInput.TextChanged += new System.EventHandler(this.userInput_TextChanged);
+            this.userInput.TextChanged += new System.EventHandler(this.UserInput_TextChanged);
             // 
             // groupBoxChoice
             // 
-            this.groupBoxChoice.Controls.Add(this.checkBoxCasse);
+            this.groupBoxChoice.Controls.Add(this.checkBoxCase);
             this.groupBoxChoice.Controls.Add(this.checkBoxCharColor);
             this.groupBoxChoice.Controls.Add(this.checkBoxBgColor);
             this.groupBoxChoice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -86,16 +86,16 @@
             this.groupBoxChoice.TabStop = false;
             this.groupBoxChoice.Text = "Choix";
             // 
-            // checkBoxCasse
+            // checkBoxCase
             // 
-            this.checkBoxCasse.AutoSize = true;
-            this.checkBoxCasse.Location = new System.Drawing.Point(12, 82);
-            this.checkBoxCasse.Name = "checkBoxCasse";
-            this.checkBoxCasse.Size = new System.Drawing.Size(63, 23);
-            this.checkBoxCasse.TabIndex = 2;
-            this.checkBoxCasse.Text = "Casse";
-            this.checkBoxCasse.UseVisualStyleBackColor = true;
-            this.checkBoxCasse.CheckedChanged += new System.EventHandler(this.CheckBoxCasse_CheckedChanged);
+            this.checkBoxCase.AutoSize = true;
+            this.checkBoxCase.Location = new System.Drawing.Point(12, 82);
+            this.checkBoxCase.Name = "checkBoxCase";
+            this.checkBoxCase.Size = new System.Drawing.Size(63, 23);
+            this.checkBoxCase.TabIndex = 2;
+            this.checkBoxCase.Text = "Casse";
+            this.checkBoxCase.UseVisualStyleBackColor = true;
+            this.checkBoxCase.CheckedChanged += new System.EventHandler(this.CheckBoxBgColor_CheckedChanged);
             // 
             // checkBoxCharColor
             // 
@@ -106,7 +106,7 @@
             this.checkBoxCharColor.TabIndex = 1;
             this.checkBoxCharColor.Text = "Couleur des charactères";
             this.checkBoxCharColor.UseVisualStyleBackColor = true;
-            this.checkBoxCharColor.CheckedChanged += new System.EventHandler(this.CheckBoxCharColor_CheckedChanged);
+            this.checkBoxCharColor.CheckedChanged += new System.EventHandler(this.CheckBoxBgColor_CheckedChanged);
             // 
             // checkBoxBgColor
             // 
@@ -166,6 +166,7 @@
             this.radioBtnBg.Size = new System.Drawing.Size(66, 23);
             this.radioBtnBg.TabIndex = 0;
             this.radioBtnBg.TabStop = true;
+            this.radioBtnBg.Tag = "";
             this.radioBtnBg.Text = "Rouge";
             this.radioBtnBg.UseVisualStyleBackColor = true;
             this.radioBtnBg.CheckedChanged += new System.EventHandler(this.RadioBtnBg_CheckedChanged);
@@ -224,7 +225,7 @@
             // groupBoxCasse
             // 
             this.groupBoxCasse.Controls.Add(this.radioBtnUpperCase);
-            this.groupBoxCasse.Controls.Add(this.radioBtnLowerCase);
+            this.groupBoxCasse.Controls.Add(this.radioBtnCase);
             this.groupBoxCasse.Location = new System.Drawing.Point(305, 208);
             this.groupBoxCasse.Name = "groupBoxCasse";
             this.groupBoxCasse.Size = new System.Drawing.Size(121, 95);
@@ -243,20 +244,20 @@
             this.radioBtnUpperCase.TabStop = true;
             this.radioBtnUpperCase.Text = "Majuscules";
             this.radioBtnUpperCase.UseVisualStyleBackColor = true;
-            this.radioBtnUpperCase.CheckedChanged += new System.EventHandler(this.radioBtnUpperCase_CheckedChanged);
+            this.radioBtnUpperCase.CheckedChanged += new System.EventHandler(this.radioBtnCase_CheckedChanged);
             // 
-            // radioBtnLowerCase
+            // radioBtnCase
             // 
-            this.radioBtnLowerCase.AutoSize = true;
-            this.radioBtnLowerCase.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioBtnLowerCase.Location = new System.Drawing.Point(16, 28);
-            this.radioBtnLowerCase.Name = "radioBtnLowerCase";
-            this.radioBtnLowerCase.Size = new System.Drawing.Size(95, 23);
-            this.radioBtnLowerCase.TabIndex = 6;
-            this.radioBtnLowerCase.TabStop = true;
-            this.radioBtnLowerCase.Text = "Minuscules";
-            this.radioBtnLowerCase.UseVisualStyleBackColor = true;
-            this.radioBtnLowerCase.CheckedChanged += new System.EventHandler(this.radioBtnLowerCase_CheckedChanged);
+            this.radioBtnCase.AutoSize = true;
+            this.radioBtnCase.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioBtnCase.Location = new System.Drawing.Point(16, 28);
+            this.radioBtnCase.Name = "radioBtnCase";
+            this.radioBtnCase.Size = new System.Drawing.Size(95, 23);
+            this.radioBtnCase.TabIndex = 6;
+            this.radioBtnCase.TabStop = true;
+            this.radioBtnCase.Text = "Minuscules";
+            this.radioBtnCase.UseVisualStyleBackColor = true;
+            this.radioBtnCase.CheckedChanged += new System.EventHandler(this.radioBtnCase_CheckedChanged);
             // 
             // labelTxt
             // 
@@ -311,7 +312,7 @@
         private Label labelUserInput;
         private TextBox userInput;
         private GroupBox groupBoxChoice;
-        private CheckBox checkBoxCasse;
+        private CheckBox checkBoxCase;
         private CheckBox checkBoxCharColor;
         private CheckBox checkBoxBgColor;
         private GroupBox groupBoxBg;
@@ -324,7 +325,7 @@
         private RadioButton radioBtnCharBlack;
         private GroupBox groupBoxCasse;
         private RadioButton radioBtnUpperCase;
-        private RadioButton radioBtnLowerCase;
+        private RadioButton radioBtnCase;
         private Label labelTxt;
         private Label labelTxtEnter;
     }
