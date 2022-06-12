@@ -30,13 +30,13 @@
         {
             this.listBoxTarget = new System.Windows.Forms.ListBox();
             this.labelTarget = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.comboBoxSource = new System.Windows.Forms.ComboBox();
+            this.btnAddOneInTarget = new System.Windows.Forms.Button();
+            this.btnAddAllInTarget = new System.Windows.Forms.Button();
+            this.btnAddOneInSource = new System.Windows.Forms.Button();
+            this.btnAddAllInSource = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
             this.labelSource = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             // 
             this.listBoxTarget.FormattingEnabled = true;
             this.listBoxTarget.ItemHeight = 15;
-            this.listBoxTarget.Location = new System.Drawing.Point(222, 54);
+            this.listBoxTarget.Location = new System.Drawing.Point(222, 50);
             this.listBoxTarget.Name = "listBoxTarget";
             this.listBoxTarget.Size = new System.Drawing.Size(132, 169);
             this.listBoxTarget.TabIndex = 0;
@@ -53,80 +53,86 @@
             // 
             this.labelTarget.AutoSize = true;
             this.labelTarget.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTarget.Location = new System.Drawing.Point(264, 20);
+            this.labelTarget.Location = new System.Drawing.Point(264, 16);
             this.labelTarget.Name = "labelTarget";
             this.labelTarget.Size = new System.Drawing.Size(45, 21);
             this.labelTarget.TabIndex = 1;
             this.labelTarget.Text = "Cible";
             // 
-            // comboBox1
+            // comboBoxSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 23);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxSource.FormattingEnabled = true;
+            this.comboBoxSource.Location = new System.Drawing.Point(12, 51);
+            this.comboBoxSource.Name = "comboBoxSource";
+            this.comboBoxSource.Size = new System.Drawing.Size(145, 23);
+            this.comboBoxSource.TabIndex = 2;
             // 
-            // button1
+            // btnAddOneInTarget
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(163, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = ">";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddOneInTarget.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddOneInTarget.Location = new System.Drawing.Point(163, 50);
+            this.btnAddOneInTarget.Name = "btnAddOneInTarget";
+            this.btnAddOneInTarget.Size = new System.Drawing.Size(53, 23);
+            this.btnAddOneInTarget.TabIndex = 3;
+            this.btnAddOneInTarget.Text = ">";
+            this.btnAddOneInTarget.UseVisualStyleBackColor = true;
+            this.btnAddOneInTarget.Click += new System.EventHandler(this.btnAddOneInTarget_Click);
             // 
-            // button2
+            // btnAddAllInTarget
             // 
-            this.button2.Location = new System.Drawing.Point(163, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(53, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddAllInTarget.Location = new System.Drawing.Point(163, 79);
+            this.btnAddAllInTarget.Name = "btnAddAllInTarget";
+            this.btnAddAllInTarget.Size = new System.Drawing.Size(53, 23);
+            this.btnAddAllInTarget.TabIndex = 4;
+            this.btnAddAllInTarget.Text = ">>";
+            this.btnAddAllInTarget.UseVisualStyleBackColor = true;
+            this.btnAddAllInTarget.Click += new System.EventHandler(this.btnAddAllInTarget_Click);
             // 
-            // button3
+            // btnAddOneInSource
             // 
-            this.button3.Location = new System.Drawing.Point(163, 171);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(53, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddOneInSource.Location = new System.Drawing.Point(163, 167);
+            this.btnAddOneInSource.Name = "btnAddOneInSource";
+            this.btnAddOneInSource.Size = new System.Drawing.Size(53, 23);
+            this.btnAddOneInSource.TabIndex = 5;
+            this.btnAddOneInSource.Text = "<";
+            this.btnAddOneInSource.UseVisualStyleBackColor = true;
+            this.btnAddOneInSource.Click += new System.EventHandler(this.btnAddOneInSource_Click);
             // 
-            // button4
+            // btnAddAllInSource
             // 
-            this.button4.Location = new System.Drawing.Point(163, 200);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(53, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddAllInSource.Location = new System.Drawing.Point(163, 196);
+            this.btnAddAllInSource.Name = "btnAddAllInSource";
+            this.btnAddAllInSource.Size = new System.Drawing.Size(53, 23);
+            this.btnAddAllInSource.TabIndex = 6;
+            this.btnAddAllInSource.Text = "<<";
+            this.btnAddAllInSource.UseVisualStyleBackColor = true;
+            this.btnAddAllInSource.Click += new System.EventHandler(this.btnAddAllInSource_Click);
             // 
-            // button5
+            // btnDown
             // 
-            this.button5.Location = new System.Drawing.Point(292, 229);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(62, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Bas";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDown.Location = new System.Drawing.Point(292, 225);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(62, 23);
+            this.btnDown.TabIndex = 7;
+            this.btnDown.Text = "Bas";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
-            // button6
+            // btnUp
             // 
-            this.button6.Location = new System.Drawing.Point(222, 229);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Haut";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnUp.Location = new System.Drawing.Point(222, 225);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(64, 23);
+            this.btnUp.TabIndex = 8;
+            this.btnUp.Text = "Haut";
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // labelSource
             // 
             this.labelSource.AutoSize = true;
             this.labelSource.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSource.Location = new System.Drawing.Point(54, 21);
+            this.labelSource.Location = new System.Drawing.Point(54, 17);
             this.labelSource.Name = "labelSource";
             this.labelSource.Size = new System.Drawing.Size(58, 21);
             this.labelSource.TabIndex = 9;
@@ -138,17 +144,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 274);
             this.Controls.Add(this.labelSource);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnAddAllInSource);
+            this.Controls.Add(this.btnAddOneInSource);
+            this.Controls.Add(this.btnAddAllInTarget);
+            this.Controls.Add(this.btnAddOneInTarget);
+            this.Controls.Add(this.comboBoxSource);
             this.Controls.Add(this.labelTarget);
             this.Controls.Add(this.listBoxTarget);
             this.Name = "Form1";
             this.Text = "Les listes";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,13 +165,13 @@
 
         private ListBox listBoxTarget;
         private Label labelTarget;
-        private ComboBox comboBox1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private ComboBox comboBoxSource;
+        private Button btnAddOneInTarget;
+        private Button btnAddAllInTarget;
+        private Button btnAddOneInSource;
+        private Button btnAddAllInSource;
+        private Button btnDown;
+        private Button btnUp;
         private Label labelSource;
     }
 }
