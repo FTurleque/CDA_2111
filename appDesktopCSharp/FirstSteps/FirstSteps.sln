@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibInputValidation", "LibIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestOnValidationOfEntry", "TestOnValidationOfEntry\TestOnValidationOfEntry.csproj", "{95D4368D-92D9-48D4-ADDC-AEC37912E06B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOperationsOnListBox", "BasicOperationsOnListBox\BasicOperationsOnListBox.csproj", "{84D46237-E19E-499C-B848-42D5530532A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D4368D-92D9-48D4-ADDC-AEC37912E06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D46237-E19E-499C-B848-42D5530532A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D46237-E19E-499C-B848-42D5530532A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D46237-E19E-499C-B848-42D5530532A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D46237-E19E-499C-B848-42D5530532A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
