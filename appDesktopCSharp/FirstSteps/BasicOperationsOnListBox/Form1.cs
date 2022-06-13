@@ -25,7 +25,7 @@ namespace BasicOperationsOnListBox
             }
             else
             {
-                errorProvider.SetError(textBoxIndexElement, "Le chiffre séléctionner est hors limite")
+                errorProvider.SetError(textBoxIndexElement, "Le chiffre séléctionner est hors limite");
             }
         }
 
