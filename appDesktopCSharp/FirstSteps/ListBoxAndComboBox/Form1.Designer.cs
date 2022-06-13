@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.comboBoxSource = new System.Windows.Forms.ComboBox();
             this.listBoxTarget = new System.Windows.Forms.ListBox();
             this.labelTarget = new System.Windows.Forms.Label();
-            this.comboBoxSource = new System.Windows.Forms.ComboBox();
             this.btnAddOneInTarget = new System.Windows.Forms.Button();
             this.btnAddAllInTarget = new System.Windows.Forms.Button();
             this.btnAddOneInSource = new System.Windows.Forms.Button();
@@ -39,6 +39,15 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.labelSource = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // comboBoxSource
+            // 
+            this.comboBoxSource.FormattingEnabled = true;
+            this.comboBoxSource.Location = new System.Drawing.Point(12, 51);
+            this.comboBoxSource.Name = "comboBoxSource";
+            this.comboBoxSource.Size = new System.Drawing.Size(145, 23);
+            this.comboBoxSource.TabIndex = 2;
+            this.comboBoxSource.SelectedIndexChanged += new System.EventHandler(this.comboBoxSource_SelectedIndexChanged);
             // 
             // listBoxTarget
             // 
@@ -58,14 +67,6 @@
             this.labelTarget.Size = new System.Drawing.Size(45, 21);
             this.labelTarget.TabIndex = 1;
             this.labelTarget.Text = "Cible";
-            // 
-            // comboBoxSource
-            // 
-            this.comboBoxSource.FormattingEnabled = true;
-            this.comboBoxSource.Location = new System.Drawing.Point(12, 51);
-            this.comboBoxSource.Name = "comboBoxSource";
-            this.comboBoxSource.Size = new System.Drawing.Size(145, 23);
-            this.comboBoxSource.TabIndex = 2;
             // 
             // btnAddOneInTarget
             // 

@@ -41,10 +41,20 @@ namespace ListBoxAndComboBox
             };
             comboBoxSource.DataSource = manager.Source;
             listBoxTarget.DataSource = manager.Target;
+            comboBoxSource.SelectedIndex = -1;
+            btnAddAllInSource.Enabled = false;
+            btnAddAllInTarget.Enabled = false;
+            btnAddAllInSource.Enabled = false;
+            btnAddAllInTarget.Enabled = false;
+        }
+        private void comboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnAddAllInSource.Enabled = comboBoxSource.SelectedIndex >= 0 ? true : false;
         }
 
         private void btnAddOneInTarget_Click(object sender, EventArgs e)
         {
+
             /*if (comboBoxSource.SelectedIndex > -1)
             {
                 listBoxTarget.Items.Add((string)comboBoxSource.SelectedItem);
@@ -95,12 +105,13 @@ namespace ListBoxAndComboBox
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            manager.Reverse();
+            
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            manager.Reverse();
+            
         }
+
     }
 }

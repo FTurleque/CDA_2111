@@ -48,15 +48,5 @@ namespace ListBoxAndComboBox
             }
         }
 
-        public void Reverse()
-        {
-            BindingList<string> newTarget = new BindingList<string>();
-            for (int i = Target.Count - 1; i >= 0; i--)
-            {
-                newTarget.Add(Target[i]);
-            }
-            Target.Clear();
-            Target = newTarget;
-        }
     }
 }
