@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibInputValidation", "LibIn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestOnValidationOfEntry", "TestOnValidationOfEntry\TestOnValidationOfEntry.csproj", "{95D4368D-92D9-48D4-ADDC-AEC37912E06B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicOperationsOnListBox", "BasicOperationsOnListBox\BasicOperationsOnListBox.csproj", "{84D46237-E19E-499C-B848-42D5530532A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicOperationsOnListBox", "BasicOperationsOnListBox\BasicOperationsOnListBox.csproj", "{84D46237-E19E-499C-B848-42D5530532A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBoxAndComboBox", "ListBoxAndComboBox\ListBoxAndComboBox.csproj", "{34A4B00C-81D3-4AC7-BF0C-34BC12669B07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListBoxAndComboBox", "ListBoxAndComboBox\ListBoxAndComboBox.csproj", "{34A4B00C-81D3-4AC7-BF0C-34BC12669B07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DefilementComponents", "DefilementComponents\DefilementComponents.csproj", "{A381C6FE-92C7-4E28-9E9D-F3218B85A312}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{34A4B00C-81D3-4AC7-BF0C-34BC12669B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A4B00C-81D3-4AC7-BF0C-34BC12669B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A4B00C-81D3-4AC7-BF0C-34BC12669B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A381C6FE-92C7-4E28-9E9D-F3218B85A312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A381C6FE-92C7-4E28-9E9D-F3218B85A312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A381C6FE-92C7-4E28-9E9D-F3218B85A312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A381C6FE-92C7-4E28-9E9D-F3218B85A312}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
