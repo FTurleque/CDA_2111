@@ -2,6 +2,7 @@ namespace BasicOperationsOnListBox
 {
     public partial class Form1 : Form
     {
+        ErrorProvider errorProvider;
         public Form1()
         {
             InitializeComponent();
@@ -9,6 +10,7 @@ namespace BasicOperationsOnListBox
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            errorProvider = new ErrorProvider();
             listBoxElements.Items.Add(textBoxNewElement.Text);
             textBoxCount.Text = listBoxElements.Items.Count.ToString();
             textBoxNewElement.Clear();
@@ -17,7 +19,14 @@ namespace BasicOperationsOnListBox
 
         private void buttonSelect_Click(object sender, EventArgs e)
         {
-            listBoxElements.SelectedIndex = int.Parse(textBoxIndexElement.Text);
+            if(listBoxElements.Items.Count > int.Parse(textBoxIndexElement.Text))
+            {
+                listBoxElements.SelectedIndex = int.Parse(textBoxIndexElement.Text);
+            }
+            else
+            {
+                errorProvider.SetError(textBoxIndexElement, "Le chiffre séléctionner est hors limite")
+            }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
