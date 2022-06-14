@@ -35,9 +35,9 @@
             this.btnAddAllInTarget = new System.Windows.Forms.Button();
             this.btnAddOneInSource = new System.Windows.Forms.Button();
             this.btnAddAllInSource = new System.Windows.Forms.Button();
-            this.btnDown = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.labelSource = new System.Windows.Forms.Label();
+            this.btnDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxSource
@@ -110,23 +110,14 @@
             this.btnAddAllInSource.UseVisualStyleBackColor = true;
             this.btnAddAllInSource.Click += new System.EventHandler(this.btnAddAllInSource_Click);
             // 
-            // btnDown
-            // 
-            this.btnDown.Location = new System.Drawing.Point(292, 225);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(62, 23);
-            this.btnDown.TabIndex = 7;
-            this.btnDown.Text = "Bas";
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(222, 225);
+            this.btnUp.Font = new System.Drawing.Font("Webdings", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUp.Location = new System.Drawing.Point(252, 231);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(64, 23);
+            this.btnUp.Size = new System.Drawing.Size(29, 25);
             this.btnUp.TabIndex = 8;
-            this.btnUp.Text = "Haut";
+            this.btnUp.Text = "5";
             this.btnUp.UseVisualStyleBackColor = true;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
@@ -139,6 +130,17 @@
             this.labelSource.Size = new System.Drawing.Size(58, 21);
             this.labelSource.TabIndex = 9;
             this.labelSource.Text = "Source";
+            // 
+            // btnDown
+            // 
+            this.btnDown.Font = new System.Drawing.Font("Webdings", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnDown.Location = new System.Drawing.Point(287, 231);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(29, 25);
+            this.btnDown.TabIndex = 7;
+            this.btnDown.Text = "6";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // Form1
             // 
@@ -155,6 +157,7 @@
             this.Controls.Add(this.comboBoxSource);
             this.Controls.Add(this.labelTarget);
             this.Controls.Add(this.listBoxTarget);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Les listes";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -172,8 +175,8 @@
         private Button btnAddAllInTarget;
         private Button btnAddOneInSource;
         private Button btnAddAllInSource;
-        private Button btnDown;
         private Button btnUp;
         private Label labelSource;
+        private Button btnDown;
     }
 }

@@ -28,12 +28,8 @@ namespace ListBoxAndComboBox
             comboBoxSource.DataSource = manager.Source;
             listBoxTarget.DataSource = manager.Target;
             comboBoxSource.SelectedIndex = -1;
-            btnAddOneInSource.Enabled = false;
-            // btnAddAllInSource.Enabled = false;
-            /*btnAddAllInSource.Enabled = false;
-            btnAddAllInTarget.Enabled = false;
-            btnAddAllInSource.Enabled = false;
-            btnAddAllInTarget.Enabled = false;*/
+            btnUp.Enabled = false;
+            btnDown.Enabled = false;
         }
         private void comboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -45,10 +41,12 @@ namespace ListBoxAndComboBox
 
         private void listBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
+            btnAddAllInTarget.Enabled = manager.Source.Count > 0;
             btnAddAllInSource.Enabled = manager.Target.Count > 0;
             btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
-            btnAddOneInTarget.Enabled = manager.Source.Count > 0;
-            btnAddAllInTarget.Enabled = manager.Source.Count > 0;
+            btnUp.Enabled = listBoxTarget.SelectedIndex > 0;
+            btnDown.Enabled = listBoxTarget.SelectedIndex > 0;
         }
 
         private void btnAddOneInTarget_Click(object sender, EventArgs e)
@@ -57,6 +55,7 @@ namespace ListBoxAndComboBox
             {
                 manager.MoveOne(comboBoxSource.SelectedIndex);
                 comboBoxSource.SelectedIndex = -1;
+                listBoxTarget.SelectedIndex = -1;
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -67,6 +66,7 @@ namespace ListBoxAndComboBox
         private void btnAddAllInTarget_Click(object sender, EventArgs e)
         {
             manager.MoveAll();
+            listBoxTarget.SelectedIndex = -1;
         }
 
         private void btnAddOneInSource_Click(object sender, EventArgs e)
@@ -75,6 +75,7 @@ namespace ListBoxAndComboBox
             {
                 manager.ReverseMouveOne(listBoxTarget.SelectedIndex);
                 comboBoxSource.SelectedIndex = -1;
+                listBoxTarget.SelectedIndex = -1;
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -88,6 +89,7 @@ namespace ListBoxAndComboBox
             manager.MoveAll();
             manager.ReverseList();
             comboBoxSource.SelectedIndex = -1;
+            listBoxTarget.SelectedIndex = -1;
         }
 
         private void btnUp_Click(object sender, EventArgs e)

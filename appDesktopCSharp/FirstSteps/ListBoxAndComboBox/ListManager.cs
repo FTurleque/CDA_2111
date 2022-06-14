@@ -34,7 +34,6 @@ namespace ListBoxAndComboBox
             {
                 throw new ArgumentOutOfRangeException("Index hors limites.");
             }
-
             Target.Add(Source[index]);
             Source.RemoveAt(index);
         }
