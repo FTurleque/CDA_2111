@@ -46,7 +46,7 @@ namespace ListBoxAndComboBox
             btnAddAllInSource.Enabled = manager.Target.Count > 0;
             btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
             btnUp.Enabled = listBoxTarget.SelectedIndex > 0;
-            btnDown.Enabled = listBoxTarget.SelectedIndex > 0;
+            btnDown.Enabled = listBoxTarget.SelectedIndex < manager.Target.Count - 1;
         }
 
         private void btnAddOneInTarget_Click(object sender, EventArgs e)
