@@ -34,13 +34,13 @@
             this.labelRed = new System.Windows.Forms.Label();
             this.labelBlue = new System.Windows.Forms.Label();
             this.labelGreen = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxRed = new System.Windows.Forms.TextBox();
+            this.textBoxBlue = new System.Windows.Forms.TextBox();
+            this.textBoxGreen = new System.Windows.Forms.TextBox();
             this.numUpDownRed = new System.Windows.Forms.NumericUpDown();
             this.numUpDownBlue = new System.Windows.Forms.NumericUpDown();
             this.numUpDownGreen = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxColorMake = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownGreen)).BeginInit();
@@ -49,24 +49,29 @@
             // hScrollBarRed
             // 
             this.hScrollBarRed.Location = new System.Drawing.Point(81, 46);
+            this.hScrollBarRed.Maximum = 264;
             this.hScrollBarRed.Name = "hScrollBarRed";
             this.hScrollBarRed.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarRed.TabIndex = 0;
+            this.hScrollBarRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
             // 
             // hScrollBarBlue
             // 
             this.hScrollBarBlue.Location = new System.Drawing.Point(81, 121);
+            this.hScrollBarBlue.Maximum = 264;
             this.hScrollBarBlue.Name = "hScrollBarBlue";
             this.hScrollBarBlue.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarBlue.TabIndex = 1;
+            this.hScrollBarBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
             // 
             // hScrollBarGreen
             // 
             this.hScrollBarGreen.Location = new System.Drawing.Point(81, 84);
-            this.hScrollBarGreen.Maximum = 255;
+            this.hScrollBarGreen.Maximum = 264;
             this.hScrollBarGreen.Name = "hScrollBarGreen";
             this.hScrollBarGreen.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarGreen.TabIndex = 2;
+            this.hScrollBarGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
             // 
             // labelRed
             // 
@@ -97,80 +102,102 @@
             this.labelGreen.TabIndex = 5;
             this.labelGreen.Text = "Vert";
             // 
-            // textBox1
+            // textBoxRed
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(391, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 23);
-            this.textBox1.TabIndex = 6;
+            this.textBoxRed.BackColor = System.Drawing.Color.Red;
+            this.textBoxRed.Enabled = false;
+            this.textBoxRed.Location = new System.Drawing.Point(391, 45);
+            this.textBoxRed.Name = "textBoxRed";
+            this.textBoxRed.Size = new System.Drawing.Size(67, 23);
+            this.textBoxRed.TabIndex = 6;
             // 
-            // textBox2
+            // textBoxBlue
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Blue;
-            this.textBox2.Location = new System.Drawing.Point(391, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(67, 23);
-            this.textBox2.TabIndex = 7;
+            this.textBoxBlue.BackColor = System.Drawing.Color.Blue;
+            this.textBoxBlue.Enabled = false;
+            this.textBoxBlue.Location = new System.Drawing.Point(391, 120);
+            this.textBoxBlue.Name = "textBoxBlue";
+            this.textBoxBlue.Size = new System.Drawing.Size(67, 23);
+            this.textBoxBlue.TabIndex = 7;
             // 
-            // textBox3
+            // textBoxGreen
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Green;
-            this.textBox3.Location = new System.Drawing.Point(391, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(67, 23);
-            this.textBox3.TabIndex = 8;
+            this.textBoxGreen.BackColor = System.Drawing.Color.Green;
+            this.textBoxGreen.Enabled = false;
+            this.textBoxGreen.Location = new System.Drawing.Point(391, 83);
+            this.textBoxGreen.Name = "textBoxGreen";
+            this.textBoxGreen.Size = new System.Drawing.Size(67, 23);
+            this.textBoxGreen.TabIndex = 8;
             // 
             // numUpDownRed
             // 
             this.numUpDownRed.Location = new System.Drawing.Point(295, 45);
+            this.numUpDownRed.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numUpDownRed.Name = "numUpDownRed";
             this.numUpDownRed.Size = new System.Drawing.Size(77, 23);
             this.numUpDownRed.TabIndex = 9;
+            this.numUpDownRed.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
             // numUpDownBlue
             // 
             this.numUpDownBlue.Location = new System.Drawing.Point(295, 120);
+            this.numUpDownBlue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numUpDownBlue.Name = "numUpDownBlue";
             this.numUpDownBlue.Size = new System.Drawing.Size(77, 23);
             this.numUpDownBlue.TabIndex = 10;
+            this.numUpDownBlue.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
             // numUpDownGreen
             // 
             this.numUpDownGreen.Location = new System.Drawing.Point(295, 83);
+            this.numUpDownGreen.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numUpDownGreen.Name = "numUpDownGreen";
             this.numUpDownGreen.Size = new System.Drawing.Size(77, 23);
             this.numUpDownGreen.TabIndex = 11;
+            this.numUpDownGreen.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
-            // textBox4
+            // textBoxColorMake
             // 
-            this.textBox4.Location = new System.Drawing.Point(21, 187);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(437, 123);
-            this.textBox4.TabIndex = 12;
+            this.textBoxColorMake.Location = new System.Drawing.Point(21, 187);
+            this.textBoxColorMake.Multiline = true;
+            this.textBoxColorMake.Name = "textBoxColorMake";
+            this.textBoxColorMake.Size = new System.Drawing.Size(437, 123);
+            this.textBoxColorMake.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 339);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxColorMake);
             this.Controls.Add(this.numUpDownGreen);
             this.Controls.Add(this.numUpDownBlue);
             this.Controls.Add(this.numUpDownRed);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxGreen);
+            this.Controls.Add(this.textBoxBlue);
+            this.Controls.Add(this.textBoxRed);
             this.Controls.Add(this.labelGreen);
             this.Controls.Add(this.labelBlue);
             this.Controls.Add(this.labelRed);
             this.Controls.Add(this.hScrollBarGreen);
             this.Controls.Add(this.hScrollBarBlue);
             this.Controls.Add(this.hScrollBarRed);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
             this.Text = "Defilement";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownBlue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownGreen)).EndInit();
@@ -187,12 +214,12 @@
         private Label labelRed;
         private Label labelBlue;
         private Label labelGreen;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textBoxRed;
+        private TextBox textBoxBlue;
+        private TextBox textBoxGreen;
         private NumericUpDown numUpDownRed;
         private NumericUpDown numUpDownBlue;
         private NumericUpDown numUpDownGreen;
-        private TextBox textBox4;
+        private TextBox textBoxColorMake;
     }
 }
