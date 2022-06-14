@@ -57,6 +57,7 @@
             this.listBoxTarget.Name = "listBoxTarget";
             this.listBoxTarget.Size = new System.Drawing.Size(132, 169);
             this.listBoxTarget.TabIndex = 0;
+            this.listBoxTarget.SelectedIndexChanged += new System.EventHandler(this.listBoxTarget_SelectedIndexChanged);
             // 
             // labelTarget
             // 

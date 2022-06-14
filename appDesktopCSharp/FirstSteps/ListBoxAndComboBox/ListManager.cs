@@ -48,5 +48,11 @@ namespace ListBoxAndComboBox
             }
         }
 
+        public void Move(int index, int indexToMove)
+        {
+            var tmp = Target[indexToMove];
+            Target[indexToMove] = Target[index];
+            Target[index] = tmp;
+        }
     }
 }

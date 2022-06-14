@@ -4,7 +4,6 @@ namespace ListBoxAndComboBox
 {
     public partial class Form1 : Form
     {
-        // private string[] countriesList;
         ListManager manager;
 
         public Form1()
@@ -14,56 +13,50 @@ namespace ListBoxAndComboBox
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*countriesList = new string[]
-            {
-                "Allemagne", "Australie", "Autriche", "Bahamas", "Belgique", "Birmanie", "Brésil", "Bulgarie", "Cameroun", 
-                "Canada", "Chili", "Chine", "Colombie", "Égypte", "Espagne", "France", "Ghana", "Grece", "Guinée", "Guyane",
-                "Japon", "Jordanie", "Laos", "Liban", "Macao", "Mali", "Maroc", "Mongolie", "Népal", "Nigéria", "Panama", 
-                "Paraguay", "Pérou", "Philippines", "Pologne", "Portugal", "Roumanie", "Russie", "Salvador", "Suède", "Suisse", 
-                "Taïwan", "Tanzanie", "Ukraine", "USA", "Viêtnam", "Zambie"
-            };
-            foreach (string country in countriesList)
-            {
-                comboBoxSource.Items.Add(country);
-            }*/
-
             manager = new ListManager()
             {
                 Source = new BindingList<string>()
                 {
                     "Allemagne", "Australie", "Autriche", "Bahamas", "Belgique", "Birmanie", "Brésil", "Bulgarie", "Cameroun",
-                    "Canada", "Chili", "Chine", "Colombie", "Égypte", "Espagne", "France", "Ghana", "Grece", "Guinée", "Guyane",
+                    /*"Canada", "Chili", "Chine", "Colombie", "Égypte", "Espagne", "France", "Ghana", "Grece", "Guinée", "Guyane",
                     "Japon", "Jordanie", "Laos", "Liban", "Macao", "Mali", "Maroc", "Mongolie", "Népal", "Nigéria", "Panama",
                     "Paraguay", "Pérou", "Philippines", "Pologne", "Portugal", "Roumanie", "Russie", "Salvador", "Suède", "Suisse",
-                    "Taïwan", "Tanzanie", "Ukraine", "USA", "Viêtnam", "Zambie"
+                    "Taïwan", "Tanzanie", "Ukraine", "USA", "Viêtnam", "Zambie"*/
                 },
                 Target = new BindingList<string>()
             };
             comboBoxSource.DataSource = manager.Source;
             listBoxTarget.DataSource = manager.Target;
             comboBoxSource.SelectedIndex = -1;
-            btnAddAllInSource.Enabled = false;
+            btnAddOneInSource.Enabled = false;
+            // btnAddAllInSource.Enabled = false;
+            /*btnAddAllInSource.Enabled = false;
             btnAddAllInTarget.Enabled = false;
             btnAddAllInSource.Enabled = false;
-            btnAddAllInTarget.Enabled = false;
+            btnAddAllInTarget.Enabled = false;*/
         }
         private void comboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnAddAllInSource.Enabled = comboBoxSource.SelectedIndex >= 0 ? true : false;
+            btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
+            btnAddAllInTarget.Enabled = manager.Source.Count > 0;
+            btnAddAllInSource.Enabled = manager.Target.Count > 0;
+            btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
+        }
+
+        private void listBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnAddAllInSource.Enabled = manager.Target.Count > 0;
+            btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
+            btnAddOneInTarget.Enabled = manager.Source.Count > 0;
+            btnAddAllInTarget.Enabled = manager.Source.Count > 0;
         }
 
         private void btnAddOneInTarget_Click(object sender, EventArgs e)
         {
-
-            /*if (comboBoxSource.SelectedIndex > -1)
-            {
-                listBoxTarget.Items.Add((string)comboBoxSource.SelectedItem);
-                comboBoxSource.Items.Remove(comboBoxSource.SelectedItem);
-            }*/
             try
             {
                 manager.MoveOne(comboBoxSource.SelectedIndex);
-                // TODO : refresh items
+                comboBoxSource.SelectedIndex = -1;
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -73,14 +66,6 @@ namespace ListBoxAndComboBox
 
         private void btnAddAllInTarget_Click(object sender, EventArgs e)
         {
-            /*if(listBoxTarget.SelectedIndex > -1)
-            {
-                foreach (var item in comboBoxSource.Items)
-                {
-                    listBoxTarget.Items.Add(item);
-                }
-                comboBoxSource.Items.Clear();
-            }*/
             manager.MoveAll();
         }
 
@@ -89,6 +74,7 @@ namespace ListBoxAndComboBox
             try
             {
                 manager.ReverseMouveOne(listBoxTarget.SelectedIndex);
+                comboBoxSource.SelectedIndex = -1;
             }
             catch (ArgumentOutOfRangeException ex)
             {
@@ -101,17 +87,19 @@ namespace ListBoxAndComboBox
             manager.ReverseList();
             manager.MoveAll();
             manager.ReverseList();
+            comboBoxSource.SelectedIndex = -1;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            
+            manager.Move(listBoxTarget.SelectedIndex, listBoxTarget.SelectedIndex - 1);
+            listBoxTarget.SelectedIndex--;
         }
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            
+            manager.Move(listBoxTarget.SelectedIndex, listBoxTarget.SelectedIndex + 1);
+            listBoxTarget.SelectedIndex++;
         }
-
     }
 }
