@@ -40,7 +40,7 @@
             this.numUpDownRed = new System.Windows.Forms.NumericUpDown();
             this.numUpDownBlue = new System.Windows.Forms.NumericUpDown();
             this.numUpDownGreen = new System.Windows.Forms.NumericUpDown();
-            this.textBoxColorMake = new System.Windows.Forms.TextBox();
+            this.labelColorResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownGreen)).BeginInit();
@@ -168,20 +168,22 @@
             this.numUpDownGreen.TabIndex = 11;
             this.numUpDownGreen.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
-            // textBoxColorMake
+            // labelColorResult
             // 
-            this.textBoxColorMake.Location = new System.Drawing.Point(21, 187);
-            this.textBoxColorMake.Multiline = true;
-            this.textBoxColorMake.Name = "textBoxColorMake";
-            this.textBoxColorMake.Size = new System.Drawing.Size(437, 123);
-            this.textBoxColorMake.TabIndex = 12;
+            this.labelColorResult.AutoSize = true;
+            this.labelColorResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelColorResult.Location = new System.Drawing.Point(12, 185);
+            this.labelColorResult.MinimumSize = new System.Drawing.Size(460, 140);
+            this.labelColorResult.Name = "labelColorResult";
+            this.labelColorResult.Size = new System.Drawing.Size(460, 140);
+            this.labelColorResult.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 339);
-            this.Controls.Add(this.textBoxColorMake);
+            this.Controls.Add(this.labelColorResult);
             this.Controls.Add(this.numUpDownGreen);
             this.Controls.Add(this.numUpDownBlue);
             this.Controls.Add(this.numUpDownRed);
@@ -220,6 +222,6 @@
         private NumericUpDown numUpDownRed;
         private NumericUpDown numUpDownBlue;
         private NumericUpDown numUpDownGreen;
-        private TextBox textBoxColorMake;
+        private Label labelColorResult;
     }
 }

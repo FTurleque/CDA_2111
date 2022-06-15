@@ -2,14 +2,17 @@ namespace DefilementComponents
 {
     public partial class Form1 : Form
     {
+        MyColor colorResult;
+
         public Form1()
         {
             InitializeComponent();
+            colorResult = new MyColor();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            labelColorResult.BackColor = colorResult.NewColor;
         }
 
         private void hScrollBarRed_Scroll(object sender, ScrollEventArgs e)
@@ -24,6 +27,8 @@ namespace DefilementComponents
             hScrollBarRed.Value = (int)numUpDownRed.Value;
             hScrollBarGreen.Value = (int)numUpDownGreen.Value;
             hScrollBarBlue.Value = (int)numUpDownBlue.Value;
+            colorResult.ChangeColor(hScrollBarRed.Value, hScrollBarGreen.Value, hScrollBarBlue.Value);
+            labelColorResult.BackColor = colorResult.NewColor;
         }
     }
 }
