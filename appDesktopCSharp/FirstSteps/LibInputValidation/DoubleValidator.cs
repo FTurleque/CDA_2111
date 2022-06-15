@@ -40,7 +40,7 @@ namespace LibInputValidation
             }
             catch (FormatException e)
             {
-                throw e;
+                return false;
             }
 
         }
