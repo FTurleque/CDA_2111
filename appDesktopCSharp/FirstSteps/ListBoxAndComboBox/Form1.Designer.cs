@@ -140,7 +140,7 @@
             this.btnDown.TabIndex = 7;
             this.btnDown.Text = "6";
             this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.btnDown.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // Form1
             // 

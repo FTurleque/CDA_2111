@@ -27,6 +27,8 @@ namespace ListBoxAndComboBox
             };
             comboBoxSource.DataSource = manager.Source;
             listBoxTarget.DataSource = manager.Target;
+            btnDown.Tag = 2;
+            btnUp.Tag = -1;
             comboBoxSource.SelectedIndex = -1;
             btnUp.Enabled = false;
             btnDown.Enabled = false;
@@ -73,7 +75,7 @@ namespace ListBoxAndComboBox
         {
             try
             {
-                manager.ReverseMouveOne(listBoxTarget.SelectedIndex);
+                manager.ReverseMoveOne(listBoxTarget.SelectedIndex);
                 comboBoxSource.SelectedIndex = -1;
                 listBoxTarget.SelectedIndex = -1;
             }
@@ -85,23 +87,21 @@ namespace ListBoxAndComboBox
 
         private void btnAddAllInSource_Click(object sender, EventArgs e)
         {
-            manager.ReverseList();
-            manager.MoveAll();
-            manager.ReverseList();
+            manager.ReverseMoveAll();
             comboBoxSource.SelectedIndex = -1;
             listBoxTarget.SelectedIndex = -1;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            manager.Move(listBoxTarget.SelectedIndex, listBoxTarget.SelectedIndex - 1);
-            listBoxTarget.SelectedIndex--;
-        }
-
-        private void btnDown_Click(object sender, EventArgs e)
-        {
-            manager.Move(listBoxTarget.SelectedIndex, listBoxTarget.SelectedIndex + 1);
-            listBoxTarget.SelectedIndex++;
+            if (sender is Control control)
+            {
+                listBoxTarget.SelectedIndex =
+                    manager.Move(
+                        listBoxTarget.SelectedIndex,
+                        (int)control.Tag
+                );
+            }
         }
     }
 }

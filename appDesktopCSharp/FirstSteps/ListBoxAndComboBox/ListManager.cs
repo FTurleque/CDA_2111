@@ -14,17 +14,24 @@ namespace ListBoxAndComboBox
 
         public ListManager() { }
 
-        public void ReverseList()
+        private void ReverseList()
         {
             BindingList<string> tmp = Source;
             Source = Target;
             Target = tmp;
         }
 
-        public void ReverseMouveOne(int index)
+        public void ReverseMoveOne(int index)
         {
             ReverseList();
             MoveOne(index);
+            ReverseList();
+        }
+
+        public void ReverseMoveAll()
+        {
+            ReverseList();
+            MoveAll();
             ReverseList();
         }
 
@@ -47,11 +54,26 @@ namespace ListBoxAndComboBox
             }
         }
 
-        public void Move(int index, int indexToMove)
+        public int Move(int index, int offset)
         {
-            var tmp = Target[indexToMove];
-            Target[indexToMove] = Target[index];
-            Target[index] = tmp;
+            int newIndex = index + offset;
+
+            if (offset != 0
+                && index >= 0
+                && index <= Target.Count - 1
+                && newIndex <= Target.Count
+                && newIndex >= 0)
+            {
+                int oldIndex = offset > 0 ? index : index + 1;
+
+                string tmp = Target[index];
+                Target.Insert(newIndex, tmp);
+                Target.RemoveAt(oldIndex);
+
+                return offset > 0 ? newIndex - 1 : newIndex;
+            }
+
+            return index;
         }
     }
 }
