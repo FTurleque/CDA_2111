@@ -207,11 +207,10 @@
             this.labelResultLoan.AutoSize = true;
             this.labelResultLoan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelResultLoan.ForeColor = System.Drawing.Color.Red;
-            this.labelResultLoan.Location = new System.Drawing.Point(437, 278);
+            this.labelResultLoan.Location = new System.Drawing.Point(437, 263);
             this.labelResultLoan.Name = "labelResultLoan";
-            this.labelResultLoan.Size = new System.Drawing.Size(84, 19);
+            this.labelResultLoan.Size = new System.Drawing.Size(0, 19);
             this.labelResultLoan.TabIndex = 12;
-            this.labelResultLoan.Text = "5 0483,36 €";
             // 
             // btnOk
             // 
@@ -237,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 323);
+            this.ClientSize = new System.Drawing.Size(652, 323);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.labelResultLoan);
