@@ -34,13 +34,13 @@
             this.labelRed = new System.Windows.Forms.Label();
             this.labelBlue = new System.Windows.Forms.Label();
             this.labelGreen = new System.Windows.Forms.Label();
-            this.textBoxRed = new System.Windows.Forms.TextBox();
-            this.textBoxBlue = new System.Windows.Forms.TextBox();
-            this.textBoxGreen = new System.Windows.Forms.TextBox();
             this.numUpDownRed = new System.Windows.Forms.NumericUpDown();
             this.numUpDownBlue = new System.Windows.Forms.NumericUpDown();
             this.numUpDownGreen = new System.Windows.Forms.NumericUpDown();
             this.labelColorResult = new System.Windows.Forms.Label();
+            this.lblRed = new System.Windows.Forms.Label();
+            this.lblGreen = new System.Windows.Forms.Label();
+            this.lblBlue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownBlue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownGreen)).BeginInit();
@@ -53,7 +53,7 @@
             this.hScrollBarRed.Name = "hScrollBarRed";
             this.hScrollBarRed.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarRed.TabIndex = 0;
-            this.hScrollBarRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
+            this.hScrollBarRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.HScrollBarRed_Scroll);
             // 
             // hScrollBarBlue
             // 
@@ -62,7 +62,6 @@
             this.hScrollBarBlue.Name = "hScrollBarBlue";
             this.hScrollBarBlue.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarBlue.TabIndex = 1;
-            this.hScrollBarBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
             // 
             // hScrollBarGreen
             // 
@@ -71,7 +70,6 @@
             this.hScrollBarGreen.Name = "hScrollBarGreen";
             this.hScrollBarGreen.Size = new System.Drawing.Size(189, 22);
             this.hScrollBarGreen.TabIndex = 2;
-            this.hScrollBarGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBarRed_Scroll);
             // 
             // labelRed
             // 
@@ -102,33 +100,6 @@
             this.labelGreen.TabIndex = 5;
             this.labelGreen.Text = "Vert";
             // 
-            // textBoxRed
-            // 
-            this.textBoxRed.BackColor = System.Drawing.Color.Red;
-            this.textBoxRed.Enabled = false;
-            this.textBoxRed.Location = new System.Drawing.Point(391, 45);
-            this.textBoxRed.Name = "textBoxRed";
-            this.textBoxRed.Size = new System.Drawing.Size(67, 23);
-            this.textBoxRed.TabIndex = 6;
-            // 
-            // textBoxBlue
-            // 
-            this.textBoxBlue.BackColor = System.Drawing.Color.Blue;
-            this.textBoxBlue.Enabled = false;
-            this.textBoxBlue.Location = new System.Drawing.Point(391, 120);
-            this.textBoxBlue.Name = "textBoxBlue";
-            this.textBoxBlue.Size = new System.Drawing.Size(67, 23);
-            this.textBoxBlue.TabIndex = 7;
-            // 
-            // textBoxGreen
-            // 
-            this.textBoxGreen.BackColor = System.Drawing.Color.Green;
-            this.textBoxGreen.Enabled = false;
-            this.textBoxGreen.Location = new System.Drawing.Point(391, 83);
-            this.textBoxGreen.Name = "textBoxGreen";
-            this.textBoxGreen.Size = new System.Drawing.Size(67, 23);
-            this.textBoxGreen.TabIndex = 8;
-            // 
             // numUpDownRed
             // 
             this.numUpDownRed.Location = new System.Drawing.Point(295, 45);
@@ -140,7 +111,6 @@
             this.numUpDownRed.Name = "numUpDownRed";
             this.numUpDownRed.Size = new System.Drawing.Size(77, 23);
             this.numUpDownRed.TabIndex = 9;
-            this.numUpDownRed.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
             // numUpDownBlue
             // 
@@ -153,7 +123,6 @@
             this.numUpDownBlue.Name = "numUpDownBlue";
             this.numUpDownBlue.Size = new System.Drawing.Size(77, 23);
             this.numUpDownBlue.TabIndex = 10;
-            this.numUpDownBlue.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
             // numUpDownGreen
             // 
@@ -166,11 +135,11 @@
             this.numUpDownGreen.Name = "numUpDownGreen";
             this.numUpDownGreen.Size = new System.Drawing.Size(77, 23);
             this.numUpDownGreen.TabIndex = 11;
-            this.numUpDownGreen.ValueChanged += new System.EventHandler(this.numUpDownRed_ValueChanged);
             // 
             // labelColorResult
             // 
             this.labelColorResult.AutoSize = true;
+            this.labelColorResult.BackColor = System.Drawing.Color.Black;
             this.labelColorResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelColorResult.Location = new System.Drawing.Point(12, 185);
             this.labelColorResult.MinimumSize = new System.Drawing.Size(460, 140);
@@ -178,18 +147,42 @@
             this.labelColorResult.Size = new System.Drawing.Size(460, 140);
             this.labelColorResult.TabIndex = 12;
             // 
+            // lblRed
+            // 
+            this.lblRed.BackColor = System.Drawing.Color.Transparent;
+            this.lblRed.Location = new System.Drawing.Point(391, 45);
+            this.lblRed.Name = "lblRed";
+            this.lblRed.Size = new System.Drawing.Size(63, 23);
+            this.lblRed.TabIndex = 13;
+            // 
+            // lblGreen
+            // 
+            this.lblGreen.BackColor = System.Drawing.Color.Transparent;
+            this.lblGreen.Location = new System.Drawing.Point(391, 83);
+            this.lblGreen.Name = "lblGreen";
+            this.lblGreen.Size = new System.Drawing.Size(63, 23);
+            this.lblGreen.TabIndex = 14;
+            // 
+            // lblBlue
+            // 
+            this.lblBlue.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlue.Location = new System.Drawing.Point(391, 120);
+            this.lblBlue.Name = "lblBlue";
+            this.lblBlue.Size = new System.Drawing.Size(63, 23);
+            this.lblBlue.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 339);
+            this.Controls.Add(this.lblBlue);
+            this.Controls.Add(this.lblGreen);
+            this.Controls.Add(this.lblRed);
             this.Controls.Add(this.labelColorResult);
             this.Controls.Add(this.numUpDownGreen);
             this.Controls.Add(this.numUpDownBlue);
             this.Controls.Add(this.numUpDownRed);
-            this.Controls.Add(this.textBoxGreen);
-            this.Controls.Add(this.textBoxBlue);
-            this.Controls.Add(this.textBoxRed);
             this.Controls.Add(this.labelGreen);
             this.Controls.Add(this.labelBlue);
             this.Controls.Add(this.labelRed);
@@ -216,12 +209,12 @@
         private Label labelRed;
         private Label labelBlue;
         private Label labelGreen;
-        private TextBox textBoxRed;
-        private TextBox textBoxBlue;
-        private TextBox textBoxGreen;
         private NumericUpDown numUpDownRed;
         private NumericUpDown numUpDownBlue;
         private NumericUpDown numUpDownGreen;
         private Label labelColorResult;
+        private Label lblRed;
+        private Label lblGreen;
+        private Label lblBlue;
     }
 }
