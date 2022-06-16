@@ -33,7 +33,7 @@ namespace TakeALoan
         {
             labelMonth.Text = hScrollBarMonth.Value.ToString();
             labelRefundNumber.Text = (int.Parse(labelMonth.Text) / (int)hScrollBarMonth.Tag).ToString();
-            refund.RefundNumber = int.Parse(labelRefundNumber.Text);
+            refund.RefundNumber = int.Parse(labelMonth.Text);
         }
 
         private void RadioBtnPercent_CheckedChanged(object sender, EventArgs e)
