@@ -1,4 +1,4 @@
-namespace CheckBoxAndRadioButtons
+namespace FormsMenu
 {
     public partial class CheckBoxRadioBtn : Form
     {

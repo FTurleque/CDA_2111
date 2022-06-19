@@ -1,4 +1,4 @@
-﻿namespace DefilementComponents
+﻿namespace FormsMenu
 {
     partial class ScrollingElement
     {
@@ -48,6 +48,7 @@
             // 
             // hScrollBarRed
             // 
+            this.hScrollBarRed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.hScrollBarRed.Location = new System.Drawing.Point(81, 46);
             this.hScrollBarRed.Maximum = 264;
             this.hScrollBarRed.Name = "hScrollBarRed";
@@ -57,6 +58,7 @@
             // 
             // hScrollBarBlue
             // 
+            this.hScrollBarBlue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.hScrollBarBlue.Location = new System.Drawing.Point(81, 121);
             this.hScrollBarBlue.Maximum = 264;
             this.hScrollBarBlue.Name = "hScrollBarBlue";
@@ -65,6 +67,7 @@
             // 
             // hScrollBarGreen
             // 
+            this.hScrollBarGreen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.hScrollBarGreen.Location = new System.Drawing.Point(81, 84);
             this.hScrollBarGreen.Maximum = 264;
             this.hScrollBarGreen.Name = "hScrollBarGreen";
@@ -75,6 +78,7 @@
             // 
             this.labelRed.AutoSize = true;
             this.labelRed.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelRed.Location = new System.Drawing.Point(21, 49);
             this.labelRed.Name = "labelRed";
             this.labelRed.Size = new System.Drawing.Size(48, 19);
@@ -84,6 +88,7 @@
             // labelBlue
             // 
             this.labelBlue.AutoSize = true;
+            this.labelBlue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelBlue.Location = new System.Drawing.Point(21, 128);
             this.labelBlue.Name = "labelBlue";
             this.labelBlue.Size = new System.Drawing.Size(30, 15);
@@ -94,6 +99,7 @@
             // 
             this.labelGreen.AutoSize = true;
             this.labelGreen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGreen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelGreen.Location = new System.Drawing.Point(21, 87);
             this.labelGreen.Name = "labelGreen";
             this.labelGreen.Size = new System.Drawing.Size(34, 19);
@@ -141,6 +147,7 @@
             this.labelColorResult.AutoSize = true;
             this.labelColorResult.BackColor = System.Drawing.Color.Black;
             this.labelColorResult.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelColorResult.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.labelColorResult.Location = new System.Drawing.Point(12, 185);
             this.labelColorResult.MinimumSize = new System.Drawing.Size(460, 140);
             this.labelColorResult.Name = "labelColorResult";
@@ -150,6 +157,7 @@
             // lblRed
             // 
             this.lblRed.BackColor = System.Drawing.Color.Transparent;
+            this.lblRed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblRed.Location = new System.Drawing.Point(391, 45);
             this.lblRed.Name = "lblRed";
             this.lblRed.Size = new System.Drawing.Size(63, 23);
@@ -158,6 +166,7 @@
             // lblGreen
             // 
             this.lblGreen.BackColor = System.Drawing.Color.Transparent;
+            this.lblGreen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblGreen.Location = new System.Drawing.Point(391, 83);
             this.lblGreen.Name = "lblGreen";
             this.lblGreen.Size = new System.Drawing.Size(63, 23);
@@ -166,12 +175,13 @@
             // lblBlue
             // 
             this.lblBlue.BackColor = System.Drawing.Color.Transparent;
+            this.lblBlue.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblBlue.Location = new System.Drawing.Point(391, 120);
             this.lblBlue.Name = "lblBlue";
             this.lblBlue.Size = new System.Drawing.Size(63, 23);
             this.lblBlue.TabIndex = 15;
             // 
-            // Form1
+            // ScrollingElement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,7 +200,7 @@
             this.Controls.Add(this.hScrollBarBlue);
             this.Controls.Add(this.hScrollBarRed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
+            this.Name = "ScrollingElement";
             this.Text = "Defilement";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).EndInit();

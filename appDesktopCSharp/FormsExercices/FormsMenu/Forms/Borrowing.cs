@@ -1,6 +1,6 @@
-using LibInputValidation;
+using FormsMenu;
 
-namespace TakeALoan
+namespace FormsMenu
 {
     public partial class Borrowing : Form
     {

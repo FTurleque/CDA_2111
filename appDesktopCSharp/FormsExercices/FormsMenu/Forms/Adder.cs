@@ -1,10 +1,10 @@
-namespace Calculator
+namespace FormsMenu
 {
-    public partial class Calculator : Form
+    public partial class Adder : Form
     {
         private List<int> values;
 
-        public Calculator()
+        public Adder()
         {
             InitializeComponent();
             values = new List<int>();

@@ -1,4 +1,4 @@
-﻿namespace LibInputValidation
+﻿namespace FormsMenu
 {
     public class DateValidator
     {
@@ -16,9 +16,9 @@
                 newDate = DateTime.Parse(_date);
                 return true;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
-                throw e;
+                return false;
             }
         }
 
@@ -33,9 +33,9 @@
                 }
                 return true;
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
-                throw e;
+                return false;
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace ListBoxOperation
+﻿namespace FormsMenu
 {
     partial class ListBoxOperation
     {
@@ -195,7 +195,7 @@
             this.labelText.TabIndex = 15;
             this.labelText.Text = "Text";
             // 
-            // Form1
+            // ListBoxOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -216,7 +216,8 @@
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.labelListBox);
             this.Controls.Add(this.listBoxElements);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "ListBoxOperation";
             this.Text = "Les listes et leur propriétés";
             this.ResumeLayout(false);
             this.PerformLayout();

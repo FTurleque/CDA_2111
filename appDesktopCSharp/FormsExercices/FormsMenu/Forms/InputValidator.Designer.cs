@@ -1,4 +1,4 @@
-﻿namespace ValidationOfTheEntry
+﻿namespace FormsMenu
 {
     partial class InputValidator
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnValidate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -40,8 +39,6 @@
             this.postalCode = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.Label();
             this.dateSize = new System.Windows.Forms.Label();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // btnValidate
@@ -52,7 +49,7 @@
             this.btnValidate.TabIndex = 0;
             this.btnValidate.Text = "Valider";
             this.btnValidate.UseVisualStyleBackColor = true;
-            this.btnValidate.Click += new System.EventHandler(this.btnValidate_Click);
+            this.btnValidate.Click += new System.EventHandler(this.BtnValidate_Click);
             // 
             // btnDelete
             // 
@@ -71,7 +68,7 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(178, 23);
             this.txtNom.TabIndex = 2;
-            this.txtNom.Validating += new System.ComponentModel.CancelEventHandler(this.txtNom_Validating);
+            this.txtNom.Click += new System.EventHandler(this.BtnValidate_Click);
             // 
             // txtCP
             // 
@@ -80,7 +77,7 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(79, 23);
             this.txtCP.TabIndex = 3;
-            this.txtCP.Validating += new System.ComponentModel.CancelEventHandler(this.txtCP_Validating);
+            this.txtCP.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCP_Validating);
             // 
             // txtMontant
             // 
@@ -88,7 +85,7 @@
             this.txtMontant.Name = "txtMontant";
             this.txtMontant.Size = new System.Drawing.Size(121, 23);
             this.txtMontant.TabIndex = 4;
-            this.txtMontant.Validating += new System.ComponentModel.CancelEventHandler(this.txtMontant_Validating);
+            this.txtMontant.Validating += new System.ComponentModel.CancelEventHandler(this.TxtMontant_Validating);
             // 
             // txtDate
             // 
@@ -98,7 +95,7 @@
             this.txtDate.PlaceholderText = "JJ/MM/AAAA";
             this.txtDate.Size = new System.Drawing.Size(121, 23);
             this.txtDate.TabIndex = 5;
-            this.txtDate.Validating += new System.ComponentModel.CancelEventHandler(this.txtDate_Validating);
+            this.txtDate.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDate_Validating);
             // 
             // date
             // 
@@ -145,11 +142,7 @@
             this.dateSize.TabIndex = 14;
             this.dateSize.Text = "(JJ/MM/AAAA)";
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
-            // Form1
+            // InputValidator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -165,9 +158,9 @@
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnValidate);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "InputValidator";
             this.Text = "Les contrôles";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,6 +179,5 @@
         private Label postalCode;
         private Label name;
         private Label dateSize;
-        private ErrorProvider errorProvider;
     }
 }

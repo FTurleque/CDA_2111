@@ -1,6 +1,6 @@
-﻿namespace Calculator
+﻿namespace FormsMenu
 {
-    partial class Calculator
+    partial class Adder
     {
         /// <summary>
         ///  Required designer variable.
@@ -173,7 +173,7 @@
             this.textBox1.Size = new System.Drawing.Size(224, 78);
             this.textBox1.TabIndex = 12;
             // 
-            // Form1
+            // Adder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,7 +191,8 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "Adder";
             this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();

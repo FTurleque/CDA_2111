@@ -1,4 +1,4 @@
-namespace ListBoxOperation
+namespace FormsMenu
 {
     public partial class ListBoxOperation : Form
     {

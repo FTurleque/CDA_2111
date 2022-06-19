@@ -1,4 +1,4 @@
-﻿namespace TakeALoan
+﻿namespace FormsMenu
 {
     partial class Borrowing
     {
@@ -232,7 +232,7 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // Form1
+            // Borrowing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.textBoxLoan);
             this.Controls.Add(this.textBoxName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
+            this.Name = "Borrowing";
             this.Text = "Emprunts";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxInterestRates.ResumeLayout(false);

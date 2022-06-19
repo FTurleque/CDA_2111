@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace LibInputValidation
+namespace FormsMenu
 {
     public class ZipCode
     {
@@ -29,9 +29,9 @@ namespace LibInputValidation
                 zipCode = int.Parse(_userEntry);
                 return true;
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
-                throw e;
+                return false;
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace LibInputValidation
+namespace FormsMenu
 {
     public class NameValidator
     {

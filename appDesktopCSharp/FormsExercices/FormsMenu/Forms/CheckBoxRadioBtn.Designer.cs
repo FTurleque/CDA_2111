@@ -1,4 +1,4 @@
-﻿namespace CheckBoxAndRadioButtons
+﻿namespace FormsMenu
 {
     partial class CheckBoxRadioBtn
     {
@@ -279,7 +279,7 @@
             this.labelTxtEnter.TabIndex = 0;
             this.labelTxtEnter.Text = "      ";
             // 
-            // Form1
+            // CheckBoxRadioBtn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +292,8 @@
             this.Controls.Add(this.groupBoxChoice);
             this.Controls.Add(this.userInput);
             this.Controls.Add(this.labelUserInput);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "CheckBoxRadioBtn";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxChoice.ResumeLayout(false);

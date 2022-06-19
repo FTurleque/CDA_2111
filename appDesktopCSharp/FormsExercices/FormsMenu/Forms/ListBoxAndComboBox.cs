@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace ListBoxAndComboBox
+namespace FormsMenu
 {
     public partial class ListBoxAndComboBox : Form
     {

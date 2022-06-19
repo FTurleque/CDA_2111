@@ -1,4 +1,4 @@
-﻿namespace ListBoxAndComboBox
+﻿namespace FormsMenu
 {
     partial class ListBoxAndComboBox
     {
@@ -142,7 +142,7 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnUp_Click);
             // 
-            // Form1
+            // ListBoxAndComboBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.labelTarget);
             this.Controls.Add(this.listBoxTarget);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Name = "Form1";
+            this.Name = "ListBoxAndComboBox";
             this.Text = "Les listes";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
