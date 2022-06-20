@@ -10,7 +10,7 @@ namespace FormsMenu
             values = new List<int>();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void Button10_Click(object sender, EventArgs e)
         {
             try
             {
@@ -24,13 +24,13 @@ namespace FormsMenu
             }
         }
 
-        private void drain_Click(object sender, EventArgs e)
+        private void Drain_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
             values = new List<int>();
         }
 
-        private void calculate_Click(object sender, EventArgs e)
+        private void Calculate_Click(object sender, EventArgs e)
         {
             int result = values.Sum();
             textBox1.Text += " = " + result.ToString() + '+';

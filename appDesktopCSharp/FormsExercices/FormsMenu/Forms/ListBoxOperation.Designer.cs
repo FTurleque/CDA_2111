@@ -55,7 +55,7 @@
             this.listBoxElements.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.listBoxElements.Size = new System.Drawing.Size(120, 109);
             this.listBoxElements.TabIndex = 0;
-            this.listBoxElements.SelectedIndexChanged += new System.EventHandler(this.listBoxElements_SelectedIndexChanged);
+            this.listBoxElements.SelectedIndexChanged += new System.EventHandler(this.ListBoxElements_SelectedIndexChanged);
             // 
             // labelListBox
             // 
@@ -75,7 +75,7 @@
             this.buttonAdd.TabIndex = 2;
             this.buttonAdd.Text = "&Ajout Liste";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.ButtonAdd_Click);
             // 
             // textBoxNewElement
             // 
@@ -119,7 +119,7 @@
             this.buttonSelect.TabIndex = 7;
             this.buttonSelect.Text = "&Sélectioner";
             this.buttonSelect.UseVisualStyleBackColor = true;
-            this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
+            this.buttonSelect.Click += new System.EventHandler(this.ButtonSelect_Click);
             // 
             // buttonClear
             // 
@@ -129,7 +129,7 @@
             this.buttonClear.TabIndex = 8;
             this.buttonClear.Text = "&Vider la liste";
             this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonClear.Click += new System.EventHandler(this.ButtonClear_Click);
             // 
             // labelPropreties
             // 

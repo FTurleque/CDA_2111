@@ -15,7 +15,7 @@ namespace FormsMenu
 
         public string Name { get => name; }
 
-        public bool isValidName(string _name)
+        public bool IsValidName(string _name)
         {
             name = _name;
             return regexName.IsMatch(_name);

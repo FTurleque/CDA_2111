@@ -6,18 +6,18 @@ namespace FormsMenu
         public ListBoxOperation()
         {
             InitializeComponent();
+            errorProvider = new ErrorProvider();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            errorProvider = new ErrorProvider();
             listBoxElements.Items.Add(textBoxNewElement.Text);
             textBoxCount.Text = listBoxElements.Items.Count.ToString();
             textBoxNewElement.Clear();
             textBoxNewElement.Focus();
         }
 
-        private void buttonSelect_Click(object sender, EventArgs e)
+        private void ButtonSelect_Click(object sender, EventArgs e)
         {
             if(listBoxElements.Items.Count > int.Parse(textBoxIndexElement.Text))
             {
@@ -29,12 +29,12 @@ namespace FormsMenu
             }
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void ButtonClear_Click(object sender, EventArgs e)
         {
             listBoxElements.Items.Clear();
         }
 
-        private void listBoxElements_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxElements_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBoxSelectedIndex.Text = listBoxElements.SelectedIndex.ToString();
             textBoxText.Text = listBoxElements.SelectedItem.ToString();

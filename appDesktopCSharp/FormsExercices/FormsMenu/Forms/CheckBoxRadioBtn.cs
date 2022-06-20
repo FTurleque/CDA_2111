@@ -77,7 +77,7 @@ namespace FormsMenu
             };
         }
 
-        private void radioBtnCase_CheckedChanged(object sender, EventArgs e)
+        private void RadioBtnCase_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioButton = (RadioButton)sender;
             labelTxtEnter.Text = (radioButton.Name == "radioBtnUpperCase") ? labelTxtEnter.Text.ToUpper() : labelTxtEnter.Text.ToLower();

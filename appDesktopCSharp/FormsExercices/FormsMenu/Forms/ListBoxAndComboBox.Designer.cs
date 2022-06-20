@@ -47,7 +47,7 @@
             this.comboBoxSource.Name = "comboBoxSource";
             this.comboBoxSource.Size = new System.Drawing.Size(145, 23);
             this.comboBoxSource.TabIndex = 2;
-            this.comboBoxSource.SelectedIndexChanged += new System.EventHandler(this.comboBoxSource_SelectedIndexChanged);
+            this.comboBoxSource.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSource_SelectedIndexChanged);
             // 
             // listBoxTarget
             // 
@@ -57,7 +57,7 @@
             this.listBoxTarget.Name = "listBoxTarget";
             this.listBoxTarget.Size = new System.Drawing.Size(132, 169);
             this.listBoxTarget.TabIndex = 0;
-            this.listBoxTarget.SelectedIndexChanged += new System.EventHandler(this.listBoxTarget_SelectedIndexChanged);
+            this.listBoxTarget.SelectedIndexChanged += new System.EventHandler(this.ListBoxTarget_SelectedIndexChanged);
             // 
             // labelTarget
             // 
@@ -78,7 +78,7 @@
             this.btnAddOneInTarget.TabIndex = 3;
             this.btnAddOneInTarget.Text = ">";
             this.btnAddOneInTarget.UseVisualStyleBackColor = true;
-            this.btnAddOneInTarget.Click += new System.EventHandler(this.btnAddOneInTarget_Click);
+            this.btnAddOneInTarget.Click += new System.EventHandler(this.BtnAddOneInTarget_Click);
             // 
             // btnAddAllInTarget
             // 
@@ -88,7 +88,7 @@
             this.btnAddAllInTarget.TabIndex = 4;
             this.btnAddAllInTarget.Text = ">>";
             this.btnAddAllInTarget.UseVisualStyleBackColor = true;
-            this.btnAddAllInTarget.Click += new System.EventHandler(this.btnAddAllInTarget_Click);
+            this.btnAddAllInTarget.Click += new System.EventHandler(this.BtnAddAllInTarget_Click);
             // 
             // btnAddOneInSource
             // 
@@ -98,7 +98,7 @@
             this.btnAddOneInSource.TabIndex = 5;
             this.btnAddOneInSource.Text = "<";
             this.btnAddOneInSource.UseVisualStyleBackColor = true;
-            this.btnAddOneInSource.Click += new System.EventHandler(this.btnAddOneInSource_Click);
+            this.btnAddOneInSource.Click += new System.EventHandler(this.BtnAddOneInSource_Click);
             // 
             // btnAddAllInSource
             // 
@@ -108,7 +108,7 @@
             this.btnAddAllInSource.TabIndex = 6;
             this.btnAddAllInSource.Text = "<<";
             this.btnAddAllInSource.UseVisualStyleBackColor = true;
-            this.btnAddAllInSource.Click += new System.EventHandler(this.btnAddAllInSource_Click);
+            this.btnAddAllInSource.Click += new System.EventHandler(this.BtnAddAllInSource_Click);
             // 
             // btnUp
             // 
@@ -119,7 +119,7 @@
             this.btnUp.TabIndex = 8;
             this.btnUp.Text = "5";
             this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnUp.Click += new System.EventHandler(this.BtnUp_Click);
             // 
             // labelSource
             // 
@@ -140,7 +140,7 @@
             this.btnDown.TabIndex = 7;
             this.btnDown.Text = "6";
             this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnDown.Click += new System.EventHandler(this.BtnUp_Click);
             // 
             // ListBoxAndComboBox
             // 

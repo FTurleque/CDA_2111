@@ -244,7 +244,7 @@
             this.radioBtnUpperCase.TabStop = true;
             this.radioBtnUpperCase.Text = "Majuscules";
             this.radioBtnUpperCase.UseVisualStyleBackColor = true;
-            this.radioBtnUpperCase.CheckedChanged += new System.EventHandler(this.radioBtnCase_CheckedChanged);
+            this.radioBtnUpperCase.CheckedChanged += new System.EventHandler(this.RadioBtnCase_CheckedChanged);
             // 
             // radioBtnCase
             // 
@@ -257,7 +257,7 @@
             this.radioBtnCase.TabStop = true;
             this.radioBtnCase.Text = "Minuscules";
             this.radioBtnCase.UseVisualStyleBackColor = true;
-            this.radioBtnCase.CheckedChanged += new System.EventHandler(this.radioBtnCase_CheckedChanged);
+            this.radioBtnCase.CheckedChanged += new System.EventHandler(this.RadioBtnCase_CheckedChanged);
             // 
             // labelTxt
             // 
@@ -294,7 +294,7 @@
             this.Controls.Add(this.labelUserInput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "CheckBoxRadioBtn";
-            this.Text = "Form1";
+            this.Text = "CheckBox et RadioButton";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxChoice.ResumeLayout(false);
             this.groupBoxChoice.PerformLayout();

@@ -78,7 +78,7 @@ namespace FormsMenu
         private void BtnOk_Click(object sender, EventArgs e)
         {
             errorProvider.SetError(textBoxLoan, doubleValidator.IsValidDouble(textBoxLoan.Text) ? String.Empty : "Ne doit contenir que des chiffre ',' ou '.'.");
-            errorProvider.SetError(textBoxName, nameValidate.isValidName(textBoxName.Text) ? String.Empty : "Erreur de nom");
+            errorProvider.SetError(textBoxName, nameValidate.IsValidName(textBoxName.Text) ? String.Empty : "Erreur de nom");
             double tmp = (double)((int)hScrollBarMonth.Tag);
             labelResultLoan.Text = refund.Refund(double.Parse(textBoxLoan.Text), tmp).ToString() + " €";
         }

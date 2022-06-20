@@ -59,7 +59,7 @@
             this.btnDelete.TabIndex = 1;
             this.btnDelete.Text = "Effacer";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // txtNom
             // 
@@ -68,7 +68,6 @@
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(178, 23);
             this.txtNom.TabIndex = 2;
-            this.txtNom.Click += new System.EventHandler(this.BtnValidate_Click);
             // 
             // txtCP
             // 
@@ -77,7 +76,6 @@
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(79, 23);
             this.txtCP.TabIndex = 3;
-            this.txtCP.Validating += new System.ComponentModel.CancelEventHandler(this.TxtCP_Validating);
             // 
             // txtMontant
             // 
@@ -85,7 +83,6 @@
             this.txtMontant.Name = "txtMontant";
             this.txtMontant.Size = new System.Drawing.Size(121, 23);
             this.txtMontant.TabIndex = 4;
-            this.txtMontant.Validating += new System.ComponentModel.CancelEventHandler(this.TxtMontant_Validating);
             // 
             // txtDate
             // 
@@ -95,7 +92,6 @@
             this.txtDate.PlaceholderText = "JJ/MM/AAAA";
             this.txtDate.Size = new System.Drawing.Size(121, 23);
             this.txtDate.TabIndex = 5;
-            this.txtDate.Validating += new System.ComponentModel.CancelEventHandler(this.TxtDate_Validating);
             // 
             // date
             // 

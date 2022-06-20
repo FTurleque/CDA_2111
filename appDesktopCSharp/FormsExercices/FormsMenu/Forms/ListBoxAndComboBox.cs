@@ -18,10 +18,10 @@ namespace FormsMenu
                 Source = new BindingList<string>()
                 {
                     "Allemagne", "Australie", "Autriche", "Bahamas", "Belgique", "Birmanie", "Brésil", "Bulgarie", "Cameroun",
-                    /*"Canada", "Chili", "Chine", "Colombie", "Égypte", "Espagne", "France", "Ghana", "Grece", "Guinée", "Guyane",
+                    "Canada", "Chili", "Chine", "Colombie", "Égypte", "Espagne", "France", "Ghana", "Grece", "Guinée", "Guyane",
                     "Japon", "Jordanie", "Laos", "Liban", "Macao", "Mali", "Maroc", "Mongolie", "Népal", "Nigéria", "Panama",
                     "Paraguay", "Pérou", "Philippines", "Pologne", "Portugal", "Roumanie", "Russie", "Salvador", "Suède", "Suisse",
-                    "Taïwan", "Tanzanie", "Ukraine", "USA", "Viêtnam", "Zambie"*/
+                    "Taïwan", "Tanzanie", "Ukraine", "USA", "Viêtnam", "Zambie"
                 },
                 Target = new BindingList<string>()
             };
@@ -33,7 +33,7 @@ namespace FormsMenu
             btnUp.Enabled = false;
             btnDown.Enabled = false;
         }
-        private void comboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
             btnAddAllInTarget.Enabled = manager.Source.Count > 0;
@@ -41,7 +41,7 @@ namespace FormsMenu
             btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
         }
 
-        private void listBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
+        private void ListBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
             btnAddAllInTarget.Enabled = manager.Source.Count > 0;
@@ -51,7 +51,7 @@ namespace FormsMenu
             btnDown.Enabled = listBoxTarget.SelectedIndex < manager.Target.Count - 1;
         }
 
-        private void btnAddOneInTarget_Click(object sender, EventArgs e)
+        private void BtnAddOneInTarget_Click(object sender, EventArgs e)
         {
             try
             {
@@ -65,13 +65,13 @@ namespace FormsMenu
             }
         }
 
-        private void btnAddAllInTarget_Click(object sender, EventArgs e)
+        private void BtnAddAllInTarget_Click(object sender, EventArgs e)
         {
             manager.MoveAll();
             listBoxTarget.SelectedIndex = -1;
         }
 
-        private void btnAddOneInSource_Click(object sender, EventArgs e)
+        private void BtnAddOneInSource_Click(object sender, EventArgs e)
         {
             try
             {
@@ -85,14 +85,14 @@ namespace FormsMenu
             }
         }
 
-        private void btnAddAllInSource_Click(object sender, EventArgs e)
+        private void BtnAddAllInSource_Click(object sender, EventArgs e)
         {
             manager.ReverseMoveAll();
             comboBoxSource.SelectedIndex = -1;
             listBoxTarget.SelectedIndex = -1;
         }
 
-        private void btnUp_Click(object sender, EventArgs e)
+        private void BtnUp_Click(object sender, EventArgs e)
         {
             if (sender is Control control)
             {
