@@ -29,13 +29,19 @@ namespace FormsMenu
             switch (menu.Name)
             {
                 case "loginMenuItem":
-                    MessageBox.Show("Bonjour, bienvenue dans notre sélection ne formulaires.", "Bienvenue", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Bonjour, bienvenue dans notre sélection ne formulaires.", "Bienvenue", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     phase1ToolStripMenuItem.Enabled = true;
                     phase2ToolStripMenuItem.Enabled = true;
                     phase3ToolStripMenuItem.Enabled = true;
                     break;
                 case "exitMenuItem":
-                    Environment.Exit(0);
+                    var result = MessageBox.Show("Voulez vous quitter l'application ?", "Quiter",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (result == DialogResult.OK)
+                    {
+                        Environment.Exit(0);
+                    }
                     break;
                 case "adderMenuItem":
                     frmAdder = new Adder();

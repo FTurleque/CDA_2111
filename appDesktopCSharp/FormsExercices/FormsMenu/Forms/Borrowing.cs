@@ -26,14 +26,13 @@ namespace FormsMenu
             listBoxPeriods.SelectedIndex = 0;
             labelRefundNumber.Text = "1";
             refund.Rate = (double)radioBtnPercent.Tag;
-            /*refund.RefundNumber = int.Parse(labelRefundNumber.Text);*/
         }
 
         private void HScrollBarMonth_Scroll(object sender, ScrollEventArgs e)
         {
             labelMonth.Text = hScrollBarMonth.Value.ToString();
-            labelRefundNumber.Text = (int.Parse(labelMonth.Text) / (int)hScrollBarMonth.Tag).ToString();
-            refund.RefundNumber = int.Parse(labelMonth.Text);
+            refund.RefundNumber = (double)(int.Parse(labelMonth.Text) / (int)hScrollBarMonth.Tag);
+            labelRefundNumber.Text = refund.RefundNumber.ToString();
         }
 
         private void RadioBtnPercent_CheckedChanged(object sender, EventArgs e)
@@ -47,40 +46,28 @@ namespace FormsMenu
 
         private void ListBoxPeriods_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int step;
-            switch (listBoxPeriods.SelectedItem)
+            var step = listBoxPeriods.SelectedItem switch
             {
-                case "Bimestriel":
-                    step = 2;
-                    break;
-                case "Trimestriel":
-                    step = 3;
-                    break;
-                case "Semestriel":
-                    step = 6;
-                    break;
-                case "Annuel":
-                    step = 12;
-                    break;
-                default:
-                    step = 1;
-                    break;
-            }
+                "Bimestriel" => 2,
+                "Trimestriel" => 3,
+                "Semestriel" => 6,
+                "Annuel" => 12,
+                _ => 1,
+            };
             hScrollBarMonth.Tag = step;
             hScrollBarMonth.Minimum = (int)hScrollBarMonth.Tag;
             labelMonth.Text = hScrollBarMonth.Minimum.ToString();
             hScrollBarMonth.LargeChange = step * 2;
             hScrollBarMonth.SmallChange = step;
             hScrollBarMonth.Value = step;
-            
+            refund.Periodicity = (double)step;
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
         {
             errorProvider.SetError(textBoxLoan, doubleValidator.IsValidDouble(textBoxLoan.Text) ? String.Empty : "Ne doit contenir que des chiffre ',' ou '.'.");
             errorProvider.SetError(textBoxName, nameValidate.IsValidName(textBoxName.Text) ? String.Empty : "Erreur de nom");
-            double tmp = (double)((int)hScrollBarMonth.Tag);
-            labelResultLoan.Text = refund.Refund(double.Parse(textBoxLoan.Text), tmp).ToString() + " €";
+            labelResultLoan.Text = refund.Refund(double.Parse(textBoxLoan.Text)).ToString() + " €";
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)

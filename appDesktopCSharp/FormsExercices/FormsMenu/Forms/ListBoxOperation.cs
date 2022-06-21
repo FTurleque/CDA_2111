@@ -11,21 +11,31 @@ namespace FormsMenu
 
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-            listBoxElements.Items.Add(textBoxNewElement.Text);
-            textBoxCount.Text = listBoxElements.Items.Count.ToString();
+            if(!listBoxElements.Items.Contains(textBoxNewElement.Text))
+            {
+                listBoxElements.Items.Add(textBoxNewElement.Text);
+                textBoxCount.Text = listBoxElements.Items.Count.ToString();
+                listBoxElements.SelectedIndex = listBoxElements.Items.Count - 1;
+            }
+            else
+            {
+                MessageBox.Show("Le nouvel element est déjà dans la liste", 
+                    "Erreur", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+            }
             textBoxNewElement.Clear();
             textBoxNewElement.Focus();
         }
 
         private void ButtonSelect_Click(object sender, EventArgs e)
         {
-            if(listBoxElements.Items.Count > int.Parse(textBoxIndexElement.Text))
+            errorProvider.SetError(textBoxIndexElement, 
+                listBoxElements.Items.Count > int.Parse(textBoxIndexElement.Text) ?
+                String.Empty : "Le chiffre séléctionner est hors limite");
+            if (listBoxElements.Items.Count > int.Parse(textBoxIndexElement.Text))
             {
                 listBoxElements.SelectedIndex = int.Parse(textBoxIndexElement.Text);
-            }
-            else
-            {
-                errorProvider.SetError(textBoxIndexElement, "Le chiffre séléctionner est hors limite");
             }
         }
 

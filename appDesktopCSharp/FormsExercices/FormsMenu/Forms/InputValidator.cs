@@ -45,12 +45,12 @@ namespace FormsMenu
             {
                 MessageBox.Show("Nom : " + txtNom.Text +
                                 "\nDate : " + txtDate.Text +
-                                "\nMontant : " + txtMontant.Text +
+                                "\nMontant : " + txtMontant.Text + " €" +
                                 "\nCode : " + txtCP.Text, "Validation effectuée", MessageBoxButtons.OK);
                 var result = MessageBox.Show("Fin de l'application", "FIN", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
-                    Environment.Exit(0);
+                    this.Close();
                 }
             }
         }

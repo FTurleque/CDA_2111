@@ -35,20 +35,23 @@ namespace FormsMenu
         }
         private void ComboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
         {
-            btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
-            btnAddAllInTarget.Enabled = manager.Source.Count > 0;
-            btnAddAllInSource.Enabled = manager.Target.Count > 0;
-            btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
+            DisablingTheButtons();
         }
 
         private void ListBoxTarget_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisablingTheButtons();
+            btnUp.Enabled = listBoxTarget.SelectedIndex > 0;
+            btnDown.Enabled = listBoxTarget.SelectedIndex < manager.Target.Count - 1 && 
+                listBoxTarget.SelectedIndex != -1;
+        }
+
+        private void DisablingTheButtons()
         {
             btnAddOneInTarget.Enabled = comboBoxSource.SelectedIndex >= 0;
             btnAddAllInTarget.Enabled = manager.Source.Count > 0;
             btnAddAllInSource.Enabled = manager.Target.Count > 0;
             btnAddOneInSource.Enabled = listBoxTarget.SelectedIndex >= 0;
-            btnUp.Enabled = listBoxTarget.SelectedIndex > 0;
-            btnDown.Enabled = listBoxTarget.SelectedIndex < manager.Target.Count - 1;
         }
 
         private void BtnAddOneInTarget_Click(object sender, EventArgs e)

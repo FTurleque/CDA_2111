@@ -16,7 +16,7 @@ namespace FormsMenu
             {
                 Button btn = (Button)sender;
                 values.Add(int.Parse(btn.Text));
-                textBox1.Text += btn.Text + '+';
+                textBox1.Text += values.Count > 1 ? "+" + btn.Text : btn.Text;
             }
             catch(Exception error)
             {
@@ -33,7 +33,7 @@ namespace FormsMenu
         private void Calculate_Click(object sender, EventArgs e)
         {
             int result = values.Sum();
-            textBox1.Text += " = " + result.ToString() + '+';
+            textBox1.Text += " = " + result.ToString();
         }
     }
 }

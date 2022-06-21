@@ -10,14 +10,14 @@ namespace FormsMenu
     {
         public double Rate { get; set; }
         public double RefundNumber { get; set; }
+        public double Periodicity { get; set; }
 
         public RefundCalculation() { }
         
-        public double Refund(double borrowedCapital, double step)
+        public double Refund(double borrowedCapital)
         {
-            double divisor = Math.Pow(1 + (Rate / 12), -RefundNumber);
-            double monthResult = (borrowedCapital * (Rate / 12)) / (1 - divisor);
-            return Math.Round(monthResult * step, 2);
+            double annualRate = Rate / (12.0 / Periodicity);
+            return Math.Round(borrowedCapital * (annualRate / (1 - Math.Pow(1.0 + annualRate, -RefundNumber))), 2);
         }
     }
 }
