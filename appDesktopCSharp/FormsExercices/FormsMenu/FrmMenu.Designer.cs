@@ -54,9 +54,9 @@
             this.toolStripStatusDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnLogin = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolStripSplitPhases = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -91,19 +91,19 @@
             // loginMenuItem
             // 
             this.loginMenuItem.Name = "loginMenuItem";
-            this.loginMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.loginMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loginMenuItem.Text = "&Identification";
             this.loginMenuItem.Click += new System.EventHandler(this.OnClick);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitMenuItem.Text = "&Quitter";
             this.exitMenuItem.Click += new System.EventHandler(this.OnClick);
             // 
@@ -253,9 +253,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.toolStripBtnLogin,
             this.toolStripSeparator1,
-            this.toolStripSplitButton1,
+            this.toolStripSplitPhases,
             this.toolStripSeparator2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
@@ -263,28 +263,28 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // toolStripBtnLogin
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(67, 22);
-            this.toolStripButton1.Text = "S\'identifier";
+            this.toolStripBtnLogin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripBtnLogin.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnLogin.Image")));
+            this.toolStripBtnLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnLogin.Name = "toolStripBtnLogin";
+            this.toolStripBtnLogin.Size = new System.Drawing.Size(67, 22);
+            this.toolStripBtnLogin.Text = "S\'identifier";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripSplitButton1
+            // toolStripSplitPhases
             // 
-            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripSplitButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitButton1.Image")));
-            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
-            this.toolStripSplitButton1.Size = new System.Drawing.Size(59, 22);
-            this.toolStripSplitButton1.Text = "Phases";
+            this.toolStripSplitPhases.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripSplitPhases.Image = ((System.Drawing.Image)(resources.GetObject("toolStripSplitPhases.Image")));
+            this.toolStripSplitPhases.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitPhases.Name = "toolStripSplitPhases";
+            this.toolStripSplitPhases.Size = new System.Drawing.Size(59, 22);
+            this.toolStripSplitPhases.Text = "Phases";
             // 
             // toolStripSeparator2
             // 
@@ -326,9 +326,9 @@
         private ToolStripMenuItem windowToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
+        private ToolStripButton toolStripBtnLogin;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripSplitButton toolStripSplitButton1;
+        private ToolStripSplitButton toolStripSplitPhases;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripMenuItem loginMenuItem;
         private ToolStripSeparator toolStripSeparator3;

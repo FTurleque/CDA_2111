@@ -193,7 +193,8 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Adder";
-            this.Text = "Calculator";
+            this.Text = "L\'additionneur";
+            this.Load += new System.EventHandler(this.Adder_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

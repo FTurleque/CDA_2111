@@ -3,11 +3,21 @@ namespace FormsMenu
     public partial class Adder : Form
     {
         private List<int> values;
+        public string Title 
+        { 
+            get { return Title; } 
+            set { Title = value; }
+        }
 
         public Adder()
         {
             InitializeComponent();
             values = new List<int>();
+        }
+
+        private void Adder_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void Button10_Click(object sender, EventArgs e)
@@ -35,5 +45,6 @@ namespace FormsMenu
             int result = values.Sum();
             textBox1.Text += " = " + result.ToString();
         }
+
     }
 }

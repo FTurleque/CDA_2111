@@ -29,6 +29,7 @@ namespace FormsMenu
             switch (menu.Name)
             {
                 case "loginMenuItem":
+                case "toolStripBtnLogin":
                     MessageBox.Show("Bonjour, bienvenue dans notre sélection ne formulaires.", "Bienvenue", 
                         MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     phase1ToolStripMenuItem.Enabled = true;
@@ -45,6 +46,7 @@ namespace FormsMenu
                     break;
                 case "adderMenuItem":
                     frmAdder = new Adder();
+                    frmAdder.Text += " " + 1;
                     ShowForm(frmAdder);
                     break;
                 case "inputControlMenuItem":
