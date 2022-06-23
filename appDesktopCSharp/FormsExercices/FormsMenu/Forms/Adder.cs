@@ -17,7 +17,7 @@ namespace FormsMenu
 
         private void Adder_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Button10_Click(object sender, EventArgs e)
