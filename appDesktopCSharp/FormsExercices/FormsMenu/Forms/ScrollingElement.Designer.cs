@@ -201,7 +201,7 @@
             this.Controls.Add(this.hScrollBarRed);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ScrollingElement";
-            this.Text = "Defilement";
+            this.Text = "Défilement";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownBlue)).EndInit();
