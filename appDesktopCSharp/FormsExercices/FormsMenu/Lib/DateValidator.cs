@@ -1,4 +1,4 @@
-﻿namespace FormsMenu
+﻿namespace FormsMenu.Lib
 {
     public class DateValidator
     {

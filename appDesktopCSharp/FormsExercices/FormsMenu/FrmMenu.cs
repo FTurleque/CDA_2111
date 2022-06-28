@@ -1,14 +1,16 @@
+using FormsMenu.Lib;
+
 namespace FormsMenu
 {
     public partial class FrmMenu : Form
     {
-        private Adder frmAdder;
-        private Borrowing frmBorrowing;
-        private CheckBoxRadioBtn frmCheckBoxRadioBtn;
-        private InputValidator frmInputValidator;
-        private ListBoxAndComboBox frmListBoxAndComboBox;
-        private ListBoxOperation frmListBoxOperation;
-        private ScrollingElement frmScrollingElement;
+        private FormBuilder<Adder> frmAdder;
+        private FormBuilder<Borrowing> frmBorrowing;
+        private FormBuilder<CheckBoxRadioBtn> frmCheckBoxRadioBtn;
+        private FormBuilder<InputValidator> frmInputValidator;
+        private FormBuilder<ListBoxAndComboBox> frmListBoxAndComboBox;
+        private FormBuilder<ListBoxOperation> frmListBoxOperation;
+        private FormBuilder<ScrollingElement> frmScrollingElement;
 
         public FrmMenu()
         {
@@ -17,6 +19,14 @@ namespace FormsMenu
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
+            frmAdder = new();
+            frmBorrowing = new();
+            frmCheckBoxRadioBtn = new();
+            frmInputValidator = new();
+            frmListBoxAndComboBox = new();
+            frmListBoxOperation = new();
+            frmScrollingElement = new();
+
             phase1ToolStripMenuItem.Enabled = false;
             phase2ToolStripMenuItem.Enabled = false;
             phase3ToolStripMenuItem.Enabled = false;
@@ -47,33 +57,25 @@ namespace FormsMenu
                     }
                     break;
                 case "adderMenuItem":
-                    frmAdder = new Adder();
-                    frmAdder.Text += " " + 1;
-                    ShowForm(frmAdder);
+                    frmAdder.CreateInstance(this).Show();
                     break;
                 case "inputControlMenuItem":
-                    frmInputValidator = new InputValidator();
-                    ShowForm(frmInputValidator);
+                    frmInputValidator.CreateInstance(this).Show();
                     break;
                 case "checkBoxAndRadioButtonMenuItem":
-                    frmCheckBoxRadioBtn = new CheckBoxRadioBtn();
-                    ShowForm(frmCheckBoxRadioBtn);
+                    frmCheckBoxRadioBtn.CreateInstance(this).Show();
                     break;
                 case "listBoxMenuItem":
-                    frmListBoxOperation = new ListBoxOperation();
-                    ShowForm(frmListBoxOperation);
+                    frmListBoxOperation.CreateInstance(this).Show();
                     break;
                 case "comboBoxMenuItem":
-                    frmListBoxAndComboBox = new ListBoxAndComboBox();
-                    ShowForm(frmListBoxAndComboBox);
+                    frmListBoxAndComboBox.CreateInstance(this).Show();
                     break;
                 case "scrollingMenuItem":
-                    frmScrollingElement = new ScrollingElement();
-                    ShowForm(frmScrollingElement);
+                    frmScrollingElement.CreateInstance(this).Show();
                     break;
                 case "borrowingMenuItem":
-                    frmBorrowing = new Borrowing();
-                    ShowForm(frmBorrowing);
+                    frmBorrowing.CreateInstance(this).Show();
                     break;
                 case "cascadeToolStripMenuItem":
                     this.LayoutMdi(MdiLayout.Cascade);
@@ -88,12 +90,5 @@ namespace FormsMenu
                     break;
             }
         }
-
-        private void ShowForm(Form frm)
-        {
-            frm.MdiParent = this;
-            frm.Show();
-        }
-
     }
 }

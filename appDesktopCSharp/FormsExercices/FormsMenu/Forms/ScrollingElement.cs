@@ -1,3 +1,5 @@
+using FormsMenu.Lib;
+
 namespace FormsMenu
 {
     public partial class ScrollingElement : Form
