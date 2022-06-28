@@ -85,8 +85,8 @@
             this.toolStripSeparator3,
             this.exitMenuItem});
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            this.loginToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.loginToolStripMenuItem.Text = "Connection";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.loginToolStripMenuItem.Text = "Connexion";
             // 
             // loginMenuItem
             // 

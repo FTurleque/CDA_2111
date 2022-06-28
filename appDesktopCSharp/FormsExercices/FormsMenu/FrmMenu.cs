@@ -20,6 +20,7 @@ namespace FormsMenu
             phase1ToolStripMenuItem.Enabled = false;
             phase2ToolStripMenuItem.Enabled = false;
             phase3ToolStripMenuItem.Enabled = false;
+            windowToolStripMenuItem.Enabled = false;
             toolStripStatusDate.Text = DateTime.Now.ToString("d");
         }
 
@@ -35,13 +36,14 @@ namespace FormsMenu
                     phase1ToolStripMenuItem.Enabled = true;
                     phase2ToolStripMenuItem.Enabled = true;
                     phase3ToolStripMenuItem.Enabled = true;
+                    windowToolStripMenuItem.Enabled = true;
                     break;
                 case "exitMenuItem":
                     var result = MessageBox.Show("Voulez vous quitter l'application ?", "Quiter",
-                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (result == DialogResult.OK)
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        Environment.Exit(0);
+                        Application.Exit();
                     }
                     break;
                 case "adderMenuItem":
