@@ -91,26 +91,27 @@
             // loginMenuItem
             // 
             this.loginMenuItem.Name = "loginMenuItem";
-            this.loginMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loginMenuItem.Size = new System.Drawing.Size(144, 22);
             this.loginMenuItem.Text = "&Identification";
-            this.loginMenuItem.Click += new System.EventHandler(this.OnClick);
+            this.loginMenuItem.Click += new System.EventHandler(this.LoginMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
-            this.exitMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitMenuItem.Size = new System.Drawing.Size(144, 22);
             this.exitMenuItem.Text = "&Quitter";
-            this.exitMenuItem.Click += new System.EventHandler(this.OnClick);
+            this.exitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
             // phase1ToolStripMenuItem
             // 
             this.phase1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adderMenuItem});
+            this.phase1ToolStripMenuItem.Enabled = false;
             this.phase1ToolStripMenuItem.Name = "phase1ToolStripMenuItem";
             this.phase1ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.phase1ToolStripMenuItem.Text = "Phase 1";
@@ -126,6 +127,7 @@
             // 
             this.phase2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inputControlMenuItem});
+            this.phase2ToolStripMenuItem.Enabled = false;
             this.phase2ToolStripMenuItem.Name = "phase2ToolStripMenuItem";
             this.phase2ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.phase2ToolStripMenuItem.Text = "Phase 2";
@@ -146,6 +148,7 @@
             this.scrollingMenuItem,
             this.toolStripSeparator5,
             this.borrowingMenuItem});
+            this.phase3ToolStripMenuItem.Enabled = false;
             this.phase3ToolStripMenuItem.Name = "phase3ToolStripMenuItem";
             this.phase3ToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.phase3ToolStripMenuItem.Text = "Phase 3";
@@ -197,6 +200,7 @@
             this.horizontalToolStripMenuItem,
             this.verticalToolStripMenuItem,
             this.toolStripSeparator4});
+            this.windowToolStripMenuItem.Enabled = false;
             this.windowToolStripMenuItem.Name = "windowToolStripMenuItem";
             this.windowToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.windowToolStripMenuItem.Text = "Fenêtres";
@@ -271,6 +275,7 @@
             this.toolStripBtnLogin.Name = "toolStripBtnLogin";
             this.toolStripBtnLogin.Size = new System.Drawing.Size(67, 22);
             this.toolStripBtnLogin.Text = "S\'identifier";
+            this.toolStripBtnLogin.Click += new System.EventHandler(this.LoginMenuItem_Click);
             // 
             // toolStripSeparator1
             // 

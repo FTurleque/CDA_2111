@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FormsMenu.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FormsMenu.Lib
 {
-    internal class FormBuilder<T> where T : Form, new()
+    internal class FormBuilder<T> : IFormBuilder where T : Form, new()
     {
         public int index;
 
@@ -15,7 +16,7 @@ namespace FormsMenu.Lib
             index = 0;
         }
 
-        public T CreateInstance(Form parent)
+        public Form CreateInstance(Form parent)
         {
             T form = new();
             form.Text += " N°" + ++index;
