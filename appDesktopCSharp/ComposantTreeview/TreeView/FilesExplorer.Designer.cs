@@ -1,6 +1,6 @@
 ﻿namespace TreeView
 {
-    partial class Form1
+    partial class FilesExplorer
     {
         /// <summary>
         ///  Required designer variable.

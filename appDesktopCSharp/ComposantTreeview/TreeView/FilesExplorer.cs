@@ -1,8 +1,8 @@
 namespace TreeView
 {
-    public partial class Form1 : Form
+    public partial class FilesExplorer : Form
     {
-        public Form1()
+        public FilesExplorer()
         {
             InitializeComponent();
         }
