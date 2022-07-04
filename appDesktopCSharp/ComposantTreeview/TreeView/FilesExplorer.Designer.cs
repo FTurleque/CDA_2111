@@ -95,7 +95,7 @@
             this.label1.Text = "Chemin du dossier à examiner";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form1
+            // FilesExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,7 +107,7 @@
             this.Controls.Add(this.btnReduceTree);
             this.Controls.Add(this.btnHardDiskPath);
             this.Controls.Add(this.treeView);
-            this.Name = "Form1";
+            this.Name = "FilesExplorer";
             this.Text = "Vous avez sélectionné :";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
