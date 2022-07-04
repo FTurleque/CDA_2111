@@ -9,29 +9,13 @@ namespace TreeView.Class
 {
     internal abstract class FT_Node
     {
-        public string Name
-        {
-            get => default;
-            set { }
-        }
+        public string Name  { get; set; }
 
-        public string Path
-        {
-            get => default;
-            set { }
-        }
+        public string Path { get; set; }
 
-        public FT_Node Parent
-        {
-            get => default;
-            set { }
-        }
+        public FT_Node Parent { get; set; }
 
-        public bool IsAuthorized
-        {
-            get => default;
-            set { }
-        }
+        public bool IsAuthorized { get; set; }
 
         public FT_Node(
             string name, 

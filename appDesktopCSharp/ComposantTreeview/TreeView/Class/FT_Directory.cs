@@ -9,11 +9,7 @@ namespace TreeView.Class
 {
     internal class FT_Directory : FT_Node
     {
-        public List<FT_Node> Child
-        {
-            get => default;
-            set { }
-        }
+        public List<FT_Node> Child { get; set; }
 
         public FT_Directory(
             List<FT_Node> child,

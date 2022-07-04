@@ -9,11 +9,7 @@ namespace TreeView.Class
 {
     internal class FT_File : FT_Node
     {
-        public string Extention
-        {
-            get => default;
-            set { }
-        }
+        public string Extention { get; set; }
 
         public FT_File(
             string extention, 
