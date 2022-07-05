@@ -19,7 +19,7 @@ namespace FormsMenu
             comboBoxMenuItem.Tag = new FormBuilder<ListBoxAndComboBox>();
             scrollingMenuItem.Tag = new FormBuilder<ScrollingElement>();
             borrowingMenuItem.Tag = new FormBuilder<Borrowing>();
-            toolStripStatusDate.Text = DateTime.Now.ToString("d");
+            lblTime.Text = DateTime.Now.ToString("d");
         }
 
         private void OnClick(object sender, EventArgs e)
@@ -27,7 +27,10 @@ namespace FormsMenu
             ToolStripMenuItem menu = (ToolStripMenuItem)sender;
             if (menu.Tag is IFormBuilder formBuilder)
             {
-                formBuilder.CreateInstance(this).Show();
+                //formBuilder.CreateInstance(this).Show();
+                Form form = formBuilder.CreateInstance(this);
+                lblLastWindow.Text = form.Text;
+                form.Show();
             }
             switch (menu.Name)
             {
