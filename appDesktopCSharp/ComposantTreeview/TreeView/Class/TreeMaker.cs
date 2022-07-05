@@ -20,5 +20,20 @@ namespace TreeView.Class
         {
             dirs.Append(path);
         }
+
+        public static void MakeNode()
+        {
+
+        }
+
+        public static void AddParentNode()
+        {
+
+        }
+
+        public static void AddChild()
+        {
+
+        }
     }
 }

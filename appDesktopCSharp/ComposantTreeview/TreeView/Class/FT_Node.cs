@@ -11,6 +11,7 @@ namespace TreeView.Class
     {
         public string Name  { get; set; }
 
+        // Renommer le chemin complet avec le nom complet
         public string Path { get; set; }
 
         public FT_Node Parent { get; set; }
@@ -33,6 +34,11 @@ namespace TreeView.Class
         public void GetFiles(string path)
         {
             var f = Directory.GetFiles(path);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
