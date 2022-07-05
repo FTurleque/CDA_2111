@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace HttpServer
 {
     public class WebServer
     {
-        Boolean running;
+        public Boolean Running { get; private set; }
         HttpListener server;
 
         public async void Start()
@@ -19,9 +20,9 @@ namespace HttpServer
                 server.Prefixes.Add("http://localhost:8000/");
                 // server.Prefixes.Add(Environment.MachineName);
                 server.Start();
-                running = true;
+                Running = true;
 
-                while(running)
+                while(Running)
                 {
                     var context = await server.GetContextAsync();
                     Thread thread1 = new Thread(OnRequest);
@@ -32,15 +33,23 @@ namespace HttpServer
 
         public void Stop()
         {
-            running = false;
+            Running = false;
         }
 
-        public void OnRequest(Object req)
+        public void OnRequest(object? req)
         {
             if(req is HttpListenerContext ctx)
             {
-                string s = "<html>Bonjour !</html>";
-                byte[] res = Encoding.UTF8.GetBytes(s.ToCharArray());
+                // string s = "<html>Bonjour !</html>";
+                List<Car> cars = Car.GetCars();
+
+                // Conversion en Json.
+                string json = JsonSerializer.Serialize(cars);
+
+                // Conversion Json en Objet C#
+                // List<Car>? newCars = JsonSerializer.Deserialize<List<Car>>(json);
+
+                byte[] res = Encoding.UTF8.GetBytes(json.ToCharArray());
 
                 ctx.Response.Close(res, true);
             }
