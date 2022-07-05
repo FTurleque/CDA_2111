@@ -52,7 +52,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusDate = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblLastWindow = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripBtnLogin = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -235,7 +236,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusDate,
-            this.toolStripStatusLabel2});
+            this.lblTime,
+            this.lblLastWindow});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
@@ -247,12 +249,17 @@
             this.toolStripStatusDate.Name = "toolStripStatusDate";
             this.toolStripStatusDate.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripStatusLabel2
+            // lblTime
             // 
-            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(63, 17);
-            this.toolStripStatusLabel2.Text = "S\'identifier";
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(33, 17);
+            this.lblTime.Text = "Time";
+            // 
+            // lblLastWindow
+            // 
+            this.lblLastWindow.Name = "lblLastWindow";
+            this.lblLastWindow.Size = new System.Drawing.Size(59, 17);
+            this.lblLastWindow.Text = "Last Form";
             // 
             // toolStrip1
             // 
@@ -351,6 +358,7 @@
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem borrowingMenuItem;
         private ToolStripStatusLabel toolStripStatusDate;
-        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel lblLastWindow;
+        private ToolStripStatusLabel lblTime;
     }
 }
