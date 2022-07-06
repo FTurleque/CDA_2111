@@ -85,6 +85,8 @@
             this.txtBoxPath.Name = "txtBoxPath";
             this.txtBoxPath.Size = new System.Drawing.Size(233, 23);
             this.txtBoxPath.TabIndex = 5;
+            this.txtBoxPath.Text = "C:\\Users\\CRM\\Documents";
+            this.txtBoxPath.Validated += new System.EventHandler(this.txtBoxPath_Validated);
             // 
             // label1
             // 
@@ -109,7 +111,6 @@
             this.Controls.Add(this.treeView);
             this.Name = "FilesExplorer";
             this.Text = "Vous avez sélectionné :";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

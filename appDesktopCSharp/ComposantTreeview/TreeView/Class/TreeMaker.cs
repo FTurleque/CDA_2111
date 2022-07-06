@@ -6,24 +6,38 @@ using System.Threading.Tasks;
 
 namespace TreeView.Class
 {
-    public static class TreeMaker
+    public class TreeMaker
     {
         private static IEnumerable<string> files = Enumerable.Empty<string>();
         private static IEnumerable<string> dirs = Enumerable.Empty<string>();
 
-        public static void GetFiles(string path)
+        TreeView tree;
+
+        /*public static void GetFiles(string path)
         {
             files.Append(path);
         }
 
         public static void GetDirectories(string path)
         {
-            dirs.Append(path);
-        }
+            
+            var tmp = Directory.EnumerateDirectories(path);
+        }*/
 
-        public static void MakeNode()
+        public void MakeNode(string path)
         {
-
+            // Repartition selon fichier ou dossier
+            foreach (var item in Directory.EnumerateDirectories(path))
+            {
+                if (item is Directory)
+                {
+                    dirs.Append(item);
+                }
+                if (item is File)
+                {
+                    files.Append(item);
+                }
+            }
         }
 
         public static void AddParentNode()

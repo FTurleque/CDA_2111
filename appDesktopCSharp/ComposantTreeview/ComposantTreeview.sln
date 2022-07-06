@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeView", "TreeView\TreeView.csproj", "{8D86C7AD-59BB-45FE-A306-F2DDE3D1CE74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilesExplorer", "FilesExplorer\FilesExplorer.csproj", "{23CE4D29-30FE-4266-AF40-8A091F9DFF05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8D86C7AD-59BB-45FE-A306-F2DDE3D1CE74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D86C7AD-59BB-45FE-A306-F2DDE3D1CE74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D86C7AD-59BB-45FE-A306-F2DDE3D1CE74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D86C7AD-59BB-45FE-A306-F2DDE3D1CE74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23CE4D29-30FE-4266-AF40-8A091F9DFF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23CE4D29-30FE-4266-AF40-8A091F9DFF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23CE4D29-30FE-4266-AF40-8A091F9DFF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23CE4D29-30FE-4266-AF40-8A091F9DFF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,9 +7,10 @@ namespace TreeView
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void txtBoxPath_Validated(object sender, EventArgs e)
         {
-            txtBoxPath.Text = @"C:\Users\CRM\Documents";
+            var result = Directory.EnumerateFileSystemEntries(@"C:\Users\CRM\Documents\Microsoft Office Professional Plus 2013 VL Edition x86 x64 FR");
+            // var r = Directory.EnumerateFiles(@"C:\Users\CRM\Documents\Microsoft Office Professional Plus 2013 VL Edition x86 x64 FR");
         }
     }
 }
