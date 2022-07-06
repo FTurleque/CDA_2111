@@ -1,11 +1,10 @@
-using System.IO;
 using FilesExplorer.Class;
 
 namespace FilesExplorer
 {
     public partial class FilesExplorer : Form
     {
-        /*private TreeMaker treeMaker;*/
+        TreeNodeMaker nodes;
 
         public FilesExplorer()
         {
@@ -14,15 +13,14 @@ namespace FilesExplorer
 
         private void FilesExplorer_Load(object sender, EventArgs e)
         {
-            /*treeMaker = new TreeMaker(treeView);*/
+            nodes = new TreeNodeMaker(treeView);
         }
 
         private void btnHardDiskPath_Click(object sender, EventArgs e)
         {
-            string path = txtBoxPath.Text;
-            var dir = Directory.GetDirectories(path);
-            var fs = Directory.GetFileSystemEntries(path);
-            TreeMaker.MakeNode(path);
+            /*var dir = Directory.GetDirectories(path);
+            var fs = Directory.GetFileSystemEntries(path);*/
+            nodes.MakeNodes(txtBoxPath.Text);
             /*foreach (var item in Directory.EnumerateDirectories(path))
             {
                 if(item is System.IO.Directory)
