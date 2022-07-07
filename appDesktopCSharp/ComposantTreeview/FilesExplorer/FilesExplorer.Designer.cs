@@ -51,7 +51,7 @@
             this.txtBoxPath.Name = "txtBoxPath";
             this.txtBoxPath.Size = new System.Drawing.Size(233, 23);
             this.txtBoxPath.TabIndex = 11;
-            this.txtBoxPath.Text = "E:\\Documents\\algoboxwin64usb";
+            this.txtBoxPath.Text = "C:\\Users\\CRM\\Documents\\algoboxwin64usb\\algoboxwin64usb";
             // 
             // btnExpansionTree
             // 

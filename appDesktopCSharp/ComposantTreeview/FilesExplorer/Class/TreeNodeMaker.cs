@@ -22,16 +22,26 @@ namespace FilesExplorer.Class
 
         private TreeNode AddNode(string path)
         {
+            List<string> directories = new List<string>();
             TreeNode nodes = new TreeNode(path);
-            foreach (var item in Directory.GetFiles(path))
+            /*foreach (var fs in Directory.GetFiles(path))
             {
-                nodes.Nodes.Add(item);
-            }
-            foreach (var item in Directory.GetDirectories(path))
+                nodes.Nodes.Add(fs);
+            }*/
+            foreach (string item in Directory.GetDirectories(path))
             {
+                //directories.Add(item);
                 nodes.Nodes.Add(AddNode(item));
             }
+            /*foreach (string item in directories)
+            {
+                foreach (var fs in Directory.GetFiles(item))
+                {
+                    nodes.Nodes.Add(fs);
+                }
+            }*/
             return nodes;
         }
+
     }
 }
