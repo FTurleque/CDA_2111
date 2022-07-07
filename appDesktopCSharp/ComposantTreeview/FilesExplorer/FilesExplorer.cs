@@ -1,4 +1,4 @@
-using FilesExplorer.Class;
+using System.IO;
 
 namespace FilesExplorer
 {
@@ -26,9 +26,9 @@ namespace FilesExplorer
             this.MakeNode(node, txtBoxPath.Text);*/
 
             DirectoryInfo dir = new DirectoryInfo(txtBoxPath.Text);
-            string t = dir.FullName;
-            TreeNode node = treeView.Nodes.Add(dir.Name);
-
+            TreeNode node = new TreeNode(txtBoxPath.Text);
+            treeView.Nodes.Add(node);
+            this.MakeNode(dir, node);
             /*foreach (string filePath in Directory.GetDirectories(txtBoxPath.Text)) //myList is your list of paths
             {
                 node = root;
@@ -52,9 +52,9 @@ namespace FilesExplorer
             PopulateTreeView(treeView, paths, '\\');*/
         }
 
-        private void MakeNode(TreeNode node, string root)
+        private void MakeNode(DirectoryInfo _dir,TreeNode _parent)
         {
-            foreach (string filePath in Directory.GetDirectories(root)) //myList is your list of paths
+            /*foreach (string filePath in Directory.GetDirectories(root))
             {
                 root = filePath;
                 foreach (string pathBits in filePath.Split('/'))
@@ -62,19 +62,31 @@ namespace FilesExplorer
                     node = AddNode(node, pathBits);
                 }
                 MakeNode(node, root);
+            }*/
+            DirectoryInfo[] subDirs = _dir.GetDirectories();
+            if(subDirs.Length > 0 && subDirs != null)
+            {
+                foreach (DirectoryInfo subDir in subDirs)
+                {
+                    TreeNode children = new TreeNode(subDir.Name, 0, 1);
+                    _parent.Nodes.Add(children);
+                    this.AddFiles(subDir, children);
+                    MakeNode(subDir, children);
+                }
             }
+            AddFiles(_dir, _parent);
         }
 
-        private TreeNode AddNode(TreeNode node, string key)
+        private void AddFiles(DirectoryInfo _dir,TreeNode _parent)
         {
-            string[] newName = key.Split('\\');
-            if (node.Nodes.ContainsKey(key))
+            FileInfo[] subFiles = _dir.GetFiles();
+            if(subFiles.Length > 0 && subFiles != null)
             {
-                return node.Nodes[key];
-            }
-            else
-            {
-                return node.Nodes.Add(key, newName[^1]);
+                foreach (FileInfo subFile in subFiles)
+                {
+                    TreeNode nodeFile = new TreeNode(subFile.Name, 0, 1);
+                    _parent.Nodes.Add(nodeFile);
+                }
             }
         }
 
