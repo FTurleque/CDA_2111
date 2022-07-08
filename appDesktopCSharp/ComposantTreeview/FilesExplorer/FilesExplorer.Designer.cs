@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilesExplorer));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxPath = new System.Windows.Forms.TextBox();
             this.btnExpansionTree = new System.Windows.Forms.Button();
             this.btnReduceTree = new System.Windows.Forms.Button();
             this.btnHardDiskPath = new System.Windows.Forms.Button();
             this.treeView = new System.Windows.Forms.TreeView();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -83,10 +86,23 @@
             // 
             // treeView
             // 
+            this.treeView.CheckBoxes = true;
+            this.treeView.ImageIndex = 0;
+            this.treeView.ImageList = this.imageList;
             this.treeView.Location = new System.Drawing.Point(56, 120);
             this.treeView.Name = "treeView";
+            this.treeView.SelectedImageIndex = 0;
             this.treeView.Size = new System.Drawing.Size(689, 434);
             this.treeView.TabIndex = 7;
+            // 
+            // imageList
+            // 
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "pngegg.png");
+            this.imageList.Images.SetKeyName(1, "kisspng-computer-icons-document-file-format-apple-icon-ima-social-media-content-v" +
+        "ideo-package-gingerbeard-m-5b634cb280a200.3736848915332343545269.png");
             // 
             // FilesExplorer
             // 
@@ -101,7 +117,6 @@
             this.Controls.Add(this.treeView);
             this.Name = "FilesExplorer";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FilesExplorer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +130,6 @@
         private Button btnReduceTree;
         private Button btnHardDiskPath;
         private TreeView treeView;
+        private ImageList imageList;
     }
 }

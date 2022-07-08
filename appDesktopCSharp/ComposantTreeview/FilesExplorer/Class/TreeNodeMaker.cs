@@ -1,47 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FilesExplorer.Class
+﻿namespace FilesExplorer.Class
 {
-    internal class TreeNodeMaker
+    internal static class TreeNodeMaker
     {
-        TreeView treeView;
-
-        public TreeNodeMaker(TreeView _treeView)
+        public static void MakeNode(DirectoryInfo _dir, TreeNode _parent)
         {
-            this.treeView = _treeView;
-        }
-
-        public void MakeNodes(string path)
-        {
-            treeView.Nodes.Add(AddNode(path));
-        }
-
-        private TreeNode AddNode(string path)
-        {
-            List<string> directories = new List<string>();
-            TreeNode nodes = new TreeNode(path);
-            /*foreach (var fs in Directory.GetFiles(path))
+            DirectoryInfo[] subDirs = _dir.GetDirectories();
+            if (subDirs.Length > 0 && subDirs != null)
             {
-                nodes.Nodes.Add(fs);
-            }*/
-            foreach (string item in Directory.GetDirectories(path))
-            {
-                //directories.Add(item);
-                nodes.Nodes.Add(AddNode(item));
-            }
-            /*foreach (string item in directories)
-            {
-                foreach (var fs in Directory.GetFiles(item))
+                foreach (DirectoryInfo subDir in subDirs)
                 {
-                    nodes.Nodes.Add(fs);
+                    TreeNode children = new TreeNode(subDir.Name, 0, 1);
+                    _parent.Nodes.Add(children);
+                    AddFiles(subDir, children);
+                    MakeNode(subDir, children);
                 }
-            }*/
-            return nodes;
+            }
+            AddFiles(_dir, _parent);
         }
 
+        private static void AddFiles(DirectoryInfo _dir, TreeNode _parent)
+        {
+            FileInfo[] subFiles = _dir.GetFiles();
+            if (subFiles.Length > 0 && subFiles != null)
+            {
+                foreach (FileInfo subFile in subFiles)
+                {
+                    TreeNode nodeFile = new TreeNode(subFile.Name, 0, 1);
+                    _parent.Nodes.Add(nodeFile);
+                }
+            }
+        }
     }
 }
