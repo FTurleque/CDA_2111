@@ -32,16 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilesExplorer));
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxPath = new System.Windows.Forms.TextBox();
-            this.btnExpansionTree = new System.Windows.Forms.Button();
-            this.btnReduceTree = new System.Windows.Forms.Button();
+            this.btnExpand = new System.Windows.Forms.Button();
+            this.btnCollapse = new System.Windows.Forms.Button();
             this.btnHardDiskPath = new System.Windows.Forms.Button();
             this.treeView = new System.Windows.Forms.TreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.btnPathSelected = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(278, 42);
+            this.label1.Location = new System.Drawing.Point(162, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 35);
             this.label1.TabIndex = 12;
@@ -50,33 +51,35 @@
             // 
             // txtBoxPath
             // 
-            this.txtBoxPath.Location = new System.Drawing.Point(405, 54);
+            this.txtBoxPath.Location = new System.Drawing.Point(290, 54);
             this.txtBoxPath.Name = "txtBoxPath";
-            this.txtBoxPath.Size = new System.Drawing.Size(233, 23);
+            this.txtBoxPath.Size = new System.Drawing.Size(343, 23);
             this.txtBoxPath.TabIndex = 11;
-            this.txtBoxPath.Text = "C:\\Users\\CRM\\Documents\\algoboxwin64usb\\algoboxwin64usb";
+            this.txtBoxPath.Text = "C:\\Users\\fturl\\OneDrive - CENTRE DE READAPTATION\\Documents\\CDA\\cmder";
             // 
-            // btnExpansionTree
+            // btnExpand
             // 
-            this.btnExpansionTree.Location = new System.Drawing.Point(154, 570);
-            this.btnExpansionTree.Name = "btnExpansionTree";
-            this.btnExpansionTree.Size = new System.Drawing.Size(100, 61);
-            this.btnExpansionTree.TabIndex = 10;
-            this.btnExpansionTree.Text = "&Expansion de l\'arbre";
-            this.btnExpansionTree.UseVisualStyleBackColor = true;
+            this.btnExpand.Location = new System.Drawing.Point(154, 570);
+            this.btnExpand.Name = "btnExpand";
+            this.btnExpand.Size = new System.Drawing.Size(100, 61);
+            this.btnExpand.TabIndex = 10;
+            this.btnExpand.Text = "&Expansion de l\'arbre";
+            this.btnExpand.UseVisualStyleBackColor = true;
+            this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
             // 
-            // btnReduceTree
+            // btnCollapse
             // 
-            this.btnReduceTree.Location = new System.Drawing.Point(534, 570);
-            this.btnReduceTree.Name = "btnReduceTree";
-            this.btnReduceTree.Size = new System.Drawing.Size(99, 61);
-            this.btnReduceTree.TabIndex = 9;
-            this.btnReduceTree.Text = "&Reduction de l\'arbre";
-            this.btnReduceTree.UseVisualStyleBackColor = true;
+            this.btnCollapse.Location = new System.Drawing.Point(534, 570);
+            this.btnCollapse.Name = "btnCollapse";
+            this.btnCollapse.Size = new System.Drawing.Size(99, 61);
+            this.btnCollapse.TabIndex = 9;
+            this.btnCollapse.Text = "&Reduction de l\'arbre";
+            this.btnCollapse.UseVisualStyleBackColor = true;
+            this.btnCollapse.Click += new System.EventHandler(this.btnExpand_Click);
             // 
             // btnHardDiskPath
             // 
-            this.btnHardDiskPath.Location = new System.Drawing.Point(154, 22);
+            this.btnHardDiskPath.Location = new System.Drawing.Point(56, 21);
             this.btnHardDiskPath.Name = "btnHardDiskPath";
             this.btnHardDiskPath.Size = new System.Drawing.Size(100, 76);
             this.btnHardDiskPath.TabIndex = 8;
@@ -97,22 +100,56 @@
             // 
             // imageList
             // 
-            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList.Images.SetKeyName(0, "pngegg.png");
-            this.imageList.Images.SetKeyName(1, "kisspng-computer-icons-document-file-format-apple-icon-ima-social-media-content-v" +
-        "ideo-package-gingerbeard-m-5b634cb280a200.3736848915332343545269.png");
+            this.imageList.Images.SetKeyName(0, "folder.png");
+            this.imageList.Images.SetKeyName(1, "file.png");
+            this.imageList.Images.SetKeyName(2, "folder-open-empty.png");
+            this.imageList.Images.SetKeyName(3, "folder-open.png");
+            this.imageList.Images.SetKeyName(4, "fichier-exe.png");
+            this.imageList.Images.SetKeyName(5, "fichier-avi.png");
+            this.imageList.Images.SetKeyName(6, "fichier-css.png");
+            this.imageList.Images.SetKeyName(7, "fichier-doc.png");
+            this.imageList.Images.SetKeyName(8, "fichier-docx.png");
+            this.imageList.Images.SetKeyName(9, "fichier-gif.png");
+            this.imageList.Images.SetKeyName(10, "fichier-html.png");
+            this.imageList.Images.SetKeyName(11, "fichier-iso.png");
+            this.imageList.Images.SetKeyName(12, "fichier-jpg.png");
+            this.imageList.Images.SetKeyName(13, "fichier-js.png");
+            this.imageList.Images.SetKeyName(14, "fichier-mkv.png");
+            this.imageList.Images.SetKeyName(15, "fichier-mp3.png");
+            this.imageList.Images.SetKeyName(16, "fichier-mp4.png");
+            this.imageList.Images.SetKeyName(17, "fichier-mpg.png");
+            this.imageList.Images.SetKeyName(18, "fichier-pdf.png");
+            this.imageList.Images.SetKeyName(19, "fichier-php.png");
+            this.imageList.Images.SetKeyName(20, "fichier-png.png");
+            this.imageList.Images.SetKeyName(21, "fichier-ppt.png");
+            this.imageList.Images.SetKeyName(22, "fichier-rar.png");
+            this.imageList.Images.SetKeyName(23, "fichier-svg.png");
+            this.imageList.Images.SetKeyName(24, "fichier-txt.png");
+            this.imageList.Images.SetKeyName(25, "fichier-zip.png");
+            // 
+            // btnPathSelected
+            // 
+            this.btnPathSelected.Location = new System.Drawing.Point(639, 21);
+            this.btnPathSelected.Name = "btnPathSelected";
+            this.btnPathSelected.Size = new System.Drawing.Size(106, 76);
+            this.btnPathSelected.TabIndex = 13;
+            this.btnPathSelected.Text = "&Sélection du chemin";
+            this.btnPathSelected.UseVisualStyleBackColor = true;
+            this.btnPathSelected.Click += new System.EventHandler(this.btnPathSelected_Click);
             // 
             // FilesExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 667);
+            this.Controls.Add(this.btnPathSelected);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxPath);
-            this.Controls.Add(this.btnExpansionTree);
-            this.Controls.Add(this.btnReduceTree);
+            this.Controls.Add(this.btnExpand);
+            this.Controls.Add(this.btnCollapse);
             this.Controls.Add(this.btnHardDiskPath);
             this.Controls.Add(this.treeView);
             this.Name = "FilesExplorer";
@@ -126,10 +163,11 @@
 
         private Label label1;
         private TextBox txtBoxPath;
-        private Button btnExpansionTree;
-        private Button btnReduceTree;
+        private Button btnExpand;
+        private Button btnCollapse;
         private Button btnHardDiskPath;
         private TreeView treeView;
         private ImageList imageList;
+        private Button btnPathSelected;
     }
 }
