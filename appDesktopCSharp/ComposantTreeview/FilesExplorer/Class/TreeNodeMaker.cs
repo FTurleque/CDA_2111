@@ -11,8 +11,8 @@ namespace FilesExplorer.Class
         public static void MakeNode(DirectoryInfo _dir, TreeNode _parent)
         {
             // var files = Directory.GetDirectories(_dir.FullName, "*", directoryOptions);
-            // DirectoryInfo[] subDirs = _dir.GetDirectories(_dir.FullName, directoryOptions);
-            DirectoryInfo[] subDirs = _dir.GetDirectories();
+            DirectoryInfo[] subDirs = _dir.GetDirectories("*", directoryOptions);
+            // DirectoryInfo[] subDirs = _dir.GetDirectories();
             if (subDirs.Length > 0 && subDirs != null)
             {
                 foreach (DirectoryInfo subDir in subDirs)
@@ -22,11 +22,11 @@ namespace FilesExplorer.Class
                     children.SelectedImageIndex = 2;
                     children.Name = subDir.Name;
                     _parent.Nodes.Add(children);
-                    AddFiles(subDir, children);
                     MakeNode(subDir, children);
+                    AddFiles(subDir, children);
                 }
+                /*AddFiles(_dir, _parent);*/
             }
-            AddFiles(_dir, _parent);
         }
 
         private static void AddFiles(DirectoryInfo _dir, TreeNode _parent)

@@ -66,7 +66,7 @@
             this.btnExpand.TabIndex = 10;
             this.btnExpand.Text = "&Expansion de l\'arbre";
             this.btnExpand.UseVisualStyleBackColor = true;
-            this.btnExpand.Click += new System.EventHandler(this.btnExpand_Click);
+            this.btnExpand.Click += new System.EventHandler(this.btnExpandCollapse_Click);
             // 
             // btnCollapse
             // 
@@ -76,7 +76,7 @@
             this.btnCollapse.TabIndex = 9;
             this.btnCollapse.Text = "&Reduction de l\'arbre";
             this.btnCollapse.UseVisualStyleBackColor = true;
-            this.btnCollapse.Click += new System.EventHandler(this.btnExpand_Click);
+            this.btnCollapse.Click += new System.EventHandler(this.btnExpandCollapse_Click);
             // 
             // btnHardDiskPath
             // 

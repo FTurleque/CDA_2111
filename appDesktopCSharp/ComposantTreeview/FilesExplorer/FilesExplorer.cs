@@ -28,7 +28,7 @@ namespace FilesExplorer
             TreeNodeMaker.MakeNode(dir, node);
         }
 
-        private void btnExpand_Click(object sender, EventArgs e)
+        private void btnExpandCollapse_Click(object sender, EventArgs e)
         {
             Thread thread = new Thread(this.ExpandOrCollapse);
             thread.Start(sender);
@@ -37,17 +37,14 @@ namespace FilesExplorer
         private void ExpandOrCollapse(object? sender)
         {
             Button btn = (Button)sender;
-            this.Invoke(new MethodInvoker(() =>
+            if (btn.Name == "btnExpand")
             {
-                if (btn.Name == "btnExpand")
-                {
-                    treeView.ExpandAll();
-                }
-                else
-                {
-                    treeView.CollapseAll();
-                }
-            }));
+                treeView.ExpandAll();
+            }
+            else
+            {
+                treeView.CollapseAll();
+            }
         }
 
     }
