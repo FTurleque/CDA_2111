@@ -1,9 +1,17 @@
-﻿namespace FilesExplorer.Class
+﻿using System.Security.Permissions;
+
+namespace FilesExplorer.Class
 {
     internal static class TreeNodeMaker
     {
+        private static EnumerationOptions directoryOptions = new EnumerationOptions {
+            IgnoreInaccessible = true
+        };
+
         public static void MakeNode(DirectoryInfo _dir, TreeNode _parent)
         {
+            // var files = Directory.GetDirectories(_dir.FullName, "*", directoryOptions);
+            // DirectoryInfo[] subDirs = _dir.GetDirectories(_dir.FullName, directoryOptions);
             DirectoryInfo[] subDirs = _dir.GetDirectories();
             if (subDirs.Length > 0 && subDirs != null)
             {

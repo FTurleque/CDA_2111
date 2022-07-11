@@ -38,6 +38,7 @@
             this.treeView = new System.Windows.Forms.TreeView();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.btnPathSelected = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SuspendLayout();
             // 
             // label1
@@ -140,11 +141,20 @@
             this.btnPathSelected.UseVisualStyleBackColor = true;
             this.btnPathSelected.Click += new System.EventHandler(this.btnPathSelected_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Location = new System.Drawing.Point(0, 645);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // FilesExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 667);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnPathSelected);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxPath);
@@ -169,5 +179,6 @@
         private TreeView treeView;
         private ImageList imageList;
         private Button btnPathSelected;
+        private StatusStrip statusStrip1;
     }
 }
