@@ -51,29 +51,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.progressBarProductionB = new System.Windows.Forms.ProgressBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageA = new System.Windows.Forms.TabPage();
-            this.txtBoxGlobalDefectRateA = new System.Windows.Forms.TextBox();
-            this.txtBoxDefectRatePerHourA = new System.Windows.Forms.TextBox();
-            this.txtBoxCashRegistersNbA = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.prodControlA = new CashProduction.ProductionControl.ProductionControl();
             this.tabPageB = new System.Windows.Forms.TabPage();
-            this.txtBoxGlobalDefectRateB = new System.Windows.Forms.TextBox();
-            this.txtBoxDefectRatePerHourB = new System.Windows.Forms.TextBox();
-            this.txtBoxCashRegistersNbB = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.prodControlB = new CashProduction.ProductionControl.ProductionControl();
             this.tabPageC = new System.Windows.Forms.TabPage();
-            this.txtBoxGlobalDefectRateC = new System.Windows.Forms.TextBox();
-            this.txtBoxDefectRatePerHourC = new System.Windows.Forms.TextBox();
-            this.txtBoxCashRegistersNbC = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.prodControlC = new CashProduction.ProductionControl.ProductionControl();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageA.SuspendLayout();
             this.tabPageB.SuspendLayout();
@@ -102,7 +92,7 @@
             // exitMenu
             // 
             this.exitMenu.Name = "exitMenu";
-            this.exitMenu.Size = new System.Drawing.Size(180, 22);
+            this.exitMenu.Size = new System.Drawing.Size(111, 22);
             this.exitMenu.Text = "&Quitter";
             this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -202,9 +192,9 @@
             // 
             // progressBarProductionA
             // 
-            this.progressBarProductionA.Location = new System.Drawing.Point(239, 268);
+            this.progressBarProductionA.Location = new System.Drawing.Point(212, 268);
             this.progressBarProductionA.Name = "progressBarProductionA";
-            this.progressBarProductionA.Size = new System.Drawing.Size(369, 23);
+            this.progressBarProductionA.Size = new System.Drawing.Size(396, 23);
             this.progressBarProductionA.TabIndex = 1;
             // 
             // label1
@@ -229,9 +219,9 @@
             // 
             // progressBarProductionC
             // 
-            this.progressBarProductionC.Location = new System.Drawing.Point(239, 326);
+            this.progressBarProductionC.Location = new System.Drawing.Point(212, 326);
             this.progressBarProductionC.Name = "progressBarProductionC";
-            this.progressBarProductionC.Size = new System.Drawing.Size(369, 23);
+            this.progressBarProductionC.Size = new System.Drawing.Size(396, 23);
             this.progressBarProductionC.TabIndex = 3;
             // 
             // label3
@@ -246,221 +236,112 @@
             // 
             // progressBarProductionB
             // 
-            this.progressBarProductionB.Location = new System.Drawing.Point(239, 297);
+            this.progressBarProductionB.Location = new System.Drawing.Point(212, 297);
             this.progressBarProductionB.Name = "progressBarProductionB";
-            this.progressBarProductionB.Size = new System.Drawing.Size(369, 23);
+            this.progressBarProductionB.Size = new System.Drawing.Size(396, 23);
             this.progressBarProductionB.TabIndex = 5;
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3,
+            this.toolStripStatusLabel4});
             this.statusStrip1.Location = new System.Drawing.Point(0, 382);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(646, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(57, 17);
+            this.toolStripStatusLabel1.Text = "Caisse A :";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(51, 17);
+            this.toolStripStatusLabel2.Text = "Caise B :";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(56, 17);
+            this.toolStripStatusLabel3.Text = "Caisses C";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(33, 17);
+            this.toolStripStatusLabel4.Text = "Time";
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tabPageA);
             this.tabControl.Controls.Add(this.tabPageB);
             this.tabControl.Controls.Add(this.tabPageC);
-            this.tabControl.Location = new System.Drawing.Point(239, 51);
+            this.tabControl.Location = new System.Drawing.Point(212, 51);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(369, 168);
+            this.tabControl.Size = new System.Drawing.Size(396, 184);
             this.tabControl.TabIndex = 8;
             // 
             // tabPageA
             // 
-            this.tabPageA.Controls.Add(this.txtBoxGlobalDefectRateA);
-            this.tabPageA.Controls.Add(this.txtBoxDefectRatePerHourA);
-            this.tabPageA.Controls.Add(this.txtBoxCashRegistersNbA);
-            this.tabPageA.Controls.Add(this.label6);
-            this.tabPageA.Controls.Add(this.label5);
-            this.tabPageA.Controls.Add(this.label4);
+            this.tabPageA.Controls.Add(this.prodControlA);
             this.tabPageA.Location = new System.Drawing.Point(4, 24);
             this.tabPageA.Name = "tabPageA";
             this.tabPageA.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageA.Size = new System.Drawing.Size(361, 140);
+            this.tabPageA.Size = new System.Drawing.Size(388, 156);
             this.tabPageA.TabIndex = 0;
             this.tabPageA.Text = "Type A";
             this.tabPageA.UseVisualStyleBackColor = true;
             // 
-            // txtBoxGlobalDefectRateA
+            // prodControlA
             // 
-            this.txtBoxGlobalDefectRateA.Location = new System.Drawing.Point(255, 100);
-            this.txtBoxGlobalDefectRateA.Name = "txtBoxGlobalDefectRateA";
-            this.txtBoxGlobalDefectRateA.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxGlobalDefectRateA.TabIndex = 5;
-            // 
-            // txtBoxDefectRatePerHourA
-            // 
-            this.txtBoxDefectRatePerHourA.Location = new System.Drawing.Point(255, 58);
-            this.txtBoxDefectRatePerHourA.Name = "txtBoxDefectRatePerHourA";
-            this.txtBoxDefectRatePerHourA.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxDefectRatePerHourA.TabIndex = 4;
-            // 
-            // txtBoxCashRegistersNbA
-            // 
-            this.txtBoxCashRegistersNbA.Location = new System.Drawing.Point(255, 17);
-            this.txtBoxCashRegistersNbA.Name = "txtBoxCashRegistersNbA";
-            this.txtBoxCashRegistersNbA.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxCashRegistersNbA.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(166, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Taux défaut depuis démarrage";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Taux défaut heure";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 15);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nombre de caisses depuis le démarrage";
+            this.prodControlA.Location = new System.Drawing.Point(5, 6);
+            this.prodControlA.Name = "prodControlA";
+            this.prodControlA.Size = new System.Drawing.Size(380, 143);
+            this.prodControlA.TabIndex = 0;
             // 
             // tabPageB
             // 
-            this.tabPageB.Controls.Add(this.txtBoxGlobalDefectRateB);
-            this.tabPageB.Controls.Add(this.txtBoxDefectRatePerHourB);
-            this.tabPageB.Controls.Add(this.txtBoxCashRegistersNbB);
-            this.tabPageB.Controls.Add(this.label7);
-            this.tabPageB.Controls.Add(this.label8);
-            this.tabPageB.Controls.Add(this.label9);
+            this.tabPageB.Controls.Add(this.prodControlB);
             this.tabPageB.Location = new System.Drawing.Point(4, 24);
             this.tabPageB.Name = "tabPageB";
             this.tabPageB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageB.Size = new System.Drawing.Size(361, 140);
+            this.tabPageB.Size = new System.Drawing.Size(388, 156);
             this.tabPageB.TabIndex = 1;
             this.tabPageB.Text = "Type B";
             this.tabPageB.UseVisualStyleBackColor = true;
             // 
-            // txtBoxGlobalDefectRateB
+            // prodControlB
             // 
-            this.txtBoxGlobalDefectRateB.Location = new System.Drawing.Point(255, 100);
-            this.txtBoxGlobalDefectRateB.Name = "txtBoxGlobalDefectRateB";
-            this.txtBoxGlobalDefectRateB.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxGlobalDefectRateB.TabIndex = 11;
-            // 
-            // txtBoxDefectRatePerHourB
-            // 
-            this.txtBoxDefectRatePerHourB.Location = new System.Drawing.Point(255, 58);
-            this.txtBoxDefectRatePerHourB.Name = "txtBoxDefectRatePerHourB";
-            this.txtBoxDefectRatePerHourB.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxDefectRatePerHourB.TabIndex = 10;
-            // 
-            // txtBoxCashRegistersNbB
-            // 
-            this.txtBoxCashRegistersNbB.Location = new System.Drawing.Point(255, 17);
-            this.txtBoxCashRegistersNbB.Name = "txtBoxCashRegistersNbB";
-            this.txtBoxCashRegistersNbB.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxCashRegistersNbB.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 15);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Taux défaut depuis démarrage";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Taux défaut heure";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(216, 15);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Nombre de caisses depuis le démarrage";
+            this.prodControlB.Location = new System.Drawing.Point(5, 6);
+            this.prodControlB.Name = "prodControlB";
+            this.prodControlB.Size = new System.Drawing.Size(380, 143);
+            this.prodControlB.TabIndex = 0;
             // 
             // tabPageC
             // 
-            this.tabPageC.Controls.Add(this.txtBoxGlobalDefectRateC);
-            this.tabPageC.Controls.Add(this.txtBoxDefectRatePerHourC);
-            this.tabPageC.Controls.Add(this.txtBoxCashRegistersNbC);
-            this.tabPageC.Controls.Add(this.label10);
-            this.tabPageC.Controls.Add(this.label11);
-            this.tabPageC.Controls.Add(this.label12);
+            this.tabPageC.Controls.Add(this.prodControlC);
             this.tabPageC.Location = new System.Drawing.Point(4, 24);
             this.tabPageC.Name = "tabPageC";
             this.tabPageC.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageC.Size = new System.Drawing.Size(361, 140);
+            this.tabPageC.Size = new System.Drawing.Size(388, 156);
             this.tabPageC.TabIndex = 2;
             this.tabPageC.Text = "Type C";
             this.tabPageC.UseVisualStyleBackColor = true;
             // 
-            // txtBoxGlobalDefectRateC
+            // prodControlC
             // 
-            this.txtBoxGlobalDefectRateC.Location = new System.Drawing.Point(255, 100);
-            this.txtBoxGlobalDefectRateC.Name = "txtBoxGlobalDefectRateC";
-            this.txtBoxGlobalDefectRateC.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxGlobalDefectRateC.TabIndex = 11;
-            // 
-            // txtBoxDefectRatePerHourC
-            // 
-            this.txtBoxDefectRatePerHourC.Location = new System.Drawing.Point(255, 58);
-            this.txtBoxDefectRatePerHourC.Name = "txtBoxDefectRatePerHourC";
-            this.txtBoxDefectRatePerHourC.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxDefectRatePerHourC.TabIndex = 10;
-            // 
-            // txtBoxCashRegistersNbC
-            // 
-            this.txtBoxCashRegistersNbC.Location = new System.Drawing.Point(255, 17);
-            this.txtBoxCashRegistersNbC.Name = "txtBoxCashRegistersNbC";
-            this.txtBoxCashRegistersNbC.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxCashRegistersNbC.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 108);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(166, 15);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Taux défaut depuis démarrage";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 66);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 15);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Taux défaut heure";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 25);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(216, 15);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Nombre de caisses depuis le démarrage";
+            this.prodControlC.Location = new System.Drawing.Point(5, 6);
+            this.prodControlC.Name = "prodControlC";
+            this.prodControlC.Size = new System.Drawing.Size(380, 143);
+            this.prodControlC.TabIndex = 0;
             // 
             // Form1
             // 
@@ -481,13 +362,12 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPageA.ResumeLayout(false);
-            this.tabPageA.PerformLayout();
             this.tabPageB.ResumeLayout(false);
-            this.tabPageB.PerformLayout();
             this.tabPageC.ResumeLayout(false);
-            this.tabPageC.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -522,23 +402,12 @@
         private TabPage tabPageA;
         private TabPage tabPageB;
         private TabPage tabPageC;
-        private Label label4;
-        private Label label6;
-        private Label label5;
-        private TextBox txtBoxGlobalDefectRateA;
-        private TextBox txtBoxDefectRatePerHourA;
-        private TextBox txtBoxCashRegistersNbA;
-        private TextBox txtBoxGlobalDefectRateB;
-        private TextBox txtBoxDefectRatePerHourB;
-        private TextBox txtBoxCashRegistersNbB;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private TextBox txtBoxGlobalDefectRateC;
-        private TextBox txtBoxDefectRatePerHourC;
-        private TextBox txtBoxCashRegistersNbC;
-        private Label label10;
-        private Label label11;
-        private Label label12;
+        private ProductionControl.ProductionControl prodControlA;
+        private ProductionControl.ProductionControl prodControlB;
+        private ProductionControl.ProductionControl prodControlC;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel toolStripStatusLabel3;
+        private ToolStripStatusLabel toolStripStatusLabel4;
     }
 }

@@ -8,7 +8,12 @@ namespace CashProduction.Class
 {
     public class Production
     {
-        public string name
+        public Production(string _name, int _totalProduction)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string Name
         {
             get => default;
             set
@@ -16,7 +21,7 @@ namespace CashProduction.Class
             }
         }
 
-        public int cashRegistersNb
+        public int BoxesNumber
         {
             get => default;
             set
@@ -24,7 +29,7 @@ namespace CashProduction.Class
             }
         }
 
-        public float defectRatePerHour
+        public float DefectRateLastHour
         {
             get => default;
             set
@@ -32,7 +37,7 @@ namespace CashProduction.Class
             }
         }
 
-        public float globalDefectRate
+        public float GlobalDefectRate
         {
             get => default;
             set
@@ -40,5 +45,43 @@ namespace CashProduction.Class
             }
         }
 
+        public QuotaPerHour QuotaPerHour
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal BoxesDefault ProductionDefault
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public int TotalProduction
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public void Start()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void StandBy()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Continue()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
