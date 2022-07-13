@@ -56,6 +56,7 @@
             this.txtBoxCashRegistersNb.Name = "txtBoxCashRegistersNb";
             this.txtBoxCashRegistersNb.Size = new System.Drawing.Size(100, 23);
             this.txtBoxCashRegistersNb.TabIndex = 15;
+            this.txtBoxCashRegistersNb.TextChanged += new System.EventHandler(this.txtBoxCashRegistersNb_TextChanged);
             // 
             // label7
             // 

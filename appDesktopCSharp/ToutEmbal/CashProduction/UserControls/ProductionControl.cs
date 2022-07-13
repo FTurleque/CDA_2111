@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CashProduction.Class;
 
 namespace CashProduction.ProductionControl
 {
@@ -15,6 +16,11 @@ namespace CashProduction.ProductionControl
         public ProductionControl()
         {
             InitializeComponent();
+        }
+
+        private void txtBoxCashRegistersNb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

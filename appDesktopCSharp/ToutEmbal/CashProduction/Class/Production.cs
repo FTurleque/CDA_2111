@@ -8,70 +8,32 @@ namespace CashProduction.Class
 {
     public class Production
     {
+        public string Name { get; set; }
+
+        public int BoxesNumber { get; set; }
+
+        public float DefectRateLastHour { get; set; }
+
+        public float GlobalDefectRate { get; set; }
+
+        public QuotaPerHour QuotaPerHour { get; set; }
+
+        internal BoxesDefault ProductionDefault { get; set; }
+
+        public int TotalProduction { get; set; }
+
         public Production(string _name, int _totalProduction)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public string Name
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int BoxesNumber
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public float DefectRateLastHour
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public float GlobalDefectRate
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public QuotaPerHour QuotaPerHour
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        internal BoxesDefault ProductionDefault
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public int TotalProduction
-        {
-            get => default;
-            set
-            {
-            }
+            Name = _name;
+            TotalProduction = _totalProduction;
         }
 
         public void Start()
         {
-            throw new System.NotImplementedException();
+            while (BoxesNumber != TotalProduction)
+            {
+                BoxesNumber++;
+            }
         }
 
         public void StandBy()
