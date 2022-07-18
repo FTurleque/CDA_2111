@@ -1,6 +1,6 @@
 ﻿namespace CashProduction.ProductionControl
 {
-    partial class ProductionControl
+    partial class productionControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,7 +56,7 @@
             this.txtBoxCashRegistersNb.Name = "txtBoxCashRegistersNb";
             this.txtBoxCashRegistersNb.Size = new System.Drawing.Size(100, 23);
             this.txtBoxCashRegistersNb.TabIndex = 15;
-            this.txtBoxCashRegistersNb.TextChanged += new System.EventHandler(this.txtBoxCashRegistersNb_TextChanged);
+            this.txtBoxCashRegistersNb.TextChanged += new System.EventHandler(this.ProductionUpdate_TextChanged);
             // 
             // label7
             // 
@@ -85,7 +85,7 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Nombre de caisses depuis le démarrage";
             // 
-            // ProductionControl
+            // productionControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,8 +95,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Name = "ProductionControl";
+            this.Name = "productionControl";
             this.Size = new System.Drawing.Size(380, 143);
+            this.Load += new System.EventHandler(this.ProductionControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

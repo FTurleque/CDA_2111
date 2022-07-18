@@ -44,12 +44,6 @@
             this.continueAMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.continueBMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.continueCMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBarProductionA = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.progressBarProductionC = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.progressBarProductionB = new System.Windows.Forms.ProgressBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -57,11 +51,14 @@
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageA = new System.Windows.Forms.TabPage();
-            this.prodControlA = new CashProduction.ProductionControl.ProductionControl();
+            this.prodControlA = new CashProduction.ProductionControl.productionControl();
             this.tabPageB = new System.Windows.Forms.TabPage();
-            this.prodControlB = new CashProduction.ProductionControl.ProductionControl();
+            this.prodControlB = new CashProduction.ProductionControl.productionControl();
             this.tabPageC = new System.Windows.Forms.TabPage();
-            this.prodControlC = new CashProduction.ProductionControl.ProductionControl();
+            this.prodControlC = new CashProduction.ProductionControl.productionControl();
+            this.progressBarControlA = new CashProduction.UserControls.ProgressBarControl();
+            this.progressBarControlC = new CashProduction.UserControls.ProgressBarControl();
+            this.progressBarControlB = new CashProduction.UserControls.ProgressBarControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
@@ -121,18 +118,21 @@
             this.startAMenu.Name = "startAMenu";
             this.startAMenu.Size = new System.Drawing.Size(82, 22);
             this.startAMenu.Text = "A";
+            this.startAMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
             // startBMenu
             // 
             this.startBMenu.Name = "startBMenu";
             this.startBMenu.Size = new System.Drawing.Size(82, 22);
             this.startBMenu.Text = "B";
+            this.startBMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
             // startCMenu
             // 
             this.startCMenu.Name = "startCMenu";
             this.startCMenu.Size = new System.Drawing.Size(82, 22);
             this.startCMenu.Text = "C";
+            this.startCMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
             // stopMenu
             // 
@@ -189,57 +189,6 @@
             this.continueCMenu.Name = "continueCMenu";
             this.continueCMenu.Size = new System.Drawing.Size(82, 22);
             this.continueCMenu.Text = "C";
-            // 
-            // progressBarProductionA
-            // 
-            this.progressBarProductionA.Location = new System.Drawing.Point(212, 268);
-            this.progressBarProductionA.Name = "progressBarProductionA";
-            this.progressBarProductionA.Size = new System.Drawing.Size(396, 23);
-            this.progressBarProductionA.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(34, 270);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Production A";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(34, 328);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 21);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Production C";
-            // 
-            // progressBarProductionC
-            // 
-            this.progressBarProductionC.Location = new System.Drawing.Point(212, 326);
-            this.progressBarProductionC.Name = "progressBarProductionC";
-            this.progressBarProductionC.Size = new System.Drawing.Size(396, 23);
-            this.progressBarProductionC.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(34, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 21);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Production B";
-            // 
-            // progressBarProductionB
-            // 
-            this.progressBarProductionB.Location = new System.Drawing.Point(212, 297);
-            this.progressBarProductionB.Name = "progressBarProductionB";
-            this.progressBarProductionB.Size = new System.Drawing.Size(396, 23);
-            this.progressBarProductionB.TabIndex = 5;
             // 
             // statusStrip1
             // 
@@ -343,19 +292,37 @@
             this.prodControlC.Size = new System.Drawing.Size(380, 143);
             this.prodControlC.TabIndex = 0;
             // 
+            // progressBarControlA
+            // 
+            this.progressBarControlA.Location = new System.Drawing.Point(17, 241);
+            this.progressBarControlA.Name = "progressBarControlA";
+            this.progressBarControlA.Size = new System.Drawing.Size(606, 53);
+            this.progressBarControlA.TabIndex = 9;
+            // 
+            // progressBarControlC
+            // 
+            this.progressBarControlC.Location = new System.Drawing.Point(17, 315);
+            this.progressBarControlC.Name = "progressBarControlC";
+            this.progressBarControlC.Size = new System.Drawing.Size(606, 53);
+            this.progressBarControlC.TabIndex = 10;
+            // 
+            // progressBarControlB
+            // 
+            this.progressBarControlB.Location = new System.Drawing.Point(17, 279);
+            this.progressBarControlB.Name = "progressBarControlB";
+            this.progressBarControlB.Size = new System.Drawing.Size(606, 53);
+            this.progressBarControlB.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(646, 404);
+            this.Controls.Add(this.progressBarControlB);
+            this.Controls.Add(this.progressBarControlC);
+            this.Controls.Add(this.progressBarControlA);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.progressBarProductionB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBarProductionC);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBarProductionA);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -392,23 +359,20 @@
         private ToolStripMenuItem continueAMenu;
         private ToolStripMenuItem continueBMenu;
         private ToolStripMenuItem continueCMenu;
-        private ProgressBar progressBarProductionA;
-        private Label label1;
-        private Label label2;
-        private ProgressBar progressBarProductionC;
-        private Label label3;
-        private ProgressBar progressBarProductionB;
         private StatusStrip statusStrip1;
         private TabControl tabControl;
         private TabPage tabPageA;
         private TabPage tabPageB;
         private TabPage tabPageC;
-        private ProductionControl.ProductionControl prodControlA;
-        private ProductionControl.ProductionControl prodControlB;
-        private ProductionControl.ProductionControl prodControlC;
+        private ProductionControl.productionControl prodControlA;
+        private ProductionControl.productionControl prodControlB;
+        private ProductionControl.productionControl prodControlC;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private ToolStripStatusLabel toolStripStatusLabel2;
         private ToolStripStatusLabel toolStripStatusLabel3;
         private ToolStripStatusLabel toolStripStatusLabel4;
+        private UserControls.ProgressBarControl progressBarControlA;
+        private UserControls.ProgressBarControl progressBarControlC;
+        private UserControls.ProgressBarControl progressBarControlB;
     }
 }
