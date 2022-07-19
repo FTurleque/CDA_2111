@@ -14,13 +14,15 @@ namespace CashProduction.Class
         private static Production? instance;
         private static List<Production> instances = new List<Production>();
 
+        TotalBoxesPerProd TotalBoxesPerProd { get; set; }
+
         public static Production GetInstance(string _name, int _totalProduction)
         {
-            instance = null;
+            // instance = null;
             if (instance == null)
             {
                 instance = new Production(_name, _totalProduction);
-                instances.Add(instance);
+                // instances.Add(instance);
             }
             return instance;
         }
@@ -47,6 +49,8 @@ namespace CashProduction.Class
         }
 
         public bool ProdStarted { get; set; }
+
+        public int ProdPerHour { get; set; }
 
         // Défault de production sur 1h
         public float DefectRateLastHour { get; set; }
@@ -94,7 +98,7 @@ namespace CashProduction.Class
 
         private void Update()
         {
-            if (OnChange != null)
+            if (this.OnChange != null)
             {
                 OnChange(this, new PropertyChangedEventArgs(nameof(BoxesNumber)));
             }

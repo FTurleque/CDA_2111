@@ -20,7 +20,7 @@ namespace CashProduction
             prodB = Production.GetInstance("B", 25000);
             prodC = Production.GetInstance("C", 120000);
 
-            prodA.OnChange += ProdChange;
+            // prodA.OnChange += ProdChange;
             /*prodB.OnChange += ProdChange;
             prodC.OnChange += ProdChange;*/
         }

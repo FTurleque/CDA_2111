@@ -301,7 +301,7 @@
             // 
             // progressBarControlC
             // 
-            this.progressBarControlC.Location = new System.Drawing.Point(17, 315);
+            this.progressBarControlC.Location = new System.Drawing.Point(17, 320);
             this.progressBarControlC.Name = "progressBarControlC";
             this.progressBarControlC.Size = new System.Drawing.Size(606, 53);
             this.progressBarControlC.TabIndex = 10;

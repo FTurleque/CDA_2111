@@ -14,8 +14,8 @@ namespace CashProduction.UserControls
     public partial class ProgressBarControl : UserControl
     {
         private Production ProdA { get; set; }
-        private Production ProdB { get; set; }
-        private Production ProdC { get; set; }
+        /*private Production ProdB { get; set; }
+        private Production ProdC { get; set; }*/
 
         public ProgressBarControl()
         {
@@ -25,11 +25,11 @@ namespace CashProduction.UserControls
         private void ProgressBarControl_Load(object sender, EventArgs e)
         {
             ProdA = Production.GetInstance("A", 10000);
-            ProdB = Production.GetInstance("B", 25000);
-            ProdC = Production.GetInstance("C", 120000);
+            /*ProdB = Production.GetInstance("B", 25000);
+            ProdC = Production.GetInstance("C", 120000);*/
             ProdA.OnChange += ProdChange;
-            ProdB.OnChange += ProdChange;
-            ProdC.OnChange += ProdChange;
+            /*ProdB.OnChange += ProdChange;
+            ProdC.OnChange += ProdChange;*/
         }
 
         private void ProdChange(object sender, PropertyChangedEventArgs e)

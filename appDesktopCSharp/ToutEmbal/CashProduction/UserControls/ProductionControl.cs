@@ -14,8 +14,8 @@ namespace CashProduction.ProductionControl
     public partial class productionControl : UserControl
     {
         private Production? ProdA { get; set; }
-        private Production? ProdB { get; set; }
-        private Production? ProdC { get; set; }
+        /*private Production? ProdB { get; set; }
+        private Production? ProdC { get; set; }*/
 
         public productionControl()
         {
@@ -25,12 +25,12 @@ namespace CashProduction.ProductionControl
         private void ProductionControl_Load(object sender, EventArgs e)
         {
             ProdA = Production.GetInstance("A", 10000);
-            ProdB = Production.GetInstance("B", 25000);
-            ProdC = Production.GetInstance("C", 120000);
-            /*txtBoxCashRegistersNb.Text = ProdA.BoxesNumber.ToString();*/
+            /*ProdB = Production.GetInstance("B", 25000);
+            ProdC = Production.GetInstance("C", 120000);*/
+            txtBoxCashRegistersNb.Text = ProdA.BoxesNumber.ToString();
             ProdA.OnChange += ProdChange;
-            ProdB.OnChange += ProdChange;
-            ProdC.OnChange += ProdChange;
+            /*ProdB.OnChange += ProdChange;
+            ProdC.OnChange += ProdChange;*/
         }
 
         private void ProductionUpdate_TextChanged(object sender, EventArgs e)
