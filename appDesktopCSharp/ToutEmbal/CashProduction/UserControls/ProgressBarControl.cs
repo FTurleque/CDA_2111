@@ -13,10 +13,6 @@ namespace CashProduction.UserControls
 {
     public partial class ProgressBarControl : UserControl
     {
-        private Production ProdA { get; set; }
-        /*private Production ProdB { get; set; }
-        private Production ProdC { get; set; }*/
-
         public ProgressBarControl()
         {
             InitializeComponent();
@@ -24,15 +20,18 @@ namespace CashProduction.UserControls
 
         private void ProgressBarControl_Load(object sender, EventArgs e)
         {
-            ProdA = Production.GetInstance("A", 10000);
-            /*ProdB = Production.GetInstance("B", 25000);
-            ProdC = Production.GetInstance("C", 120000);*/
-            ProdA.OnChange += ProdChange;
-            /*ProdB.OnChange += ProdChange;
-            ProdC.OnChange += ProdChange;*/
+            if (ProdManager.GetProductions == null)
+            {
+                ProdManager.MakeProdInstancies();
+            }
+            List<Production> productions = ProdManager.GetProductions;
+            foreach (Production prod in productions)
+            {
+                prod.OnChange += ProdChange;
+            }
         }
 
-        private void ProdChange(object sender, PropertyChangedEventArgs e)
+        private void ProdChange(object? sender, PropertyChangedEventArgs e)
         {
             if (sender is Production prod)
             {

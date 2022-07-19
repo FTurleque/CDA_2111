@@ -9,29 +9,16 @@ namespace CashProduction.Class
 {
     public class Production
     {
-        #region
-        // Recupérer une instance d'une production
-        private static Production? instance;
-        private static List<Production> instances = new List<Production>();
-
-        TotalBoxesPerProd TotalBoxesPerProd { get; set; }
-
-        public static Production GetInstance(string _name, int _totalProduction)
-        {
-            // instance = null;
-            if (instance == null)
-            {
-                instance = new Production(_name, _totalProduction);
-                // instances.Add(instance);
-            }
-            return instance;
-        }
-        #endregion
-
         public event PropertyChangedEventHandler OnChange;
 
         // Nom
         public string Name { get; set; }
+
+        // Production par heure
+        public int ProdPerHour { get; set; }
+
+        // Etat de la production
+        public bool ProdStarted { get; set; }
 
         // Nombre de caisses
         private int boxesNumber;
@@ -48,10 +35,6 @@ namespace CashProduction.Class
             }
         }
 
-        public bool ProdStarted { get; set; }
-
-        public int ProdPerHour { get; set; }
-
         // Défault de production sur 1h
         public float DefectRateLastHour { get; set; }
 
@@ -67,11 +50,12 @@ namespace CashProduction.Class
         public int TotalProduction { get; set; }
 
 
-        public Production(string _name, int _totalProduction)
+        public Production(string _name, int _totalProduction, int _prodPerHour)
         {
             Name = _name;
             TotalProduction = _totalProduction;
-            BoxesNumber = 0;
+            ProdPerHour = _prodPerHour;
+            boxesNumber = 0;
             DefectRateLastHour = 0;
             GlobalDefectRate = 0;
             ProdStarted = false;

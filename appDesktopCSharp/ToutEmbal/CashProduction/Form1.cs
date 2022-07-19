@@ -5,10 +5,6 @@ namespace CashProduction
 {
     public partial class Form1 : Form
     {
-        private Production prodA;
-        private Production prodB;
-        private Production prodC;
-
         public Form1()
         {
             InitializeComponent();
@@ -16,13 +12,10 @@ namespace CashProduction
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            prodA = Production.GetInstance("A", 10000);
-            prodB = Production.GetInstance("B", 25000);
-            prodC = Production.GetInstance("C", 120000);
-
-            // prodA.OnChange += ProdChange;
-            /*prodB.OnChange += ProdChange;
-            prodC.OnChange += ProdChange;*/
+            if (ProdManager.GetProductions == null)
+            {
+                ProdManager.MakeProdInstancies();
+            }
         }
 
         private void exitMenu_Click(object sender, EventArgs e)
@@ -34,20 +27,8 @@ namespace CashProduction
         private void StartProd_Click(object sender, EventArgs e)
         {
             var prodName = sender as ToolStripMenuItem;
-            switch (prodName.Text)
-            {
-                case "A":
-                    prodA.Start();
-                    break;
-                case "B":
-                    prodB.Start();
-                    break;
-                case "C":
-                    prodC.Start();
-                    break;
-                default:
-                    break;
-            }
+            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            prod.Start();
         }
 
         private void ProdChange(object sender, PropertyChangedEventArgs e)
@@ -55,10 +36,6 @@ namespace CashProduction
             if(sender is Production prod)
             {
                 prodControlA.Name = prod.Name;
-                /*progressBarProductionA.Minimum = 1;
-                progressBarProductionA.Maximum = prod.TotalProduction;
-                progressBarProductionA.Value = prod.BoxesNumber;*/ 
-                
             }
         }
     }
