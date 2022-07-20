@@ -14,7 +14,15 @@ namespace CashProduction
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            foreach (Control c in this.Controls)
+            {
+                if(c is UserControl control)
+                {
+                    
+                }
+                Char typeProde = c.Name.ToArray()[^1];
+                MessageBox.Show(typeProde.ToString());
+            }
             // Liaison du userControl à une prod précise
             prodControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
             prodControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
@@ -44,12 +52,16 @@ namespace CashProduction
         {
             var prodName = sender as ToolStripMenuItem;
             Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            prod.StandBy();
         }
 
         private void ContinueProd_Click(object sender, EventArgs e)
         {
             var prodName = sender as ToolStripMenuItem;
             Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            prod.Continue();
         }
+
+        // Changement du nombre de boites par Production dans la bar de status
     }
 }

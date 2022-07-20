@@ -42,6 +42,7 @@
             this.txtBoxGlobalDefectRate.Name = "txtBoxGlobalDefectRate";
             this.txtBoxGlobalDefectRate.Size = new System.Drawing.Size(100, 23);
             this.txtBoxGlobalDefectRate.TabIndex = 17;
+            this.txtBoxGlobalDefectRate.Text = "0";
             // 
             // txtBoxDefectRatePerHour
             // 
@@ -49,6 +50,7 @@
             this.txtBoxDefectRatePerHour.Name = "txtBoxDefectRatePerHour";
             this.txtBoxDefectRatePerHour.Size = new System.Drawing.Size(100, 23);
             this.txtBoxDefectRatePerHour.TabIndex = 16;
+            this.txtBoxDefectRatePerHour.Text = "0";
             // 
             // txtBoxBoxNumber
             // 
@@ -56,6 +58,7 @@
             this.txtBoxBoxNumber.Name = "txtBoxBoxNumber";
             this.txtBoxBoxNumber.Size = new System.Drawing.Size(100, 23);
             this.txtBoxBoxNumber.TabIndex = 15;
+            this.txtBoxBoxNumber.Text = "0";
             // 
             // label7
             // 
