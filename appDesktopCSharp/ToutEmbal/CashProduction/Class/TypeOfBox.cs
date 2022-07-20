@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CashProduction.Class
 {
-    public enum QuotaPerHour
+    public enum TypeOfBox
     {
         A = 1000,
         B = 5000,

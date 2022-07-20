@@ -30,7 +30,7 @@
         {
             this.txtBoxGlobalDefectRate = new System.Windows.Forms.TextBox();
             this.txtBoxDefectRatePerHour = new System.Windows.Forms.TextBox();
-            this.txtBoxCashRegistersNb = new System.Windows.Forms.TextBox();
+            this.txtBoxBoxNumber = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -50,12 +50,12 @@
             this.txtBoxDefectRatePerHour.Size = new System.Drawing.Size(100, 23);
             this.txtBoxDefectRatePerHour.TabIndex = 16;
             // 
-            // txtBoxCashRegistersNb
+            // txtBoxBoxNumber
             // 
-            this.txtBoxCashRegistersNb.Location = new System.Drawing.Point(265, 15);
-            this.txtBoxCashRegistersNb.Name = "txtBoxCashRegistersNb";
-            this.txtBoxCashRegistersNb.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxCashRegistersNb.TabIndex = 15;
+            this.txtBoxBoxNumber.Location = new System.Drawing.Point(265, 15);
+            this.txtBoxBoxNumber.Name = "txtBoxBoxNumber";
+            this.txtBoxBoxNumber.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxBoxNumber.TabIndex = 15;
             // 
             // label7
             // 
@@ -90,13 +90,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.txtBoxGlobalDefectRate);
             this.Controls.Add(this.txtBoxDefectRatePerHour);
-            this.Controls.Add(this.txtBoxCashRegistersNb);
+            this.Controls.Add(this.txtBoxBoxNumber);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Name = "productionControl";
             this.Size = new System.Drawing.Size(380, 143);
-            this.Load += new System.EventHandler(this.ProductionControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +105,7 @@
 
         private TextBox txtBoxGlobalDefectRate;
         private TextBox txtBoxDefectRatePerHour;
-        private TextBox txtBoxCashRegistersNb;
+        private TextBox txtBoxBoxNumber;
         private Label label7;
         private Label label8;
         private Label label9;

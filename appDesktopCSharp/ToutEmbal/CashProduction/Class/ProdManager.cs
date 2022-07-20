@@ -16,16 +16,16 @@ namespace CashProduction.Class
         public static void MakeProdInstancies()
         {
             productions = new List<Production>();
-            productions.Add(new Production("A", 10000, 1000));
-            productions.Add(new Production("B", 25000, 5000));
-            productions.Add(new Production("C", 120000, 10000));
+            productions.Add(new Production(TypeOfBox.A, 10000));
+            productions.Add(new Production(TypeOfBox.B, 25000));
+            productions.Add(new Production(TypeOfBox.C, 120000));
         }
 
         public static Production GetOneProdInstance(string _name)
         {
             foreach (Production prod in productions)
             {
-                if (prod.Name == _name)
+                if (prod.boxType.ToString() == _name)
                 {
                     prodByName = prod;
                 }

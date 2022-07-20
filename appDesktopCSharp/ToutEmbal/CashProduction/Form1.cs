@@ -8,14 +8,23 @@ namespace CashProduction
         public Form1()
         {
             InitializeComponent();
+            // Création des instances de ma production
+            ProdManager.MakeProdInstancies();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (ProdManager.GetProductions == null)
-            {
-                ProdManager.MakeProdInstancies();
-            }
+
+            // Liaison du userControl à une prod précise
+            prodControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
+            prodControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
+            prodControlC.ProdLink(ProdManager.GetOneProdInstance("C"));
+            progressBarControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
+            progressBarControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
+            progressBarControlC.ProdLink(ProdManager.GetOneProdInstance("C"));
+            statusBoxA.Text += $"  {ProdManager.GetOneProdInstance("A").BoxCounter}";
+            statusBoxB.Text += $"  {ProdManager.GetOneProdInstance("B").BoxCounter}";
+            statusBoxC.Text += $"  {ProdManager.GetOneProdInstance("C").BoxCounter}";
         }
 
         private void exitMenu_Click(object sender, EventArgs e)
@@ -31,12 +40,16 @@ namespace CashProduction
             prod.Start();
         }
 
-        private void ProdChange(object sender, PropertyChangedEventArgs e)
+        private void StopProd_Click(object sender, EventArgs e)
         {
-            if(sender is Production prod)
-            {
-                prodControlA.Name = prod.Name;
-            }
+            var prodName = sender as ToolStripMenuItem;
+            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+        }
+
+        private void ContinueProd_Click(object sender, EventArgs e)
+        {
+            var prodName = sender as ToolStripMenuItem;
+            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
         }
     }
 }

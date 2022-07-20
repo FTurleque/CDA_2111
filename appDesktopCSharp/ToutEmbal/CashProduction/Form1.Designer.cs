@@ -45,10 +45,10 @@
             this.continueBMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.continueCMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusBoxA = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusBoxB = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusBoxC = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageA = new System.Windows.Forms.TabPage();
             this.prodControlA = new CashProduction.ProductionControl.productionControl();
@@ -110,7 +110,7 @@
             this.startBMenu,
             this.startCMenu});
             this.startMenu.Name = "startMenu";
-            this.startMenu.Size = new System.Drawing.Size(127, 22);
+            this.startMenu.Size = new System.Drawing.Size(180, 22);
             this.startMenu.Text = "&Démarer";
             // 
             // startAMenu
@@ -141,7 +141,7 @@
             this.stopBMenu,
             this.StopCMenu});
             this.stopMenu.Name = "stopMenu";
-            this.stopMenu.Size = new System.Drawing.Size(127, 22);
+            this.stopMenu.Size = new System.Drawing.Size(180, 22);
             this.stopMenu.Text = "&Arrêter";
             // 
             // stopAMenu
@@ -149,18 +149,21 @@
             this.stopAMenu.Name = "stopAMenu";
             this.stopAMenu.Size = new System.Drawing.Size(82, 22);
             this.stopAMenu.Text = "A";
+            this.stopAMenu.Click += new System.EventHandler(this.StopProd_Click);
             // 
             // stopBMenu
             // 
             this.stopBMenu.Name = "stopBMenu";
             this.stopBMenu.Size = new System.Drawing.Size(82, 22);
             this.stopBMenu.Text = "B";
+            this.stopBMenu.Click += new System.EventHandler(this.StopProd_Click);
             // 
             // StopCMenu
             // 
             this.StopCMenu.Name = "StopCMenu";
             this.StopCMenu.Size = new System.Drawing.Size(82, 22);
             this.StopCMenu.Text = "C";
+            this.StopCMenu.Click += new System.EventHandler(this.StopProd_Click);
             // 
             // continueMenu
             // 
@@ -169,63 +172,69 @@
             this.continueBMenu,
             this.continueCMenu});
             this.continueMenu.Name = "continueMenu";
-            this.continueMenu.Size = new System.Drawing.Size(127, 22);
+            this.continueMenu.Size = new System.Drawing.Size(180, 22);
             this.continueMenu.Text = "&Continuer";
             // 
             // continueAMenu
             // 
             this.continueAMenu.Name = "continueAMenu";
-            this.continueAMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueAMenu.Size = new System.Drawing.Size(180, 22);
             this.continueAMenu.Text = "A";
+            this.continueAMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueBMenu
             // 
             this.continueBMenu.Name = "continueBMenu";
-            this.continueBMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueBMenu.Size = new System.Drawing.Size(180, 22);
             this.continueBMenu.Text = "B";
+            this.continueBMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueCMenu
             // 
             this.continueCMenu.Name = "continueCMenu";
-            this.continueCMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueCMenu.Size = new System.Drawing.Size(180, 22);
             this.continueCMenu.Text = "C";
+            this.continueCMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel4});
+            this.statusBoxA,
+            this.statusBoxB,
+            this.statusBoxC,
+            this.statusTime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 382);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(646, 22);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // statusBoxA
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(57, 17);
-            this.toolStripStatusLabel1.Text = "Caisse A :";
+            this.statusBoxA.Margin = new System.Windows.Forms.Padding(0, 3, 100, 2);
+            this.statusBoxA.Name = "statusBoxA";
+            this.statusBoxA.Size = new System.Drawing.Size(57, 17);
+            this.statusBoxA.Text = "Caisse A :";
             // 
-            // toolStripStatusLabel2
+            // statusBoxB
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(51, 17);
-            this.toolStripStatusLabel2.Text = "Caise B :";
+            this.statusBoxB.Margin = new System.Windows.Forms.Padding(0, 3, 100, 2);
+            this.statusBoxB.Name = "statusBoxB";
+            this.statusBoxB.Size = new System.Drawing.Size(51, 17);
+            this.statusBoxB.Text = "Caise B :";
             // 
-            // toolStripStatusLabel3
+            // statusBoxC
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(56, 17);
-            this.toolStripStatusLabel3.Text = "Caisses C";
+            this.statusBoxC.Margin = new System.Windows.Forms.Padding(0, 3, 100, 2);
+            this.statusBoxC.Name = "statusBoxC";
+            this.statusBoxC.Size = new System.Drawing.Size(62, 17);
+            this.statusBoxC.Text = "Caisses C :";
             // 
-            // toolStripStatusLabel4
+            // statusTime
             // 
-            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(33, 17);
-            this.toolStripStatusLabel4.Text = "Time";
+            this.statusTime.Name = "statusTime";
+            this.statusTime.Size = new System.Drawing.Size(33, 17);
+            this.statusTime.Text = "Time";
             // 
             // tabControl
             // 
@@ -367,10 +376,10 @@
         private ProductionControl.productionControl prodControlA;
         private ProductionControl.productionControl prodControlB;
         private ProductionControl.productionControl prodControlC;
-        private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripStatusLabel toolStripStatusLabel2;
-        private ToolStripStatusLabel toolStripStatusLabel3;
-        private ToolStripStatusLabel toolStripStatusLabel4;
+        private ToolStripStatusLabel statusBoxA;
+        private ToolStripStatusLabel statusBoxB;
+        private ToolStripStatusLabel statusBoxC;
+        private ToolStripStatusLabel statusTime;
         private UserControls.ProgressBarControl progressBarControlA;
         private UserControls.ProgressBarControl progressBarControlC;
         private UserControls.ProgressBarControl progressBarControlB;

@@ -57,7 +57,6 @@
             this.Controls.Add(this.progressBarProd);
             this.Name = "ProgressBarControl";
             this.Size = new System.Drawing.Size(606, 53);
-            this.Load += new System.EventHandler(this.ProgressBarControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
