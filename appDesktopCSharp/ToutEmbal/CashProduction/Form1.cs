@@ -14,15 +14,15 @@ namespace CashProduction
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
+            /*foreach (Control c in this.Controls)
             {
                 if(c is UserControl control)
                 {
                     
                 }
                 Char typeProde = c.Name.ToArray()[^1];
-                MessageBox.Show(typeProde.ToString());
-            }
+                //MessageBox.Show(typeProde.ToString());
+            }*/
             // Liaison du userControl à une prod précise
             prodControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
             prodControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
@@ -37,12 +37,45 @@ namespace CashProduction
 
         private void exitMenu_Click(object sender, EventArgs e)
         {
-            this.Close();
+            /*foreach (Production prod in ProdManager.Productions)
+            {
+                if (prod.ProdStarted)
+                {
+
+                }
+            }*/
+            
         }
 
 
         private void StartProd_Click(object sender, EventArgs e)
         {
+            foreach (ToolStripItem item in productionMenu.DropDownItems)
+            {
+                
+            }
+            /*foreach (Control c in this.Controls)
+            {
+                if (c.GetType() == typeof(GroupBox))
+                {
+                    foreach (Control cc in c.Controls)
+                    {
+                        // ...
+                    }
+                }
+                else if (c.GetType() == typeof(MenuStrip))
+                {   // ToolStrip et cousin(e)s :D
+                    foreach (ToolStripItem ci in ((MenuStrip)c).Items)
+                    {
+                        
+                        // ...
+                    }
+                }
+                else
+                {
+                    // Controles contenus par le formulaire
+                }
+            }*/
             var prodName = sender as ToolStripMenuItem;
             Production prod = ProdManager.GetOneProdInstance(prodName.Text);
             prod.Start();

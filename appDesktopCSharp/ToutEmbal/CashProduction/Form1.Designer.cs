@@ -89,7 +89,7 @@
             // exitMenu
             // 
             this.exitMenu.Name = "exitMenu";
-            this.exitMenu.Size = new System.Drawing.Size(111, 22);
+            this.exitMenu.Size = new System.Drawing.Size(180, 22);
             this.exitMenu.Text = "&Quitter";
             this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -110,7 +110,7 @@
             this.startBMenu,
             this.startCMenu});
             this.startMenu.Name = "startMenu";
-            this.startMenu.Size = new System.Drawing.Size(180, 22);
+            this.startMenu.Size = new System.Drawing.Size(127, 22);
             this.startMenu.Text = "&Démarer";
             // 
             // startAMenu
@@ -141,7 +141,7 @@
             this.stopBMenu,
             this.StopCMenu});
             this.stopMenu.Name = "stopMenu";
-            this.stopMenu.Size = new System.Drawing.Size(180, 22);
+            this.stopMenu.Size = new System.Drawing.Size(127, 22);
             this.stopMenu.Text = "&Arrêter";
             // 
             // stopAMenu
@@ -172,27 +172,27 @@
             this.continueBMenu,
             this.continueCMenu});
             this.continueMenu.Name = "continueMenu";
-            this.continueMenu.Size = new System.Drawing.Size(180, 22);
+            this.continueMenu.Size = new System.Drawing.Size(127, 22);
             this.continueMenu.Text = "&Continuer";
             // 
             // continueAMenu
             // 
             this.continueAMenu.Name = "continueAMenu";
-            this.continueAMenu.Size = new System.Drawing.Size(180, 22);
+            this.continueAMenu.Size = new System.Drawing.Size(82, 22);
             this.continueAMenu.Text = "A";
             this.continueAMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueBMenu
             // 
             this.continueBMenu.Name = "continueBMenu";
-            this.continueBMenu.Size = new System.Drawing.Size(180, 22);
+            this.continueBMenu.Size = new System.Drawing.Size(82, 22);
             this.continueBMenu.Text = "B";
             this.continueBMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueCMenu
             // 
             this.continueCMenu.Name = "continueCMenu";
-            this.continueCMenu.Size = new System.Drawing.Size(180, 22);
+            this.continueCMenu.Size = new System.Drawing.Size(82, 22);
             this.continueCMenu.Text = "C";
             this.continueCMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
@@ -383,5 +383,6 @@
         private UserControls.ProgressBarControl progressBarControlA;
         private UserControls.ProgressBarControl progressBarControlC;
         private UserControls.ProgressBarControl progressBarControlB;
+        private ToolStripMenuItem toolStripMenuItem2;
     }
 }
