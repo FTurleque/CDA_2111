@@ -35,9 +35,12 @@ namespace CashProduction.ProductionControl
             {
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    txtBoxBoxNumber.Text = prod.BoxCounter.ToString();
-                    txtBoxDefectRatePerHour.Text = prod.DefectRateLastHour.ToString();
-                    txtBoxGlobalDefectRate.Text = prod.GlobalDefectRate.ToString();
+                    if(!prod.ProdEnding)
+                    {
+                        txtBoxBoxNumber.Text = prod.BoxCounter.ToString();
+                        txtBoxDefectRatePerHour.Text = Math.Round(prod.DefectRateLastHour, 4).ToString();
+                        txtBoxGlobalDefectRate.Text = Math.Round(prod.GlobalDefectRate,4).ToString();
+                    }
                 }));
             }
         }

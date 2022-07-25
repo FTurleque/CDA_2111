@@ -22,7 +22,7 @@ namespace CashProduction.Class
         public readonly int totalProduction;
 
         // Etat de la production.
-        public bool ProdStarted { get; private set; }
+        public bool ProdStarted { get; set; }
 
         // Nombre de boites.
         private int boxCounter;
@@ -31,9 +31,10 @@ namespace CashProduction.Class
             get => boxCounter; 
             private set
             {
-                if (value > 0 && value <= totalProduction)
+                if (value > 0 && value <= totalProduction && !ProdEnding)
                 {
                     boxCounter = value;
+                    GetGlobalDefectRate();
                     Update();
                 }
             }
@@ -42,14 +43,25 @@ namespace CashProduction.Class
         // Création du Thread.
         public Thread Thread { get; set; }
 
+        // Méttre en pause la Production
+        public bool ProdEnding { get; set; }
+
+        private List<Box> BoxListDefect { get; set; }
+
         // Défault de production sur 1h.
-        public float DefectRateLastHour { get; private set; }
+        public double DefectRateLastHour { get; private set; }
 
         // Taux de défault global.
-        public float GlobalDefectRate { get; private set; }
-
-        internal BoxesDefault ProductionDefault { get; private set; }
-
+        private double globalDefectRate;
+        public double GlobalDefectRate 
+        {
+            get => globalDefectRate; 
+            private set
+            {
+                globalDefectRate = value;
+                Update();
+            } 
+        }
 
         /// <summary>
         /// Construction d'une Production.
@@ -61,9 +73,11 @@ namespace CashProduction.Class
             this.boxType = _boxType;
             this.totalProduction = _totalProduction;
             this.boxCounter = 0;
+            BoxListDefect = new List<Box>();
             DefectRateLastHour = 0;
             GlobalDefectRate = 0;
             ProdStarted = false;
+            ProdEnding = false;
             Thread = new Thread(this.StartedProd);
             prodTimeOfABox = (int)(3600d / (double)boxType * 1000d);
         }
@@ -77,9 +91,9 @@ namespace CashProduction.Class
         {
             if (!ProdStarted)
             {
-                BoxCounter = 0;
+                /*BoxCounter = 0;
                 DefectRateLastHour = 0;
-                GlobalDefectRate = 0;
+                GlobalDefectRate = 0;*/
                 ProdStarted = true;
                 Thread.Start();
             }
@@ -93,15 +107,48 @@ namespace CashProduction.Class
 
             if (ProdStarted)
             {
-                while (BoxCounter != totalProduction)
+                while (!ProdEnding && BoxCounter != totalProduction)
                 {
                     if (ProdStarted)
                     {
                         Thread.Sleep(this.prodTimeOfABox);
-                        ++BoxCounter;
+                        Box box = new Box(this.boxType);
+                        if (box.isOk)
+                        {
+                            ++BoxCounter;
+                        }
+                        else
+                        {
+                            BoxListDefect.Add(box);
+                            GetGlobalDefectRate();
+                        }
                     }
                 }
             }
+        }
+
+        private void GetDefectRateLastHour()
+        {
+            DefectRateLastHour = 0;
+            TimeSpan interval = new TimeSpan(1, 0, 0);
+            foreach (Box box in BoxListDefect)
+            {
+                if(DateTime.Compare(box.manufacturingTime, DateTime.Now) > 0)
+                {
+
+                }
+            }
+
+            DefectRateLastHour = (double)BoxListDefect.Count / (double)BoxCounter;
+        }
+
+        /// <summary>
+        /// Taux d'erreur global de la production.
+        /// </summary>
+        private void GetGlobalDefectRate()
+        {
+            // Nombre de boite défectueuse / nombre de boite produite 
+            globalDefectRate = (double)BoxListDefect.Count / (double)BoxCounter;
         }
 
         /// <summary>

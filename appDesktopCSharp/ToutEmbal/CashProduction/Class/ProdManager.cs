@@ -18,9 +18,9 @@ namespace CashProduction.Class
         public static void MakeProdInstancies()
         {
             Productions = new List<Production>();
-            Productions.Add(new Production(TypeOfBox.A, 10000));
-            Productions.Add(new Production(TypeOfBox.B, 25000));
-            Productions.Add(new Production(TypeOfBox.C, 120000));
+            Productions.Add(new Production(TypeOfBox.A, 1000)); // 10000
+            Productions.Add(new Production(TypeOfBox.B, 2500)); // 25000
+            Productions.Add(new Production(TypeOfBox.C, 12000)); // 120000
         }
 
         /// <summary>

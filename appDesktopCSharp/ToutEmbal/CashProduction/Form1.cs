@@ -37,23 +37,24 @@ namespace CashProduction
 
         private void exitMenu_Click(object sender, EventArgs e)
         {
-            /*foreach (Production prod in ProdManager.Productions)
+            foreach (Production prod in ProdManager.Productions)
             {
                 if (prod.ProdStarted)
                 {
-
+                    prod.ProdEnding = true;
                 }
-            }*/
-            
+            }
+            this.Close();
         }
 
 
         private void StartProd_Click(object sender, EventArgs e)
         {
-            foreach (ToolStripItem item in productionMenu.DropDownItems)
+            // Faire désactiver et activer les menus
+            /*foreach (ToolStripItem item in productionMenu.DropDownItems)
             {
                 
-            }
+            }*/
             /*foreach (Control c in this.Controls)
             {
                 if (c.GetType() == typeof(GroupBox))

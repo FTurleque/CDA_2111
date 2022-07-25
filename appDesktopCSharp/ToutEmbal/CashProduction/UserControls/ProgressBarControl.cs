@@ -35,7 +35,10 @@ namespace CashProduction.UserControls
             {
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    progressBarProd.Value = prod.BoxCounter;
+                    if(!prod.ProdEnding)
+                    {
+                        progressBarProd.Value = prod.BoxCounter;
+                    }
                 }));
             }
         }
