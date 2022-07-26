@@ -38,8 +38,8 @@ namespace CashProduction.ProductionControl
                     if(!prod.ProdEnding)
                     {
                         txtBoxBoxNumber.Text = prod.BoxCounter.ToString();
-                        txtBoxDefectRatePerHour.Text = Math.Round(prod.DefectRateLastHour, 4).ToString();
-                        txtBoxGlobalDefectRate.Text = Math.Round(prod.GlobalDefectRate,4).ToString();
+                        txtBoxDefectRatePerHour.Text = Math.Round(prod.DefectRateLastHour, 4).ToString("0.0000");
+                        txtBoxGlobalDefectRate.Text = Math.Round(prod.GlobalDefectRate,4).ToString("0.0000");
                     }
                 }));
             }

@@ -15,7 +15,7 @@ namespace CashProduction.Class
         public readonly TypeOfBox boxType;
 
         // Date et heure de fabrication de la boite.
-        public readonly DateTime manufacturingTime;
+        public readonly TimeSpan manufacturingTime;
 
         // Génération d'un random pour générer le défault.
         private readonly Random random;
@@ -29,7 +29,7 @@ namespace CashProduction.Class
             random = new Random();
             this.boxType = _boxType;
             isOk = BoxDefect();
-            manufacturingTime = DateTime.Now;
+            manufacturingTime = DateTime.Now.TimeOfDay;
         }
 
         /// <summary>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace CashProduction.Class
 {
@@ -35,6 +30,7 @@ namespace CashProduction.Class
                 {
                     boxCounter = value;
                     GetGlobalDefectRate();
+                    GetDefectRateLastHour();
                     Update();
                 }
             }
@@ -49,7 +45,16 @@ namespace CashProduction.Class
         private List<Box> BoxListDefect { get; set; }
 
         // Défault de production sur 1h.
-        public double DefectRateLastHour { get; private set; }
+        private double defectRateLastHour;
+        public double DefectRateLastHour 
+        {
+            get => defectRateLastHour;
+            private set
+            {
+                defectRateLastHour = value;
+                Update();
+            } 
+        }
 
         // Taux de défault global.
         private double globalDefectRate;
@@ -91,9 +96,6 @@ namespace CashProduction.Class
         {
             if (!ProdStarted)
             {
-                /*BoxCounter = 0;
-                DefectRateLastHour = 0;
-                GlobalDefectRate = 0;*/
                 ProdStarted = true;
                 Thread.Start();
             }
@@ -104,7 +106,6 @@ namespace CashProduction.Class
         /// </summary>
         private void StartedProd()
         {
-
             if (ProdStarted)
             {
                 while (!ProdEnding && BoxCounter != totalProduction)
@@ -121,25 +122,32 @@ namespace CashProduction.Class
                         {
                             BoxListDefect.Add(box);
                             GetGlobalDefectRate();
+                            GetDefectRateLastHour();
                         }
                     }
                 }
             }
         }
 
+        /// <summary>
+        /// Taux de d'erreur sur la dernière heure.
+        /// </summary>
         private void GetDefectRateLastHour()
         {
-            DefectRateLastHour = 0;
-            TimeSpan interval = new TimeSpan(1, 0, 0);
+            if(BoxListDefect.Count == 0)
+            {
+                return;
+            }
+            int defaultCounter = 0;
+            TimeSpan interval = new TimeSpan(0, 1, 0);
             foreach (Box box in BoxListDefect)
             {
-                if(DateTime.Compare(box.manufacturingTime, DateTime.Now) > 0)
+                if(box.manufacturingTime > DateTime.Now.TimeOfDay - interval)
                 {
-
+                    ++defaultCounter;
                 }
             }
-
-            DefectRateLastHour = (double)BoxListDefect.Count / (double)BoxCounter;
+            DefectRateLastHour = (double)defaultCounter / (double)BoxCounter;
         }
 
         /// <summary>

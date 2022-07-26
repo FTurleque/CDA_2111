@@ -30,9 +30,7 @@ namespace CashProduction
             progressBarControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
             progressBarControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
             progressBarControlC.ProdLink(ProdManager.GetOneProdInstance("C"));
-            statusBoxA.Text += $"  {ProdManager.GetOneProdInstance("A").BoxCounter}";
-            statusBoxB.Text += $"  {ProdManager.GetOneProdInstance("B").BoxCounter}";
-            statusBoxC.Text += $"  {ProdManager.GetOneProdInstance("C").BoxCounter}";
+            timer1.Start();
         }
 
         private void exitMenu_Click(object sender, EventArgs e)
@@ -96,6 +94,12 @@ namespace CashProduction
             prod.Continue();
         }
 
-        // Changement du nombre de boites par Production dans la bar de status
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            statusTime.Text = DateTime.Now.ToLongTimeString();
+            boxA.Text = ProdManager.GetOneProdInstance("A").BoxCounter.ToString();
+            boxB.Text = ProdManager.GetOneProdInstance("B").BoxCounter.ToString();
+            boxC.Text = ProdManager.GetOneProdInstance("C").BoxCounter.ToString();
+        }
     }
 }
