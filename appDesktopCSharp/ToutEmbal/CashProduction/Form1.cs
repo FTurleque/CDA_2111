@@ -23,17 +23,20 @@ namespace CashProduction
                 Char typeProde = c.Name.ToArray()[^1];
                 //MessageBox.Show(typeProde.ToString());
             }*/
+            groupBoxA.Tag = ProdManager.GetOneProdInstance("A");
+            groupBoxB.Tag = ProdManager.GetOneProdInstance("B");
+            groupBoxC.Tag = ProdManager.GetOneProdInstance("C");
             // Liaison du userControl à une prod précise
-            prodControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
-            prodControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
-            prodControlC.ProdLink(ProdManager.GetOneProdInstance("C"));
-            progressBarControlA.ProdLink(ProdManager.GetOneProdInstance("A"));
-            progressBarControlB.ProdLink(ProdManager.GetOneProdInstance("B"));
-            progressBarControlC.ProdLink(ProdManager.GetOneProdInstance("C"));
+            prodControlA.ProdLink((Production)groupBoxA.Tag);
+            prodControlB.ProdLink((Production)groupBoxB.Tag);
+            prodControlC.ProdLink((Production)groupBoxC.Tag);
+            progressBarControlA.ProdLink((Production)groupBoxA.Tag);
+            progressBarControlB.ProdLink((Production)groupBoxB.Tag);
+            progressBarControlC.ProdLink((Production)groupBoxC.Tag);
             timer1.Start();
         }
 
-        private void exitMenu_Click(object sender, EventArgs e)
+        private void ExitMenu_Click(object sender, EventArgs e)
         {
             foreach (Production prod in ProdManager.Productions)
             {
@@ -45,6 +48,10 @@ namespace CashProduction
             this.Close();
         }
 
+        private void ChangeBtnStates(string _name)
+        {
+
+        }
 
         private void StartProd_Click(object sender, EventArgs e)
         {

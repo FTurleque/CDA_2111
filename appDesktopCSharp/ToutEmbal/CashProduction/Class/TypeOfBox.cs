@@ -1,5 +1,8 @@
 ﻿namespace CashProduction.Class
 {
+    /// <summary>
+    /// Type de la boite ainsi que le nombre de boite produites à l'heure.
+    /// </summary>
     public enum TypeOfBox
     {
         A = 1000,

@@ -111,7 +111,7 @@
             this.exitMenu.Name = "exitMenu";
             this.exitMenu.Size = new System.Drawing.Size(111, 22);
             this.exitMenu.Text = "&Quitter";
-            this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
+            this.exitMenu.Click += new System.EventHandler(this.ExitMenu_Click);
             // 
             // productionMenu
             // 
