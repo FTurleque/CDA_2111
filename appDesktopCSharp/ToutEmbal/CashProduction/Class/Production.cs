@@ -7,6 +7,8 @@ namespace CashProduction.Class
         // Evenement qui permet de s'abonner aux changement de la Production.
         public event PropertyChangedEventHandler OnChange;
 
+        private CancellationTokenSource ctx;
+
         // Nom + prod par heure.
         public readonly TypeOfBox boxType;
 
@@ -85,6 +87,7 @@ namespace CashProduction.Class
             ProdEnding = false;
             Thread = new Thread(this.StartedProd);
             prodTimeOfABox = (int)(3600d / (double)boxType * 1000d);
+            ctx = new CancellationTokenSource();
         }
 
         /// <summary>
@@ -96,6 +99,10 @@ namespace CashProduction.Class
         {
             if (!ProdStarted)
             {
+                Thread = new Thread(this.StartedProd);
+                this.boxCounter = 0;
+                DefectRateLastHour = 0;
+                GlobalDefectRate = 0;
                 ProdStarted = true;
                 Thread.Start();
             }
@@ -108,23 +115,32 @@ namespace CashProduction.Class
         {
             if (ProdStarted)
             {
-                while (!ProdEnding && BoxCounter != totalProduction)
+                try
                 {
-                    if (ProdStarted)
+                    while (!ProdEnding && BoxCounter != totalProduction)
                     {
-                        Thread.Sleep(this.prodTimeOfABox);
-                        Box box = new Box(this.boxType);
-                        if (box.isOk)
+                        ctx.Token.ThrowIfCancellationRequested();
+                        if (ProdStarted)
                         {
-                            ++BoxCounter;
-                        }
-                        else
-                        {
-                            BoxListDefect.Add(box);
-                            GetGlobalDefectRate();
-                            GetDefectRateLastHour();
+                            ctx.Token.WaitHandle.WaitOne(this.prodTimeOfABox);
+                            Box box = new Box(this.boxType);
+                            if (box.isOk)
+                            {
+                                ++BoxCounter;
+                            }
+                            else
+                            {
+                                BoxListDefect.Add(box);
+                                GetGlobalDefectRate();
+                                GetDefectRateLastHour();
+                            }
                         }
                     }
+                }
+                catch (OperationCanceledException)
+                {
+                    ctx.Dispose();
+                    ctx = new CancellationTokenSource();
                 }
             }
         }
@@ -139,7 +155,7 @@ namespace CashProduction.Class
                 return;
             }
             int defaultCounter = 0;
-            TimeSpan interval = new TimeSpan(0, 1, 0);
+            TimeSpan interval = TimeSpan.FromHours(1);
             foreach (Box box in BoxListDefect)
             {
                 if(box.manufacturingTime > DateTime.Now.TimeOfDay - interval)
@@ -147,7 +163,7 @@ namespace CashProduction.Class
                     ++defaultCounter;
                 }
             }
-            DefectRateLastHour = (double)defaultCounter / (double)BoxCounter;
+            DefectRateLastHour = (double)defaultCounter / (double)this.boxType;
         }
 
         /// <summary>
@@ -165,6 +181,7 @@ namespace CashProduction.Class
         public void StandBy()
         {
             ProdStarted = false;
+            ctx.Cancel();
         }
 
         /// <summary>
@@ -172,7 +189,10 @@ namespace CashProduction.Class
         /// </summary>
         public void Continue()
         {
-            ProdStarted = true;
+            ctx = new CancellationTokenSource();
+            this.ProdStarted = true;
+            Thread = new Thread(this.StartedProd);
+            Thread.Start();
         }
 
         /// <summary>

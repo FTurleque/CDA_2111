@@ -5,6 +5,8 @@ namespace CashProduction
 {
     public partial class Form1 : Form
     {
+        Production prod;
+
         public Form1()
         {
             InitializeComponent();
@@ -14,15 +16,6 @@ namespace CashProduction
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            /*foreach (Control c in this.Controls)
-            {
-                if(c is UserControl control)
-                {
-                    
-                }
-                Char typeProde = c.Name.ToArray()[^1];
-                //MessageBox.Show(typeProde.ToString());
-            }*/
             groupBoxA.Tag = ProdManager.GetOneProdInstance("A");
             groupBoxB.Tag = ProdManager.GetOneProdInstance("B");
             groupBoxC.Tag = ProdManager.GetOneProdInstance("C");
@@ -48,65 +41,166 @@ namespace CashProduction
             this.Close();
         }
 
-        private void ChangeBtnStates(string _name)
+        private void ChangeBtnStates(Production prod)
         {
+            switch (prod.boxType.ToString())
+            {
+                case "A":
+                    if (!prod.ProdStarted)
+                    {
+                        startAMenu.Enabled = false;
+                        stopAMenu.Enabled = true;
+                        continueAMenu.Enabled = false;
+                        btnStartA.Enabled = false;
+                        btnStandByA.Enabled = false;
+                        btnStopA.Enabled = true;
+                        trafficLightA.BackgroundImage = Properties.Resources.Green;
+                    }
+                    else
+                    {
+                        startAMenu.Enabled = true;
+                        stopAMenu.Enabled = false;
+                        continueAMenu.Enabled = true;
+                        btnStartA.Enabled = true;
+                        btnStandByA.Enabled = true;
+                        btnStopA.Enabled = false;
+                        trafficLightA.BackgroundImage = Properties.Resources.Orange;
+                    }
+                    break;
+                case "B":
+                    if(!prod.ProdStarted)
+                    {
+                        startBMenu.Enabled = false;
+                        stopBMenu.Enabled = true;
+                        continueBMenu.Enabled = false;
+                        btnStartB.Enabled = false;
+                        btnStandByB.Enabled = false;
+                        btnStopB.Enabled = true;
+                        trafficLightB.BackgroundImage = Properties.Resources.Green;
+                    }
+                    else
+                    {
+                        startBMenu.Enabled = true;
+                        stopBMenu.Enabled = false;
+                        continueBMenu.Enabled = true;
+                        btnStartB.Enabled = true;
+                        btnStandByB.Enabled = true;
+                        btnStopB.Enabled = false;
+                        trafficLightB.BackgroundImage = Properties.Resources.Orange;
+                    }
+                    break;
+                case "C":
+                    if (!prod.ProdStarted)
+                    {
+                        startCMenu.Enabled = false;
+                        stopCMenu.Enabled = true;
+                        continueCMenu.Enabled = false;
+                        btnStartC.Enabled = false;
+                        btnStandByC.Enabled = false;
+                        btnStopC.Enabled = true;
+                        trafficLightC.BackgroundImage = Properties.Resources.Green;
+                    }
+                    else
+                    {
+                        startCMenu.Enabled = true;
+                        stopCMenu.Enabled = false;
+                        continueCMenu.Enabled = true;
+                        btnStartC.Enabled = true;
+                        btnStandByC.Enabled = true;
+                        btnStopC.Enabled = false;
+                        trafficLightC.BackgroundImage = Properties.Resources.Orange;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
 
+        private Production GetProduction(object sender)
+        {
+            if (sender is Button btn)
+            {
+                if (btn.Parent is GroupBox)
+                {
+                    prod = (Production)btn.Parent.Tag;
+                    string c = prod.boxType.ToString();
+                }
+            }
+            else if (sender is ToolStripMenuItem prodName)
+            {
+                prod = ProdManager.GetOneProdInstance(prodName.Text);
+            }
+            ChangeBtnStates(prod);
+            return prod;
         }
 
         private void StartProd_Click(object sender, EventArgs e)
         {
-            // Faire désactiver et activer les menus
-            /*foreach (ToolStripItem item in productionMenu.DropDownItems)
-            {
-                
-            }*/
-            /*foreach (Control c in this.Controls)
-            {
-                if (c.GetType() == typeof(GroupBox))
-                {
-                    foreach (Control cc in c.Controls)
-                    {
-                        // ...
-                    }
-                }
-                else if (c.GetType() == typeof(MenuStrip))
-                {   // ToolStrip et cousin(e)s :D
-                    foreach (ToolStripItem ci in ((MenuStrip)c).Items)
-                    {
-                        
-                        // ...
-                    }
-                }
-                else
-                {
-                    // Controles contenus par le formulaire
-                }
-            }*/
-            var prodName = sender as ToolStripMenuItem;
-            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            Production prod = GetProduction(sender);
             prod.Start();
         }
 
         private void StopProd_Click(object sender, EventArgs e)
         {
-            var prodName = sender as ToolStripMenuItem;
-            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            Production prod = GetProduction(sender);
             prod.StandBy();
         }
 
         private void ContinueProd_Click(object sender, EventArgs e)
         {
-            var prodName = sender as ToolStripMenuItem;
-            Production prod = ProdManager.GetOneProdInstance(prodName.Text);
+            Production prod = GetProduction(sender);
             prod.Continue();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             statusTime.Text = DateTime.Now.ToLongTimeString();
-            boxA.Text = ProdManager.GetOneProdInstance("A").BoxCounter.ToString();
-            boxB.Text = ProdManager.GetOneProdInstance("B").BoxCounter.ToString();
-            boxC.Text = ProdManager.GetOneProdInstance("C").BoxCounter.ToString();
+            boxA.Text = ((Production)groupBoxA.Tag).BoxCounter.ToString();
+            boxB.Text = ((Production)groupBoxB.Tag).BoxCounter.ToString();
+            boxC.Text = ((Production)groupBoxC.Tag).BoxCounter.ToString();
+        }
+
+        private void EndedProduction_Click(object sender, EventArgs e)
+        {
+            if(sender is Button btn)
+            {
+                if(btn.Parent is GroupBox group)
+                {
+                    Production prod = (Production)group.Tag;
+                    prod.StandBy();
+
+                    foreach (Control c in group.Controls)
+                    {
+                        if(c.BackgroundImage != null)
+                        {
+                            c.BackgroundImage = Properties.Resources.Red;
+                        }
+                        if(c.Text.Equals("Démarer"))
+                        {
+                            c.Enabled = true;
+                        }
+                        else
+                        {
+                            c.Enabled = false;
+                        }
+                    }
+                    foreach (ToolStripItem menu in productionMenu.DropDownItems)
+                    {
+                        foreach (ToolStripItem item in startMenu.DropDownItems)
+                        {
+
+                        }
+                        if (menu.Text == prod.boxType.ToString())
+                        {
+                            menu.Enabled = true;
+                        }
+                        else
+                        { 
+                            menu.Enabled = false;
+                        }
+                    }
+                }
+            }
         }
     }
 }
