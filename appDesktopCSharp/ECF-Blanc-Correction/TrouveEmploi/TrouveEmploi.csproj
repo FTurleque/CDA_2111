@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TrouveEmploi.Lib\TrouveEmploi.Lib.csproj" />
+    <ProjectReference Include="..\TrouveEmploi.Tests\TrouveEmploi.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

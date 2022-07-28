@@ -11,23 +11,60 @@ namespace TrouveEmploi.Lib.Validation
     {
         private readonly Regex regexName = new Regex(@"^([\p{L}]+([-]?[\p{L}]+)?){1}$");
         private readonly Regex regexDiploma = new Regex(@"^[\p{L} ']+$");
+        private readonly int currentYear = DateTime.Now.Year;
 
         public bool IsValid()
         {
-            if(!regexName.IsMatch(Name) || regexName.IsMatch(FirstName))
+            if(!Validation_Name() || !ValidationFirstName())
             {
                 return false;
             }
 
-            // Verifié si un diplôme est bien renseigné.
+            if(!Validation_Date())
+            {
+                return false;
+            }
+
             if(Diploma != null)
             {
-                if(!regexDiploma.IsMatch(Diploma.LastDiplomaName))
+                if(!Validation_LastDiplomaName())
+                {
+                    return false;
+                }
+
+                if(!Validation_Date())
                 {
                     return false;
                 }
             }
             
+            return true;
+        }
+
+        public bool Validation_Name()
+        {
+            return regexName.IsMatch(Name);
+        }
+
+        public bool ValidationFirstName()
+        {
+            return regexName.IsMatch(FirstName);
+        }
+
+        public bool Validation_LastDiplomaName()
+        {
+            return regexDiploma.IsMatch(Diploma.LastDiplomaName);
+        }
+
+        public bool Validation_Date()
+        {
+            if (Diploma.LastDiplomaYear > currentYear || 
+                Diploma.LastDiplomaYear < 1950 || 
+                RegistrationYear > currentYear ||
+                RegistrationYear < 1950)
+            {
+                return false;
+            }
             return true;
         }
     }

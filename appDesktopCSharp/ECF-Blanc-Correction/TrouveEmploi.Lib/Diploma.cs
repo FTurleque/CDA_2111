@@ -11,5 +11,11 @@ namespace TrouveEmploi.Lib
         public string LastDiplomaName { get; private set; }
 
         public int LastDiplomaYear { get; private set; }
+
+        public Diploma(string _lastDiplomaName, int _lastDiplomaYear)
+        {
+            this.LastDiplomaName = _lastDiplomaName;
+            this.LastDiplomaYear = _lastDiplomaYear;
+        }
     }
 }

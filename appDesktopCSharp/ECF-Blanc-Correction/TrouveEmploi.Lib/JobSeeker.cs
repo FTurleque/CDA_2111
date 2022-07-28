@@ -4,19 +4,19 @@
     {
         private static int lastId = 0;
 
-        public int Id { get; private set; }
+        public int Id { get; set; }
 
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
-        public string FirstName { get; private set; }
+        public string FirstName { get; set; }
 
-        public int RegistrationYear { get; private set; }
+        public int RegistrationYear { get; set; }
 
-        public Levels Level { get; private set; }
+        public Levels Level { get; set; }
 
         public string Employability { get { return Level + "%"; } }
 
-        public Diploma? Diploma { get; private set; }
+        public Diploma? Diploma { get; set; }
 
         public JobSeeker()
         {
@@ -25,12 +25,12 @@
 
         public JobSeeker(JobSeeker jobSeeker)
         {
-            Id = jobSeeker.Id;
-            Name = jobSeeker.Name;
-            FirstName = jobSeeker.FirstName;
-            RegistrationYear = jobSeeker.RegistrationYear;
-            Level = jobSeeker.Level;
-            Diploma = jobSeeker.Diploma;
+            this.Id = jobSeeker.Id;
+            this.Name = jobSeeker.Name;
+            this.FirstName = jobSeeker.FirstName;
+            this.RegistrationYear = jobSeeker.RegistrationYear;
+            this.Level = jobSeeker.Level;
+            this.Diploma = jobSeeker.Diploma;
         }
     }
 }

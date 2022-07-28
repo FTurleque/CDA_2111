@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrouveEmploi", "TrouveEmploi\TrouveEmploi.csproj", "{25BDA8C1-7297-45F6-9983-25BADFA50409}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrouveEmploi", "TrouveEmploi\TrouveEmploi.csproj", "{25BDA8C1-7297-45F6-9983-25BADFA50409}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrouveEmploi.Lib", "TrouveEmploi.Lib\TrouveEmploi.Lib.csproj", "{678F7433-BDED-42BD-A007-6F178352549E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrouveEmploi.Lib", "TrouveEmploi.Lib\TrouveEmploi.Lib.csproj", "{678F7433-BDED-42BD-A007-6F178352549E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrouveEmploi.Tests", "TrouveEmploi.Tests\TrouveEmploi.Tests.csproj", "{632E9CDF-91F0-4A4A-A2CF-7F911B43475C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{678F7433-BDED-42BD-A007-6F178352549E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{678F7433-BDED-42BD-A007-6F178352549E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{678F7433-BDED-42BD-A007-6F178352549E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{632E9CDF-91F0-4A4A-A2CF-7F911B43475C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{632E9CDF-91F0-4A4A-A2CF-7F911B43475C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{632E9CDF-91F0-4A4A-A2CF-7F911B43475C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{632E9CDF-91F0-4A4A-A2CF-7F911B43475C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
