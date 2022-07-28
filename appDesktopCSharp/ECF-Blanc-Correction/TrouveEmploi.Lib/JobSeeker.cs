@@ -14,7 +14,7 @@
 
         public Levels Level { get; set; }
 
-        public string Employability { get { return Level + "%"; } }
+        public string Employability { get { return Int32.Parse(Level.ToString()).ToString() + "%"; } }
 
         public Diploma? Diploma { get; set; }
 

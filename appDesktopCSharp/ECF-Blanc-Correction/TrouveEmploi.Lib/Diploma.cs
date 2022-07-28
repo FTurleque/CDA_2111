@@ -8,9 +8,9 @@ namespace TrouveEmploi.Lib
 {
     public class Diploma
     {
-        public string LastDiplomaName { get; private set; }
+        public string? LastDiplomaName { get; private set; }
 
-        public int LastDiplomaYear { get; private set; }
+        public int? LastDiplomaYear { get; private set; }
 
         public Diploma(string _lastDiplomaName, int _lastDiplomaYear)
         {
