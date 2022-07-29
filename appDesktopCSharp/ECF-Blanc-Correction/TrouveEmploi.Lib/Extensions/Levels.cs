@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TrouveEmploi.Lib
+namespace TrouveEmploi.Lib.Extensions
 {
     public enum Levels
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace TrouveEmploi.Lib
+namespace TrouveEmploi.Lib.Extensions
 {
     public static class EnumExtensions
     {
@@ -14,7 +14,7 @@ namespace TrouveEmploi.Lib
         {
             Type genericEnumType = GenericEnum.GetType();
             MemberInfo[] Level = genericEnumType.GetMember(GenericEnum.ToString());
-            if ((Level.Length <= 0))
+            if (Level.Length <= 0)
             {
                 return GenericEnum.ToString();
             }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrouveEmploi.Lib
+namespace TrouveEmploi.Lib.Class
 {
     public class Diploma
     {
@@ -16,8 +16,8 @@ namespace TrouveEmploi.Lib
 
         public Diploma(string _lastDiplomaName, int _lastDiplomaYear)
         {
-            this.LastDiplomaName = _lastDiplomaName;
-            this.LastDiplomaYear = _lastDiplomaYear;
+            LastDiplomaName = _lastDiplomaName;
+            LastDiplomaYear = _lastDiplomaYear;
         }
     }
 }

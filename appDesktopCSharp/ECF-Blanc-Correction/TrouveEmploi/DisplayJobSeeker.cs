@@ -1,4 +1,4 @@
-﻿using TrouveEmploi.Lib;
+﻿using TrouveEmploi.Lib.Class;
 
 namespace TrouveEmploi
 {

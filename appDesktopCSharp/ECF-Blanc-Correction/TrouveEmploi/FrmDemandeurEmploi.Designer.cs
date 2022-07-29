@@ -45,6 +45,7 @@
             this.checkBoxDiploma = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gBoxDiploma.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             this.txtBoxRegistration.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxRegistration.Location = new System.Drawing.Point(180, 91);
+            this.txtBoxRegistration.MaxLength = 4;
             this.txtBoxRegistration.Name = "txtBoxRegistration";
             this.txtBoxRegistration.Size = new System.Drawing.Size(88, 25);
             this.txtBoxRegistration.TabIndex = 2;
@@ -226,11 +228,22 @@
             this.label6.Size = new System.Drawing.Size(429, 2);
             this.label6.TabIndex = 9;
             // 
-            // MainForm
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(67, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(325, 28);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Ajout d\'un demandeur d\'emploi :";
+            // 
+            // FrmDemandeurEmploi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 420);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBoxDiploma);
@@ -240,7 +253,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "FrmDemandeurEmploi";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
@@ -271,5 +284,6 @@
         private CheckBox checkBoxDiploma;
         private Button button1;
         private Label label6;
+        private Label label8;
     }
 }

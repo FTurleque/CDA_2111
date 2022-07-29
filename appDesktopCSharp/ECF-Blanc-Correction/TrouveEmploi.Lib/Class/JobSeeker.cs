@@ -1,4 +1,6 @@
-﻿namespace TrouveEmploi.Lib
+﻿using TrouveEmploi.Lib.Extensions;
+
+namespace TrouveEmploi.Lib.Class
 {
     public class JobSeeker
     {
@@ -37,12 +39,12 @@
         /// <param name="jobSeeker">Instance du demandeur à cloné</param>
         public JobSeeker(JobSeeker jobSeeker)
         {
-            this.Id = jobSeeker.Id;
-            this.Name = jobSeeker.Name;
-            this.FirstName = jobSeeker.FirstName;
-            this.RegistrationYear = jobSeeker.RegistrationYear;
-            this.Level = jobSeeker.Level;
-            this.Diploma = jobSeeker.Diploma;
+            Id = jobSeeker.Id;
+            Name = jobSeeker.Name;
+            FirstName = jobSeeker.FirstName;
+            RegistrationYear = jobSeeker.RegistrationYear;
+            Level = jobSeeker.Level;
+            Diploma = jobSeeker.Diploma;
         }
     }
 }

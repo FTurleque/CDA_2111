@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TrouveEmploi.Lib.Class;
 
 namespace TrouveEmploi.Lib.Validation
 {
@@ -12,6 +13,9 @@ namespace TrouveEmploi.Lib.Validation
         private readonly Regex regexName = new Regex(@"^([\p{L}]+([-]?[\p{L}]+)?){1}$");
         private readonly Regex regexDiploma = new Regex(@"^[\p{L} ']+$");
         private readonly int currentYear = DateTime.Now.Year;
+        private NameValidator nameValidator = new NameValidator();
+        private SentenceValidator sentenceValidator = new SentenceValidator();
+        private YearValidator yearValidator = new YearValidator();
 
         /// <summary>
         /// Valide toutes les données du view model.
@@ -19,24 +23,24 @@ namespace TrouveEmploi.Lib.Validation
         /// <returns>Retourne si le test est passé ou pas</returns>
         public bool IsValid()
         {
-            if(!Validation_Name() || !ValidationFirstName())
+            if(!nameValidator.IsValid(Name) || !nameValidator.IsValid(FirstName))
             {
                 return false;
             }
 
-            if(!ValidationRegistrationYear_Date())
+            if(!yearValidator.IsValid(RegistrationYear.ToString()))
             {
                 return false;
             }
 
             if(Diploma != null)
             {
-                if(!Validation_LastDiplomaName())
+                if(!sentenceValidator.IsValid(Diploma.LastDiplomaName))
                 {
                     return false;
                 }
 
-                if(!ValidationDiplomaYear_Date())
+                if(!yearValidator.IsValid(Diploma.LastDiplomaYear.ToString()))
                 {
                     return false;
                 }
@@ -45,7 +49,7 @@ namespace TrouveEmploi.Lib.Validation
             return true;
         }
 
-        public bool Validation_Name()
+        /*public bool Validation_Name()
         {
             return regexName.IsMatch(Name);
         }
@@ -76,6 +80,6 @@ namespace TrouveEmploi.Lib.Validation
                 return false;
             }
             return true;
-        }
+        }*/
     }
 }
