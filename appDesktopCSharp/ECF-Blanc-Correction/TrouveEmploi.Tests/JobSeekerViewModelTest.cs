@@ -51,7 +51,8 @@ namespace TrouveEmploi.Tests
             };
             Assert.IsFalse(j1.Validation_Name());
             Assert.IsFalse(j1.ValidationFirstName());
-            Assert.IsFalse(j1.Validation_Date());
+            Assert.IsFalse(j1.ValidationDiplomaYear_Date()); 
+            Assert.IsFalse(j1.ValidationRegistrationYear_Date()); 
             Assert.IsFalse(j1.Validation_LastDiplomaName());
             Assert.IsFalse(j1.Validation_LastDiplomaName());
         }

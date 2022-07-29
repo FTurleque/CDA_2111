@@ -1,6 +1,6 @@
 ﻿namespace TrouveEmploi
 {
-    partial class MainForm
+    partial class FrmDemandeurEmploi
     {
         /// <summary>
         ///  Required designer variable.
@@ -209,7 +209,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(303, 374);
+            this.button1.Location = new System.Drawing.Point(303, 376);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 32);
             this.button1.TabIndex = 7;

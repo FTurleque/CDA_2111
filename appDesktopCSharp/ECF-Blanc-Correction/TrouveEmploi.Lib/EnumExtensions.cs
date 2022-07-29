@@ -5,6 +5,11 @@ namespace TrouveEmploi.Lib
 {
     public static class EnumExtensions
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="GenericEnum"></param>
+        /// <returns></returns>
         public static string GetDescription(this Enum GenericEnum)
         {
             Type genericEnumType = GenericEnum.GetType();

@@ -8,8 +8,10 @@ namespace TrouveEmploi.Lib
 {
     public class Diploma
     {
+        // Nom du diplôme.
         public string? LastDiplomaName { get; private set; }
 
+        // Année d'obtention du diplôme.
         public int? LastDiplomaYear { get; private set; }
 
         public Diploma(string _lastDiplomaName, int _lastDiplomaYear)

@@ -2,20 +2,28 @@
 {
     public class JobSeeker
     {
+        // Dernier Id qui concernera toutes les instances.
         private static int lastId = 0;
 
-        public int Id { get; set; }
+        // Id d'un demandeur d'emploi.
+        public int Id { get; private set; }
 
+        // Nom du demandeur.
         public string Name { get; set; }
 
+        // Prénom du demandeur.
         public string FirstName { get; set; }
 
+        // Année d'inscription du demandeur.
         public int RegistrationYear { get; set; }
 
-        public Levels Level { get; set; }
+        // Niveau d'étude du demandeur.
+        public Levels? Level { get; set; }
 
-        public string Employability { get { return Int32.Parse(Level.ToString()).ToString() + "%"; } }
+        // Taux d'employabilité.
+        public string Employability { get { return (int)Level + "%"; } }
 
+        // Dernier diplôme obtenu.
         public Diploma? Diploma { get; set; }
 
         public JobSeeker()
@@ -23,6 +31,10 @@
             Id = ++lastId;
         }
 
+        /// <summary>
+        /// Constructeur par copie.
+        /// </summary>
+        /// <param name="jobSeeker">Instance du demandeur à cloné</param>
         public JobSeeker(JobSeeker jobSeeker)
         {
             this.Id = jobSeeker.Id;

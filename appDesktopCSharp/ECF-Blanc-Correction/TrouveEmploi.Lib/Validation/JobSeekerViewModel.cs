@@ -13,6 +13,10 @@ namespace TrouveEmploi.Lib.Validation
         private readonly Regex regexDiploma = new Regex(@"^[\p{L} ']+$");
         private readonly int currentYear = DateTime.Now.Year;
 
+        /// <summary>
+        /// Valide toutes les données du view model.
+        /// </summary>
+        /// <returns>Retourne si le test est passé ou pas</returns>
         public bool IsValid()
         {
             if(!Validation_Name() || !ValidationFirstName())
@@ -20,7 +24,7 @@ namespace TrouveEmploi.Lib.Validation
                 return false;
             }
 
-            if(!Validation_Date())
+            if(!ValidationRegistrationYear_Date())
             {
                 return false;
             }
@@ -32,7 +36,7 @@ namespace TrouveEmploi.Lib.Validation
                     return false;
                 }
 
-                if(!Validation_Date())
+                if(!ValidationDiplomaYear_Date())
                 {
                     return false;
                 }
@@ -56,12 +60,18 @@ namespace TrouveEmploi.Lib.Validation
             return regexDiploma.IsMatch(Diploma.LastDiplomaName);
         }
 
-        public bool Validation_Date()
+        public bool ValidationRegistrationYear_Date()
         {
-            if (Diploma.LastDiplomaYear > currentYear || 
-                Diploma.LastDiplomaYear < 1950 || 
-                RegistrationYear > currentYear ||
-                RegistrationYear < 1950)
+            if (RegistrationYear > currentYear || RegistrationYear < 1950)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ValidationDiplomaYear_Date()
+        {
+            if (Diploma.LastDiplomaYear > currentYear || Diploma.LastDiplomaYear < 1950)
             {
                 return false;
             }
