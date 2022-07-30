@@ -1,6 +1,6 @@
 ﻿namespace CashProduction
 {
-    partial class Form1
+    partial class ProductionForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -64,33 +64,15 @@
             this.progressBarControlC = new CashProduction.UserControls.ProgressBarControl();
             this.progressBarControlB = new CashProduction.UserControls.ProgressBarControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBoxA = new System.Windows.Forms.GroupBox();
-            this.btnStopA = new System.Windows.Forms.Button();
-            this.btnStandByA = new System.Windows.Forms.Button();
-            this.btnEndedProdA = new System.Windows.Forms.Button();
-            this.btnStartA = new System.Windows.Forms.Button();
-            this.trafficLightA = new System.Windows.Forms.Button();
-            this.groupBoxB = new System.Windows.Forms.GroupBox();
-            this.btnStopB = new System.Windows.Forms.Button();
-            this.btnEndedProdB = new System.Windows.Forms.Button();
-            this.btnStandByB = new System.Windows.Forms.Button();
-            this.btnStartB = new System.Windows.Forms.Button();
-            this.trafficLightB = new System.Windows.Forms.Button();
-            this.groupBoxC = new System.Windows.Forms.GroupBox();
-            this.btnEndedProdC = new System.Windows.Forms.Button();
-            this.btnStopC = new System.Windows.Forms.Button();
-            this.btnStandByC = new System.Windows.Forms.Button();
-            this.btnStartC = new System.Windows.Forms.Button();
-            this.trafficLightC = new System.Windows.Forms.Button();
+            this.btnsControlA = new CashProduction.UserControls.ButtonsControl();
+            this.btnsControlB = new CashProduction.UserControls.ButtonsControl();
+            this.btnsControlC = new CashProduction.UserControls.ButtonsControl();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageA.SuspendLayout();
             this.tabPageB.SuspendLayout();
             this.tabPageC.SuspendLayout();
-            this.groupBoxA.SuspendLayout();
-            this.groupBoxB.SuspendLayout();
-            this.groupBoxC.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -100,7 +82,7 @@
             this.productionMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(649, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(647, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -142,21 +124,21 @@
             // startAMenu
             // 
             this.startAMenu.Name = "startAMenu";
-            this.startAMenu.Size = new System.Drawing.Size(82, 22);
+            this.startAMenu.Size = new System.Drawing.Size(180, 22);
             this.startAMenu.Text = "A";
             this.startAMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
             // startBMenu
             // 
             this.startBMenu.Name = "startBMenu";
-            this.startBMenu.Size = new System.Drawing.Size(82, 22);
+            this.startBMenu.Size = new System.Drawing.Size(180, 22);
             this.startBMenu.Text = "B";
             this.startBMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
             // startCMenu
             // 
             this.startCMenu.Name = "startCMenu";
-            this.startCMenu.Size = new System.Drawing.Size(82, 22);
+            this.startCMenu.Size = new System.Drawing.Size(180, 22);
             this.startCMenu.Text = "C";
             this.startCMenu.Click += new System.EventHandler(this.StartProd_Click);
             // 
@@ -172,6 +154,7 @@
             // 
             // stopAMenu
             // 
+            this.stopAMenu.BackColor = System.Drawing.Color.Gray;
             this.stopAMenu.Enabled = false;
             this.stopAMenu.Name = "stopAMenu";
             this.stopAMenu.Size = new System.Drawing.Size(180, 22);
@@ -180,6 +163,7 @@
             // 
             // stopBMenu
             // 
+            this.stopBMenu.BackColor = System.Drawing.Color.Gray;
             this.stopBMenu.Enabled = false;
             this.stopBMenu.Name = "stopBMenu";
             this.stopBMenu.Size = new System.Drawing.Size(180, 22);
@@ -188,6 +172,7 @@
             // 
             // stopCMenu
             // 
+            this.stopCMenu.BackColor = System.Drawing.Color.Gray;
             this.stopCMenu.Enabled = false;
             this.stopCMenu.Name = "stopCMenu";
             this.stopCMenu.Size = new System.Drawing.Size(180, 22);
@@ -196,6 +181,7 @@
             // 
             // continueMenu
             // 
+            this.continueMenu.BackColor = System.Drawing.Color.Transparent;
             this.continueMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.continueAMenu,
             this.continueBMenu,
@@ -206,25 +192,28 @@
             // 
             // continueAMenu
             // 
+            this.continueAMenu.BackColor = System.Drawing.Color.Gray;
             this.continueAMenu.Enabled = false;
             this.continueAMenu.Name = "continueAMenu";
-            this.continueAMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueAMenu.Size = new System.Drawing.Size(180, 22);
             this.continueAMenu.Text = "A";
             this.continueAMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueBMenu
             // 
+            this.continueBMenu.BackColor = System.Drawing.Color.Gray;
             this.continueBMenu.Enabled = false;
             this.continueBMenu.Name = "continueBMenu";
-            this.continueBMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueBMenu.Size = new System.Drawing.Size(180, 22);
             this.continueBMenu.Text = "B";
             this.continueBMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
             // continueCMenu
             // 
+            this.continueCMenu.BackColor = System.Drawing.Color.Gray;
             this.continueCMenu.Enabled = false;
             this.continueCMenu.Name = "continueCMenu";
-            this.continueCMenu.Size = new System.Drawing.Size(82, 22);
+            this.continueCMenu.Size = new System.Drawing.Size(180, 22);
             this.continueCMenu.Text = "C";
             this.continueCMenu.Click += new System.EventHandler(this.ContinueProd_Click);
             // 
@@ -238,9 +227,9 @@
             this.statusBoxC,
             this.boxC,
             this.statusTime});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 494);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 554);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(649, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(647, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
@@ -292,7 +281,7 @@
             this.tabControl.Controls.Add(this.tabPageA);
             this.tabControl.Controls.Add(this.tabPageB);
             this.tabControl.Controls.Add(this.tabPageC);
-            this.tabControl.Location = new System.Drawing.Point(220, 171);
+            this.tabControl.Location = new System.Drawing.Point(218, 225);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(396, 184);
@@ -354,21 +343,21 @@
             // 
             // progressBarControlA
             // 
-            this.progressBarControlA.Location = new System.Drawing.Point(25, 361);
+            this.progressBarControlA.Location = new System.Drawing.Point(23, 415);
             this.progressBarControlA.Name = "progressBarControlA";
             this.progressBarControlA.Size = new System.Drawing.Size(606, 53);
             this.progressBarControlA.TabIndex = 9;
             // 
             // progressBarControlC
             // 
-            this.progressBarControlC.Location = new System.Drawing.Point(25, 440);
+            this.progressBarControlC.Location = new System.Drawing.Point(23, 494);
             this.progressBarControlC.Name = "progressBarControlC";
             this.progressBarControlC.Size = new System.Drawing.Size(606, 53);
             this.progressBarControlC.TabIndex = 10;
             // 
             // progressBarControlB
             // 
-            this.progressBarControlB.Location = new System.Drawing.Point(25, 399);
+            this.progressBarControlB.Location = new System.Drawing.Point(23, 453);
             this.progressBarControlB.Name = "progressBarControlB";
             this.progressBarControlB.Size = new System.Drawing.Size(606, 53);
             this.progressBarControlB.TabIndex = 11;
@@ -377,212 +366,35 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBoxA
+            // btnsControlA
             // 
-            this.groupBoxA.Controls.Add(this.btnStopA);
-            this.groupBoxA.Controls.Add(this.btnStandByA);
-            this.groupBoxA.Controls.Add(this.btnEndedProdA);
-            this.groupBoxA.Controls.Add(this.btnStartA);
-            this.groupBoxA.Controls.Add(this.trafficLightA);
-            this.groupBoxA.Location = new System.Drawing.Point(27, 27);
-            this.groupBoxA.Name = "groupBoxA";
-            this.groupBoxA.Size = new System.Drawing.Size(133, 138);
-            this.groupBoxA.TabIndex = 24;
-            this.groupBoxA.TabStop = false;
-            this.groupBoxA.Text = "Production A";
+            this.btnsControlA.Location = new System.Drawing.Point(27, 46);
+            this.btnsControlA.Name = "btnsControlA";
+            this.btnsControlA.Size = new System.Drawing.Size(145, 150);
+            this.btnsControlA.TabIndex = 26;
             // 
-            // btnStopA
+            // btnsControlB
             // 
-            this.btnStopA.Enabled = false;
-            this.btnStopA.Location = new System.Drawing.Point(51, 80);
-            this.btnStopA.Name = "btnStopA";
-            this.btnStopA.Size = new System.Drawing.Size(75, 23);
-            this.btnStopA.TabIndex = 20;
-            this.btnStopA.Text = "Arrêter";
-            this.btnStopA.UseVisualStyleBackColor = true;
-            this.btnStopA.Click += new System.EventHandler(this.StopProd_Click);
+            this.btnsControlB.Location = new System.Drawing.Point(255, 46);
+            this.btnsControlB.Name = "btnsControlB";
+            this.btnsControlB.Size = new System.Drawing.Size(145, 150);
+            this.btnsControlB.TabIndex = 27;
             // 
-            // btnStandByA
+            // btnsControlC
             // 
-            this.btnStandByA.Enabled = false;
-            this.btnStandByA.Location = new System.Drawing.Point(51, 51);
-            this.btnStandByA.Name = "btnStandByA";
-            this.btnStandByA.Size = new System.Drawing.Size(75, 23);
-            this.btnStandByA.TabIndex = 19;
-            this.btnStandByA.Text = "Continuer";
-            this.btnStandByA.UseVisualStyleBackColor = true;
-            this.btnStandByA.Click += new System.EventHandler(this.ContinueProd_Click);
+            this.btnsControlC.Location = new System.Drawing.Point(478, 46);
+            this.btnsControlC.Name = "btnsControlC";
+            this.btnsControlC.Size = new System.Drawing.Size(145, 150);
+            this.btnsControlC.TabIndex = 28;
             // 
-            // btnEndedProdA
-            // 
-            this.btnEndedProdA.Location = new System.Drawing.Point(7, 109);
-            this.btnEndedProdA.Name = "btnEndedProdA";
-            this.btnEndedProdA.Size = new System.Drawing.Size(119, 23);
-            this.btnEndedProdA.TabIndex = 26;
-            this.btnEndedProdA.Text = "Terminer Prod A";
-            this.btnEndedProdA.UseVisualStyleBackColor = true;
-            this.btnEndedProdA.Click += new System.EventHandler(this.EndedProduction_Click);
-            // 
-            // btnStartA
-            // 
-            this.btnStartA.Location = new System.Drawing.Point(51, 22);
-            this.btnStartA.Name = "btnStartA";
-            this.btnStartA.Size = new System.Drawing.Size(75, 23);
-            this.btnStartA.TabIndex = 18;
-            this.btnStartA.Text = "Démarer";
-            this.btnStartA.UseVisualStyleBackColor = true;
-            this.btnStartA.Click += new System.EventHandler(this.StartProd_Click);
-            // 
-            // trafficLightA
-            // 
-            this.trafficLightA.BackgroundImage = global::CashProduction.Properties.Resources.Red;
-            this.trafficLightA.Enabled = false;
-            this.trafficLightA.Location = new System.Drawing.Point(7, 30);
-            this.trafficLightA.Name = "trafficLightA";
-            this.trafficLightA.Size = new System.Drawing.Size(32, 66);
-            this.trafficLightA.TabIndex = 17;
-            this.trafficLightA.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxB
-            // 
-            this.groupBoxB.Controls.Add(this.btnStopB);
-            this.groupBoxB.Controls.Add(this.btnEndedProdB);
-            this.groupBoxB.Controls.Add(this.btnStandByB);
-            this.groupBoxB.Controls.Add(this.btnStartB);
-            this.groupBoxB.Controls.Add(this.trafficLightB);
-            this.groupBoxB.Location = new System.Drawing.Point(255, 27);
-            this.groupBoxB.Name = "groupBoxB";
-            this.groupBoxB.Size = new System.Drawing.Size(133, 138);
-            this.groupBoxB.TabIndex = 25;
-            this.groupBoxB.TabStop = false;
-            this.groupBoxB.Text = "Production B";
-            // 
-            // btnStopB
-            // 
-            this.btnStopB.Enabled = false;
-            this.btnStopB.Location = new System.Drawing.Point(50, 80);
-            this.btnStopB.Name = "btnStopB";
-            this.btnStopB.Size = new System.Drawing.Size(75, 23);
-            this.btnStopB.TabIndex = 16;
-            this.btnStopB.Text = "Arrêter";
-            this.btnStopB.UseVisualStyleBackColor = true;
-            this.btnStopB.Click += new System.EventHandler(this.StopProd_Click);
-            // 
-            // btnEndedProdB
-            // 
-            this.btnEndedProdB.Location = new System.Drawing.Point(6, 109);
-            this.btnEndedProdB.Name = "btnEndedProdB";
-            this.btnEndedProdB.Size = new System.Drawing.Size(119, 23);
-            this.btnEndedProdB.TabIndex = 27;
-            this.btnEndedProdB.Text = "Terminer Prod B";
-            this.btnEndedProdB.UseVisualStyleBackColor = true;
-            this.btnEndedProdB.Click += new System.EventHandler(this.EndedProduction_Click);
-            // 
-            // btnStandByB
-            // 
-            this.btnStandByB.Enabled = false;
-            this.btnStandByB.Location = new System.Drawing.Point(50, 51);
-            this.btnStandByB.Name = "btnStandByB";
-            this.btnStandByB.Size = new System.Drawing.Size(75, 23);
-            this.btnStandByB.TabIndex = 15;
-            this.btnStandByB.Text = "Continuer";
-            this.btnStandByB.UseVisualStyleBackColor = true;
-            this.btnStandByB.Click += new System.EventHandler(this.ContinueProd_Click);
-            // 
-            // btnStartB
-            // 
-            this.btnStartB.Location = new System.Drawing.Point(50, 22);
-            this.btnStartB.Name = "btnStartB";
-            this.btnStartB.Size = new System.Drawing.Size(75, 23);
-            this.btnStartB.TabIndex = 14;
-            this.btnStartB.Text = "Démarer";
-            this.btnStartB.UseVisualStyleBackColor = true;
-            this.btnStartB.Click += new System.EventHandler(this.StartProd_Click);
-            // 
-            // trafficLightB
-            // 
-            this.trafficLightB.BackgroundImage = global::CashProduction.Properties.Resources.Red;
-            this.trafficLightB.Enabled = false;
-            this.trafficLightB.Location = new System.Drawing.Point(6, 30);
-            this.trafficLightB.Name = "trafficLightB";
-            this.trafficLightB.Size = new System.Drawing.Size(32, 66);
-            this.trafficLightB.TabIndex = 13;
-            this.trafficLightB.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxC
-            // 
-            this.groupBoxC.Controls.Add(this.btnEndedProdC);
-            this.groupBoxC.Controls.Add(this.btnStopC);
-            this.groupBoxC.Controls.Add(this.btnStandByC);
-            this.groupBoxC.Controls.Add(this.btnStartC);
-            this.groupBoxC.Controls.Add(this.trafficLightC);
-            this.groupBoxC.Location = new System.Drawing.Point(490, 27);
-            this.groupBoxC.Name = "groupBoxC";
-            this.groupBoxC.Size = new System.Drawing.Size(133, 138);
-            this.groupBoxC.TabIndex = 25;
-            this.groupBoxC.TabStop = false;
-            this.groupBoxC.Text = "Production C";
-            // 
-            // btnEndedProdC
-            // 
-            this.btnEndedProdC.Location = new System.Drawing.Point(7, 108);
-            this.btnEndedProdC.Name = "btnEndedProdC";
-            this.btnEndedProdC.Size = new System.Drawing.Size(119, 23);
-            this.btnEndedProdC.TabIndex = 28;
-            this.btnEndedProdC.Text = "Terminer Pro C";
-            this.btnEndedProdC.UseVisualStyleBackColor = true;
-            this.btnEndedProdC.Click += new System.EventHandler(this.EndedProduction_Click);
-            // 
-            // btnStopC
-            // 
-            this.btnStopC.Enabled = false;
-            this.btnStopC.Location = new System.Drawing.Point(51, 79);
-            this.btnStopC.Name = "btnStopC";
-            this.btnStopC.Size = new System.Drawing.Size(75, 23);
-            this.btnStopC.TabIndex = 24;
-            this.btnStopC.Text = "Arrêter";
-            this.btnStopC.UseVisualStyleBackColor = true;
-            this.btnStopC.Click += new System.EventHandler(this.StopProd_Click);
-            // 
-            // btnStandByC
-            // 
-            this.btnStandByC.Enabled = false;
-            this.btnStandByC.Location = new System.Drawing.Point(51, 50);
-            this.btnStandByC.Name = "btnStandByC";
-            this.btnStandByC.Size = new System.Drawing.Size(75, 23);
-            this.btnStandByC.TabIndex = 23;
-            this.btnStandByC.Text = "Continuer";
-            this.btnStandByC.UseVisualStyleBackColor = true;
-            this.btnStandByC.Click += new System.EventHandler(this.ContinueProd_Click);
-            // 
-            // btnStartC
-            // 
-            this.btnStartC.Location = new System.Drawing.Point(51, 21);
-            this.btnStartC.Name = "btnStartC";
-            this.btnStartC.Size = new System.Drawing.Size(75, 23);
-            this.btnStartC.TabIndex = 22;
-            this.btnStartC.Text = "Démarer";
-            this.btnStartC.UseVisualStyleBackColor = true;
-            this.btnStartC.Click += new System.EventHandler(this.StartProd_Click);
-            // 
-            // trafficLightC
-            // 
-            this.trafficLightC.BackgroundImage = global::CashProduction.Properties.Resources.Red;
-            this.trafficLightC.Enabled = false;
-            this.trafficLightC.Location = new System.Drawing.Point(7, 29);
-            this.trafficLightC.Name = "trafficLightC";
-            this.trafficLightC.Size = new System.Drawing.Size(32, 66);
-            this.trafficLightC.TabIndex = 21;
-            this.trafficLightC.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // ProductionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 516);
-            this.Controls.Add(this.groupBoxC);
-            this.Controls.Add(this.groupBoxB);
-            this.Controls.Add(this.groupBoxA);
+            this.ClientSize = new System.Drawing.Size(647, 576);
+            this.Controls.Add(this.btnsControlC);
+            this.Controls.Add(this.btnsControlB);
+            this.Controls.Add(this.btnsControlA);
             this.Controls.Add(this.progressBarControlB);
             this.Controls.Add(this.progressBarControlC);
             this.Controls.Add(this.progressBarControlA);
@@ -593,7 +405,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "ProductionForm";
             this.Text = "Production de boites";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -604,9 +416,6 @@
             this.tabPageA.ResumeLayout(false);
             this.tabPageB.ResumeLayout(false);
             this.tabPageC.ResumeLayout(false);
-            this.groupBoxA.ResumeLayout(false);
-            this.groupBoxB.ResumeLayout(false);
-            this.groupBoxC.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,23 +459,8 @@
         private ToolStripStatusLabel boxA;
         private ToolStripStatusLabel boxB;
         private ToolStripStatusLabel boxC;
-        private GroupBox groupBoxA;
-        private GroupBox groupBoxB;
-        private Button trafficLightB;
-        private GroupBox groupBoxC;
-        private Button btnStopB;
-        private Button btnStandByB;
-        private Button btnStartB;
-        private Button btnStopA;
-        private Button btnStandByA;
-        private Button btnStartA;
-        private Button trafficLightA;
-        private Button btnStopC;
-        private Button btnStandByC;
-        private Button btnStartC;
-        private Button trafficLightC;
-        private Button btnEndedProdA;
-        private Button btnEndedProdB;
-        private Button btnEndedProdC;
+        private UserControls.ButtonsControl btnsControlA;
+        private UserControls.ButtonsControl btnsControlB;
+        private UserControls.ButtonsControl btnsControlC;
     }
 }

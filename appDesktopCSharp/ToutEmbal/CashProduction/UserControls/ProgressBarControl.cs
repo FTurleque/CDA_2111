@@ -14,6 +14,8 @@ namespace CashProduction.UserControls
 
         /// <summary>
         /// Liaison du UserControl à sa Production.
+        /// Mise à jour du nom de la progressBar et de son maximum.
+        /// Abonnement au changement de la production.
         /// </summary>
         /// <param name="prod">Production à lier</param>
         public void ProdLink(Production prod)

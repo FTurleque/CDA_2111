@@ -97,6 +97,10 @@ namespace CashProduction.Class
         /// </summary>
         public void Start()
         {
+            if (ctx == null)
+            {
+                ctx = new CancellationTokenSource();
+            }
             if (!ProdStarted)
             {
                 Thread = new Thread(this.StartedProd);
@@ -187,12 +191,20 @@ namespace CashProduction.Class
         /// <summary>
         /// redémarage de la Production.
         /// </summary>
-        public void Continue()
+        public void Restart()
         {
             ctx = new CancellationTokenSource();
             this.ProdStarted = true;
             Thread = new Thread(this.StartedProd);
             Thread.Start();
+        }
+
+        /// <summary>
+        /// Arret de la production.
+        /// </summary>
+        public void Stop()
+        {
+            StandBy();
         }
 
         /// <summary>
