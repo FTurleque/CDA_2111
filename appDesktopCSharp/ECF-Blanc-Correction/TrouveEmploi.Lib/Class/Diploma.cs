@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrouveEmploi.Lib.Class
+﻿namespace TrouveEmploi.Lib.Class
 {
     public class Diploma
     {
@@ -12,9 +6,9 @@ namespace TrouveEmploi.Lib.Class
         public string? LastDiplomaName { get; private set; }
 
         // Année d'obtention du diplôme.
-        public int? LastDiplomaYear { get; private set; }
+        public string? LastDiplomaYear { get; private set; }
 
-        public Diploma(string _lastDiplomaName, int _lastDiplomaYear)
+        public Diploma(string _lastDiplomaName, string _lastDiplomaYear)
         {
             LastDiplomaName = _lastDiplomaName;
             LastDiplomaYear = _lastDiplomaYear;

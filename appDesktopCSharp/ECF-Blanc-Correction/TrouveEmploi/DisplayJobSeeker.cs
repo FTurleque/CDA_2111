@@ -13,6 +13,7 @@ namespace TrouveEmploi
 
         public void JobSeekerLink(JobSeeker _jobSeeker, FrmDemandeurEmploi _parent)
         {
+            // Mettre l'id et le taux d'employabilité dans un label
             this.parent = _parent;
             txtBoxId.Text = _jobSeeker.Id.ToString();
             txtBoxName.Text = _jobSeeker.Name.ToString();

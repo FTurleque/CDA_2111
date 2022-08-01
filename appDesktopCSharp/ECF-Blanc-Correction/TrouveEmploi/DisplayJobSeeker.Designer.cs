@@ -248,7 +248,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "DisplayJobSeeker";
-            this.Text = "Demandeurd\'emploi";
+            this.Text = "Demandeur d\'emploi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

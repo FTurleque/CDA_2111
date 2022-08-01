@@ -16,14 +16,14 @@ namespace TrouveEmploi.Tests
             FirstName = "Jean-Louis",
             RegistrationYear = 2021,
             Level = Levels.BacPlus2,
-            Diploma = new Diploma("Concepteur Développeur d'Application", 2020)
+            Diploma = new Diploma("Concepteur Développeur d'Application", "2020")
         };
         private JobSeekerViewModel jInvalid = new JobSeekerViewModel()
         {
             Name = "123654",
             FirstName = "1234654",
             RegistrationYear = 9999,
-            Diploma = new Diploma("654 5464", 9999)
+            Diploma = new Diploma("654 5464", "9999")
         };
 
         [TestMethod]
@@ -75,11 +75,11 @@ namespace TrouveEmploi.Tests
         {
             Assert.IsFalse(yearValidator.IsValid("azerty"));
             Assert.IsFalse(yearValidator.IsValid(",;:"));
-            Assert.IsFalse(yearValidator.IsValid("1999855"));
-            Assert.IsFalse(yearValidator.IsValid((DateTime.Now.Year + 1).ToString()));
+            Assert.IsFalse(yearValidator.IsNotInFuture(1999855));
+            Assert.IsFalse(yearValidator.IsNotInFuture((DateTime.Now.Year + 1)));
             Assert.IsFalse(yearValidator.IsNotInFuture(9999));
-            Assert.IsFalse(yearValidator.IsValid(jInvalid.RegistrationYear.ToString()));
-            Assert.IsFalse(yearValidator.IsValid(jInvalid.Diploma.LastDiplomaYear.ToString()));
+            Assert.IsFalse(yearValidator.IsNotInFuture(jInvalid.RegistrationYear));
+            Assert.IsFalse(yearValidator.IsNotInFuture(int.Parse(jInvalid.Diploma.LastDiplomaYear)));
         }
 
         [TestMethod]

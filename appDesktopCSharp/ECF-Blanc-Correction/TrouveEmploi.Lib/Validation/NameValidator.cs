@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace TrouveEmploi.Lib.Validation
 {
@@ -18,6 +13,11 @@ namespace TrouveEmploi.Lib.Validation
             Name = string.Empty;
         }
 
+        /// <summary>
+        /// Validation d'un nom et un prénom
+        /// </summary>
+        /// <param name="_name">Nom ou prénom</param>
+        /// <returns>Vrai ou faux</returns>
         public bool IsValid(string _name)
         {
             Name = _name;

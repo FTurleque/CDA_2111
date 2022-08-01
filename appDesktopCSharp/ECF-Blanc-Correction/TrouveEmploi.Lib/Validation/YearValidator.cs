@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
 namespace TrouveEmploi.Lib.Validation
 {
@@ -14,39 +9,38 @@ namespace TrouveEmploi.Lib.Validation
 
         public YearValidator()
         {
-            regexYear = new Regex(@"^[\d]{4}$");
+            regexYear = new Regex(@"^[0-9]{4}$");
         }
 
+        /// <summary>
+        /// Valide que la chaine de charactère est un entier.
+        /// </summary>
+        /// <param name="_year">Chaine de charactère</param>
+        /// <returns>Vrai ou faux</returns>
         public bool IsValid(string _year)
         {
-            try
+            if (String.IsNullOrEmpty(_year))
             {
-                if (String.IsNullOrEmpty(_year))
-                {
-                    throw new ArgumentNullException("Veuillez remplir le champ.");
-                }
-                if (!regexYear.IsMatch(_year))
-                {
-                    throw new FormatException("Une année ne comporte pas de lettres.");
-                }
+                return false;
             }
-            catch (ArgumentNullException e)
+            if (!regexYear.IsMatch(_year))
             {
-                throw e;
+                return false;
             }
-            catch (FormatException e)
-            {
-                throw e;
-            }
-            return IsNotInFuture(Int32.Parse(_year));
+            return true;
         }
 
+        /// <summary>
+        /// Valide que l'année n'est pas dans le futur.
+        /// </summary>
+        /// <param name="_year"></param>
+        /// <returns>Vrai ou faux</returns>
         public bool IsNotInFuture(int _year)
         {
             int thisYear = DateTime.Today.Year;
             if (thisYear < _year)
             {
-                throw new FormatException("L'année ne peut pas être dans le futur.");
+                return false;
             }
             return true;
         }

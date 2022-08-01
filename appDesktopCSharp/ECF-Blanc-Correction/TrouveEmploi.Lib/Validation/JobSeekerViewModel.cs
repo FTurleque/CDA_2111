@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TrouveEmploi.Lib.Class;
+using TrouveEmploi.Lib.JobSeekerExceptions;
 
 namespace TrouveEmploi.Lib.Validation
 {
@@ -23,34 +24,45 @@ namespace TrouveEmploi.Lib.Validation
         /// <returns>Retourne si le test est passé ou pas</returns>
         public bool IsValid()
         {
+            if (String.IsNullOrEmpty(Name) || String.IsNullOrEmpty(FirstName))
+            {
+                throw new InvalidNameException("Veuillez renseigner le champ.");
+            }
             RegistrationYear = DateTime.Now.Year;
             if (nameValidator.IsValid(Name) && nameValidator.IsValid(FirstName))
             {
                 if (Diploma is not null)
                 {
-                    if (Diploma.LastDiplomaYear is not null && String.IsNullOrEmpty(Diploma.LastDiplomaName))
+                    if (!String.IsNullOrEmpty(Diploma.LastDiplomaYear) && String.IsNullOrEmpty(Diploma.LastDiplomaName))
                     {
                         throw new InvalidDataException("Vous n'avez pas renseigné le nom du diplôme.");
                     }
 
-                    if (!sentenceValidator.IsValid(Diploma.LastDiplomaName))
-                    {
-                        throw new InvalidDataException("Le nom du diplôme comporte des charactères interdit.");
-                    }
-
-                    /*if (yearValidator.IsValid(Diploma.LastDiplomaYear.ToString()))
-                    {
-                        throw new FormatException("Une année ne comporte que des chiffres.");
-                    }*/
-
-                    if (Diploma.LastDiplomaYear is null && String.IsNullOrEmpty(Diploma.LastDiplomaName))
+                    if (String.IsNullOrEmpty(Diploma.LastDiplomaYear) && !String.IsNullOrEmpty(Diploma.LastDiplomaName))
                     {
                         throw new InvalidDataException("Vous n'avez pas renseigné la date du diplôme.");
                     }
+
+                    if (!sentenceValidator.IsValid(Diploma.LastDiplomaName))
+                    {
+                        throw new InvalidStringException("Le nom du diplôme comporte des charactères interdit.");
+                    }
+
+                    if (!yearValidator.IsValid(Diploma.LastDiplomaYear))
+                    {
+                        throw new InvalidDateException("Une année ne comporte 4 chiffres.");
+                    }
+
+                    if (!yearValidator.IsNotInFuture(int.Parse(Diploma.LastDiplomaYear)))
+                    {
+                        throw new InvalidDateException("La date du diplôme ne peut pas être dans le future.");
+                    }
+
+
                 }
                 return true;
             }
-            return false;
+            throw new InvalidNameException("Le champ ne doit comporté que des lettres ou un '-'.");
         }
     }
 }
