@@ -13,6 +13,7 @@ namespace TrouveEmploi
         private Diploma? diploma;
         private JobSeekerViewModel model;
         private JobSeeker jobSeeker;
+        private List<JobSeeker> jobSeekers;
 
         public FrmDemandeurEmploi()
         {
@@ -21,6 +22,7 @@ namespace TrouveEmploi
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            jobSeekers = new List<JobSeeker>();
             _errorProvider = new ErrorProvider();
             _validName = new NameValidator();
             _validYear = new YearValidator();
@@ -33,42 +35,48 @@ namespace TrouveEmploi
             // Valeurs temporaires
             txtBoxName.Text = "Turleque";
             txtBoxFirstName.Text = "Fabrice";
-            txtBoxRegistration.Text = "2020";
         }
 
         private void Validation_Click(object sender, EventArgs e)
         {
             try
             {
-                _errorProvider.SetError(txtBoxName, _validName.IsValid(txtBoxName.Text) ? String.Empty : "Le Format du nom n'est pas valide.");
-                _errorProvider.SetError(txtBoxFirstName, _validName.IsValid(txtBoxFirstName.Text) ? String.Empty : "Le Format du prénom n'est pas valide.");
-                _errorProvider.SetError(txtBoxRegistration, _validYear.IsValid(txtBoxRegistration.Text) ? String.Empty : "La date est dans le futur ou c'est des lettre.");
+                /*_errorProvider.SetError(txtBoxName, _validName.IsValid(txtBoxName.Text) ? String.Empty : "Le Format du nom n'est pas valide.");
+                _errorProvider.SetError(txtBoxFirstName, _validName.IsValid(txtBoxFirstName.Text) ? String.Empty : "Le Format du prénom n'est pas valide.");*/
                 if (checkBoxDiploma.Checked)
                 {
-                    _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : "Le nom du diplôme a des charactère intérdit.");
-                    _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) ? String.Empty : "La date est dans le futur ou c'est des lettre.");
+                    _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : "");
+                    _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) ? String.Empty : "");
                     diploma = new Diploma(txtBoxDiplomaName.Text, Int32.Parse(txtBoxDiplomaYear.Text));
                 }
                 model = new JobSeekerViewModel()
                 {
                     Name = txtBoxName.Text,
                     FirstName = txtBoxFirstName.Text,
-                    RegistrationYear = Int32.Parse(txtBoxRegistration.Text),
                     Level = (Levels)Enum.Parse<Levels>(comboBoxLevels.SelectedItem.ToString()),
                     Diploma = diploma
                 };
                 if (model.IsValid())
                 {
                     jobSeeker = new JobSeeker(model);
+                    jobSeekers.Add(jobSeeker);
                     DisplayJobSeeker resp = new DisplayJobSeeker();
                     resp.JobSeekerLink(jobSeeker, this);
                     resp.Show();
                 }
             }
-            catch (Exception)
+            catch (FormatException ex)
             {
+                _errorProvider.SetError(txtBoxDiplomaYear, ex.Message);
 
-
+            }
+            catch (InvalidDataException ex)
+            {
+                _errorProvider.SetError(txtBoxDiplomaName, ex.Message);
+            }
+            catch(ArgumentNullException ex)
+            {
+                _errorProvider.SetError(txtBoxDiplomaYear, ex.Message);
             }
         }
 
@@ -88,7 +96,6 @@ namespace TrouveEmploi
             }*/
             txtBoxName.Clear();
             txtBoxFirstName.Clear();
-            txtBoxRegistration.Clear();
             txtBoxDiplomaName.Clear();
             txtBoxDiplomaYear.Clear();
             comboBoxLevels.SelectedIndex = 0;

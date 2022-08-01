@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBoxRegistration = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,8 +51,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtBoxRegistration);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtBoxFirstName);
             this.groupBox1.Controls.Add(this.label1);
@@ -63,29 +59,10 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(428, 136);
+            this.groupBox1.Size = new System.Drawing.Size(428, 101);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info Perso";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(11, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Année d\'inscription";
-            // 
-            // txtBoxRegistration
-            // 
-            this.txtBoxRegistration.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBoxRegistration.Location = new System.Drawing.Point(180, 91);
-            this.txtBoxRegistration.MaxLength = 4;
-            this.txtBoxRegistration.Name = "txtBoxRegistration";
-            this.txtBoxRegistration.Size = new System.Drawing.Size(88, 25);
-            this.txtBoxRegistration.TabIndex = 2;
             // 
             // label2
             // 
@@ -125,9 +102,10 @@
             // 
             // comboBoxLevels
             // 
+            this.comboBoxLevels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLevels.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxLevels.FormattingEnabled = true;
-            this.comboBoxLevels.Location = new System.Drawing.Point(192, 191);
+            this.comboBoxLevels.Location = new System.Drawing.Point(192, 156);
             this.comboBoxLevels.Name = "comboBoxLevels";
             this.comboBoxLevels.Size = new System.Drawing.Size(158, 25);
             this.comboBoxLevels.TabIndex = 3;
@@ -136,7 +114,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(23, 195);
+            this.label4.Location = new System.Drawing.Point(23, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(153, 21);
             this.label4.TabIndex = 6;
@@ -151,7 +129,7 @@
             this.gBoxDiploma.Controls.Add(this.txtBoxDiplomaName);
             this.gBoxDiploma.Enabled = false;
             this.gBoxDiploma.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.gBoxDiploma.Location = new System.Drawing.Point(12, 261);
+            this.gBoxDiploma.Location = new System.Drawing.Point(12, 226);
             this.gBoxDiploma.Name = "gBoxDiploma";
             this.gBoxDiploma.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.gBoxDiploma.Size = new System.Drawing.Size(428, 107);
@@ -173,6 +151,7 @@
             // 
             this.txtBoxDiplomaYear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBoxDiplomaYear.Location = new System.Drawing.Point(180, 60);
+            this.txtBoxDiplomaYear.MaxLength = 4;
             this.txtBoxDiplomaYear.Name = "txtBoxDiplomaYear";
             this.txtBoxDiplomaYear.Size = new System.Drawing.Size(88, 25);
             this.txtBoxDiplomaYear.TabIndex = 6;
@@ -198,7 +177,7 @@
             // checkBoxDiploma
             // 
             this.checkBoxDiploma.AutoSize = true;
-            this.checkBoxDiploma.Location = new System.Drawing.Point(12, 236);
+            this.checkBoxDiploma.Location = new System.Drawing.Point(12, 201);
             this.checkBoxDiploma.Name = "checkBoxDiploma";
             this.checkBoxDiploma.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxDiploma.Size = new System.Drawing.Size(112, 19);
@@ -211,7 +190,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(303, 376);
+            this.button1.Location = new System.Drawing.Point(303, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 32);
             this.button1.TabIndex = 7;
@@ -223,7 +202,7 @@
             // 
             this.label6.BackColor = System.Drawing.Color.DarkGray;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(12, 231);
+            this.label6.Location = new System.Drawing.Point(12, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(429, 2);
             this.label6.TabIndex = 9;
@@ -242,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 420);
+            this.ClientSize = new System.Drawing.Size(459, 390);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -272,8 +251,6 @@
         private TextBox txtBoxName;
         private Label label2;
         private TextBox txtBoxFirstName;
-        private Label label3;
-        private TextBox txtBoxRegistration;
         private ComboBox comboBoxLevels;
         private Label label4;
         private GroupBox gBoxDiploma;

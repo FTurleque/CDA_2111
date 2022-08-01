@@ -19,21 +19,26 @@ namespace TrouveEmploi.Lib.Validation
 
         public bool IsValid(string _year)
         {
-            int year;
             try
             {
-                year = Int32.Parse(_year);
+                if (String.IsNullOrEmpty(_year))
+                {
+                    throw new ArgumentNullException("Veuillez remplir le champ.");
+                }
                 if (!regexYear.IsMatch(_year))
                 {
-                    throw new Exception();
+                    throw new FormatException("Une année ne comporte pas de lettres.");
                 }
             }
-            catch (Exception)
+            catch (ArgumentNullException e)
             {
-
-                return false;
+                throw e;
             }
-            return IsNotInFuture(year);
+            catch (FormatException e)
+            {
+                throw e;
+            }
+            return IsNotInFuture(Int32.Parse(_year));
         }
 
         public bool IsNotInFuture(int _year)
@@ -41,7 +46,7 @@ namespace TrouveEmploi.Lib.Validation
             int thisYear = DateTime.Today.Year;
             if (thisYear < _year)
             {
-                return false;
+                throw new FormatException("L'année ne peut pas être dans le futur.");
             }
             return true;
         }

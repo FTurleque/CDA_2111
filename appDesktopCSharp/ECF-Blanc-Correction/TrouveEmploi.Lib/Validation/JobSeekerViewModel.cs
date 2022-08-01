@@ -23,63 +23,34 @@ namespace TrouveEmploi.Lib.Validation
         /// <returns>Retourne si le test est passé ou pas</returns>
         public bool IsValid()
         {
-            if(!nameValidator.IsValid(Name) || !nameValidator.IsValid(FirstName))
+            RegistrationYear = DateTime.Now.Year;
+            if (nameValidator.IsValid(Name) && nameValidator.IsValid(FirstName))
             {
-                return false;
-            }
-
-            if(!yearValidator.IsValid(RegistrationYear.ToString()))
-            {
-                return false;
-            }
-
-            if(Diploma != null)
-            {
-                if(!sentenceValidator.IsValid(Diploma.LastDiplomaName))
+                if (Diploma is not null)
                 {
-                    return false;
+                    if (Diploma.LastDiplomaYear is not null && String.IsNullOrEmpty(Diploma.LastDiplomaName))
+                    {
+                        throw new InvalidDataException("Vous n'avez pas renseigné le nom du diplôme.");
+                    }
+
+                    if (!sentenceValidator.IsValid(Diploma.LastDiplomaName))
+                    {
+                        throw new InvalidDataException("Le nom du diplôme comporte des charactères interdit.");
+                    }
+
+                    /*if (yearValidator.IsValid(Diploma.LastDiplomaYear.ToString()))
+                    {
+                        throw new FormatException("Une année ne comporte que des chiffres.");
+                    }*/
+
+                    if (Diploma.LastDiplomaYear is null && String.IsNullOrEmpty(Diploma.LastDiplomaName))
+                    {
+                        throw new InvalidDataException("Vous n'avez pas renseigné la date du diplôme.");
+                    }
                 }
-
-                if(!yearValidator.IsValid(Diploma.LastDiplomaYear.ToString()))
-                {
-                    return false;
-                }
+                return true;
             }
-            
-            return true;
+            return false;
         }
-
-        /*public bool Validation_Name()
-        {
-            return regexName.IsMatch(Name);
-        }
-
-        public bool ValidationFirstName()
-        {
-            return regexName.IsMatch(FirstName);
-        }
-
-        public bool Validation_LastDiplomaName()
-        {
-            return regexDiploma.IsMatch(Diploma.LastDiplomaName);
-        }
-
-        public bool ValidationRegistrationYear_Date()
-        {
-            if (RegistrationYear > currentYear || RegistrationYear < 1950)
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public bool ValidationDiplomaYear_Date()
-        {
-            if (Diploma.LastDiplomaYear > currentYear || Diploma.LastDiplomaYear < 1950)
-            {
-                return false;
-            }
-            return true;
-        }*/
     }
 }

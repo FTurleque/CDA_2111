@@ -31,6 +31,7 @@ namespace TrouveEmploi.Lib.Class
         public JobSeeker()
         {
             Id = ++lastId;
+            RegistrationYear = DateTime.Now.Year;
         }
 
         /// <summary>
