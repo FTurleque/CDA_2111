@@ -33,19 +33,15 @@ namespace TrouveEmploi.Lib.Validation
             {
                 if (Diploma is not null)
                 {
-                    if (!String.IsNullOrEmpty(Diploma.LastDiplomaYear) && String.IsNullOrEmpty(Diploma.LastDiplomaName))
+                    if ((!String.IsNullOrEmpty(Diploma.LastDiplomaYear) && String.IsNullOrEmpty(Diploma.LastDiplomaName)) ||
+                        (String.IsNullOrEmpty(Diploma.LastDiplomaYear) && !String.IsNullOrEmpty(Diploma.LastDiplomaName)))
                     {
-                        throw new InvalidDataException("Vous n'avez pas renseigné le nom du diplôme.");
-                    }
-
-                    if (String.IsNullOrEmpty(Diploma.LastDiplomaYear) && !String.IsNullOrEmpty(Diploma.LastDiplomaName))
-                    {
-                        throw new InvalidDataException("Vous n'avez pas renseigné la date du diplôme.");
+                        throw new InvalidDataException("Vous n'avez pas renseigné ");
                     }
 
                     if (!sentenceValidator.IsValid(Diploma.LastDiplomaName))
                     {
-                        throw new InvalidStringException("Le nom du diplôme comporte des charactères interdit.");
+                        throw new InvalidStringException("diplôme comporte des charactères interdit.");
                     }
 
                     if (!yearValidator.IsValid(Diploma.LastDiplomaYear))

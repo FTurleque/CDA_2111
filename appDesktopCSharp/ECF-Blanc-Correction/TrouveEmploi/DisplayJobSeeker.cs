@@ -15,7 +15,7 @@ namespace TrouveEmploi
         {
             // Mettre l'id et le taux d'employabilité dans un label
             this.parent = _parent;
-            txtBoxId.Text = _jobSeeker.Id.ToString();
+            lblJobSeekerId.Text = String.Format("Demandeur n°{0} ajouté en {1}.", _jobSeeker.Id, _jobSeeker.RegistrationYear);
             txtBoxName.Text = _jobSeeker.Name.ToString();
             txtBoxFirstName.Text = _jobSeeker.FirstName.ToString();
             txtBoxRegistrationYear.Text = _jobSeeker.RegistrationYear.ToString();

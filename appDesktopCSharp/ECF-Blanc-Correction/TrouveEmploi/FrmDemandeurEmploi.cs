@@ -43,10 +43,6 @@ namespace TrouveEmploi
         {
             try
             {
-                /*if (checkBoxDiploma.Checked)
-                {
-                    diploma = new Diploma(txtBoxDiplomaName.Text, Int32.Parse(txtBoxDiplomaYear.Text));
-                }*/
                 model = new JobSeekerViewModel()
                 {
                     Name = txtBoxName.Text,
@@ -66,33 +62,53 @@ namespace TrouveEmploi
             }
             catch (InvalidDataException ex)
             {
-                /*_errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) ? String.Empty : ex.Message);
-                _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : ex.Message);*/
                 SetErrorProvider(ex);
             }
             catch (InvalidNameException ex) 
             {
-                /*_errorProvider.SetError(txtBoxName, _validName.IsValid(txtBoxName.Text) ? String.Empty : ex.Message);
-                _errorProvider.SetError(txtBoxFirstName, _validName.IsValid(txtBoxFirstName.Text) ? String.Empty : ex.Message);*/
                 SetErrorProvider(ex);
             }
             catch (InvalidStringException ex)
             {
-                //_errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : ex.Message);
                 SetErrorProvider(ex);
             }
             catch (InvalidDateException ex)
             {
-                //_errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) ? String.Empty : ex.Message);
                 SetErrorProvider(ex);
             }
         }
 
         private void SetErrorProvider([Optional] Exception e)
         {
-            _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) && _validYear.IsNotInFuture(int.Parse(txtBoxDiplomaYear.Text)) ? String.Empty : e.Message);
-            //_errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsNotInFuture(int.Parse(txtBoxDiplomaYear.Text)) ? String.Empty : e.Message);
-            _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : e.Message);
+            if (checkBoxDiploma.Checked)
+            {
+                int dateNb;
+                if (!String.IsNullOrEmpty(txtBoxDiplomaName.Text) && !String.IsNullOrEmpty(txtBoxDiplomaYear.Text))
+                {
+                    if (int.TryParse(txtBoxDiplomaYear.Text, out dateNb))
+                    {
+                        _errorProvider.SetError(txtBoxDiplomaYear,_validYear.IsNotInFuture(int.Parse(txtBoxDiplomaYear.Text)) ? 
+                            String.Empty : $"{dateNb} est dans le futur.");
+                        _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : "Le nom du " + e.Message);
+                    }
+                    else
+                    {
+                        _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) && 
+                            _validYear.IsNotInFuture(int.Parse(txtBoxDiplomaYear.Text)) ? String.Empty : "L'année du " + e.Message);
+                        _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? String.Empty : "Le nom du " + e.Message);
+                    }
+                    
+                }
+                else
+                {
+                    _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) &&
+                    _validYear.IsNotInFuture(int.Parse(txtBoxDiplomaYear.Text)) ||
+                    String.IsNullOrEmpty(txtBoxDiplomaName.Text) ? String.Empty : e.Message + "l'année du diplôme.");
+                    _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ||
+                        String.IsNullOrEmpty(txtBoxDiplomaYear.Text) ? String.Empty : e.Message + "le nom du diplôme.");
+                }
+                
+            }
             _errorProvider.SetError(txtBoxName, _validName.IsValid(txtBoxName.Text) ? String.Empty : e.Message);
             _errorProvider.SetError(txtBoxFirstName, _validName.IsValid(txtBoxFirstName.Text) ? String.Empty : e.Message);
         }
@@ -104,13 +120,6 @@ namespace TrouveEmploi
 
         public void ResetTheFields()
         {
-            /*foreach (Control c in this.Controls)
-            {
-                if (c is TextBox box)
-                {
-                    box.Clear();
-                }
-            }*/
             txtBoxName.Clear();
             txtBoxFirstName.Clear();
             txtBoxDiplomaName.Clear();
