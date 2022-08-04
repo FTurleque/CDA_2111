@@ -21,13 +21,13 @@ namespace TrouveEmploi.Lib.Validation
         {
             if (String.IsNullOrEmpty(_year))
             {
-                return false;
+                throw new InvalidDataException("Veuillez remplir le champ.");
             }
             if (!regexYear.IsMatch(_year))
             {
-                return false;
+                throw new InvalidDataException("Veuillez entrez 4 chiffres");
             }
-            return true;
+            return IsNotInFuture(int.Parse(_year));
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace TrouveEmploi.Lib.Validation
             int thisYear = DateTime.Today.Year;
             if (thisYear < _year)
             {
-                return false;
+                throw new InvalidDataException("La date du diplôme de peut pas être dans le futur.");
             }
             return true;
         }

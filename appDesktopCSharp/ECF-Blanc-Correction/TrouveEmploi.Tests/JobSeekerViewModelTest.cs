@@ -1,5 +1,6 @@
 using TrouveEmploi.Lib.Class;
 using TrouveEmploi.Lib.Extensions;
+using TrouveEmploi.Lib.JobSeekerExceptions;
 using TrouveEmploi.Lib.Validation;
 
 namespace TrouveEmploi.Tests
@@ -52,11 +53,10 @@ namespace TrouveEmploi.Tests
         [TestMethod]
         public void Test_InvalidNames()
         {
-            Assert.IsFalse(nameValidator.IsValid("Meme-"));
-            Assert.IsFalse(nameValidator.IsValid("Meme-ldjflkj:!"));
-            Assert.IsFalse(nameValidator.IsValid(jInvalid.Name));
-            Assert.IsFalse(nameValidator.IsValid(jInvalid.FirstName));
-            Assert.IsFalse(sentenceValidator.IsValid(jInvalid.Diploma.LastDiplomaName));
+            Assert.ThrowsException<InvalidNameException>(() => nameValidator.IsValid("Meme-"));
+            Assert.ThrowsException<InvalidNameException>(() => nameValidator.IsValid("Meme-ldjflkj:!"));
+            Assert.ThrowsException<InvalidNameException>(() => nameValidator.IsValid(jInvalid.Name));
+            Assert.ThrowsException<InvalidNameException>(() => nameValidator.IsValid(jInvalid.FirstName));
         }
 
         [TestMethod]
@@ -67,19 +67,32 @@ namespace TrouveEmploi.Tests
             Assert.IsTrue(nameValidator.IsValid("Théo"));
             Assert.IsTrue(nameValidator.IsValid(jValid.Name));
             Assert.IsTrue(nameValidator.IsValid(jValid.FirstName));
+        }
+
+        [TestMethod]
+        public void Test_ValidSentence()
+        {
+            Assert.IsTrue(sentenceValidator.IsValid("Concéption développeur d'application"));
             Assert.IsTrue(sentenceValidator.IsValid(jValid.Diploma.LastDiplomaName));
+        }
+
+        [TestMethod]
+        public void Test_InvalidSentence()
+        {
+            Assert.ThrowsException<InvalidStringException>(() => sentenceValidator.IsValid("789546 654687 654"));
+            Assert.ThrowsException<InvalidStringException>(() => sentenceValidator.IsValid(jInvalid.Diploma.LastDiplomaName));
         }
 
         [TestMethod]
         public void Test_InvalidDates()
         {
-            Assert.IsFalse(yearValidator.IsValid("azerty"));
-            Assert.IsFalse(yearValidator.IsValid(",;:"));
-            Assert.IsFalse(yearValidator.IsNotInFuture(1999855));
-            Assert.IsFalse(yearValidator.IsNotInFuture((DateTime.Now.Year + 1)));
-            Assert.IsFalse(yearValidator.IsNotInFuture(9999));
-            Assert.IsFalse(yearValidator.IsNotInFuture(jInvalid.RegistrationYear));
-            Assert.IsFalse(yearValidator.IsNotInFuture(int.Parse(jInvalid.Diploma.LastDiplomaYear)));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsValid("azerty"));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsValid(",;:"));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsNotInFuture(1999855));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsNotInFuture((DateTime.Now.Year + 1)));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsNotInFuture(9999));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsNotInFuture(jInvalid.RegistrationYear));
+            Assert.ThrowsException<InvalidDataException>(() => yearValidator.IsNotInFuture(int.Parse(jInvalid.Diploma.LastDiplomaYear)));
         }
 
         [TestMethod]

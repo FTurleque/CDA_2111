@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using TrouveEmploi.Lib.JobSeekerExceptions;
 
 namespace TrouveEmploi.Lib.Validation
 {
@@ -20,8 +21,16 @@ namespace TrouveEmploi.Lib.Validation
         /// <returns>Vrai ou faux</returns>
         public bool IsValid(string _name)
         {
+            if (String.IsNullOrEmpty(_name))
+            {
+                throw new InvalidStringException("Veuillez remplir le champ.");
+            }
             Name = _name;
-            return regexName.IsMatch(Name);
+            if (!regexName.IsMatch(Name))
+            {
+                throw new InvalidNameException("Le nom comporte des charactères invalide.");
+            }
+            return true;
         }
     }
 }

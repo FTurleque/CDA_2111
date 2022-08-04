@@ -82,8 +82,12 @@ namespace TrouveEmploi
         {
             if (checkBoxDiploma.Checked)
             {
+                _errorProvider.SetError(txtBoxDiplomaYear, _validYear.IsValid(txtBoxDiplomaYear.Text) ? 
+                    String.Empty : e.Message + "l'année du diplôme.");
+                _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ? 
+                    String.Empty : e.Message + "le nom du diplôme.");
                 int dateNb;
-                if (!String.IsNullOrEmpty(txtBoxDiplomaName.Text) && !String.IsNullOrEmpty(txtBoxDiplomaYear.Text))
+                /*if (!String.IsNullOrEmpty(txtBoxDiplomaName.Text) && !String.IsNullOrEmpty(txtBoxDiplomaYear.Text))
                 {
                     if (int.TryParse(txtBoxDiplomaYear.Text, out dateNb))
                     {
@@ -106,7 +110,7 @@ namespace TrouveEmploi
                     String.IsNullOrEmpty(txtBoxDiplomaName.Text) ? String.Empty : e.Message + "l'année du diplôme.");
                     _errorProvider.SetError(txtBoxDiplomaName, _validSentences.IsValid(txtBoxDiplomaName.Text) ||
                         String.IsNullOrEmpty(txtBoxDiplomaYear.Text) ? String.Empty : e.Message + "le nom du diplôme.");
-                }
+                }*/
                 
             }
             _errorProvider.SetError(txtBoxName, _validName.IsValid(txtBoxName.Text) ? String.Empty : e.Message);

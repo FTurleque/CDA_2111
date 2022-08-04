@@ -26,7 +26,8 @@ namespace TrouveEmploi.Lib.Validation
         {
             if (String.IsNullOrEmpty(Name) || String.IsNullOrEmpty(FirstName))
             {
-                throw new InvalidNameException("Veuillez renseigner le champ.");
+                return false;
+                //throw new InvalidNameException("Veuillez renseigner le champ.");
             }
             RegistrationYear = DateTime.Now.Year;
             if (nameValidator.IsValid(Name) && nameValidator.IsValid(FirstName))
@@ -36,29 +37,33 @@ namespace TrouveEmploi.Lib.Validation
                     if ((!String.IsNullOrEmpty(Diploma.LastDiplomaYear) && String.IsNullOrEmpty(Diploma.LastDiplomaName)) ||
                         (String.IsNullOrEmpty(Diploma.LastDiplomaYear) && !String.IsNullOrEmpty(Diploma.LastDiplomaName)))
                     {
-                        throw new InvalidDataException("Vous n'avez pas renseigné ");
+                        return false;
+                        //throw new InvalidDataException("Vous n'avez pas renseigné ");
                     }
 
                     if (!sentenceValidator.IsValid(Diploma.LastDiplomaName))
                     {
-                        throw new InvalidStringException("diplôme comporte des charactères interdit.");
+                        return false;
+                        //throw new InvalidStringException("diplôme comporte des charactères interdit.");
                     }
 
                     if (!yearValidator.IsValid(Diploma.LastDiplomaYear))
                     {
-                        throw new InvalidDateException("Une année ne comporte 4 chiffres.");
+                        return false;
+                        //throw new InvalidDateException("Une année ne comporte 4 chiffres.");
                     }
 
                     if (!yearValidator.IsNotInFuture(int.Parse(Diploma.LastDiplomaYear)))
                     {
-                        throw new InvalidDateException("La date du diplôme ne peut pas être dans le future.");
+                        return false;
+                        //throw new InvalidDateException("La date du diplôme ne peut pas être dans le future.");
                     }
-
 
                 }
                 return true;
             }
-            throw new InvalidNameException("Le champ ne doit comporté que des lettres ou un '-'.");
+            return false;
+            //throw new InvalidNameException("Le champ ne doit comporté que des lettres ou un '-'.");
         }
     }
 }
